@@ -26,7 +26,7 @@ your_city                                 : London
 email_address                             : myvinyls@mcomisso.me
 facebook_username                         :                                           
 instagram_username                        : _matcom_
-twitter_username                          : mcomisso
+twitter_username                          : comismatt
 github_username                           : emilbaehr
 youtube_username                          : teomatteo89
 
@@ -58,7 +58,7 @@ features                                  :
   - title                                 : Apple TV Companion app
     description                           : Display a mosaic of records on your TV, perfect to show all your collection with ease.
     fontawesome_icon_name                 : tv
-    
+
   - title                                 : # New Feature Title
     description                           : # New Feature Description
     fontawesome_icon_name                 : # Enter Font Awesome icon name (e.g. star). Find icons on fontawesome.com/icons.
