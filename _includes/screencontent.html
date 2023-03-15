@@ -4,7 +4,21 @@
     {% if file.path contains 'assets/screenshot/' %}
         <script>
             $(function() {
-                $(".iphoneScreen").attr('src', '{{ site.github.baseurl }}{{ file.path }}');
+                var images = [
+                {% for file in site.static_files %}
+                    {% if file.path contains 'assets/screenshot/' %}
+                    "{{ site.github.baseurl }}{{ file.path }}",
+                    {% endif %}
+                {% endfor %}
+                ];
+
+                var index = 0;
+                window.setInterval(() => {
+                    $(".iphoneScreen").attr('src', images[index]);
+                    index = (index < images.length - 1)? index + 1 : 0;
+                }, 3000);
+
+                <!-- $(".iphoneScreen").attr('src', '{{ site.github.baseurl }}{{ file.path }}'); -->
                 $(".iphoneScreen").removeClass("hidden");
                 console.log("{{ file.path }}");
             });
