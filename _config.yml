@@ -37,7 +37,7 @@ features                                  :
 
   - title                                 : Discogs
     description                           : Login to your Discogs account and access a database of millions of records.
-    fontawesome_icon_name                 : record-vinyl
+    fontawesome_icon_name                 : compact-disc
     
   - title                                 : A stunning UI
     description                           : Give the artwork a front seat and showcase your library.
@@ -45,7 +45,7 @@ features                                  :
 
   - title                                 : Shazam to the rescue
     description                           : Use the shazam feature to identify a playing record, and buy it from Discogs with a few clicks.
-    fontawesome_icon_name                 : microphone-lines
+    fontawesome_icon_name                 : microphone
 
   - title                                 : Easy to Tweak
     description                           : Tweak accent color, icons and make it yours
@@ -53,7 +53,7 @@ features                                  :
   
   - title                                 : AI helpers
     description                           : Use the knowledge power of AI to receive informations and notes about your favorite records and artists.
-    fontawesome_icon_name                 : microchip-ai
+    fontawesome_icon_name                 : robot
 
   - title                                 : Apple TV Companion app
     description                           : Display a mosaic of records on your TV, perfect to show all your collection with ease.
