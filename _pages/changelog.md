@@ -5,61 +5,92 @@ include_in_header: true
 ---
 
 # Changelog
-Here you can keep a changelog for your app. Edit the markdown based CHANGELOG.md which is located in the _pages directory. The changelog below is simply an example changelog that serves to exemplify how the markdown can be used. You can be as creative as you want with the markdown.
-
-<br>
 
 ### `Latest`
-# **Version 2.0**
-This is the first update to our app. Jeez **goodness** by kept more sensually a much far proper exotically precise [here is a link](https://www.google.com) and and illicit hey uninspiring the more sat honey knelt before before bearish bowed lorikeet wolf grandly instead diligently and rhinoceros imperative.
+
+# **Version 3.0**
+This is a really big update. Welcome **My Vinyls**, farewell *Vinyly*!  
+I am switching to a subscription model - *My Vinyls **Platinum*** -, hoping that more people will find value in what I am developing. :) 
+
+#### What's new
+- Now the app name is My Vinyls
+- A few Widgets!
+- Improved Details page
+- Suggested records
+- AI description for records, thanks to OpenAI
+- Improved A11y support
+- *Bonjour*, My Vinyls now speaks French! 
+- Local caching and initial offline support
+- Additional app icons to choose from
+- Smaller packaged app!
+
+# **Version 2.1.0** (released 19th September 2022)
 
 #### What's New
-- Much far proper exotically precise unaccountable.
-- [Changes to Privacy Policy](/privacypolicy)
+- Choose your icon: Now you can pick your favourite icon from an increasing selection
+- Theme support: Additionally to the icon, you can now choose between a few colors to make Vinyly yours
+- Tip Jar: Support vinyly in its development :)
 
 #### Bug Fixes
-- Much far proper exotically precise unaccountable.
-- [Changes to Privacy Policy](/privacypolicy)
+- Various bug fixes: Improved usability of Vinyly
 
 <br>
 
-### **Version 2.1**
-Abnormal and formidable against much the before well improper more spent far heron amicably iguana plainly swanky upon mammoth **much paid darn some tapir** some glared save crud more regarding one accommodating gosh cannily and on hungry a more goodness inside merry yikes wedded versus because some a a a shined anteater goldfinch jeez up so and this this a.
-
-#### What's New
-- Much far proper exotically precise unaccountable.
-- Much far proper exotically precise unaccountable.
-
-<br>
-
-________
-<br>
-
-### `Initial Release`
-# **Version 1.0**
-Cracked a more and iguana a without some echidna a abnormal hello and beat thanks jeepers gnu jeepers until up depending for drooled awfully angelfish relentless much a well wasp some in impala darn and overate greedily wow kookaburra beneath much wistful fluid until and lemming less armadillo redoubtable after much capybara wow that hence interbred timorous loosely oh divisively wherever because jeepers until since as that goodness roadrunner insanely belated physic jeepers hey jeepers much the beside steadfastly up toward indubitably this goodness playful.
-
-<br>
-
-## **Version 1.1**
-Abnormal and formidable against much the before well improper more spent far heron amicably iguana plainly swanky upon mammoth **much paid darn some tapir** some glared save crud more regarding one accommodating gosh cannily and on hungry a more goodness inside merry yikes wedded versus because some a a a shined anteater goldfinch jeez up so and this this a.
-
-#### What's New
-- Much far proper exotically precise unaccountable.
-- Much far proper exotically precise unaccountable.
-
-<br>
-
-## Version 1.0.1
-That wow robin one and gosh audibly darn that variously less across softly awakened under affectingly wildebeest from jeepers far contemplated and indisputably clung jeepers much mistaken some after mumbled hey certain neatly far alas more trod the swelled rolled permissively so save pert the tapir paradoxical off so then juggled crud a however overslept vehemently kept indisputably anteater walked alas or into.
-
-#### What's New
-- Much far proper exotically precise unaccountable.
-- Much far proper exotically precise unaccountable.
-- Much far proper exotically precise unaccountable.
+# **Version 2.0.3** (released 5th June 2022)
 
 #### Bug Fixes
-- Improved user sign up experience.
-- Unlike deliberately zebra hen oh jeez understandable. Alas and quit oh snooty unlike deliberately.
+- The library now starts by loading the records from the most recent to the oldest addition
+- A few animation fixes
+
+<br>
+
+# **Version 2.0.2** (released 13th April 2022)
+
+#### Bug Fixes
+- Now Playing improvements: See on discogs now opens your preferred browser, and the add to wantlist/collection no longer reset some informations
+- Profile page: Some small retouch in profile page
+
+<br>
+
+# **Version 2.0.1** (released 31st March 2022)
+
+#### Bug Fixes
+- Under the hood improvements for future features
+- Profile page: Additional information from your profile
+
+<br>
+
+# **Version 2.0.0** (released 22nd January 2022)
+
+#### What's New
+- Updated look and UX: A cleaner and more audacious look, with simplified actions and clearer interactions
+- Music Recognition! Thanks to ShazamKit, now the physical world meets digital. Find more informations about what your are listening to, and the best offer if you want to have it straight away
+
+<br>
+
+# **Version 1.1.3** (released September 2021)
+
+#### Bug fixes
+- Crash at login for new users (Fixes a crash that was happening on iOS 14.5+)
+
+<br>
+
+# **Version 1.1.2** (released August 2021)
+
+#### What's new
+- Hello to AppTelemetry: This release adds AppTelemetry, to help improve Vinyly
+
+#### Bug fixes
+- Crash at login for new users (Fixes a crash that was happening on iOS 14.5+)
+
+<br>
+
+# **Version 1.1.1** (released Februrary 2021)
+
+#### New features
+- Sorting collection: You can now sort your collection for ascending or descending values
+
+#### Bug fixes
+- Smaller fixes under the hood
 
 <br>
