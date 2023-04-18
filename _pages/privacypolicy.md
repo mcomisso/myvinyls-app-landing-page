@@ -1,3 +1,9 @@
+---
+layout: page
+title: Privacy Policy
+include_in_header: true
+---
+
 **Privacy Policy**
 
 Matteo Comisso built the My Vinyls app as a Freemium app. This SERVICE is provided by Matteo Comisso at no cost and is intended for use as is.
