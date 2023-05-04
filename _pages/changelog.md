@@ -6,7 +6,78 @@ include_in_header: true
 
 # Changelog
 
+### `Coming soon`
+
+# **Version 3.2.0**
+
+#### Improvements
+- Feedback menu! The best place to provide feedback is now https://feedback.myvinyls.app.
+- Spotify! Thought I was only adding Apple Music? Nah. Now playing your records on Spotify is one tap away. One excludes the other, so head to the preferences and select your favourite digital music provider!
+- The user profile button is now displayed in every screen, not only Collection
+
+#### Bug fixes
+- The number of records in a folder was a bit flickery - it's now fixed and displays the correct amount for any folder you're browsing.
+- AI notes was failing most of the times, mostly because generating that content is a slow task. My Vinyls will keep the connection open for longer, and give another chance to the server to reply back.
+- A few UI enhancement when display Artist's names
+- International links for the suggested records. It will load your local Amazon store where supported.
+
+
 ### `Latest`
+
+# **Version 3.1.2**
+
+#### Improvements
+- The big iPad release: A lot of functional and ux fixes to make it stand out from the rest of the apps.
+- Hold a record in the collection page for the option to move it to another folder
+
+#### Bug fixes
+- Fixes Artists images, sometimes were black on black.
+- I got told that some French translations were nonsense. Thanks to my friend Antoine for pointing them out - the app should make more sense now. Unless he tricked me and My Vinyls is now displaying gibberish.
+
+# **Version 3.1.1**
+
+#### Bug fixes
+- Removes the Platinum sticker for everyone that purchased either the lifetime unlock or a subscription. THANK YOU! <3
+- A few fixes for the color selection not working
+- The counter in your collection will reflect the folder you're in
+- The button for AI notes is white on white, when dark mode is active.
+
+# **Version 3.1.0**
+
+#### Improvements
+- Offline mode is here! My Vinyls is more tolerant when there is no connection. If you browsed your collection just before entering a tunnel, you'll still be able to browse and stare at those beautiful graphics. Also works if you're hiking on a mountain, or in the tube. Or anywhere where there's little to no reception.
+- Apple Music Integration! A new button will appear when My Vinyls is able to play your record on Apple Music. Simply press play and enjoy your album. This requires a valid Apple Music subscription to work.
+
+#### Bug Fixes
+- I think I forgot about the Marketplace title in its own screen.. somehow. It's back.
+
+
+# **Version 3.0.3**
+
+#### Improvements
+- Adds a few translations under the "Subscription" page
+- Upgrades a few dependencies and things that My Vinyls uses
+- Adds Marketplace on iPad view
+- You can now redeem Promo Codes from the app!
+- Minor improvements to the “My Subscription” page
+- Automatically sync purchases at startup
+
+#### Bug Fixes
+- There was a problem where subscribers could not access the icons! Apologies - it's now fixed
+- Fixes a bug where the subscription page was not presented when on trial and tapping “colors”
+- Privacy Policy url updated
+
+# **Version 3.0.2**
+
+#### Bug Fixes
+- Fixed a loop in fetching images: in a rare situation where a record has images, My Vinyls kept trying. Forever. That's a bit too much, so the app is now aware that there might be those situation happening.
+- There was a probelm with uninstalling and re-installing the app, fixed in 3.0.1. Not only that worked well, but My Vinyls can detect and self-recover from that issue.
+
+# **Version 3.0.1**
+
+#### Bug Fixes
+- Fixed a problem that would result in My Vinyls incapable of loading records for some users. This was happening if you uninstalled and re-installed the app.
+- Fixed a crash that was silently happening when leaving the share screen to publish images on Instagram.
 
 # **Version 3.0**
 This is a really big update. Welcome **My Vinyls**, farewell *Vinyly*!  
