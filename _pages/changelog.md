@@ -6,7 +6,7 @@ include_in_header: true
 
 # Changelog
 
-### `Coming soon`
+### `Latest`
 
 # **Version 3.2.0**
 
@@ -20,9 +20,6 @@ include_in_header: true
 - AI notes was failing most of the times, mostly because generating that content is a slow task. My Vinyls will keep the connection open for longer, and give another chance to the server to reply back.
 - A few UI enhancement when display Artist's names
 - International links for the suggested records. It will load your local Amazon store where supported.
-
-
-### `Latest`
 
 # **Version 3.1.2**
 
