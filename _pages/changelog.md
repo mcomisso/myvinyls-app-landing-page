@@ -8,6 +8,15 @@ include_in_header: true
 
 ### `Latest`
 
+# **Version 3.2.1**
+
+#### Improvements
+- ¡Hola! 🇪🇸 My Vinyls now speaks Spanish!
+- Hallo! 🇩🇪 My Vinyls now speaks German!
+
+#### Bug fixes
+- A few minor fixes in the purchase actions. Thank you all for supporting My Vinyls!
+
 # **Version 3.2.0**
 
 #### Improvements
