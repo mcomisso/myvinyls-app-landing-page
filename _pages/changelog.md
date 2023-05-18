@@ -8,6 +8,16 @@ include_in_header: true
 
 ### `Latest`
 
+# **Version 3.2.2**
+
+#### Improvements
+- The iPad could not search records on the collection page, this is now provided by the search bar.
+- A new visualisation of your collection on iPad! You can now toggle between Grid or List mode.
+
+#### Bug fixes
+- Users on iPad could not load the whole collection due to technical limitations of some components used by the app. This is now fixed.
+- Fixed an issue where users on iPad could not navigate to the results from the search page
+
 # **Version 3.2.1**
 
 #### Improvements
