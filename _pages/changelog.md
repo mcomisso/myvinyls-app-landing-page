@@ -8,6 +8,16 @@ include_in_header: true
 
 ### `Latest`
 
+# **Version 3.3.0**
+
+#### Improvements
+- 📈 Track your collection value over time! The new chart will display up to 2 weeks of price fluctuations, and highlight highest and lowest value.
+
+#### Bug fixes
+- Names are formatted correctly and without extra punctuation that might come from Discogs.
+- Spinning records now display the whole artwork instead of a zoomed-in picture
+- Some minor fixes and corrected typos
+
 # **Version 3.2.2**
 
 #### Improvements
