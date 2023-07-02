@@ -8,6 +8,13 @@ include_in_header: true
 
 ### `Latest`
 
+# **Version 3.4.0**
+
+#### Improvements
+- More widgets! You can display the current value of your collection in your home screen, along to your favourite albums covers.  
+Not sure which one to pick? The random album widget will display a new one multiple times a day. :)
+- Some minor fixes and corrected typos
+
 # **Version 3.3.0**
 
 #### Improvements
