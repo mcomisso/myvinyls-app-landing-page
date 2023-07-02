@@ -8,6 +8,11 @@ include_in_header: true
 
 ### `Latest`
 
+# **Version 3.5.0**
+
+#### Improvements
+- Alternate records! From the detail page of a vinyl, use the new button to see alternate releases.
+
 # **Version 3.4.0**
 
 #### Improvements
