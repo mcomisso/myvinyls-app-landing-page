@@ -7,6 +7,24 @@ include_in_header: true
 # Changelog
 
 ### `Latest`
+# **Version 3.5.3**
+
+#### Bug fixes
+- This version focues on Music Playback! Especially on Apple Music, reliability should be drastically improved. (Thanks Samuel for the bug report!)
+
+# **Version 3.5.2**
+
+#### Bug fixes
+- This version fixes an urgent bugfix for the Platinum users not being able to use Spotify as their music service
+
+# **Version 3.5.1**
+
+#### Improvements
+- Deeplinks are here! You can now tap any of your widgets to open My Vinyls on that exact record or screen. Or looking for something on a hurry? Use spotlight search to find that album or artist, and tap on it to open the app on the record.
+- We are on Threads! The about screen now contains the links to this new social.
+
+#### Bug fixes
+- Fixed a bug that was making reappear releases after deleting them.
 
 # **Version 3.5.0**
 
@@ -18,6 +36,8 @@ include_in_header: true
 #### Improvements
 - More widgets! You can display the current value of your collection in your home screen, along to your favourite albums covers.  
 Not sure which one to pick? The random album widget will display a new one multiple times a day. :)
+
+#### Bug fixes
 - Some minor fixes and corrected typos
 
 # **Version 3.3.0**
