@@ -10,7 +10,7 @@ include_in_header: true
 # **Version 3.5.3**
 
 #### Bug fixes
-- This version focues on Music Playback! Especially on Apple Music, reliability should be drastically improved. (Thanks Samuel for the bug report!)
+- This version keeps focusing on music Playback! Apple Music reliability has been drastically improved. (Thanks Samuel for the bug report!)
 
 # **Version 3.5.2**
 
