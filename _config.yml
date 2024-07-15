@@ -55,9 +55,9 @@ features                                  :
     description                           : Use the knowledge power of AI to receive informations and notes about your favorite records and artists.
     fontawesome_icon_name                 : robot
 
-  - title                                 : Apple TV Companion app
-    description                           : Display a mosaic of records on your TV, perfect to show all your collection with ease.
-    fontawesome_icon_name                 : tv
+  # - title                                 : Apple TV Companion app
+  #   description                           : Display a mosaic of records on your TV, perfect to show all your collection with ease.
+  #   fontawesome_icon_name                 : tv
 
   - title                                 : # New Feature Title
     description                           : # New Feature Description
