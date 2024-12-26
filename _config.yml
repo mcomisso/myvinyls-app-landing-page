@@ -23,12 +23,11 @@ enable_smart_app_banner                   : true                                
 your_name                                 : Matteo Comisso                                
 your_link                                 : https://mcomisso.me                     
 your_city                                 : London                                
-email_address                             : myvinyls@mcomisso.me
-facebook_username                         :                                           
-instagram_username                        : _matcom_
-twitter_username                          : comismatt
+email_address                             : website@myvinyls.app
+# facebook_username                         :                                           
+instagram_username                        : myvinylsapp
 github_username                           : mcomisso
-youtube_username                          : teomatteo89
+# youtube_username                          : teomatteo89
 
 
 
