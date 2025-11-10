@@ -14,6 +14,17 @@ html {
 body {
 	font-size: 2rem;
 	background-color: $body-color;
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 }
 
 .subPageBody {
@@ -48,9 +59,8 @@ a:active {
 }
 
 // Shadows
-$drop-shadow: 	drop-shadow(0px 5px 10px rgba(#000, 0.1)) 
-				drop-shadow(0px 1px 1px rgba(#000, 0.2)
-				);
+$drop-shadow: 	drop-shadow(0px 8px 24px rgba(147, 51, 234, 0.15))
+				drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.12));
 
 // Various resets
 *,
