@@ -34,33 +34,29 @@ github_username                           : mcomisso
 # Feature List                            Edit, add or remove features to be presented.
 features                                  :
 
-  - title                                 : Discogs
-    description                           : Login to your Discogs account and access a database of millions of records.
+  - title                                 : Discogs Integration
+    description                           : Sync with the world's largest music database. Access millions of releases with detailed pressing info, tracklists, and credits.
     fontawesome_icon_name                 : compact-disc
-    
-  - title                                 : A stunning UI
-    description                           : Give the artwork a front seat and showcase your library.
-    fontawesome_icon_name                 : fill-drip
 
-  - title                                 : Shazam to the rescue
-    description                           : Use the shazam feature to identify a playing record, and buy it from Discogs with a few clicks.
-    fontawesome_icon_name                 : microphone
+  - title                                 : Barcode Scanning
+    description                           : Add records instantly by scanning the barcode. Quick, accurate, and no typing required.
+    fontawesome_icon_name                 : barcode
 
-  - title                                 : Easy to Tweak
-    description                           : Tweak accent color, icons and make it yours
-    fontawesome_icon_name                 : adjust
-  
-  - title                                 : AI helpers
-    description                           : Use the knowledge power of AI to receive informations and notes about your favorite records and artists.
-    fontawesome_icon_name                 : robot
+  - title                                 : Beautiful Artwork
+    description                           : Give album covers the spotlight they deserve with rich artwork displays and customizable views.
+    fontawesome_icon_name                 : images
 
-  # - title                                 : Apple TV Companion app
-  #   description                           : Display a mosaic of records on your TV, perfect to show all your collection with ease.
-  #   fontawesome_icon_name                 : tv
+  - title                                 : Shazam Recognition
+    description                           : Identify what's playing and find it in the Discogs database. From hearing to owning in seconds.
+    fontawesome_icon_name                 : music
 
-  - title                                 : # New Feature Title
-    description                           : # New Feature Description
-    fontawesome_icon_name                 : # Enter Font Awesome icon name (e.g. star). Find icons on fontawesome.com/icons.
+  - title                                 : Works Offline
+    description                           : Fast offline browsing with smart caching. Your collection is always accessible, anywhere.
+    fontawesome_icon_name                 : cloud-arrow-down
+
+  - title                                 : AI-Powered Insights
+    description                           : Discover fascinating details about your records and artists with intelligent, contextual information.
+    fontawesome_icon_name                 : lightbulb
 
 
 
@@ -77,7 +73,7 @@ device_color                              : black                               
 
 body_background_color                     : "#fafafa"
 
-link_color                                : "#d946ef"
+link_color                                : "#f97316"
 
 app_title_color                           : "#ffffff"
 app_price_color                           : "#fbbf24"
@@ -86,11 +82,11 @@ app_description_color                     : "#f3f4f6"
 feature_title_color                       : "#1f2937"
 feature_text_color                        : "#6b7280"
 
-feature_icons_foreground_color            : "#d946ef"
-feature_icons_background_color            : "#fdf4ff"
+feature_icons_foreground_color            : "#f97316"
+feature_icons_background_color            : "#fff7ed"
 
-social_icons_foreground_color             : "#9333ea"
-social_icons_background_color             : "#faf5ff"
+social_icons_foreground_color             : "#ea580c"
+social_icons_background_color             : "#fff7ed"
 
 footer_text_color                         : "#9ca3af"
 

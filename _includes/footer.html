@@ -1,75 +1,49 @@
-<footer>
-	{% if site.your_name %}
-	<p class="footerText">Made by {% if site.your_link %}<a href="{{ site.your_link }}">{% endif %}{{ site.your_name }}{%
-			if site.your_link %}</a>{% endif %}{% if site.your_city %} in {{ site.your_city }}{% endif %}</p>
-	{% endif %}
+<footer class="site-footer">
+    <div class="footer-content">
+        {% if site.your_name %}
+        <p class="copyright">
+            Made with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by
+            {% if site.your_link %}<a href="{{ site.your_link }}" target="_blank" rel="noopener">{% endif %}
+            {{ site.your_name }}
+            {% if site.your_link %}</a>{% endif %}
+            {% if site.your_city %} in {{ site.your_city }}{% endif %}
+        </p>
+        {% endif %}
 
-	<a href="https://www.producthunt.com/posts/my-vinyls?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-my&#0045;vinyls"
-		target="_blank"><img
-			src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=389141&theme=light"
-			alt="My&#0032;Vinyls - Put&#0032;all&#0032;your&#0032;Vinyl&#0032;collection&#0032;in&#0032;your&#0032;pocket | Product Hunt"
-			style="width: 250px; height: 54px;" width="250" height="54" /></a>
+        <div class="social-links">
+            {% if site.instagram_username %}
+            <a href="https://instagram.com/{{ site.instagram_username }}" aria-label="Instagram" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            {% endif %}
+            {% if site.twitter_username %}
+            <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+            </a>
+            {% endif %}
+            {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+            </a>
+            {% endif %}
+            {% if site.email_address %}
+            <a href="mailto:{{ site.email_address }}" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            {% endif %}
+        </div>
 
-	<div class="footerIcons" style="padding-top: 40px;">
+        <nav class="footer-nav">
+            {% for page in site.pages %}
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            {% endfor %}
+            {% if site.presskit_download_link %}
+            <a href="{{ site.presskit_download_link }}" target="_blank" rel="noopener">Press Kit</a>
+            {% endif %}
+        </nav>
+    </div>
 
-		{% if site.facebook_username %}
-		<a href="https://facebook.com/{{ site.facebook_username }}">
-			<span class="fa-stack fa-1x">
-				<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-				<i class="socialIconTop fab fa-facebook fa-stack-1x"></i>
-			</span>
-		</a>
-		{% endif %}
-
-		{% if site.twitter_username %}
-		<a href="https://twitter.com/{{ site.twitter_username }}">
-			<span class="fa-stack fa-1x">
-				<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-				<i class="socialIconTop fab fa-twitter fa-stack-1x"></i>
-			</span>
-		</a>
-		{% endif %}
-
-		{% if site.instagram_username %}
-		<a href="https://instagram.com/{{ site.instagram_username }}">
-			<span class="fa-stack fa-1x">
-				<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-				<i class="socialIconTop fab fa-instagram fa-stack-1x"></i>
-			</span>
-		</a>
-		{% endif %}
-
-		{% if site.github_username %}
-		<a href="https://github.com/{{ site.github_username }}">
-			<span class="fa-stack fa-1x">
-				<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-				<i class="socialIconTop fab fa-github fa-stack-1x"></i>
-			</span>
-		</a>
-		{% endif %}
-
-		<a rel="me" href="https://mastodon.social/@myvinyl" hidden>Mastodon</a>
-
-		{% if site.email_address %}
-		<a href="mailto:{{ site.email_address }}">
-			<span class="fa-stack fa-1x">
-				<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-				<i class="socialIconTop fas fa-envelope fa-stack-1x"></i>
-			</span>
-		</a>
-		{% endif %}
-
-	</div>
-	<div class="footerLinks">
-		{% for page in site.pages %}
-		<a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a>
-		{% endfor %}
-		{% if site.presskit_download_link %}
-		<a href="{{ site.presskit_download_link }}">Press Kit</a>
-		{% endif %}
-	</div>
-	<script data-goatcounter="https://myvinyls.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-	<!-- AHREF -->
-	<script src="https://analytics.ahrefs.com/analytics.js" data-key="ncfiwDjuwFtevMKEBD7xmA" async></script>
+    <!-- Analytics -->
+    <script data-goatcounter="https://myvinyls.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="ncfiwDjuwFtevMKEBD7xmA" async></script>
 </footer>

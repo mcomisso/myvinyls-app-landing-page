@@ -1,26 +1,62 @@
-<div class="features">
-
-    {% for feature in site.features %}
-
-    {% if feature.title %}
-    <div class="feature">
-        <div>
-            <span class="fa-stack fa-1x">
-                <i class="iconBack fas fa-circle fa-stack-2x"></i>
-                <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
-            </span>
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Everything you need.<br><span>Nothing you don't.</span></h2>
         </div>
-        <div class="featureText">
-            <h3>
-                {{ feature.title }}
-            </h3>
-            <p>
-                {{ feature.description }}
-            </p>
+
+        <div class="bento-grid">
+            <!-- Large Card: Database -->
+            <div class="bento-card large">
+                <div class="bento-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="bento-content">
+                    <h3>Powered by Discogs</h3>
+                    <p>Access the world's largest music database.</p>
+                </div>
+            </div>
+
+            <!-- Tall Card: Stats -->
+            <div class="bento-card tall accent">
+                <div class="bento-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="bento-content">
+                    <div class="stat">15M+</div>
+                    <h3>Releases Indexed</h3>
+                </div>
+            </div>
+
+            <!-- Standard Card: Scan -->
+            <div class="bento-card">
+                <div class="bento-icon">
+                    <i class="fas fa-barcode"></i>
+                </div>
+                <div class="bento-content">
+                    <h3>Barcode Scan</h3>
+                </div>
+            </div>
+
+            <!-- Standard Card: Offline -->
+            <div class="bento-card">
+                <div class="bento-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <div class="bento-content">
+                    <h3>Offline First</h3>
+                </div>
+            </div>
+
+            <!-- Large Card: Collection -->
+            <div class="bento-card large">
+                <div class="bento-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="bento-content">
+                    <h3>Smart Organization</h3>
+                    <p>Filter, sort, and manage with ease.</p>
+                </div>
+            </div>
         </div>
     </div>
-    {% endif %}
-
-    {% endfor %}
-
-</div>
+</section>
