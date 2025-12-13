@@ -88,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ============================================
-    // SCROLL REVEAL
+    // SCROLL REVEAL WITH STAGGER
     // ============================================
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -80px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -104,9 +104,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.feature-card, .showcase-content, .cta-content').forEach((el) => {
-        el.classList.add('reveal');
-        revealObserver.observe(el);
+    // Elements to reveal on scroll
+    const revealSelectors = [
+        '.feature-card',
+        '.showcase-content',
+        '.showcase-phones',
+        '.cta-content',
+        '.step-card',
+        '.testimonial-card',
+        '.comparison-card',
+        '.faq-item',
+        '.bento-card',
+        '.section-header',
+        '.hero-stats',
+        '.hero-badge-top'
+    ];
+
+    revealSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${index * 0.1}s`;
+            revealObserver.observe(el);
+        });
+    });
+
+    // ============================================
+    // COUNTER ANIMATION FOR STATS
+    // ============================================
+    const animateCounter = (element, target, suffix = '') => {
+        const duration = 2000;
+        const start = 0;
+        const startTime = performance.now();
+
+        const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(easeOutQuart * target);
+
+            element.textContent = current.toLocaleString() + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target.toLocaleString() + suffix;
+            }
+        };
+
+        requestAnimationFrame(updateCounter);
+    };
+
+    // Observe stats for counter animation
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const text = stat.textContent;
+                    if (text.includes('M')) {
+                        animateCounter(stat, 15, 'M+');
+                    } else if (text.includes('K')) {
+                        animateCounter(stat, 50, 'K+');
+                    } else if (text.includes('.')) {
+                        // Rating - just fade in
+                        stat.style.opacity = '1';
+                    }
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        statsObserver.observe(heroStats);
+    }
+
+    // ============================================
+    // SMOOTH SCROLL FOR ANCHORS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 
     // ============================================
@@ -140,4 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // ============================================
+    // MOBILE MENU (Optional enhancement)
+    // ============================================
+    // Add mobile menu toggle functionality here if needed
 });
