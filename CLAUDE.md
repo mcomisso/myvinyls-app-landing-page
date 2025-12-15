@@ -1,0 +1,1 @@
+- The main iOS app resides in /Users/matcom/Developer/MCSoftware/MyVinyl/iOS
