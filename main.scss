@@ -1306,6 +1306,40 @@ a {
 }
 
 // ============================================
+// APP STORE BADGE
+// ============================================
+
+.appstore-badge {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  img {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+  }
+
+  &.large img {
+    height: 56px;
+  }
+
+  @media (max-width: 480px) {
+    img {
+      height: 44px;
+    }
+
+    &.large img {
+      height: 48px;
+    }
+  }
+}
+
+// ============================================
 // SOCIAL PROOF BAR
 // ============================================
 
