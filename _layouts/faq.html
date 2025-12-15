@@ -1,0 +1,73 @@
+---
+# FAQ Layout - for the comprehensive help page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div class="main-wrapper">
+        <!-- Animated Background -->
+        <div class="glass-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="content-container">
+            {% include header.html %}
+
+            <!-- FAQ Hero -->
+            <section class="faq-hero">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Help Center</span>
+                        <h1 class="section-title">How can we help?</h1>
+                        <p class="section-subtitle">Find answers to common questions about My Vinyl+</p>
+                    </div>
+
+                    <div class="faq-search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="faq-search" placeholder="Search for answers..." autocomplete="off">
+                        <button id="faq-search-clear" class="faq-search-clear" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Content -->
+            <section class="faq-page-section">
+                <div class="container">
+                    {{ content }}
+                </div>
+            </section>
+
+            <!-- Still Need Help -->
+            <section class="faq-contact-section">
+                <div class="container">
+                    <div class="faq-contact-card">
+                        <div class="faq-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Still have questions?</h3>
+                        <p>Can't find what you're looking for? We're here to help.</p>
+                        <a href="mailto:matteo@mcomisso.me" class="faq-contact-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {% include footer.html %}
+        </div>
+    </div>
+
+    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/faq.js' | relative_url }}"></script>
+</body>
+
+</html>
