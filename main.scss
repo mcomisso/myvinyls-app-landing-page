@@ -256,12 +256,25 @@ img {
     order: 1;
   }
 
-  img, video {
+  img {
     width: auto;
     max-width: 380px;
     height: auto;
     max-height: 600px;
     border-radius: var(--radius-xl);
+
+    @media (max-width: 900px) {
+      max-width: 280px;
+      max-height: 450px;
+    }
+  }
+
+  video {
+    width: auto;
+    max-width: 380px;
+    height: auto;
+    max-height: 600px;
+    mix-blend-mode: screen; // Makes black transparent
 
     @media (max-width: 900px) {
       max-width: 280px;
