@@ -4,368 +4,259 @@
     {% include head.html %}
 
     <body>
-        <div class="main-wrapper">
-            <!-- Animated Background -->
-            <div class="glass-background">
-                <div class="blob blob-1"></div>
-                <div class="blob blob-2"></div>
-                <div class="blob blob-3"></div>
+        {% include header.html %}
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge-top">
+                        <i class="fas fa-record-vinyl"></i>
+                        <span>The #1 Discogs app for iOS</span>
+                    </div>
+                    <h1 class="hero-title">Your vinyl collection, beautifully organized.</h1>
+                    <p class="hero-subtitle">Scan, catalog, and discover. The most elegant way to manage your records, powered by the world's largest music database.</p>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number">15M+</span>
+                            <span class="stat-label">Releases</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">App Store</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Collectors</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="{{ site.appstore_link }}" class="appstore-badge" target="_blank" rel="noopener">
+                            <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store">
+                        </a>
+                        <span class="hero-badge">
+                            <i class="fas fa-gift"></i>
+                            Free to try
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <video autoplay muted loop playsinline poster="{{ 'assets/media/hero-poster.jpg' | relative_url }}">
+                        <source src="{{ 'assets/media/hero-swift.mp4' | relative_url }}" type="video/mp4">
+                    </video>
+                </div>
             </div>
+        </section>
 
-            <div class="content-container">
-                {% include header.html %}
+        <!-- App Gallery Section -->
+        <section class="app-gallery">
+            <div class="gallery-header">
+                <h2>See it in action</h2>
+                <p>Beautiful design that puts your collection first.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image 6720.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image 56C2.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image 182B.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image 2E9B.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image C1E2.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image CB58.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image D132.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image EEA3.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ 'assets/screens/Rotato Image F2AD.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-                <!-- Hero Section -->
-                <section class="hero-section">
-                    <div class="hero-content">
-                        <div class="hero-badge-top">
+        <!-- How It Works Section -->
+        <section class="how-it-works-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Simple & Intuitive</span>
+                    <h2 class="section-title">Add records in seconds</h2>
+                    <p class="section-subtitle">Three simple steps to build your digital collection.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-barcode"></i>
+                        </div>
+                        <h3>Scan the barcode</h3>
+                        <p>Point your camera at any record barcode. Recognition happens instantly.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Confirm the release</h3>
+                        <p>Select the exact pressing from Discogs' comprehensive database.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
                             <i class="fas fa-record-vinyl"></i>
-                            <span>The #1 Discogs app for iOS</span>
                         </div>
-                        <h1 class="hero-title">Finally, an app your vinyl collection deserves.</h1>
-                        <p class="hero-subtitle">Scan. Catalog. Discover. The most beautiful way to manage your records, powered by the world's largest music database.</p>
-
-                        <div class="hero-stats">
-                            <div class="hero-stat">
-                                <span class="stat-number">15M+</span>
-                                <span class="stat-label">Releases</span>
-                            </div>
-                            <div class="hero-stat-divider"></div>
-                            <div class="hero-stat">
-                                <span class="stat-number">4.8</span>
-                                <span class="stat-label">App Store</span>
-                            </div>
-                            <div class="hero-stat-divider"></div>
-                            <div class="hero-stat">
-                                <span class="stat-number">50K+</span>
-                                <span class="stat-label">Collectors</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-buttons">
-                            <a href="{{ site.appstore_link }}" class="appstore-badge" target="_blank" rel="noopener">
-                                <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store">
-                            </a>
-                            <span class="hero-badge">
-                                <i class="fas fa-gift"></i>
-                                Free to try
-                            </span>
-                        </div>
+                        <h3>It's in your collection</h3>
+                        <p>Complete with artwork, tracklist, credits, and market value.</p>
                     </div>
-
-                    <div class="hero-visual">
-                        <div class="vinyl-container">
-                            <!-- Album Sleeve -->
-                            <div class="album-sleeve">
-                                <div class="sleeve-spine"></div>
-                                <div class="sleeve-front">
-                                    <img src="{{ site.app_icon | relative_url }}" alt="{{ site.app_name }}"
-                                        class="sleeve-artwork">
-                                </div>
-                            </div>
-                            <!-- Vinyl Record -->
-                            <div class="vinyl-record">
-                                <div class="vinyl-grooves"></div>
-                                <div class="vinyl-label">
-                                    <div class="label-ring"></div>
-                                    <div class="label-content">
-                                        <span class="label-artist">My Vinyls</span>
-                                        <span class="label-title">Collection</span>
-                                    </div>
-                                    <div class="label-spindle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Social Proof Bar -->
-                <section class="social-proof-bar">
-                    <div class="proof-item">
-                        <i class="fas fa-star"></i>
-                        <span>"Best vinyl app I've used" - App Store Review</span>
-                    </div>
-                    <div class="proof-item">
-                        <i class="fas fa-heart"></i>
-                        <span>Loved by collectors worldwide</span>
-                    </div>
-                    <div class="proof-item">
-                        <i class="fas fa-bolt"></i>
-                        <span>Instant barcode scanning</span>
-                    </div>
-                </section>
-
-                <!-- How It Works Section -->
-                <section class="how-it-works-section">
-                    <div class="container">
-                        <div class="section-header">
-                            <span class="section-tag">Simple & Intuitive</span>
-                            <h2 class="section-title">Add records in seconds,<br>not minutes.</h2>
-                            <p class="section-subtitle">Three simple steps to build your digital collection.</p>
-                        </div>
-
-                        <div class="steps-grid">
-                            <div class="step-card">
-                                <div class="step-number">1</div>
-                                <div class="step-icon">
-                                    <i class="fas fa-barcode"></i>
-                                </div>
-                                <h3>Scan the barcode</h3>
-                                <p>Point your camera at any record barcode. Recognition happens instantly.</p>
-                            </div>
-                            <div class="step-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-number">2</div>
-                                <div class="step-icon">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <h3>Confirm the release</h3>
-                                <p>Select the exact pressing from Discogs' comprehensive database.</p>
-                            </div>
-                            <div class="step-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-number">3</div>
-                                <div class="step-icon">
-                                    <i class="fas fa-record-vinyl"></i>
-                                </div>
-                                <h3>It's in your collection</h3>
-                                <p>Complete with artwork, tracklist, credits, and market value.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Visual Showcase Section -->
-                <section class="showcase-section">
-                    <div class="showcase-container">
-                        <div class="showcase-phones">
-                            <div class="phone-mockup">
-                                <img src="{{ 'assets/screenshot/1.png' | relative_url }}"
-                                    alt="My Vinyl Collection View">
-                            </div>
-                            <div class="phone-mockup">
-                                <img src="{{ 'assets/screenshot/DetailPageLightDark.png' | relative_url }}"
-                                    alt="My Vinyl Detail View">
-                            </div>
-                        </div>
-                        <div class="showcase-content">
-                            <span class="section-tag">Beautiful Design</span>
-                            <h2>Your records have never<br>looked this good.</h2>
-                            <p>Album artwork takes center stage. Rich metadata at your fingertips. Every detail of your collection, beautifully presented.</p>
-
-                            <div class="showcase-features">
-                                <div class="showcase-feature">
-                                    <i class="fas fa-barcode"></i>
-                                    <span>Instant barcode scanning</span>
-                                </div>
-                                <div class="showcase-feature">
-                                    <i class="fas fa-music"></i>
-                                    <span>Shazam song recognition</span>
-                                </div>
-                                <div class="showcase-feature">
-                                    <i class="fas fa-database"></i>
-                                    <span>Full Discogs integration</span>
-                                </div>
-                                <div class="showcase-feature">
-                                    <i class="fas fa-wifi-slash"></i>
-                                    <span>Works offline</span>
-                                </div>
-                            </div>
-
-                            <a href="{{ site.appstore_link }}" class="showcase-cta">
-                                <span>Start your collection</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Features Section (Bento Grid) -->
-                {% include features.html %}
-
-                <!-- Testimonials Section -->
-                <section class="testimonials-section">
-                    <div class="container">
-                        <div class="section-header">
-                            <span class="section-tag">What Collectors Say</span>
-                            <h2 class="section-title">Join thousands of happy<br>vinyl enthusiasts.</h2>
-                        </div>
-
-                        <div class="testimonials-grid">
-                            <div class="testimonial-card featured">
-                                <div class="testimonial-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-text">"I've tried every vinyl app out there. This is the only one that actually feels like it was made by someone who collects records. The barcode scanner is lightning fast."</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">JM</div>
-                                    <div class="author-info">
-                                        <span class="author-name">James M.</span>
-                                        <span class="author-detail">1,200+ records cataloged</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-text">"Finally I know exactly what I own when I'm at the record store. No more accidental duplicates!"</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">SK</div>
-                                    <div class="author-info">
-                                        <span class="author-name">Sarah K.</span>
-                                        <span class="author-detail">Verified Purchase</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-text">"The Discogs sync is seamless. I had my 500+ collection imported in minutes. Absolutely worth it."</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">RT</div>
-                                    <div class="author-info">
-                                        <span class="author-name">Robert T.</span>
-                                        <span class="author-detail">Premium User</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="testimonial-card">
-                                <div class="testimonial-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-text">"The UI is gorgeous. Love seeing my collection displayed so beautifully. Makes me want to buy more vinyl!"</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">AL</div>
-                                    <div class="author-info">
-                                        <span class="author-name">Anna L.</span>
-                                        <span class="author-detail">App Store Review</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Comparison Section -->
-                <section class="comparison-section">
-                    <div class="container">
-                        <div class="section-header">
-                            <span class="section-tag">Why My Vinyls?</span>
-                            <h2 class="section-title">Built different.<br>Built better.</h2>
-                        </div>
-
-                        <div class="comparison-grid">
-                            <div class="comparison-card negative">
-                                <h3><i class="fas fa-times-circle"></i> Other Apps</h3>
-                                <ul>
-                                    <li>Clunky interfaces from the 2010s</li>
-                                    <li>Slow, unreliable barcode scanning</li>
-                                    <li>Limited offline functionality</li>
-                                    <li>No native iOS experience</li>
-                                    <li>Complicated Discogs sync</li>
-                                </ul>
-                            </div>
-                            <div class="comparison-card positive">
-                                <h3><i class="fas fa-check-circle"></i> My Vinyls</h3>
-                                <ul>
-                                    <li>Modern, native iOS design</li>
-                                    <li>Lightning-fast barcode scanner</li>
-                                    <li>Full offline access to your collection</li>
-                                    <li>Built specifically for iPhone & iPad</li>
-                                    <li>One-tap Discogs integration</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Final CTA Section -->
-                <section class="cta-section">
-                    <div class="cta-content">
-                        <span class="section-tag">Ready to start?</span>
-                        <h2>Your collection is waiting.</h2>
-                        <p>Join over 50,000 vinyl collectors who've made the switch. Download free and start cataloging in seconds.</p>
-
-                        <div class="cta-buttons">
-                            <a href="{{ site.appstore_link }}" class="appstore-badge large" target="_blank" rel="noopener">
-                                <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store">
-                            </a>
-                        </div>
-
-                        <div class="cta-guarantees">
-                            <div class="guarantee">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Free to download</span>
-                            </div>
-                            <div class="guarantee">
-                                <i class="fas fa-credit-card"></i>
-                                <span>No subscription required</span>
-                            </div>
-                            <div class="guarantee">
-                                <i class="fas fa-sync"></i>
-                                <span>Sync with Discogs</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- FAQ Section -->
-                <section class="faq-section">
-                    <div class="container">
-                        <div class="section-header">
-                            <span class="section-tag">FAQ</span>
-                            <h2 class="section-title">Common questions.</h2>
-                        </div>
-
-                        <div class="faq-grid">
-                            <div class="faq-item">
-                                <h3>Is the app really free?</h3>
-                                <p>Yes! My Vinyls is free to download and use. Some premium features are available through a one-time purchase - no subscriptions.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Does it work with my Discogs account?</h3>
-                                <p>Absolutely. Connect your Discogs account and sync your entire collection in minutes. Changes sync both ways automatically.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>Can I use it offline?</h3>
-                                <p>Yes! Your entire collection is cached locally. Browse your records anywhere, even without internet.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>What about CDs and cassettes?</h3>
-                                <p>My Vinyls works with any format in the Discogs database - vinyl, CD, cassette, 8-track, you name it.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {% include footer.html %}
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Features Section -->
+        {% include features.html %}
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What Collectors Say</span>
+                    <h2 class="section-title">Loved by vinyl enthusiasts</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card featured">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I've tried every vinyl app out there. This is the only one that actually feels like it was made by someone who collects records. The barcode scanner is lightning fast."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JM</div>
+                            <div class="author-info">
+                                <span class="author-name">James M.</span>
+                                <span class="author-detail">1,200+ records cataloged</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Finally I know exactly what I own when I'm at the record store. No more accidental duplicates!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div class="author-info">
+                                <span class="author-name">Sarah K.</span>
+                                <span class="author-detail">Verified Purchase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The UI is gorgeous. Love seeing my collection displayed so beautifully."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AL</div>
+                            <div class="author-info">
+                                <span class="author-name">Anna L.</span>
+                                <span class="author-detail">App Store Review</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <span class="section-tag">Ready to start?</span>
+                <h2>Your collection is waiting.</h2>
+                <p>Join over 50,000 vinyl collectors who've made the switch. Download free and start cataloging in seconds.</p>
+
+                <div class="cta-buttons">
+                    <a href="{{ site.appstore_link }}" class="appstore-badge large" target="_blank" rel="noopener">
+                        <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store">
+                    </a>
+                </div>
+
+                <div class="cta-guarantees">
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Free to download</span>
+                    </div>
+                    <div class="guarantee">
+                        <i class="fas fa-credit-card"></i>
+                        <span>No subscription required</span>
+                    </div>
+                    <div class="guarantee">
+                        <i class="fas fa-sync"></i>
+                        <span>Sync with Discogs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-title">Common questions</h2>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Is the app really free?</h3>
+                        <p>Yes! My Vinyls is free to download and use. Some premium features are available through a one-time purchase - no subscriptions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it work with my Discogs account?</h3>
+                        <p>Absolutely. Connect your Discogs account and sync your entire collection in minutes. Changes sync both ways automatically.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I use it offline?</h3>
+                        <p>Yes! Your entire collection is cached locally. Browse your records anywhere, even without internet.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What about CDs and cassettes?</h3>
+                        <p>My Vinyls works with any format in the Discogs database - vinyl, CD, cassette, 8-track, you name it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include footer.html %}
 
         <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
     </body>
