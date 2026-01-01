@@ -426,13 +426,18 @@ img {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    max-width: 300px;
   }
 }
 
@@ -445,6 +450,8 @@ img {
   img {
     width: 100%;
     height: auto;
+    max-height: 450px;
+    object-fit: contain;
     display: block;
   }
 
