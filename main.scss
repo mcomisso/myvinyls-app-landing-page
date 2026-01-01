@@ -258,14 +258,14 @@ img {
 
   img, video {
     width: auto;
-    max-width: 300px;
+    max-width: 380px;
     height: auto;
-    max-height: 500px;
+    max-height: 600px;
     border-radius: var(--radius-xl);
 
     @media (max-width: 900px) {
-      max-width: 240px;
-      max-height: 400px;
+      max-width: 280px;
+      max-height: 450px;
     }
   }
 }
