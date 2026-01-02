@@ -1,0 +1,41 @@
+{% comment %}
+Blog Card Component
+Usage: {% include blog-card.html post=post %}
+{% endcomment %}
+
+{% assign category_name = include.post.category %}
+{% for cat in site.blog_categories %}
+    {% if cat.slug == include.post.category %}
+        {% assign category_name = cat.name %}
+    {% endif %}
+{% endfor %}
+
+<article class="blog-card" data-category="{{ include.post.category }}">
+    <a href="{{ include.post.url | relative_url }}" class="blog-card-link">
+        {% if include.post.image %}
+        <div class="blog-card-image">
+            <img src="{{ include.post.image | relative_url }}" alt="{{ include.post.title }}" loading="lazy">
+        </div>
+        {% else %}
+        <div class="blog-card-image blog-card-image-placeholder">
+            <i class="fas fa-record-vinyl"></i>
+        </div>
+        {% endif %}
+
+        <div class="blog-card-content">
+            <span class="blog-card-category">{{ category_name }}</span>
+            <h3 class="blog-card-title">{{ include.post.title }}</h3>
+            <p class="blog-card-excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
+            <div class="blog-card-meta">
+                <span class="blog-card-date">
+                    <i class="far fa-calendar"></i>
+                    {{ include.post.date | date: "%b %d, %Y" }}
+                </span>
+                <span class="blog-card-read-time">
+                    <i class="far fa-clock"></i>
+                    {{ include.post.reading_time | default: 5 }} min
+                </span>
+            </div>
+        </div>
+    </a>
+</article>

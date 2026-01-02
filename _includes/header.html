@@ -6,6 +6,7 @@
         </a>
 
         <ul class="nav-links">
+            <li><a href="/blog/">Blog</a></li>
             {% for page in site.pages %}
             {% if page.include_in_header == true %}
             <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
