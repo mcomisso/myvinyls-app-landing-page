@@ -274,7 +274,7 @@ img {
     max-width: 380px;
     height: auto;
     max-height: 600px;
-    mix-blend-mode: screen; // Makes black transparent
+    border-radius: var(--radius-xl);
 
     @media (max-width: 900px) {
       max-width: 280px;
