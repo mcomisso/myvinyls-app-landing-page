@@ -1,0 +1,131 @@
+---
+# Blog Layout - for the blog listing page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div class="main-wrapper">
+        <!-- Animated Background -->
+        <div class="glass-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="content-container">
+            {% include header.html %}
+
+            <!-- Blog Hero -->
+            <section class="blog-hero">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Blog</span>
+                        <h1 class="section-title">{{ page.title | default: "The Vinyl Journal" }}</h1>
+                        <p class="section-subtitle">{{ page.description | default: "Tips, guides, and stories for vinyl enthusiasts" }}</p>
+                    </div>
+
+                    <div class="blog-search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off">
+                        <button id="blog-search-clear" class="blog-search-clear" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category Filter -->
+            <section class="blog-filter-section">
+                <div class="container">
+                    <div class="blog-categories">
+                        <button class="blog-category-pill active" data-category="all">All</button>
+                        {% for category in site.blog_categories %}
+                        <button class="blog-category-pill" data-category="{{ category.slug }}">{{ category.name }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Grid -->
+            <section class="blog-grid-section">
+                <div class="container">
+                    <div class="blog-grid">
+                        {% for post in paginator.posts %}
+                        {% include blog-card.html post=post %}
+                        {% endfor %}
+
+                        {% if paginator.posts.size == 0 %}
+                        {% for post in site.posts limit:9 %}
+                        {% include blog-card.html post=post %}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="blog-no-results" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No articles found</h3>
+                        <p>Try different keywords or browse all categories.</p>
+                    </div>
+
+                    <!-- Pagination -->
+                    {% if paginator.total_pages > 1 %}
+                    <nav class="blog-pagination" aria-label="Blog navigation">
+                        {% if paginator.previous_page %}
+                        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </a>
+                        {% else %}
+                        <span class="pagination-link disabled">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </span>
+                        {% endif %}
+
+                        <span class="pagination-info">
+                            Page {{ paginator.page }} of {{ paginator.total_pages }}
+                        </span>
+
+                        {% if paginator.next_page %}
+                        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </a>
+                        {% else %}
+                        <span class="pagination-link disabled">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </span>
+                        {% endif %}
+                    </nav>
+                    {% endif %}
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="blog-cta-section">
+                <div class="container">
+                    <div class="blog-cta-card">
+                        <div class="blog-cta-icon">
+                            <i class="fas fa-record-vinyl"></i>
+                        </div>
+                        <h3>Ready to organize your collection?</h3>
+                        <p>Download My Vinyls and start cataloging your records today.</p>
+                        <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
+                            <i class="fab fa-apple"></i>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {% include footer.html %}
+        </div>
+    </div>
+
+    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/blog.js' | relative_url }}"></script>
+</body>
+
+</html>

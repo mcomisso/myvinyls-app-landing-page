@@ -1,0 +1,243 @@
+---
+# Post Layout - for individual blog articles
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ page.title }} | {{ site.app_name }} Blog</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+
+    <link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ site.app_icon | relative_url }}">
+
+    <!-- Smart App Banner -->
+    {% if site.enable_smart_app_banner %}
+    <meta name="apple-itunes-app" content="app-id={{ site.ios_app_id }}">
+    {% endif %}
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+    <meta property="og:image" content="{{ page.image | default: site.app_icon | absolute_url }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:author" content="{{ page.author | default: site.your_name }}">
+    {% for tag in page.tags %}
+    <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+    <meta name="twitter:image" content="{{ page.image | default: site.app_icon | absolute_url }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ page.title | escape }}",
+        "image": "{{ page.image | default: site.app_icon | absolute_url }}",
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ page.author | default: site.your_name }}",
+            "url": "{{ site.your_link }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.app_name }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.app_icon | absolute_url }}"
+            }
+        },
+        "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absolute_url }}"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/main.css' | relative_url }}">
+
+    <!-- Fediverse -->
+    <meta name="fediverse:creator" content="@myvinyl@mastodon.social">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <!-- Animated Background -->
+        <div class="glass-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="content-container">
+            {% include header.html %}
+
+            <!-- Article Header -->
+            <header class="article-header">
+                <div class="container">
+                    <a href="/blog/" class="article-back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Blog
+                    </a>
+
+                    {% assign category_name = page.category %}
+                    {% for cat in site.blog_categories %}
+                        {% if cat.slug == page.category %}
+                            {% assign category_name = cat.name %}
+                        {% endif %}
+                    {% endfor %}
+                    <span class="article-category">{{ category_name }}</span>
+
+                    <h1 class="article-title">{{ page.title }}</h1>
+
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <i class="far fa-calendar"></i>
+                            {{ page.date | date: "%B %d, %Y" }}
+                        </span>
+                        <span class="article-reading-time">
+                            <i class="far fa-clock"></i>
+                            <span class="reading-time">5 min read</span>
+                        </span>
+                        <span class="article-author">
+                            <i class="far fa-user"></i>
+                            {{ page.author | default: site.your_name }}
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            {% if page.image %}
+            <div class="article-featured-image">
+                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+            </div>
+            {% endif %}
+
+            <!-- Article Content -->
+            <article class="article-content">
+                {{ content }}
+            </article>
+
+            <!-- Tags -->
+            {% if page.tags.size > 0 %}
+            <div class="article-tags">
+                <div class="container">
+                    {% for tag in page.tags %}
+                    <span class="article-tag">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Share -->
+            <div class="article-share">
+                <div class="container">
+                    <span class="share-label">Share this article</span>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
+                           class="share-button" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
+                           class="share-button" target="_blank" rel="noopener" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}"
+                           class="share-button" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <button class="share-button copy-link" data-url="{{ page.url | absolute_url }}" aria-label="Copy link">
+                            <i class="fas fa-link"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author Bio -->
+            <section class="article-author-section">
+                <div class="container">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            {{ page.author | default: site.your_name | slice: 0 }}
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">{{ page.author | default: site.your_name }}</h4>
+                            <p class="author-bio">Creator of My Vinyls, vinyl enthusiast, and music lover based in {{ site.your_city }}.</p>
+                            <a href="{{ site.your_link }}" class="author-link" target="_blank" rel="noopener">
+                                <i class="fas fa-globe"></i>
+                                Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Posts -->
+            {% assign related_posts = site.posts | where: "category", page.category | where_exp: "post", "post.url != page.url" | limit: 3 %}
+            {% if related_posts.size > 0 %}
+            <section class="related-posts-section">
+                <div class="container">
+                    <h3 class="related-posts-title">Related Articles</h3>
+                    <div class="related-posts-grid">
+                        {% for post in related_posts %}
+                        {% include blog-card.html post=post %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- CTA Section -->
+            <section class="blog-cta-section">
+                <div class="container">
+                    <div class="blog-cta-card">
+                        <div class="blog-cta-icon">
+                            <i class="fas fa-record-vinyl"></i>
+                        </div>
+                        <h3>Ready to organize your collection?</h3>
+                        <p>Download My Vinyls and start cataloging your records today.</p>
+                        <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
+                            <i class="fab fa-apple"></i>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {% include footer.html %}
+        </div>
+    </div>
+
+    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/blog.js' | relative_url }}"></script>
+</body>
+
+</html>

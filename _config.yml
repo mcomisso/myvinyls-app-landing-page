@@ -103,6 +103,37 @@ footer_text_color                         : "#9ca3af"
 
 
 ####################################################
+### Blog Configuration                           ###
+####################################################
+
+# Blog Settings
+permalink: /blog/:year/:month/:title/
+paginate: 9
+paginate_path: "/blog/page:num/"
+
+# Blog Categories
+blog_categories:
+  - name: Vinyl Collecting
+    slug: vinyl-collecting
+    description: Tips and guides for building your vinyl collection
+  - name: App Tips
+    slug: app-tips
+    description: Get the most out of My Vinyls
+  - name: Music Discovery
+    slug: music-discovery
+    description: Discover new and classic records
+  - name: Vinyl Care
+    slug: vinyl-care
+    description: How to maintain and preserve your records
+
+# Plugins (included in github-pages gem)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+####################################################
 ### Jekyll Configuration. No need to touch this. ###
 ####################################################
 
