@@ -10,214 +10,91 @@ author: Matteo Comisso
 reading_time: 6
 ---
 
-Your vinyl collection grows. First it's a shelf. Then a shelving unit. Eventually you're standing in front of hundreds of records, unable to find the album you want to hear. Sound familiar?
+It happens gradually. First you have twenty records that fit comfortably on a single shelf. Then fifty. Then two hundred. One evening you're standing in front of your collection, wanting to hear a specific album, and you realize you have no idea where it is.
 
-Organizing a vinyl collection is deeply personal — there's no single right answer. But understanding your options helps you find the system that fits how you actually listen to music.
+Every collector reaches this moment. The question isn't whether you need a system—it's which system fits how you actually live with music.
 
-## Method 1: Alphabetical by Artist
+## The Classic: Alphabetical by Artist
 
-The classic approach. Simple, universally understood, and how most record stores organize their stock.
+This is how record stores do it, and there's a reason. Simple, universally understood, endlessly scalable.
 
-**How it works:**
-- A through Z by artist's last name (or band name)
-- Within each artist, albums can be chronological or random
+Artist by last name, A through Z. Band names go by their first significant word (most collectors file "The Beatles" under B, not T, which prevents an absurdly large T section). Within each artist, albums can be chronological or random—your choice.
 
-**The "The" question:**
-Most collectors file bands beginning with "The" under their second word. The Beatles goes under B, not T. The Rolling Stones under R. This prevents an oversized T section.
+The alphabetical approach works beautifully when you know exactly what you want to hear. It works less well when you're browsing for a mood. Miles Davis ends up next to Mac DeMarco. The Velvet Underground neighbors Van Morrison. There's no inherent relationship between adjacent records.
 
-**Pros:**
-- Easy for anyone to navigate
-- No subjective decisions required
-- Scales well as collection grows
+For large collections, particularly shared ones where multiple people need to find things, alphabetical remains hard to beat. Everyone understands it. Anyone can navigate it.
 
-**Cons:**
-- Doesn't reflect how most people think about music
-- "I want to hear something funky" becomes a hunt
-- Adjacent records often have nothing in common
+## The Mood Approach: Genre-Based
 
-**Best for:** Large collections, shared spaces, people who know exactly what they want to play.
+Organize by musical style first, then alphabetically within each section. Now when you want something funky, everything funky is together. Jazz over here, rock over there, electronic in the corner.
 
-## Method 2: Genre-Based
+The trick is keeping genres broad. Five categories plus miscellaneous works better than fifteen categories you can't remember. Rock. Jazz. Soul. Electronic. Classical. Miscellaneous. Done.
 
-Organize by musical style first, then alphabetically within each section.
+Genre organization reflects how many people actually choose music—by mood rather than alphabet. The challenge comes with artists who defy categorization. Where does Prince go? Bowie? Björk? Pick a rule, apply it consistently, and don't overthink it.
 
-**Common genre divisions:**
-- Rock
-- Jazz
-- Soul/R&B
-- Electronic
-- Classical
-- Hip-Hop
-- Country/Folk
+## The Compromise: Hybrid Genre-Alphabetical
 
-**Keep genres broad.** Getting too specific creates confusion. Where does Prince go? Funk? Pop? Rock? One rule of five works well: pick five broad categories plus miscellaneous.
+Most serious collectors land here eventually. Divide into genre sections, then alphabetize within each. It's how good record stores organize: you go to the jazz section, then find artists A-Z within it.
 
-**Important:** Decide your system before organizing. If Quincy Jones can reasonably fit in jazz, soundtrack, soul, fusion, or pop, choose one and stick with it.
+This approach captures the benefits of both systems. Want something specific? Go to the genre, then the letter. Want to browse a mood? Flip through a whole section. It scales well, makes intuitive sense to visitors, and adapts as collections grow.
 
-**Pros:**
-- Find music matching your mood quickly
-- Related artists end up near each other
-- Reflects how record stores organize
+The setup takes longer than pure alphabetical. You're making genre decisions for every record. But once it's done, maintenance is straightforward.
 
-**Cons:**
-- Genre boundaries are subjective
-- Cross-genre artists create filing dilemmas
-- May need reorganization as tastes evolve
+## The Timeline: Chronological
 
-**Best for:** Mood-based listeners, people with diverse collections.
+Some collectors organize by release date. 1960s here, 1970s there, everything in historical order.
 
-## Method 3: Hybrid (Genre + Alphabetical)
+This turns your collection into a music history lesson. Browsing becomes a journey through eras. You see how sounds evolved, notice connections between artists who recorded in the same years, experience music as a timeline rather than a catalog.
 
-The most common system among serious collectors — combine both approaches.
+The downside: finding a specific album requires knowing when it was released. That's natural for some people and utterly foreign to others.
 
-**How it works:**
-1. Divide into genre sections
-2. Alphabetize within each genre
-3. Optionally organize chronologically within each artist
+Chronological organization works beautifully for curated collections focused on particular eras. It's challenging for sprawling collections that span decades and genres.
 
-This mirrors how most record stores work. You go to the jazz section, then find artists A-Z within it.
+## The Personal History: Autobiographical
 
-**Pros:**
-- Best of both worlds
-- Intuitive navigation
-- Scales well
+In the novel *High Fidelity*, the protagonist reorganizes his records autobiographically—by when each album entered his life. First record purchased goes first. Latest acquisition goes last.
 
-**Cons:**
-- More complex to maintain
-- Genre decisions still required
-- Takes more initial setup time
+It sounds chaotic, and for anyone else navigating your collection, it is. But for the collector, this approach transforms shelves into personal history. Every record triggers a memory. That album I bought in college. The one I found on vacation. The gift from someone I loved.
 
-**Best for:** Medium to large collections, people who enjoy organizing.
+Only you can navigate it. Only you would want to. That might be the point.
 
-## Method 4: Chronological
+## The Practical: Mood and Energy
 
-Organize by release date across your entire collection.
+Some collectors organize by how records feel rather than what they technically are. Morning Coffee section. Dinner Party section. Late Night section. Workout music. Melancholy music. Focus music.
 
-**How it works:**
-- Earliest releases first (or last — your choice)
-- Everything in date order regardless of artist or genre
+This mirrors how streaming playlists work, but in physical form. When you want background for cooking dinner, you don't want to think about genres or alphabets—you want to grab something appropriate.
 
-**Pros:**
-- See the history of music in your collection
-- Discover connections between eras
-- Perfect for "musical journey" listening sessions
+The challenge: mood is subjective and changes. Today's "melancholy" record might feel different next year. Albums that span moods create filing dilemmas. But for collections focused on particular listening contexts, this approach makes everyday use frictionless.
 
-**Cons:**
-- Hard to find specific albums quickly
-- Less intuitive than other methods
-- Requires knowing release dates
+## Making It Work
 
-**Best for:** Music historians, narrative listeners, smaller curated collections.
+Whatever system you choose, a few practices help:
 
-## Method 5: Autobiographical
+**Use dividers.** They transform a solid wall of spines into navigable sections. Alphabetical tabs, genre labels, whatever matches your system. Options range from cheap cardboard to elegant wood.
 
-Made famous by the novel *High Fidelity* — organize by when albums entered your life.
+**Create a "now playing" zone.** Keep a small section near your turntable for current favorites, recent arrivals, or tonight's listening queue. This reduces handling of your main collection and keeps your rotation accessible.
 
-**How it works:**
-- First record you bought goes first
-- Newest acquisition goes at the end
-- Your collection becomes a timeline of your musical journey
+**Store properly regardless of system.** Vertical, never stacked. Not too tight (you shouldn't have to force records out). Away from heat and humidity. Outer sleeves protecting jackets. Quality inner sleeves protecting vinyl.
 
-**Pros:**
-- Deeply personal and meaningful
-- Triggers memories ("I bought this on that trip")
-- Perfect conversation starter
+**Go digital too.** A digital catalog lets you search instantly, know what you own while shopping, track condition and pressing details, and share your collection with others. Physical organization handles browsing; digital handles searching.
 
-**Cons:**
-- Only you can navigate it
-- Finding specific records is slow
-- Requires excellent memory or documentation
+## When Systems Fail
 
-**Best for:** Sentimental collectors, those who remember acquisition stories, smaller collections.
+Signs your organization needs attention:
 
-## Method 6: Mood/Energy-Based
+You can't find records you know you own. Your genre sections no longer match how you think about music. New acquisitions pile up without homes because filing them feels overwhelming. Browsing your collection feels frustrating rather than enjoyable.
 
-Organize by how records make you feel rather than what they technically are.
+Reorganization isn't failure—it's evolution. Collections change, tastes change, systems should change too. And reorganizing is actually a great excuse to rediscover records you'd forgotten.
 
-**Possible sections:**
-- Morning Coffee
-- Dinner Party
-- Late Night
-- Energy Boost
-- Melancholy
-- Focus/Work
+## The Right Answer
 
-**Pros:**
-- Directly supports how many people listen
-- Crosses genre boundaries meaningfully
-- Great for entertaining
+There's no universally correct system. The right organization is the one you'll actually maintain, that helps you find what you want, that makes browsing enjoyable, and that fits your space.
 
-**Cons:**
-- Highly subjective
-- Doesn't scale well
-- Finding specific albums difficult
+Some people love elaborate systems with subcategories and cross-references. Others keep loose groupings and rely on memory. Both approaches work if they serve the collector.
 
-**Best for:** Casual listeners, people who reach for moods not artists.
+The goal isn't perfection—it's putting on more records. Whatever system gets you from "I want to hear music" to needle in groove with minimum friction is the right system for you.
 
-## Practical Organization Tips
-
-### Use Dividers
-
-Vinyl dividers transform a solid wall of records into navigable sections. Alphabetical dividers for A-Z (or A, B, C, etc.) are popular, as are genre tabs.
-
-Options:
-- Cardboard (cheap, replaceable)
-- Plastic (durable, visible)
-- Wood (aesthetic, substantial)
-
-### Create a "Now Playing" Section
-
-Keep a small area near your turntable for current favorites, recent arrivals, or a curated rotation. This prevents handling your entire collection constantly.
-
-### Establish a "Rare Records" Section
-
-Special pressings, valuable records, or items with sentimental significance deserve protected space. Store these separately with extra care.
-
-### Store Properly Regardless of System
-
-Whatever organization method you choose:
-- Store records **vertically, never stacked flat**
-- Avoid tight packing that requires force to remove records
-- Keep away from heat, humidity, and direct sunlight
-- Use outer sleeves to protect jackets
-- Upgrade inner sleeves to polyethylene
-
-### Catalog Digitally
-
-Your physical organization system should have a digital companion. Apps and databases let you:
-- Search instantly
-- Track condition and pressing details
-- Build want lists
-- Know what you own when shopping
-- Share collection with others
-
-## When to Reorganize
-
-Your collection system should evolve. Signs it's time to reorganize:
-
-- You can't find records you know you own
-- Your genre sections no longer match your listening
-- New acquisitions pile up without homes
-- Browsing feels frustrating rather than enjoyable
-
-Reorganization is also a great excuse to rediscover records you'd forgotten. Treat it as an opportunity rather than a chore.
-
-## Find Your System
-
-No organization method is objectively correct. The right system is the one that:
-
-1. You'll actually maintain
-2. Helps you find what you want
-3. Makes browsing enjoyable
-4. Fits your space
-
-Some collectors love elaborate systems. Others prefer loose groupings. Both approaches are valid if they serve how you actually use your collection.
-
-## Track Your Collection with My Vinyls
-
-With [My Vinyls](/), your collection organization extends beyond the shelf. Catalog every record with condition notes, pressing details, and personal tags. Search your collection instantly, build wishlists, and sync with Discogs. Whether you organize alphabetically, by genre, or autobiographically — My Vinyls helps you know exactly what you own.
-
-The best organization system is one that makes you want to put on a record. Find yours and enjoy the music.
+Your shelves, your rules. Find what works and enjoy the music.
 
 ---
 

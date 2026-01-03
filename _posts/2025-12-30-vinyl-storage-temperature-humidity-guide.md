@@ -10,137 +10,105 @@ author: Matteo Comisso
 reading_time: 6
 ---
 
-Your vinyl collection represents time, money, and passion. But even the most carefully curated records can be ruined by improper storage. Temperature and humidity are the silent enemies of vinyl — here's how to defeat them.
+A collector once shared a horror story that still makes people wince. He'd inherited his father's record collection—hundreds of LPs from the 1960s and 70s, including original pressings of albums that would make any collector jealous. Stored them in the attic for "safekeeping" while renovating the house. One hot summer later, he went to retrieve them and found a warped, mold-spotted disaster. Decades of careful collecting, destroyed by a few months of neglect.
 
-## The Science of Vinyl Damage
+It's a brutal lesson: vinyl is tougher than people think, but it has enemies. Heat. Humidity. Negligence. Your records don't need much from you, but they do need the right environment.
 
-Vinyl records are made from PVC (polyvinyl chloride), a material that responds dramatically to environmental conditions. Too hot, and they warp. Too humid, and mold grows. Too dry, and static builds up. Understanding these relationships is key to proper storage.
+## Why Environment Matters
 
-## Ideal Temperature: The Sweet Spot
+Records are made from PVC—polyvinyl chloride—and it's sensitive stuff. Too hot, and the vinyl softens. Too humid, and mold colonizes your sleeves and creeps onto the records themselves. Too dry, and static builds up, attracting every dust particle in the room.
 
-**Target range: 65°F to 70°F (18°C to 21°C)**
+The good news? If you're comfortable in a room, your records probably are too. The bad news? Lots of places we think are fine for storage—attics, basements, garages—are actually terrible.
 
-This temperature range keeps vinyl stable and playable for decades. Here's what happens outside this zone:
+## The Magic Numbers
 
-### When It's Too Hot
+**Temperature: 65°F to 70°F (18°C to 21°C)**
 
-- **Above 80°F (27°C)**: Risk of permanent warping increases significantly
-- **Above 90°F (32°C)**: Vinyl begins to soften and deform — even brief exposure can cause irreversible damage
-- **In direct sunlight**: Records can warp in minutes, regardless of ambient temperature
+This is the sweet spot. Records stay stable, vinyl stays solid, everyone's happy.
 
-Common danger zones:
-- Cars in summer (interior temperatures can exceed 140°F)
-- Attics during warm months
-- Near windows with direct sun exposure
-- Close to radiators or heating vents
+Above 80°F, you're entering the danger zone. Warping becomes a real risk. Hit 90°F or higher, and vinyl starts to soften—even brief exposure can cause permanent damage. And direct sunlight? A record left in a sunbeam can warp in minutes, no matter what the ambient temperature is.
 
-### When It's Too Cold
+Common killers:
+- **Cars in summer.** Interior temperatures can hit 140°F. Never leave records in a car, not even "just for a few minutes."
+- **Attics.** Temperature swings wildly, getting brutally hot in summer.
+- **Near windows.** Direct sun is the enemy.
+- **By radiators or heating vents.** Consistent low-level heat warps records slowly but surely.
 
-While cold is generally less damaging than heat, extreme cold can make vinyl brittle and more susceptible to cracking. If records have been stored in cold conditions, let them gradually warm to room temperature before playing.
+Cold is less dangerous, but extreme cold makes vinyl brittle. If your records have been somewhere cold, let them warm up gradually to room temperature before playing them.
 
-## Ideal Humidity: Finding Balance
+**Humidity: 40% to 50% relative humidity**
 
-**Target range: 40% to 50% relative humidity**
+Too humid and you get mold—that musty smell, those spots on the sleeves, that nightmare scenario where paper inner sleeves stick to the vinyl surface. Album artwork warps and deteriorates. It's ugly.
 
-Humidity affects both the vinyl and the packaging:
+Too dry and static becomes a constant battle. Paper sleeves get brittle and tear. Surface noise increases.
 
-### When It's Too Humid (Above 60%)
+Somewhere in the 40-50% range keeps everything balanced.
 
-- Mold and mildew growth on sleeves and labels
-- Musty odors that can transfer to the vinyl
-- Paper sleeves can stick to the record surface
-- Jacket artwork deteriorates and warps
+## Where to Put Them (and Where Not To)
 
-### When It's Too Dry (Below 30%)
+**Good locations:**
+- Climate-controlled living spaces—where you hang out, basically
+- Interior rooms away from exterior walls
+- Dedicated shelving away from foot traffic and vibrations
 
-- Increased static electricity attracts more dust
-- Paper sleeves become brittle and tear easily
-- Slight increase in surface noise during playback
+**Terrible locations:**
+- **Attics.** Temperature swings are violent, humidity often problematic.
+- **Basements.** Unless they're properly finished and dehumidified, basements tend to be damp. Flooding risk is real.
+- **Garages.** Uncontrolled climate, dust, temperature extremes. Just no.
+- **Near exterior walls.** More exposure to outdoor temperature changes.
+- **Close to HVAC systems.** The vibrations can affect records, and the airflow isn't great.
 
-## Storage Location Guidelines
+## The Fundamentals of Physical Storage
 
-### Best Locations
+**Vertical, always.** Store records like books on a shelf, standing upright. Never stack them horizontally. The weight of stacked records creates pressure that leads to warping, and the record jackets get ring wear from the edges of records below.
 
-- **Climate-controlled living spaces**: Where you're comfortable, your records are comfortable
-- **Interior rooms**: Less subject to temperature swings than exterior walls
-- **Dedicated storage furniture**: Away from foot traffic and vibrations
+**Support them properly.** Records shouldn't lean at severe angles. Use sturdy shelving that keeps them roughly vertical. A record leaning against nothing will slowly warp under its own weight.
 
-### Locations to Avoid
+**Upgrade your sleeves.** If your records are still in the original paper inner sleeves, consider switching to polyethylene or polypropylene alternatives. Paper sheds particles, builds static, and can scratch vinyl every time you slide it in and out. Poly sleeves are smooth, anti-static, moisture-resistant, and last forever. They cost almost nothing per record.
 
-- **Attics**: Extreme temperature fluctuations, often humid
-- **Basements**: Prone to dampness, flooding, and mold
-- **Garages**: Uncontrolled temperatures, dust, and potential pests
-- **Near exterior walls**: Greater exposure to outdoor temperature changes
-- **Close to HVAC systems**: Vibrations and airflow can affect records
+## Dealing With Problem Environments
 
-## Practical Storage Tips
+Not everyone has a perfectly climate-controlled listening room. Here's what helps:
 
-### Vertical is Vital
+**For humidity issues:**
+- A dehumidifier is essential if you're in a humid climate or storing records anywhere damp
+- Silica gel packs in storage boxes absorb moisture in enclosed spaces
+- Air conditioning naturally dehumidifies while cooling
 
-Always store records vertically — like books on a shelf. Horizontal stacking creates pressure that leads to warping and ring wear on jackets.
+**For dry air:**
+- Humidifiers add moisture during dry winter months
+- Even houseplants help regulate humidity naturally
 
-### Support Matters
+**For temperature:**
+- Keep records away from heat sources—obvious but often ignored
+- Thermal curtains block heat from windows
+- Ceiling fans distribute air evenly, preventing hot spots
 
-Use sturdy shelving that won't allow records to lean at angles. Unsupported records gradually warp under their own weight.
+## A Simple Tool: The Hygrometer
 
-### Sleeve Upgrades
+A hygrometer measures humidity, and you can get a decent digital one for under $20. Stick it in your storage area and check it occasionally, especially during seasonal changes. Knowing you have a problem is the first step to fixing it.
 
-Replace paper inner sleeves with polyethylene or polypropylene alternatives. These materials:
-- Resist moisture better than paper
-- Reduce static buildup
-- Won't scratch the vinyl surface
-- Don't deteriorate over time
+Some collectors get obsessive about monitoring conditions. You don't have to go that far. Just knowing that your storage space is in the safe zone gives peace of mind.
 
-### Monitor Conditions
+## Long-Term and Off-Site Storage
 
-Invest in a simple hygrometer (humidity meter) to monitor your storage area. Digital models are inexpensive and accurate. Check readings periodically, especially during seasonal changes.
+If you're storing records in a facility or keeping them somewhere you won't access often:
 
-## Climate Control Solutions
+- **Insist on climate control.** Non-climate-controlled storage units are basically expensive garages.
+- **Use proper storage boxes.** Record boxes with some ventilation, not sealed plastic totes that trap moisture.
+- **Add silica gel packs.** Helps maintain stable humidity.
+- **Check on them.** Don't assume conditions stay stable. Visit periodically, especially after seasonal changes.
+- **Insure them.** If your collection has significant value, make sure it's covered.
 
-If your storage area has issues, consider these solutions:
+## The Bottom Line
 
-### For High Humidity
+None of this is complicated. Records want to be where you want to be—comfortable room temperature, reasonable humidity, out of direct sunlight. They want to stand upright on sturdy shelves in decent sleeves.
 
-- **Dehumidifiers**: Essential for basements or humid climates
-- **Silica gel packs**: Good for enclosed spaces like storage boxes
-- **Air conditioning**: Naturally reduces humidity while cooling
+Get those basics right, and your collection will outlast you. Get them wrong, and even the most valuable records become unplayable artifacts.
 
-### For Low Humidity
+That story about the ruined collection in the attic? The collector who told it now keeps his rebuilt collection in his living room, right where he can see it and enjoy it. "They're not doing anyone any good boxed up somewhere," he said. "And at least in here, I know they're safe."
 
-- **Humidifiers**: Add moisture to dry winter air
-- **Houseplants**: Natural humidity regulators
-- **Water features**: Can help in very dry environments
-
-### For Temperature
-
-- **Ceiling fans**: Help distribute air evenly
-- **Thermal curtains**: Block heat from windows
-- **Strategic placement**: Keep records away from heat sources
-
-## Long-Term Storage Considerations
-
-If you're storing records in a facility or for extended periods:
-
-1. **Choose climate-controlled units** whenever possible
-2. **Use quality storage boxes** with ventilation
-3. **Add moisture absorbers** to each box
-4. **Check on them periodically** — don't assume conditions remain stable
-5. **Insure valuable collections** against damage
-
-## Quick Reference Card
-
-| Factor | Ideal | Danger Zone |
-|--------|-------|-------------|
-| Temperature | 65-70°F (18-21°C) | Above 80°F (27°C) |
-| Humidity | 40-50% RH | Above 60% or below 30% |
-| Storage | Vertical | Horizontal stacking |
-| Location | Interior rooms | Attics, basements, garages |
-
-## Track Your Collection
-
-With [My Vinyls](/), you can add notes to each record in your collection — including storage location, condition observations, and maintenance history. This makes it easy to track which records might need attention or have been exposed to less-than-ideal conditions.
-
-Proper storage isn't glamorous, but it's the foundation of a collection that lasts. Take care of your records, and they'll reward you with decades of listening pleasure.
+Good records deserve good homes.
 
 ---
 

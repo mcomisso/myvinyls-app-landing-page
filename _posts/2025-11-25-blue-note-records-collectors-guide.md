@@ -10,39 +10,31 @@ author: Matteo Comisso
 reading_time: 8
 ---
 
-In 1939, two German-Jewish immigrants, Alfred Lion and Max Margulis, and soon joined by photographer Francis Wolff, created what would become the most revered jazz label in history. Blue Note Records is, to many, the platonic ideal of a jazz label — and for collectors, it represents both the ultimate challenge and the ultimate reward.
+In 1939, two German-Jewish immigrants fleeing Europe—Alfred Lion and Max Margulis, soon joined by photographer Francis Wolff—started what would become the most revered jazz label in history. For collectors, Blue Note represents the ultimate challenge and the ultimate reward: difficult to master, expensive to collect seriously, and deeply satisfying when you find the right record at the right price.
 
 ## Why Blue Note Matters
 
-Throughout its storied history, Blue Note released more genre-defining albums than not. Most jazz titans from the 1950s to the 1970s had a Blue Note period:
+Throughout its peak years, Blue Note released more defining jazz albums than seems statistically possible. Nearly every titan of post-bebop jazz recorded for the label:
 
-- John Coltrane
-- Herbie Hancock
-- Art Blakey
-- Joe Henderson
-- Wayne Shorter
-- Tony Williams
-- Thelonious Monk
+John Coltrane. Herbie Hancock. Art Blakey. Joe Henderson. Wayne Shorter. Tony Williams. Thelonious Monk. The list goes on and on.
 
-The label's distinctive aesthetic — Reid Miles' iconic cover designs, Francis Wolff's atmospheric photographs, Rudy Van Gelder's legendary engineering — created a complete artistic vision that elevated jazz records into collectible art objects.
+But Blue Note wasn't just about signing the right artists. It created a complete aesthetic vision. Reid Miles' iconic cover designs—bold typography, striking compositions. Francis Wolff's atmospheric photographs, taken during the recording sessions. Rudy Van Gelder's legendary engineering, capturing that distinctive Blue Note sound.
 
-## The Blue Note 1500 Series
+These records weren't just vessels for music. They were art objects from the start.
 
-Between 1955 and 1958, Blue Note became the standard bearer for post-bebop modern jazz with the legendary 1500 series. These 98 LPs define what collectors chase most aggressively.
+## The 1500 Series: The Holy Grail
 
-**Why the 1500 series matters:**
+Between 1955 and 1958, Blue Note released the legendary 1500 series—98 LPs that define what collectors chase most aggressively. This was post-bebop modern jazz at its creative peak.
 
-- Post-bebop jazz at its creative peak
-- Original pressings are true historical artifacts
-- Relatively small initial print runs
-- Many weren't reissued for decades
-- First mono pressings are the holy grail
+Why these specifically? Original pressings were genuine artifacts: relatively small initial print runs, many not reissued for decades after their original release, and the mono first pressings represent the recordings as they were first heard.
 
-**The cost of entry is significant.** An original pressing of Lee Morgan's self-titled Blue Note LP (BLP 1557) sold for $4,177 in 2017. Pristine copies of sought-after titles routinely reach five figures.
+The cost of entry is significant. An original pressing of Lee Morgan's self-titled Blue Note LP sold for over $4,000 in 2017. Pristine copies of sought-after titles regularly reach five figures.
+
+This isn't casual collecting. This is serious.
 
 ## Identifying Original Pressings
 
-The difference between an original Blue Note and a reissue can be thousands of dollars. Here's how to tell them apart.
+The difference between an original Blue Note and a reissue can be thousands of dollars. Learning to tell them apart is essential.
 
 ### Label Addresses
 
@@ -52,146 +44,81 @@ Blue Note's address changed over time, and the label reflects this:
 
 **47 West 63rd, New York:** Albums 1564-1599 and 4001-4080
 
-**"New York, USA" labels:** Albums 4081 through 4226 (the final original release, Don Cherry's "Complete Communion")
+**"New York, USA" labels:** Albums 4081 through 4226
 
-**Red flags:** If the label reads "A Division Of Liberty Records, Inc" or "A Division Of United Artists," you're looking at a later repress.
+If the label reads "A Division Of Liberty Records, Inc" or "A Division Of United Artists," you're looking at a later repress. Not original.
 
 ### The "Ear" Mark
 
-This is crucial: **all original (pre-Liberty) Blue Note pressings have a small "ear" mark in the dead wax**. It looks like a cursive "P" — because that's what it is. This mark was made by the mastering engineer.
+This is crucial: all original pre-Liberty Blue Note pressings have a small "ear" mark in the dead wax—the area between the last groove and the label. It looks like a cursive "P."
 
-No ear mark = not an original pressing (regardless of label appearance).
+No ear mark means not an original pressing, regardless of what the label looks like. This single check eliminates most fakes and later pressings.
 
 ### Deep Grooves
 
-Many original Blue Notes feature a noticeable "deep groove" — a wide, ungrooved area around the label. However, you can't determine vintage by deep grooves alone. Some originals don't have them; some reissues do.
+Many originals feature a noticeable "deep groove"—a wide, ungrooved area around the label. But you can't determine vintage by deep grooves alone. Some originals don't have them; some reissues do.
 
 Deep grooves are one data point, not proof.
 
 ### Label Colors
 
-- **Blue and white:** Original era
-- **Black and light blue:** Late 1960s (Liberty era)
-- **All blue:** Mid-to-late 1970s
+- Blue and white: Original era
+- Black and light blue: Late 1960s (Liberty era)
+- All blue: Mid-to-late 1970s
 
-### Other Identifiers
+## The Most Valuable Blue Notes
 
-- "Blue Note Inc" with registered trademark symbol = later pressing
-- Gatefold sleeves on early titles = reissue (originals were single sleeves)
-- West Coast address = definitely not original
+Nearly all original Blue Notes are valuable, but some stand above:
 
-## The Most Valuable Blue Note Records
+**True Blue by Tina Brooks:** The white whale. The label reportedly pressed fewer than 1,000 copies. Finding one in any condition is noteworthy; finding one in excellent condition is a collector's dream achieved.
 
-Nearly all first-edition Blue Note records are valuable, but some stand above the rest.
+**Soul Station by Hank Mobley:** Tied for the second most expensive Blue Note ever sold on Discogs. Musical greatness meets pressing rarity.
 
-### *True Blue* by Tina Brooks
+**Other high-value titles:** Eric Dolphy's *Out to Lunch!*, Herbie Hancock's *Maiden Voyage*, Lee Morgan's *The Sidewinder*, Wayne Shorter's *Speak No Evil*, Art Blakey's *Moanin'*.
 
-The white whale of Blue Note collecting. The label reportedly pressed fewer than 1,000 copies, making it extraordinarily rare. Finding one in any condition is noteworthy; finding one in excellent condition is a collector's dream achieved.
+## Practical Collecting Wisdom
 
-### *Soul Station* by Hank Mobley
+**Start with what you love.** Don't buy based solely on value. The best collections reflect genuine musical passion. If you don't love jazz, Blue Note collecting will feel like expensive homework.
 
-Tied for the second most expensive Blue Note sold on Discogs. A perfect confluence of musical greatness and pressing rarity.
+**Learn the labels.** Study Blue Note's label evolution until you can identify eras at a glance. This knowledge protects you from overpaying.
 
-### Other High-Value Titles
+**Inspect the dead wax.** Matrix numbers and ear marks tell the real story. Sellers can claim anything; the vinyl itself reveals the truth.
 
-- **Eric Dolphy:** *Out to Lunch!*
-- **Herbie Hancock:** *Maiden Voyage*
-- **Lee Morgan:** *The Sidewinder*
-- **Wayne Shorter:** *Speak No Evil*
-- **Art Blakey:** *Moanin'*
+**Condition is everything.** A VG original isn't necessarily better than a NM reissue for listening purposes. Know what you're optimizing for.
 
-## Twelve Tips for Collecting Blue Note
+**Consider Japanese pressings.** King Records and Toshiba Japanese pressings are highly regarded for both sound and packaging. They're more affordable than US originals while delivering excellent audio.
 
-### 1. Start with What You Love
+**Be patient.** The right copy at the right price will appear. Don't overpay out of impatience. Collectors who rush accumulate regrets.
 
-Don't buy based solely on value. The best collections reflect genuine musical passion.
+**Build relationships.** Established jazz dealers can source records and alert you to opportunities. Being known and trusted opens doors.
 
-### 2. Learn the Labels
-
-Study Blue Note's label evolution until you can identify eras at a glance.
-
-### 3. Inspect the Dead Wax
-
-Matrix numbers and ear marks tell the real story.
-
-### 4. Condition Is Everything
-
-A VG original isn't necessarily better than a NM reissue for listening purposes.
-
-### 5. Consider Japanese Pressings
-
-King Records and Toshiba Japanese pressings are highly regarded for both sound quality and packaging. They're more affordable than US originals while delivering excellent audio.
-
-### 6. The OBI Adds Value
-
-Japanese pressings with intact OBI strips command premiums.
-
-### 7. Buy the Book
-
-Frederick Cohen's *Blue Note Records: A Guide For Identifying Original Pressings* is the definitive resource. It covers label design, mastering stamps, cover seams, and countless other details.
-
-### 8. Study Mono vs. Stereo
-
-Early Blue Note stereo pressings were often mastered by Rudy Van Gelder himself. Both versions can be desirable.
-
-### 9. Check Cover Construction
-
-Original covers have specific seam patterns and printing characteristics.
-
-### 10. Verify Everything
-
-Ask sellers for dead wax photos and detailed condition reports.
-
-### 11. Be Patient
-
-The right copy at the right price will appear. Don't overpay out of impatience.
-
-### 12. Build Relationships
-
-Established jazz dealers can source records and alert you to opportunities.
-
-## Modern Blue Note Reissues
+## Modern Reissues
 
 For collectors who love the music but can't afford originals, excellent options exist.
 
-### Blue Note 80 Vinyl Reissue Series
+**Tone Poet Series:** Blue Note's audiophile reissue program—180g vinyl, all-analog mastering, gatefold sleeves, superior packaging. Curated by Joe Harley. These are genuinely excellent.
 
-For Blue Note's 80th anniversary, the label launched premium reissue programs:
+**Classic Vinyl Series:** Mid-priced 180g pressings, curated by Don Was and Cem Kurosman. Good quality at accessible prices.
 
-**Tone Poet Series:** Audiophile-grade 180g vinyl, all-analog mastering, gatefold sleeves, superior packaging. Curated by Joe Harley.
+**Music Matters:** An audiophile label that released stunning Blue Note reissues on 45 RPM across two discs. Expensive but sonically remarkable.
 
-**Classic Vinyl Series:** Mid-priced 180g pressings, curated by Don Was and Cem Kurosman.
+For pure listening enjoyment, modern reissues can be hard to beat. They use high-quality vinyl, careful mastering, and often sound better than worn original pressings.
 
-These reissues use high-quality vinyl and careful mastering. For pure listening enjoyment, they're hard to beat.
+## Building Your Collection
 
-### Music Matters Reissues
+**For beginners:** Start with well-regarded reissues to learn the music. Note which albums you return to repeatedly. Upgrade those specific titles to better pressings over time.
 
-Audiophile label Music Matters has released stunning Blue Note reissues on 45 RPM across two discs. Expensive but sonically remarkable.
+**For serious collectors:** Define your scope—era, artist, budget. Track prices across platforms. Attend record shows and estate sales. Join collector communities for alerts.
 
-## Building Your Blue Note Collection
+**For completists:** Accept that you're chasing something difficult. Budget accordingly. Accept condition compromises for rare titles. Document everything.
 
-**For beginners:**
-1. Start with well-regarded reissues to learn the music
-2. Note which albums you return to repeatedly
-3. Upgrade those specific titles to better pressings
+## The Investment
 
-**For serious collectors:**
-1. Define your scope (era, artist, budget)
-2. Track prices across platforms
-3. Attend record shows and estate sales
-4. Join collector communities for alerts
+Blue Note collecting isn't cheap. Original pressings of desirable titles represent serious financial commitments. But for those who love this music, who appreciate the artistry of the design and engineering, who want to own pieces of jazz history—there's nothing quite like it.
 
-**For completists:**
-1. Acknowledge you're chasing something difficult
-2. Budget accordingly
-3. Accept condition compromises for rare titles
-4. Document everything
+The records in a Blue Note collection aren't just albums. They're artifacts from one of the most creative periods in American music, pressed on vinyl, waiting to be played.
 
-## Track Your Blue Note Collection
-
-With [My Vinyls](/), catalog every Blue Note in your collection with the details that matter: pressing information, matrix codes, label variation, and condition. Note which pressings you prefer and which you're still hunting. Your Blue Note journey deserves proper documentation.
-
-Blue Note records represent the pinnacle of jazz collecting — challenging, expensive, and deeply rewarding. Whether you're buying your first Herbie Hancock reissue or hunting for an original Tina Brooks, you're participating in one of collecting's great traditions.
+That's worth something.
 
 ---
 
