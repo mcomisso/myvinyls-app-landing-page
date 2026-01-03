@@ -7,6 +7,45 @@ include_in_header: true
 # Changelog
 
 ### `Latest`
+# **Version 3.11.0**
+
+#### Multi-Account Support
+- Manage multiple Discogs accounts in a single app
+- Easily switch between accounts from the navigation bar
+- Each account has its own collection, wantlist, and settings
+
+#### AI-Powered Album Summaries
+- Get AI-generated summaries for Today's Album recommendations (iOS 26+)
+- Powered by on-device Apple Intelligence
+
+#### Follow Other Collectors
+- Follow Discogs users to explore their collections
+- Discover records you have in common
+- See which records they have that you want
+
+#### Tab Personalization
+- Reorder and show/hide tabs in the bottom tab bar
+
+#### Push Notifications
+- Receive push notifications for price alerts, new releases, and more
+
+#### Export to Excel & PDF
+- Export your collection to Excel (.xlsx) or PDF formats
+- Choose fields and filter by folder
+
+#### Track Previews
+- Preview 30-second clips directly from album details
+
+#### Widget Gallery
+- Browse all available widgets with previews in Settings
+- New "Record of the Day" full-size widget
+
+#### UI & Stability Improvements
+- iOS 26 navigation and scroll improvements
+- Better contrast in album details
+- Accessibility fixes
+- Faster sync and crash fixes
+
 # **Version 3.5.3**
 
 #### Bug fixes
