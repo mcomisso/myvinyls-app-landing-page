@@ -167,6 +167,31 @@ include_in_header: true
 - Updated localization strings
 - Minor stability improvements
 
+# **Version 3.7.0**
+
+#### Improvements
+- iOS 17 Required: App now requires iOS 17 as minimum version
+- Takes advantage of new iOS 17 features and performance improvements
+- Theme Selector: New theme color customization in Settings
+- Personalize the app's accent colors to your taste
+- Improved Today's Record View: Redesigned "1001 Albums You Must Hear" daily recommendation view
+- Better layout and visual presentation
+- Option to hide Today's Record settings if you don't use the feature
+- Navigation stack for release details in Discovery
+- System Music Player: Changed from application music player to system music player
+- Better integration with iOS music controls
+- Enhanced Discovery analytics
+- Better tracking of feature usage
+
+#### Bug Fixes
+- Completely reworked widget architecture for iOS 17 compatibility
+- More reliable widget updates
+- Fixed widgets not displaying correctly
+- Fixed info button not showing in certain views
+- Fixed color selection issues
+- Fixed move record functionality
+- Various stability improvements
+
 # **Version 3.5.3**
 
 #### Bug fixes
