@@ -46,6 +46,71 @@ include_in_header: true
 - Accessibility fixes
 - Faster sync and crash fixes
 
+# **Version 3.10.0**
+
+#### Last.fm Scrobbling
+- Connect your Last.fm account to automatically scrobble your listening sessions
+- Real-time "Now Playing" updates while you listen
+- Enable/disable scrobbling and notifications in settings
+
+#### Smart Background Sync
+- Intelligent sync that only downloads changes, not your entire collection
+- Daily automatic background sync keeps your library up to date
+- Progress tracking shows sync status in real-time
+
+#### Bulk Barcode Scanning
+- Scan multiple barcodes continuously without stopping
+- Batch add scanned records to your collection
+- Duplicate detection warns you about records you already own
+
+#### Alphabetic Jump Bar
+- Quick navigation sidebar for large collections
+- Jump instantly to any letter or date section
+- Compact dot mode for extra-large libraries
+
+#### Advanced Search
+- Filter by format, year, genre, and condition
+- Pro subscribers get barcode, label, and catalog number search
+- Search suggestions and recent search history
+
+#### CSV Export
+- Export your collection or wantlist to CSV format
+- Choose which fields to include
+- Share via iOS share sheet
+
+#### Collection Insights & Charts
+- Detailed statistics about your collection
+- Artist, genre, and decade breakdowns
+- Visual charts showing collection composition
+
+#### Folder Drag & Drop
+- Organize records by dragging them between folders
+- Create custom folders for better organization
+
+#### Marketplace Improvements
+- Toggle between different marketplace views
+- See marketplace availability for wantlist items
+
+#### Artist Page Enhancements
+- Artist image galleries with fullscreen viewer
+- Band member information and biographies
+- Gradient backgrounds based on artist colors
+
+#### iOS 26 Visual Updates
+- Liquid Glass effects throughout the app
+- Redesigned login screen
+- Improved contrast and visual hierarchy
+
+#### Notification Settings
+- Control which notifications you receive
+- Toggle price alerts, daily recommendations, and sync notifications
+
+#### Performance & Stability
+- Faster collection loading
+- Improved rate limit handling
+- Better background task management
+- Crash fixes for widgets and background operations
+
 # **Version 3.5.3**
 
 #### Bug fixes
