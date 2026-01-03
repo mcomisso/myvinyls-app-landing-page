@@ -164,6 +164,60 @@ include_in_header: true
 - Better iPad navigation
 - Various crash fixes and stability improvements
 
+# **Version 3.8.0**
+
+#### Beyond Vinyl: CD & Cassette Support
+- Manage CDs, cassettes, and other formats alongside your vinyl collection
+- Beautiful 2D and 3D visualizations for cassette tapes
+- CD detail view with accurate disc representation
+- Search and add any physical media format to your collection
+
+#### Condition Rating System
+- Rate your record's condition: Mint, Near Mint, Very Good+, and more
+- Separate ratings for the vinyl and the sleeve/jacket
+- Conditions displayed prominently on the detail page
+- Track the quality of your entire collection
+
+#### Collection Filtering by Format
+- Filter your library by format type (Vinyl, CD, Cassette, LP, DVD)
+- Quick toggles to focus on specific media types
+- See how your collection breaks down by format
+
+#### Music Recognition (Shazam)
+- Identify songs playing around you with built-in Shazam integration
+- Find the album on Discogs and add it to your collection
+- Listening mode with real-time visual feedback
+
+#### Barcode Scanning for All Formats
+- Scan barcodes on CDs, cassettes, DVDs — not just vinyl
+- Unified search across all physical media types
+
+#### Shuffle Discovery
+- New shuffle button on the Discover page
+- Jump to a random album from your collection
+- Rediscover forgotten gems in your library
+
+#### Lifetime Purchase Option
+- One-time purchase for permanent premium access
+- No more recurring subscriptions if you prefer
+
+#### Native Subscription Management
+- Manage your subscription directly in the app
+- View renewal dates and subscription status
+
+#### Apple Vision Pro Support
+- App now runs on Apple Vision Pro
+- Manage your music collection in spatial computing
+
+#### Rewarded Ads for Free Users
+- Watch short video ads to unlock premium features temporarily
+- Completely optional — premium subscribers see no ads
+
+#### Performance & Architecture
+- Migrated to iOS 17's Observation framework for better performance
+- SwiftData for faster, more reliable local storage
+- Smoother animations and reduced memory usage
+
 # **Version 3.5.3**
 
 #### Bug fixes
