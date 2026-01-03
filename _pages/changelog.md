@@ -9,214 +9,151 @@ include_in_header: true
 ### `Latest`
 # **Version 3.11.0**
 
-#### Multi-Account Support
-- Manage multiple Discogs accounts in a single app
+#### Improvements
+- Multi-Account Support: Manage multiple Discogs accounts in a single app
 - Easily switch between accounts from the navigation bar
 - Each account has its own collection, wantlist, and settings
-
-#### AI-Powered Album Summaries
-- Get AI-generated summaries for Today's Album recommendations (iOS 26+)
+- AI-Powered Album Summaries: Get AI-generated summaries for Today's Album recommendations (iOS 26+)
 - Powered by on-device Apple Intelligence
-
-#### Follow Other Collectors
-- Follow Discogs users to explore their collections
+- Follow Other Collectors: Follow Discogs users to explore their collections
 - Discover records you have in common
 - See which records they have that you want
-
-#### Tab Personalization
-- Reorder and show/hide tabs in the bottom tab bar
-
-#### Push Notifications
-- Receive push notifications for price alerts, new releases, and more
-
-#### Export to Excel & PDF
-- Export your collection to Excel (.xlsx) or PDF formats
+- Tab Personalization: Reorder and show/hide tabs in the bottom tab bar
+- Push Notifications: Receive push notifications for price alerts, new releases, and more
+- Export to Excel & PDF: Export your collection to Excel (.xlsx) or PDF formats
 - Choose fields and filter by folder
-
-#### Track Previews
-- Preview 30-second clips directly from album details
-
-#### Widget Gallery
-- Browse all available widgets with previews in Settings
+- Track Previews: Preview 30-second clips directly from album details
+- Widget Gallery: Browse all available widgets with previews in Settings
 - New "Record of the Day" full-size widget
-
-#### UI & Stability Improvements
 - iOS 26 navigation and scroll improvements
 - Better contrast in album details
+
+#### Bug Fixes
 - Accessibility fixes
 - Faster sync and crash fixes
 
 # **Version 3.10.0**
 
-#### Last.fm Scrobbling
-- Connect your Last.fm account to automatically scrobble your listening sessions
+#### Improvements
+- Last.fm Scrobbling: Connect your Last.fm account to automatically scrobble your listening sessions
 - Real-time "Now Playing" updates while you listen
 - Enable/disable scrobbling and notifications in settings
-
-#### Smart Background Sync
-- Intelligent sync that only downloads changes, not your entire collection
+- Smart Background Sync: Intelligent sync that only downloads changes, not your entire collection
 - Daily automatic background sync keeps your library up to date
 - Progress tracking shows sync status in real-time
-
-#### Bulk Barcode Scanning
-- Scan multiple barcodes continuously without stopping
+- Bulk Barcode Scanning: Scan multiple barcodes continuously without stopping
 - Batch add scanned records to your collection
 - Duplicate detection warns you about records you already own
-
-#### Alphabetic Jump Bar
-- Quick navigation sidebar for large collections
+- Alphabetic Jump Bar: Quick navigation sidebar for large collections
 - Jump instantly to any letter or date section
 - Compact dot mode for extra-large libraries
-
-#### Advanced Search
-- Filter by format, year, genre, and condition
+- Advanced Search: Filter by format, year, genre, and condition
 - Pro subscribers get barcode, label, and catalog number search
 - Search suggestions and recent search history
-
-#### CSV Export
-- Export your collection or wantlist to CSV format
+- CSV Export: Export your collection or wantlist to CSV format
 - Choose which fields to include
 - Share via iOS share sheet
-
-#### Collection Insights & Charts
-- Detailed statistics about your collection
+- Collection Insights & Charts: Detailed statistics about your collection
 - Artist, genre, and decade breakdowns
 - Visual charts showing collection composition
-
-#### Folder Drag & Drop
-- Organize records by dragging them between folders
+- Folder Drag & Drop: Organize records by dragging them between folders
 - Create custom folders for better organization
-
-#### Marketplace Improvements
-- Toggle between different marketplace views
+- Marketplace Improvements: Toggle between different marketplace views
 - See marketplace availability for wantlist items
-
-#### Artist Page Enhancements
-- Artist image galleries with fullscreen viewer
+- Artist Page Enhancements: Artist image galleries with fullscreen viewer
 - Band member information and biographies
 - Gradient backgrounds based on artist colors
-
-#### iOS 26 Visual Updates
-- Liquid Glass effects throughout the app
+- iOS 26 Visual Updates: Liquid Glass effects throughout the app
 - Redesigned login screen
 - Improved contrast and visual hierarchy
-
-#### Notification Settings
-- Control which notifications you receive
+- Notification Settings: Control which notifications you receive
 - Toggle price alerts, daily recommendations, and sync notifications
-
-#### Performance & Stability
 - Faster collection loading
 - Improved rate limit handling
 - Better background task management
+
+#### Bug Fixes
 - Crash fixes for widgets and background operations
 
 # **Version 3.9.0**
 
-#### App Rebrand: Now "My Vinyl+"
-- The app has been renamed from "Vinyly" to "My Vinyl+"
+#### Improvements
+- App Rebrand: The app has been renamed from "Vinyly" to "My Vinyl+"
 - New branding throughout the app and on all platforms
-
-#### Price Suggestions
-- See recommended market prices for your records
+- Price Suggestions: See recommended market prices for your records
 - Prices shown by condition (Mint, Near Mint, Very Good, etc.)
 - Know the fair value when buying or selling
-
-#### Text Size Customization
-- Customize text size independently from system settings
+- Text Size Customization: Customize text size independently from system settings
 - Slider control from XSmall to XXXLarge
 - Live preview as you adjust
 - Found in Settings > Accessibility
-
-#### Folder Rename
-- Rename your collection folders directly in the app
+- Folder Rename: Rename your collection folders directly in the app
 - Better organization for your vinyl collection
-
-#### Delete from Grid View
-- Quick delete via context menu in grid view
+- Delete from Grid View: Quick delete via context menu in grid view
 - No need to open record details to remove items
-
-#### Full Collection Sync (Labs)
-- New Labs section in Settings
+- Full Collection Sync (Labs): New Labs section in Settings
 - Force a complete re-download of your Discogs collection
 - Useful for fixing sync issues or initial setup
-
-#### Spotify Search Improvements
-- Better matching when searching for albums on Spotify
+- Spotify Search Improvements: Better matching when searching for albums on Spotify
 - More accurate results for streaming previews
-
-#### AI Notes Fixes
-- Fixed issues with AI-generated notes for records without master IDs
-- More reliable AI descriptions for your collection
-
-#### tvOS Enhancements
-- Top Shelf content shows your collection on Apple TV home screen
+- tvOS Enhancements: Top Shelf content shows your collection on Apple TV home screen
 - Improved images and visuals for the big screen
-
-#### Smooth Navigation Transitions
-- Matched zoom transitions when opening record details
+- Smooth Navigation Transitions: Matched zoom transitions when opening record details
 - Polished animations throughout the app
-
-#### Bug Fixes & Improvements
-- Fixed folder disappearing issue when adding records
-- Fixed stuttering animations
 - Improved Platinum subscription checks
 - Better iPad navigation
+
+#### Bug Fixes
+- Fixed issues with AI-generated notes for records without master IDs
+- More reliable AI descriptions for your collection
+- Fixed folder disappearing issue when adding records
+- Fixed stuttering animations
 - Various crash fixes and stability improvements
 
 # **Version 3.8.0**
 
-#### Beyond Vinyl: CD & Cassette Support
-- Manage CDs, cassettes, and other formats alongside your vinyl collection
+#### Improvements
+- Beyond Vinyl: Manage CDs, cassettes, and other formats alongside your vinyl collection
 - Beautiful 2D and 3D visualizations for cassette tapes
 - CD detail view with accurate disc representation
 - Search and add any physical media format to your collection
-
-#### Condition Rating System
-- Rate your record's condition: Mint, Near Mint, Very Good+, and more
+- Condition Rating System: Rate your record's condition (Mint, Near Mint, Very Good+, and more)
 - Separate ratings for the vinyl and the sleeve/jacket
 - Conditions displayed prominently on the detail page
 - Track the quality of your entire collection
-
-#### Collection Filtering by Format
-- Filter your library by format type (Vinyl, CD, Cassette, LP, DVD)
+- Collection Filtering by Format: Filter your library by format type (Vinyl, CD, Cassette, LP, DVD)
 - Quick toggles to focus on specific media types
 - See how your collection breaks down by format
-
-#### Music Recognition (Shazam)
-- Identify songs playing around you with built-in Shazam integration
+- Music Recognition (Shazam): Identify songs playing around you with built-in Shazam integration
 - Find the album on Discogs and add it to your collection
 - Listening mode with real-time visual feedback
-
-#### Barcode Scanning for All Formats
-- Scan barcodes on CDs, cassettes, DVDs — not just vinyl
+- Barcode Scanning for All Formats: Scan barcodes on CDs, cassettes, DVDs — not just vinyl
 - Unified search across all physical media types
-
-#### Shuffle Discovery
-- New shuffle button on the Discover page
+- Shuffle Discovery: New shuffle button on the Discover page
 - Jump to a random album from your collection
 - Rediscover forgotten gems in your library
-
-#### Lifetime Purchase Option
-- One-time purchase for permanent premium access
+- Lifetime Purchase Option: One-time purchase for permanent premium access
 - No more recurring subscriptions if you prefer
-
-#### Native Subscription Management
-- Manage your subscription directly in the app
+- Native Subscription Management: Manage your subscription directly in the app
 - View renewal dates and subscription status
-
-#### Apple Vision Pro Support
-- App now runs on Apple Vision Pro
+- Apple Vision Pro Support: App now runs on Apple Vision Pro
 - Manage your music collection in spatial computing
-
-#### Rewarded Ads for Free Users
-- Watch short video ads to unlock premium features temporarily
+- Rewarded Ads for Free Users: Watch short video ads to unlock premium features temporarily
 - Completely optional — premium subscribers see no ads
-
-#### Performance & Architecture
-- Migrated to iOS 17's Observation framework for better performance
+- Performance & Architecture: Migrated to iOS 17's Observation framework for better performance
 - SwiftData for faster, more reliable local storage
 - Smoother animations and reduced memory usage
+
+# **Version 3.7.2**
+
+#### Improvements
+- Shuffle Button: New shuffle button on the Discover page
+- Jump to a random album from your collection instantly
+- Lifetime Purchase Option: One-time purchase now available for permanent premium access
+- Alternative to recurring subscriptions
+- Localization Updates: Updated translations across supported languages
+- Under the Hood: Initial SwiftData integration (preparing for future improvements)
+- Updated dependencies and packages
 
 # **Version 3.5.3**
 
