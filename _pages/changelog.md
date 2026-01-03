@@ -111,6 +111,59 @@ include_in_header: true
 - Better background task management
 - Crash fixes for widgets and background operations
 
+# **Version 3.9.0**
+
+#### App Rebrand: Now "My Vinyl+"
+- The app has been renamed from "Vinyly" to "My Vinyl+"
+- New branding throughout the app and on all platforms
+
+#### Price Suggestions
+- See recommended market prices for your records
+- Prices shown by condition (Mint, Near Mint, Very Good, etc.)
+- Know the fair value when buying or selling
+
+#### Text Size Customization
+- Customize text size independently from system settings
+- Slider control from XSmall to XXXLarge
+- Live preview as you adjust
+- Found in Settings > Accessibility
+
+#### Folder Rename
+- Rename your collection folders directly in the app
+- Better organization for your vinyl collection
+
+#### Delete from Grid View
+- Quick delete via context menu in grid view
+- No need to open record details to remove items
+
+#### Full Collection Sync (Labs)
+- New Labs section in Settings
+- Force a complete re-download of your Discogs collection
+- Useful for fixing sync issues or initial setup
+
+#### Spotify Search Improvements
+- Better matching when searching for albums on Spotify
+- More accurate results for streaming previews
+
+#### AI Notes Fixes
+- Fixed issues with AI-generated notes for records without master IDs
+- More reliable AI descriptions for your collection
+
+#### tvOS Enhancements
+- Top Shelf content shows your collection on Apple TV home screen
+- Improved images and visuals for the big screen
+
+#### Smooth Navigation Transitions
+- Matched zoom transitions when opening record details
+- Polished animations throughout the app
+
+#### Bug Fixes & Improvements
+- Fixed folder disappearing issue when adding records
+- Fixed stuttering animations
+- Improved Platinum subscription checks
+- Better iPad navigation
+- Various crash fixes and stability improvements
+
 # **Version 3.5.3**
 
 #### Bug fixes
