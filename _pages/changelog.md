@@ -155,6 +155,18 @@ include_in_header: true
 - Under the Hood: Initial SwiftData integration (preparing for future improvements)
 - Updated dependencies and packages
 
+# **Version 3.7.1**
+
+#### Improvements
+- Dynamic background color for Today's Album (1001 Records) based on album artwork
+- Better visual harmony with album covers
+- Reworked premium upsell screens
+- Cleaner presentation of subscription options
+
+#### Bug Fixes
+- Updated localization strings
+- Minor stability improvements
+
 # **Version 3.5.3**
 
 #### Bug fixes
