@@ -192,24 +192,82 @@ include_in_header: true
 - Fixed move record functionality
 - Various stability improvements
 
+# **Version 3.6.0**
+
+#### Improvements
+- Today's Record (1001 Albums): Daily album recommendation from "1001 Albums You Must Hear Before You Die"
+- View album details, rarity, and press information
+- Stream directly on Spotify, Apple Music, or Tidal
+- New home screen widget for Today's Album
+- Custom Color Themes: Choose from 13+ preset accent colors or pick any custom color
+- "Follow System" toggle for automatic light/dark mode
+- Live preview of your theme across the app
+- Reset to default option
+- Discover Page Redesign: Browse Hot Releases of the year
+- See Most Wanted and Most Collected records from the community
+- Random album shuffle from your collection
+- Time-aware greetings (Morning, Afternoon, Evening, Night)
+- Tab Bar Customization: Show or hide tabs (Today, Marketplace, Wantlist)
+- Reorder tabs via drag-and-drop
+- Personalize your navigation experience
+- iCloud Sync for Following List: Your followed users sync across devices via iCloud
+- Automatic restore on app reinstall or new device
+- Rarity Indicator: See how many collectors own each record
+- Visual rarity bar on record cards
+- Chinese Language Support: Full Simplified Chinese (zh-Hans) localization
+- 867+ translated strings
+- Subscription Page Redesign: New timeline-based subscription display
+- Clearer feature comparison
+- Context-aware hero section
+- Marquee Scrolling Component: Smooth horizontal scrolling for icon galleries and content
+- API Improvements: Migrated to API v3 with enhanced filtering
+- New custom API gateway (api.myvinyls.app)
+
 # **Version 3.5.3**
 
-#### Bug fixes
-- This version keeps focusing on music Playback! Apple Music reliability has been drastically improved. (Thanks Samuel for the bug report!)
+#### Improvements
+- Better Apple Music search and playback
+- Action buttons always visible on records
+- WhatsNewKit Integration: New "What's New" display system for showing release highlights
+- Deeplink Improvements: Fixed deeplink generator for events and banners
+- Better URL parsing and handling
+- Refactored Now Playing commands
+- Improved async value handling for Apple Music
+- Better MainActor distribution for concurrency
+
+#### Bug Fixes
+- Fixed play button reliability issues
+- Fixed failing tests
+- Removed visual X marks from error states
+- Improved button initialization
 
 # **Version 3.5.2**
 
-#### Bug fixes
-- This version fixes an urgent bugfix for the Platinum users not being able to use Spotify as their music service
+#### Bug Fixes
+- Fixed Spotify authentication error
+- Updated package dependencies
+- Removed analytics from Spotify client for better privacy
 
 # **Version 3.5.1**
 
 #### Improvements
-- Deeplinks are here! You can now tap any of your widgets to open My Vinyls on that exact record or screen. Or looking for something on a hurry? Use spotlight search to find that album or artist, and tap on it to open the app on the record.
-- We are on Threads! The about screen now contains the links to this new social.
+- Widget Deep Links: Tap widgets to open specific records in the app
+- Spotlight search integration with deep links
+- Marketplace deep links now work correctly
+- Artist Page Updates: Improved artist page navigation
+- Better artist details display
+- Request Rating Prompt: New smart prompt asking users to rate the app
+- Non-intrusive timing
+- Threads Social Link: Added Threads as a social connection option in About page
+- Spotify Search Optimization: Faster and more accurate Spotify search results
+- Crowdin Integration: New translation management system
+- Easier localization workflow
 
-#### Bug fixes
-- Fixed a bug that was making reappear releases after deleting them.
+#### Bug Fixes
+- Fixed iPad icons
+- Fixed widget record opening
+- Fixed missing search bar
+- Improved settings with LabeledContent
 
 # **Version 3.5.0**
 
