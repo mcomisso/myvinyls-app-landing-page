@@ -5,7 +5,6 @@ description: "Protect your vinyl collection from warping, mold, and damage. Lear
 date: 2025-12-30 10:00:00 +0000
 category: vinyl-care
 tags: [storage, temperature, humidity, care, preservation]
-image: /assets/blog/images/vinyl-storage-guide.jpg
 author: Matteo Comisso
 reading_time: 6
 ---

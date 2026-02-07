@@ -5,7 +5,6 @@ description: "From Edison's phonograph to today's vinyl revival, trace 140+ year
 date: 2025-12-08 10:00:00 +0000
 category: music-discovery
 tags: [history, vinyl, timeline, invention, evolution]
-image: /assets/blog/images/vinyl-history-timeline.jpg
 author: Matteo Comisso
 reading_time: 9
 ---

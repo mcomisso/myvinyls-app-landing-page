@@ -1,6 +1,7 @@
 ---
 layout: page
 title: What's New
+description: See the latest updates, new features, and improvements in My Vinyls — the vinyl collection manager for iPhone.
 include_in_header: true
 ---
 

@@ -5,7 +5,6 @@ description: "Transform any space into an acoustic haven. Learn speaker placemen
 date: 2025-12-10 10:00:00 +0000
 category: vinyl-collecting
 tags: [listening-room, acoustics, setup, audiophile, speakers]
-image: /assets/blog/images/listening-room-guide.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

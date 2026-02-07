@@ -3,8 +3,11 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>{{ site.page_title }} - {{ site.app_description }}</title>
-	<meta name="description" content="{{ site.app_description }}">
+	<title>{{ page.title | default: site.page_title }} — {{ page.description | default: site.app_description | truncate: 60, "" }}</title>
+	<meta name="description" content="{{ page.description | default: site.app_description }}">
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="{{ page.url | absolute_url }}">
 
 	<link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
 	<link rel="apple-touch-icon" href="{{ site.app_icon | relative_url }}">
@@ -16,10 +19,13 @@
 
 	<!-- Open Graph / Social -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="{{ site.page_title }}">
-	<meta property="og:description" content="{{ site.app_description }}">
-	<meta property="og:image" content="{{ site.app_icon | absolute_url }}">
+	<meta property="og:title" content="{{ page.title | default: site.page_title }}">
+	<meta property="og:description" content="{{ page.description | default: site.app_description }}">
+	<meta property="og:image" content="{{ page.image | default: site.app_icon | absolute_url }}">
+	<meta property="og:url" content="{{ page.url | absolute_url }}">
 	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ page.title | default: site.page_title }}">
+	<meta name="twitter:description" content="{{ page.description | default: site.app_description }}">
 
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">

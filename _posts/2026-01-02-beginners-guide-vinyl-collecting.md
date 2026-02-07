@@ -5,7 +5,6 @@ description: "Everything you need to know to start your vinyl record collection.
 date: 2026-01-02 10:00:00 +0000
 category: vinyl-collecting
 tags: [vinyl, collecting, beginner, turntable, records]
-image: /assets/blog/images/vinyl-collection-guide.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

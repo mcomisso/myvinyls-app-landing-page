@@ -5,7 +5,6 @@ description: "From Vinyl Me, Please to niche genre clubs, discover the best viny
 date: 2025-11-08 10:00:00 +0000
 category: music-discovery
 tags: [subscription, record-club, vinyl-me-please, discovery, collecting]
-image: /assets/blog/images/vinyl-subscription-services-2025.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

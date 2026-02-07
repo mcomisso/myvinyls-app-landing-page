@@ -5,7 +5,6 @@ description: "Does vinyl really sound better than digital? We examine the scienc
 date: 2025-12-16 10:00:00 +0000
 category: music-discovery
 tags: [vinyl, digital, sound-quality, audiophile, streaming]
-image: /assets/blog/images/vinyl-vs-digital.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

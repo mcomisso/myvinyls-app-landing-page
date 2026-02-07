@@ -18,6 +18,7 @@
 
         <div class="content-container">
             {% include header.html %}
+            {% include breadcrumbs.html %}
 
             <!-- FAQ Hero -->
             <section class="faq-hero">
@@ -65,6 +66,96 @@
             {% include footer.html %}
         </div>
     </div>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is My Vinyl+?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "My Vinyl+ is the best way to manage your record collection on iPhone and iPad. It connects to Discogs (the world's largest music database) so you can browse your vinyl, add new records, track what you want to buy, and discover new music."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I connect my Discogs account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "When you open the app for the first time, tap 'Log In with Discogs'. You'll be taken to the Discogs website to sign in. Once you approve the connection, you'll be brought back to the app with your collection ready to browse."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my Discogs data safe?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! We never see or store your Discogs password. The app connects securely through Discogs' official login system. Any changes you make in the app are saved directly to your Discogs account."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I add a record to my collection?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Search for the record and tap 'Add to Collection', or scan the barcode on your record using the camera icon in Search."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it sync with Discogs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. My Vinyl+ stays connected to your Discogs account. When you add or remove records in the app, those changes are saved to Discogs right away. The app also checks for any changes you made on the Discogs website."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your entire collection is stored locally with smart caching. Browse and search your records anywhere, even without internet."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use Shazam to find records?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Tap the Shazam icon in Search, play the song you want to identify, and the app will recognize it. You can then search for vinyl versions of that song."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Platinum?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Platinum is the premium version of My Vinyl+ with extra features including advanced search filters, custom theme colors, tab customization, and collection export. It also helps support the continued development of the app."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I cancel my subscription?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Subscriptions are managed through Apple. Go to your iPhone's Settings > [Your Name] > Subscriptions > My Vinyl+ and tap Cancel. You'll keep Platinum until the end of your current billing period."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is my collection value calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The value is based on what records actually sell for on Discogs. The app uses the middle price from recent sales to estimate what your collection is worth."
+                }
+            }
+        ]
+    }
+    </script>
 
     <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/faq.js' | relative_url }}"></script>

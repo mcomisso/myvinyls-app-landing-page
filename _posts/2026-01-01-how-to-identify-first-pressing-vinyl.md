@@ -5,7 +5,6 @@ description: "Learn how to spot valuable first pressings by examining matrix num
 date: 2026-01-01 14:00:00 +0000
 category: vinyl-collecting
 tags: [first-pressing, collecting, value, identification, rare]
-image: /assets/blog/images/first-pressing-guide.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

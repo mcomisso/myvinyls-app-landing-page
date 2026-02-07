@@ -14,7 +14,7 @@
                         <i class="fab fa-apple"></i>
                         <span>Built for iOS</span>
                     </div>
-                    <h1 class="hero-title">The fastest way to manage your vinyl.</h1>
+                    <h1 class="hero-title">The fastest way to manage your vinyl collection.</h1>
                     <p class="hero-subtitle">A beautifully crafted iOS app for vinyl collectors. Instant search, offline access, Shazam integration — all synced with Discogs.</p>
 
                     <div class="hero-stats">
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <video autoplay muted loop playsinline>
+                    <video autoplay muted loop playsinline poster="{{ 'assets/media/hero-poster.webp' | relative_url }}">
                         <source src="{{ 'assets/media/hero-swift.mp4' | relative_url }}" type="video/mp4">
                     </video>
                 </div>
@@ -61,31 +61,31 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image 6720.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image 56C2.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-detail-vinyl-disc.webp' | relative_url }}" alt="My Vinyls app album detail page with spinning vinyl disc animation" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image 182B.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-detail-genres.webp' | relative_url }}" alt="My Vinyls app showing album details with genre tags" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image 2E9B.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-artist-profile.webp' | relative_url }}" alt="My Vinyls app artist profile page with biography" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image C1E2.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-release-detail-artwork.webp' | relative_url }}" alt="My Vinyls app release detail with album artwork and vinyl record" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image CB58.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-wantlist-album-view.webp' | relative_url }}" alt="My Vinyls app album view with wantlist and collection options" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image D132.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-release-info.webp' | relative_url }}" alt="My Vinyls app album page showing genre tags and release info" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image EEA3.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-artwork-display.webp' | relative_url }}" alt="My Vinyls app showcasing album artwork with vinyl record detail" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/Rotato Image F2AD.png' | relative_url }}" alt="My Vinyls App Screenshot" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-images-gallery.webp' | relative_url }}" alt="My Vinyls app album page with image gallery and release details" loading="lazy">
                 </div>
             </div>
         </section>
@@ -218,6 +218,113 @@
         </section>
 
         {% include footer.html %}
+
+        <!-- Structured Data: SoftwareApplication -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "My Vinyls",
+            "operatingSystem": "iOS",
+            "applicationCategory": "MusicApplication",
+            "description": "The fastest way to manage your vinyl collection. Instant search, offline access, Shazam integration — all synced with Discogs.",
+            "url": "https://myvinyls.app",
+            "downloadUrl": "{{ site.appstore_link }}",
+            "screenshot": [
+                "{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | absolute_url }}",
+                "{{ 'assets/screens/my-vinyls-album-detail-vinyl-disc.webp' | absolute_url }}",
+                "{{ 'assets/screens/my-vinyls-album-detail-genres.webp' | absolute_url }}"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": "Matteo Comisso",
+                "url": "https://mcomisso.me"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "20000"
+            }
+        }
+        </script>
+
+        <!-- Structured Data: FAQPage (homepage FAQ) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does pricing work?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Free to download with core features included. Unlock everything with a one-time purchase or optional subscription — no hidden fees."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it sync with Discogs?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Connect your account and sync your entire collection in minutes. Changes sync both ways automatically."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it work offline?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Your entire collection is stored locally. Browse and search your records anywhere, even without internet."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What formats are supported?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Everything in the Discogs database — vinyl, CD, cassette, 8-track, and more."
+                    }
+                }
+            ]
+        }
+        </script>
+
+        <!-- Structured Data: Organization -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "My Vinyls",
+            "url": "https://myvinyls.app",
+            "logo": "{{ site.app_icon | absolute_url }}",
+            "sameAs": [
+                "https://instagram.com/myvinylsapp",
+                "https://github.com/mcomisso",
+                "https://mastodon.social/@myvinyl"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "website@myvinyls.app",
+                "contactType": "customer support"
+            }
+        }
+        </script>
+
+        <!-- Structured Data: WebSite -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "My Vinyls",
+            "url": "https://myvinyls.app"
+        }
+        </script>
 
         <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
     </body>

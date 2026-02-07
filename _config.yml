@@ -1,3 +1,6 @@
+# Site URL (required for sitemap, canonical tags, and OG meta)
+url                                       : "https://myvinyls.app"
+
 #page title
 page_title                                : My Vinyls                                          # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
 
@@ -13,7 +16,7 @@ presskit_download_link                    : assets/PressKit.zip                 
 app_icon                                  : assets/appicon.png                       # App icon for header and favicon
 app_name                                  : My Vinyls                                 # App name for header and branding
 app_price                                 :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : A beautiful way to manage your collection of Vinyls.
+app_description                           : Vinyl Collection Manager for iPhone — Discogs Sync & Barcode Scanner
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -146,6 +149,14 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - public
+
+# Sitemap defaults — exclude duplicate public/ paths
+defaults:
+  - scope:
+      path: "public"
+    values:
+      sitemap: false
 
 collections:
   pages:

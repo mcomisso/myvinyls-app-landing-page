@@ -5,7 +5,6 @@ description: "Discover the labels that audiophiles trust for the best-sounding v
 date: 2025-11-05 10:00:00 +0000
 category: vinyl-collecting
 tags: [audiophile, mofi, analog-productions, mastering, sound-quality]
-image: /assets/blog/images/audiophile-vinyl-pressings.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

@@ -5,7 +5,6 @@ description: "From Bronx block parties to London clubs, the Technics 1200 shaped
 date: 2025-11-22 10:00:00 +0000
 category: music-discovery
 tags: [technics, dj, turntablism, hip-hop, history]
-image: /assets/blog/images/technics-1200-dj-culture.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

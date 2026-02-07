@@ -5,7 +5,6 @@ description: "Learn how to quickly check vinyl record prices, track your collect
 date: 2026-01-01 10:00:00 +0000
 category: app-tips
 tags: [pricing, discogs, collection, app, value]
-image: /assets/blog/images/vinyl-pricing-guide.jpg
 author: Matteo Comisso
 reading_time: 6
 ---

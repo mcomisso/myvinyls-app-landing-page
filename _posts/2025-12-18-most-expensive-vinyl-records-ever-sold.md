@@ -5,7 +5,6 @@ description: "From a $2 million Wu-Tang album to Beatles rarities, discover the 
 date: 2025-12-18 10:00:00 +0000
 category: vinyl-collecting
 tags: [rare, valuable, auction, collecting, beatles]
-image: /assets/blog/images/expensive-vinyl-records.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

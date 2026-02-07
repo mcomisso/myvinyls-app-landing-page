@@ -5,7 +5,6 @@ description: "Discover why Japanese vinyl pressings command premium prices. From
 date: 2025-12-02 10:00:00 +0000
 category: vinyl-collecting
 tags: [japanese-pressing, audiophile, obi, import, collecting]
-image: /assets/blog/images/japanese-vinyl-pressings.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

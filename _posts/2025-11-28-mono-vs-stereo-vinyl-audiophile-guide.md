@@ -5,7 +5,6 @@ description: "The great vinyl debate explained. Discover why audiophiles argue a
 date: 2025-11-28 10:00:00 +0000
 category: vinyl-collecting
 tags: [mono, stereo, audiophile, sound-quality, collecting]
-image: /assets/blog/images/mono-vs-stereo-vinyl.jpg
 author: Matteo Comisso
 reading_time: 7
 ---
