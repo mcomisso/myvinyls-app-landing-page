@@ -5,7 +5,6 @@ description: "Master the hunt for rare vinyl at thrift stores, flea markets, and
 date: 2025-12-12 10:00:00 +0000
 category: vinyl-collecting
 tags: [crate-digging, thrift, rare, hunting, collecting]
-image: /assets/blog/images/crate-digging-guide.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

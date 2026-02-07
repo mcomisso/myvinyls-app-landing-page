@@ -5,7 +5,6 @@ description: "The vinyl revival continues with impressive growth. Explore the la
 date: 2026-01-02 14:00:00 +0000
 category: music-discovery
 tags: [vinyl, statistics, market, trends, sales]
-image: /assets/blog/images/vinyl-market-stats.jpg
 author: Matteo Comisso
 reading_time: 5
 ---

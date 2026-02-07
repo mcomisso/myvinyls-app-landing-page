@@ -5,7 +5,6 @@ description: "From Alex Steinweiss to Hipgnosis, explore how album artwork becam
 date: 2025-12-05 10:00:00 +0000
 category: music-discovery
 tags: [album-art, design, artwork, history, covers]
-image: /assets/blog/images/album-cover-art-history.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

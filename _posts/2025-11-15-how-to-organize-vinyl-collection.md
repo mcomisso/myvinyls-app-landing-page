@@ -5,7 +5,6 @@ description: "From alphabetical to autobiographical, discover the best ways to o
 date: 2025-11-15 10:00:00 +0000
 category: vinyl-collecting
 tags: [organization, storage, collecting, tips, catalog]
-image: /assets/blog/images/organize-vinyl-collection.jpg
 author: Matteo Comisso
 reading_time: 6
 ---

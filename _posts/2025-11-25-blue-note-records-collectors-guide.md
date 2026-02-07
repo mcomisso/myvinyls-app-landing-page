@@ -5,7 +5,6 @@ description: "From identifying original pressings to understanding what makes Bl
 date: 2025-11-25 10:00:00 +0000
 category: music-discovery
 tags: [blue-note, jazz, collecting, first-pressing, audiophile]
-image: /assets/blog/images/blue-note-records-guide.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

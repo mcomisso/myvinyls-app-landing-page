@@ -5,7 +5,6 @@ description: "Go behind the scenes at a pressing plant. Discover the fascinating
 date: 2025-12-14 10:00:00 +0000
 category: music-discovery
 tags: [manufacturing, pressing, vinyl, behind-the-scenes, process]
-image: /assets/blog/images/how-vinyl-made.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

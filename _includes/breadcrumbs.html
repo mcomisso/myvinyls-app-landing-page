@@ -1,0 +1,54 @@
+{% unless page.url == "/" %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        {% if page.layout == "post" %}
+        <li class="breadcrumb-item"><a href="/blog/">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title | truncate: 50 }}</li>
+        {% elsif page.url contains "/blog/" %}
+        <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        {% else %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        {% endif %}
+    </ol>
+</nav>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ '/' | absolute_url }}"
+        }{% if page.layout == "post" %},
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "{{ '/blog/' | absolute_url }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ page.title | escape }}",
+            "item": "{{ page.url | absolute_url }}"
+        }{% elsif page.url contains "/blog/" %},
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "{{ page.url | absolute_url }}"
+        }{% else %},
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title | escape }}",
+            "item": "{{ page.url | absolute_url }}"
+        }{% endif %}
+    ]
+}
+</script>
+{% endunless %}

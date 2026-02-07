@@ -5,7 +5,6 @@ description: "From dusty crates to digital digging, explore how vinyl sampling s
 date: 2025-11-18 10:00:00 +0000
 category: music-discovery
 tags: [hip-hop, sampling, production, crate-digging, history]
-image: /assets/blog/images/hip-hop-sampling-vinyl.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

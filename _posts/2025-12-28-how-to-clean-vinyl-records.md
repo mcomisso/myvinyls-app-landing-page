@@ -5,7 +5,6 @@ description: "Keep your records sounding their best with this comprehensive clea
 date: 2025-12-28 10:00:00 +0000
 category: vinyl-care
 tags: [cleaning, maintenance, care, records, tips]
-image: /assets/blog/images/vinyl-cleaning-guide.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

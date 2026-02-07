@@ -5,7 +5,6 @@ description: "From budget-friendly to audiophile-grade, learn how to build the p
 date: 2025-12-27 10:00:00 +0000
 category: vinyl-collecting
 tags: [turntable, setup, beginner, audiophile, equipment]
-image: /assets/blog/images/turntable-setup-guide.jpg
 author: Matteo Comisso
 reading_time: 8
 ---

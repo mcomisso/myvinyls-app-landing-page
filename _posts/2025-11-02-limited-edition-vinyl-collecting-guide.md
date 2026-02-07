@@ -5,7 +5,6 @@ description: "From colored vinyl to picture discs, understand the world of limit
 date: 2025-11-02 10:00:00 +0000
 category: vinyl-collecting
 tags: [limited-edition, colored-vinyl, variants, collecting, exclusive]
-image: /assets/blog/images/limited-edition-vinyl-guide.jpg
 author: Matteo Comisso
 reading_time: 7
 ---

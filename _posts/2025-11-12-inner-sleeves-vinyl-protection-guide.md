@@ -5,7 +5,6 @@ description: "Paper sleeves are damaging your records. Learn why polyethylene in
 date: 2025-11-12 10:00:00 +0000
 category: vinyl-care
 tags: [inner-sleeves, protection, storage, maintenance, care]
-image: /assets/blog/images/inner-sleeves-vinyl-protection.jpg
 author: Matteo Comisso
 reading_time: 5
 ---

@@ -5,7 +5,6 @@ description: "The truth about colored vinyl and picture disc sound quality. We s
 date: 2025-12-20 10:00:00 +0000
 category: vinyl-collecting
 tags: [colored-vinyl, picture-disc, sound-quality, collecting, variants]
-image: /assets/blog/images/colored-vinyl-guide.jpg
 author: Matteo Comisso
 reading_time: 6
 ---

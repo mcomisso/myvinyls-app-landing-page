@@ -5,7 +5,6 @@ description: "From Taylor Swift to Gorillaz, RSD 2025 delivered over 370 exclusi
 date: 2025-12-25 10:00:00 +0000
 category: music-discovery
 tags: [record-store-day, rsd, exclusive, vinyl, releases]
-image: /assets/blog/images/rsd-2025-highlights.jpg
 author: Matteo Comisso
 reading_time: 6
 ---

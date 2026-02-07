@@ -2305,3 +2305,47 @@ img {
 .blob {
   display: none;
 }
+
+// Breadcrumbs
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg) 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "/";
+    margin-left: var(--space-xs);
+    color: var(--gray-300);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &.active {
+    color: var(--text);
+  }
+
+  a {
+    color: var(--text-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

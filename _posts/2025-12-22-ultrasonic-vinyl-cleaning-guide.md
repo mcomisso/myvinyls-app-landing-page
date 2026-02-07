@@ -5,7 +5,6 @@ description: "Discover how ultrasonic cleaning removes dirt from the deepest gro
 date: 2025-12-22 10:00:00 +0000
 category: vinyl-care
 tags: [cleaning, ultrasonic, maintenance, deep-clean, care]
-image: /assets/blog/images/ultrasonic-cleaning-guide.jpg
 author: Matteo Comisso
 reading_time: 7
 ---
