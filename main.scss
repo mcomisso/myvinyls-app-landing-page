@@ -67,6 +67,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// Accessible touch targets
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
   font-size: 16px;
@@ -190,7 +195,7 @@ img {
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
   i {
     font-size: 0.75rem;
@@ -578,7 +583,7 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   position: relative;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 
   &:hover {
     border-color: var(--primary);
@@ -748,7 +753,7 @@ img {
   color: var(--text);
   font-weight: 600;
   font-size: 0.9375rem;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
     background: var(--gray-100);
@@ -797,7 +802,7 @@ img {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 180px;
 
   &:hover {
@@ -1364,9 +1369,10 @@ img {
       color: var(--text-muted);
     }
 
-    &:focus {
+    &:focus-visible {
       outline: none;
       border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(212, 131, 107, 0.12);
     }
   }
 
@@ -1409,7 +1415,7 @@ img {
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--text);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 
   i {
     color: var(--primary);
@@ -1507,7 +1513,7 @@ img {
   padding: 0 var(--space-lg);
   opacity: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
 
   p, ul, ol {
     font-size: 0.875rem;
@@ -1573,7 +1579,7 @@ img {
   color: var(--white);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background: var(--primary-dark);
@@ -1646,9 +1652,9 @@ img {
     font-size: 0.9375rem;
     font-family: inherit;
     background: var(--white);
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-    &:focus {
+    &:focus-visible {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(212, 131, 107, 0.12);
@@ -1699,7 +1705,7 @@ img {
   font-family: inherit;
   color: var(--text);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
     border-color: var(--primary);
@@ -1741,7 +1747,7 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
@@ -1878,7 +1884,7 @@ img {
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 
   i {
     font-size: 0.75rem;
@@ -1954,7 +1960,7 @@ img {
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 
   &:hover {
     background: var(--gray-800);
@@ -2187,7 +2193,7 @@ img {
   color: var(--text-muted);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
     background: var(--primary);
@@ -2347,5 +2353,28 @@ img {
     &:hover {
       color: var(--primary);
     }
+  }
+}
+
+// ============================================
+// REDUCED MOTION
+// ============================================
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gallery-item:hover,
+  .bento-card:hover,
+  .blog-card:hover,
+  .step-card:hover,
+  .nav-download-btn:hover,
+  .appstore-badge:hover,
+  .blog-cta-button:hover {
+    transform: none;
   }
 }

@@ -14,11 +14,11 @@ Usage: {% include blog-card.html post=post %}
     <a href="{{ include.post.url | relative_url }}" class="blog-card-link">
         {% if include.post.image %}
         <div class="blog-card-image">
-            <img src="{{ include.post.image | relative_url }}" alt="{{ include.post.title }}" loading="lazy">
+            <img src="{{ include.post.image | relative_url }}" alt="{{ include.post.title }}" width="640" height="400" loading="lazy">
         </div>
         {% else %}
         <div class="blog-card-image blog-card-image-placeholder">
-            <i class="fas fa-record-vinyl"></i>
+            <i class="fas fa-record-vinyl" aria-hidden="true"></i>
         </div>
         {% endif %}
 
@@ -28,11 +28,11 @@ Usage: {% include blog-card.html post=post %}
             <p class="blog-card-excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
             <div class="blog-card-meta">
                 <span class="blog-card-date">
-                    <i class="far fa-calendar"></i>
+                    <i class="far fa-calendar" aria-hidden="true"></i>
                     {{ include.post.date | date: "%b %d, %Y" }}
                 </span>
                 <span class="blog-card-read-time">
-                    <i class="far fa-clock"></i>
+                    <i class="far fa-clock" aria-hidden="true"></i>
                     {{ include.post.reading_time | default: 5 }} min
                 </span>
             </div>

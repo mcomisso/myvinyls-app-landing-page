@@ -104,7 +104,7 @@
             <header class="article-header">
                 <div class="container">
                     <a href="/blog/" class="article-back-link">
-                        <i class="fas fa-arrow-left"></i>
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
                         Back to Blog
                     </a>
 
@@ -120,15 +120,15 @@
 
                     <div class="article-meta">
                         <span class="article-date">
-                            <i class="far fa-calendar"></i>
+                            <i class="far fa-calendar" aria-hidden="true"></i>
                             {{ page.date | date: "%B %d, %Y" }}
                         </span>
                         <span class="article-reading-time">
-                            <i class="far fa-clock"></i>
+                            <i class="far fa-clock" aria-hidden="true"></i>
                             <span class="reading-time">5 min read</span>
                         </span>
                         <span class="article-author">
-                            <i class="far fa-user"></i>
+                            <i class="far fa-user" aria-hidden="true"></i>
                             {{ page.author | default: site.your_name }}
                         </span>
                     </div>
@@ -138,7 +138,7 @@
             <!-- Featured Image -->
             {% if page.image %}
             <div class="article-featured-image">
-                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" width="900" height="506">
             </div>
             {% endif %}
 
@@ -165,18 +165,18 @@
                     <div class="share-buttons">
                         <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on Twitter">
-                            <i class="fab fa-x-twitter"></i>
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
                         <button class="share-button copy-link" data-url="{{ page.url | absolute_url }}" aria-label="Copy link">
-                            <i class="fas fa-link"></i>
+                            <i class="fas fa-link" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                             <h4 class="author-name">{{ page.author | default: site.your_name }}</h4>
                             <p class="author-bio">Creator of My Vinyls, vinyl enthusiast, and music lover based in {{ site.your_city }}.</p>
                             <a href="{{ site.your_link }}" class="author-link" target="_blank" rel="noopener">
-                                <i class="fas fa-globe"></i>
+                                <i class="fas fa-globe" aria-hidden="true"></i>
                                 Website
                             </a>
                         </div>
@@ -221,12 +221,12 @@
                 <div class="container">
                     <div class="blog-cta-card">
                         <div class="blog-cta-icon">
-                            <i class="fas fa-record-vinyl"></i>
+                            <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                         </div>
                         <h3>Ready to organize your collection?</h3>
                         <p>Download My Vinyls and start cataloging your records today.</p>
                         <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
-                            <i class="fab fa-apple"></i>
+                            <i class="fab fa-apple" aria-hidden="true"></i>
                             Download on App Store
                         </a>
                     </div>

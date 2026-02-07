@@ -1,7 +1,7 @@
 <header class="site-header">
     <nav class="main-nav">
         <a href="/" class="logo">
-            <img src="{{ site.app_icon | relative_url }}" alt="{{ site.app_name }} Icon">
+            <img src="{{ site.app_icon | relative_url }}" alt="{{ site.app_name }} Icon" width="40" height="40">
             <span class="logo-text">{{ site.app_name }}</span>
         </a>
 
@@ -16,12 +16,12 @@
             <li><a href="https://feedback.myvinyls.app" target="_blank" rel="noopener">Feedback</a></li>
             <li>
                 <button class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </li>
             <li>
                 <a href="{{ site.appstore_link }}" class="nav-download-btn" target="_blank" rel="noopener">
-                    <i class="fas fa-download"></i>
+                    <i class="fas fa-download" aria-hidden="true"></i>
                     Download
                 </a>
             </li>

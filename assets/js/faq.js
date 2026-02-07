@@ -27,8 +27,10 @@ function initFAQAccordion() {
             // Toggle current item
             if (isActive) {
                 item.classList.remove('active');
+                this.setAttribute('aria-expanded', 'false');
             } else {
                 item.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
             }
         });
     });
@@ -92,6 +94,8 @@ function filterFAQ(query) {
             items.forEach(item => {
                 item.classList.remove('hidden');
                 item.classList.remove('active');
+                const btn = item.querySelector('.faq-accordion-header');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
                 removeHighlights(item);
             });
         });
@@ -115,6 +119,8 @@ function filterFAQ(query) {
             if (headerText.includes(query) || contentText.includes(query)) {
                 item.classList.remove('hidden');
                 item.classList.add('active'); // Expand matching items
+                const btn = item.querySelector('.faq-accordion-header');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
                 categoryMatches++;
                 totalMatches++;
 
@@ -124,6 +130,8 @@ function filterFAQ(query) {
             } else {
                 item.classList.add('hidden');
                 item.classList.remove('active');
+                const btn = item.querySelector('.faq-accordion-header');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
                 removeHighlights(item);
             }
         });
