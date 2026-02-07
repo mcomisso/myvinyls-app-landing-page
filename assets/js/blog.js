@@ -200,6 +200,9 @@ function initScrollReveal() {
 
     if (cards.length === 0) return;
 
+    // Respect prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Check if IntersectionObserver is available
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {

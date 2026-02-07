@@ -2,7 +2,7 @@
     <div class="footer-content">
         {% if site.your_name %}
         <p class="copyright">
-            Made with <i class="fas fa-heart" style="color: var(--primary);"></i> by
+            Made with <i class="fas fa-heart" aria-hidden="true" style="color: var(--primary);"></i> by
             {% if site.your_link %}<a href="{{ site.your_link }}" target="_blank" rel="noopener">{% endif %}
             {{ site.your_name }}
             {% if site.your_link %}</a>{% endif %}
@@ -13,22 +13,22 @@
         <div class="social-links">
             {% if site.instagram_username %}
             <a href="https://instagram.com/{{ site.instagram_username }}" aria-label="Instagram" target="_blank" rel="noopener">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
             {% endif %}
             {% if site.twitter_username %}
             <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter" target="_blank" rel="noopener">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
             {% endif %}
             {% if site.github_username %}
             <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
             </a>
             {% endif %}
             {% if site.email_address %}
             <a href="mailto:{{ site.email_address }}" aria-label="Email">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
             </a>
             {% endif %}
         </div>

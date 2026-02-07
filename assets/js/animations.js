@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Elements to reveal on scroll
     const revealSelectors = [
         '.step-card',
@@ -43,14 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         '.comparison-card'
     ];
 
-    revealSelectors.forEach(selector => {
-        document.querySelectorAll(selector).forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
-            revealObserver.observe(el);
+    if (!prefersReducedMotion) {
+        revealSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
+                revealObserver.observe(el);
+            });
         });
-    });
+    }
 
     // ============================================
     // SMOOTH SCROLL FOR ANCHORS

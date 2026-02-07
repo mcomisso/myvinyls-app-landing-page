@@ -30,10 +30,10 @@
                     </div>
 
                     <div class="blog-search-container">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off">
-                        <button id="blog-search-clear" class="blog-search-clear" style="display: none;">
-                            <i class="fas fa-times"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="text" id="blog-search" placeholder="Search articles…" autocomplete="off" aria-label="Search articles">
+                        <button id="blog-search-clear" class="blog-search-clear" style="display: none;" aria-label="Clear search">
+                            <i class="fas fa-times" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
 
                     <!-- No Results Message -->
                     <div class="blog-no-results" style="display: none;">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                         <h3>No articles found</h3>
                         <p>Try different keywords or browse all categories.</p>
                     </div>
@@ -78,11 +78,11 @@
                     <nav class="blog-pagination" aria-label="Blog navigation">
                         {% if paginator.previous_page %}
                         <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">
-                            <i class="fas fa-chevron-left"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            <i class="fas fa-chevron-left"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
                         </span>
                         {% endif %}
 
@@ -92,11 +92,11 @@
 
                         {% if paginator.next_page %}
                         <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">
-                            Next <i class="fas fa-chevron-right"></i>
+                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            Next <i class="fas fa-chevron-right"></i>
+                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </span>
                         {% endif %}
                     </nav>
@@ -109,12 +109,12 @@
                 <div class="container">
                     <div class="blog-cta-card">
                         <div class="blog-cta-icon">
-                            <i class="fas fa-record-vinyl"></i>
+                            <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                         </div>
                         <h3>Ready to organize your collection?</h3>
                         <p>Download My Vinyls and start cataloging your records today.</p>
                         <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
-                            <i class="fab fa-apple"></i>
+                            <i class="fab fa-apple" aria-hidden="true"></i>
                             Download on App Store
                         </a>
                     </div>
