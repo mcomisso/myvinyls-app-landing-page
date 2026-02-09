@@ -79,11 +79,11 @@
                     <nav class="blog-pagination" aria-label="Blog navigation">
                         {% if paginator.previous_page %}
                         <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">
-                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous posts
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous posts
                         </span>
                         {% endif %}
 
@@ -93,11 +93,11 @@
 
                         {% if paginator.next_page %}
                         <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">
-                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            Next posts <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            Next posts <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </span>
                         {% endif %}
                     </nav>
