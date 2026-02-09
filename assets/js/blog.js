@@ -1,8 +1,3 @@
-/**
- * Blog Interactivity
- * Handles search filtering, category selection, reading time, and copy link
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     initBlogSearch();
     initCategoryFilter();
@@ -11,10 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
 });
 
-/**
- * Initialize Blog Search
- * Client-side search filtering for blog posts
- */
 function initBlogSearch() {
     const searchInput = document.getElementById('blog-search');
     const clearButton = document.getElementById('blog-search-clear');
@@ -28,7 +19,6 @@ function initBlogSearch() {
         clearTimeout(debounceTimer);
         const query = this.value.trim();
 
-        // Show/hide clear button
         if (clearButton) {
             clearButton.style.display = query ? 'block' : 'none';
         }
@@ -38,7 +28,6 @@ function initBlogSearch() {
         }, 200);
     });
 
-    // Clear button functionality
     if (clearButton) {
         clearButton.addEventListener('click', function() {
             searchInput.value = '';
@@ -49,9 +38,6 @@ function initBlogSearch() {
     }
 }
 
-/**
- * Filter posts by search query
- */
 function filterPosts(query, cards) {
     let visibleCount = 0;
     const activeCategory = document.querySelector('.blog-category-pill.active')?.dataset.category || 'all';
@@ -81,9 +67,6 @@ function filterPosts(query, cards) {
     toggleNoResults(visibleCount === 0);
 }
 
-/**
- * Initialize Category Filter
- */
 function initCategoryFilter() {
     const categoryPills = document.querySelectorAll('.blog-category-pill');
     const blogCards = document.querySelectorAll('.blog-card');
@@ -95,20 +78,17 @@ function initCategoryFilter() {
         pill.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Update active state
             categoryPills.forEach(p => p.classList.remove('active'));
             this.classList.add('active');
 
             const category = this.dataset.category;
             const searchQuery = searchInput?.value.toLowerCase().trim() || '';
 
-            // Filter cards
             let visibleCount = 0;
 
             blogCards.forEach(card => {
                 const matchesCategory = category === 'all' || card.dataset.category === category;
 
-                // Also check search query if present
                 let matchesSearch = true;
                 if (searchQuery) {
                     const title = card.querySelector('.blog-card-title')?.textContent.toLowerCase() || '';
@@ -129,9 +109,6 @@ function initCategoryFilter() {
     });
 }
 
-/**
- * Toggle no results message
- */
 function toggleNoResults(show) {
     const noResults = document.querySelector('.blog-no-results');
 
@@ -140,9 +117,6 @@ function toggleNoResults(show) {
     }
 }
 
-/**
- * Calculate and display reading time
- */
 function initReadingTime() {
     const articleContent = document.querySelector('.article-content');
     const readingTimeEl = document.querySelector('.reading-time');
@@ -156,9 +130,6 @@ function initReadingTime() {
     }
 }
 
-/**
- * Copy link to clipboard functionality
- */
 function initCopyLink() {
     const copyButtons = document.querySelectorAll('.copy-link');
 
@@ -169,7 +140,6 @@ function initCopyLink() {
             try {
                 await navigator.clipboard.writeText(url);
 
-                // Show feedback
                 const icon = this.querySelector('i');
                 const originalClass = icon.className;
                 icon.className = 'fas fa-check';
@@ -178,7 +148,7 @@ function initCopyLink() {
                     icon.className = originalClass;
                 }, 2000);
             } catch (err) {
-                // Fallback for older browsers
+
                 const textArea = document.createElement('textarea');
                 textArea.value = url;
                 textArea.style.position = 'fixed';
@@ -192,23 +162,18 @@ function initCopyLink() {
     });
 }
 
-/**
- * Initialize scroll reveal for blog cards
- */
 function initScrollReveal() {
     const cards = document.querySelectorAll('.blog-card');
 
     if (cards.length === 0) return;
 
-    // Respect prefers-reduced-motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Check if IntersectionObserver is available
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    // Add staggered delay
+
                     entry.target.style.transitionDelay = `${index * 0.05}s`;
                     entry.target.classList.add('revealed');
                     observer.unobserve(entry.target);
@@ -225,7 +190,6 @@ function initScrollReveal() {
             observer.observe(card);
         });
 
-        // Add revealed state styles
         const style = document.createElement('style');
         style.textContent = `
             .blog-card.revealed {
