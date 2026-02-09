@@ -63,7 +63,7 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="eager" fetchpriority="high">
                 </div>
                 <div class="gallery-item">
                     <img src="{{ 'assets/screens/my-vinyls-album-detail-vinyl-disc.webp' | relative_url }}" alt="My Vinyls app album detail page with spinning vinyl disc animation" width="390" height="844" loading="lazy">
@@ -342,7 +342,7 @@
         }
         </script>
 
-        <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
     </body>
 
 </html>
