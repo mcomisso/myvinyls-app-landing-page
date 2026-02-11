@@ -98,6 +98,21 @@ img {
   display: block;
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: #111;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 12px;
+}
+
 // ============================================
 // LAYOUT
 // ============================================

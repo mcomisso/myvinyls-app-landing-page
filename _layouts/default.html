@@ -6,6 +6,7 @@
     <body>
         {% include header.html %}
 
+        <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-container">
@@ -48,6 +49,7 @@
                 <div class="hero-image">
                     <video autoplay muted loop playsinline width="380" height="824" poster="{{ 'assets/media/hero-poster.webp' | relative_url }}">
                         <source src="{{ 'assets/media/hero-swift.mp4' | relative_url }}" type="video/mp4">
+                        <track kind="captions" srclang="en" label="English" src="{{ 'assets/media/hero-swift.vtt' | relative_url }}">
                     </video>
                 </div>
             </div>
@@ -61,7 +63,7 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="eager" fetchpriority="high">
                 </div>
                 <div class="gallery-item">
                     <img src="{{ 'assets/screens/my-vinyls-album-detail-vinyl-disc.webp' | relative_url }}" alt="My Vinyls app album detail page with spinning vinyl disc animation" width="390" height="844" loading="lazy">
@@ -252,8 +254,22 @@
                 </div>
             </div>
         </section>
+        </main>
 
         {% include footer.html %}
+
+        <!-- Structured Data: VideoObject -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "My Vinyls app preview",
+            "description": "Quick preview of the My Vinyls iOS app interface.",
+            "thumbnailUrl": "{{ 'assets/media/hero-poster.webp' | absolute_url }}",
+            "uploadDate": "2026-02-01",
+            "contentUrl": "{{ 'assets/media/hero-swift.mp4' | absolute_url }}"
+        }
+        </script>
 
         <!-- Structured Data: SoftwareApplication -->
         <script type="application/ld+json">
@@ -362,7 +378,7 @@
         }
         </script>
 
-        <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
     </body>
 
 </html>
