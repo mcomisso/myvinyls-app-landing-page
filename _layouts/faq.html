@@ -20,6 +20,7 @@
             {% include header.html %}
             {% include breadcrumbs.html %}
 
+            <main id="main-content" tabindex="-1">
             <!-- FAQ Hero -->
             <section class="faq-hero">
                 <div class="container">
@@ -62,6 +63,7 @@
                     </div>
                 </div>
             </section>
+            </main>
 
             {% include footer.html %}
         </div>
@@ -157,8 +159,8 @@
     }
     </script>
 
-    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/faq.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/faq.js' | relative_url }}" defer></script>
 </body>
 
 </html>

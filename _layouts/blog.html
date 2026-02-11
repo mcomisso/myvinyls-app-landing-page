@@ -20,6 +20,7 @@
             {% include header.html %}
             {% include breadcrumbs.html %}
 
+            <main id="main-content" tabindex="-1">
             <!-- Blog Hero -->
             <section class="blog-hero">
                 <div class="container">
@@ -78,11 +79,11 @@
                     <nav class="blog-pagination" aria-label="Blog navigation">
                         {% if paginator.previous_page %}
                         <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">
-                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous posts
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i> Previous posts
                         </span>
                         {% endif %}
 
@@ -92,11 +93,11 @@
 
                         {% if paginator.next_page %}
                         <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">
-                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            Next posts <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </a>
                         {% else %}
                         <span class="pagination-link disabled">
-                            Next <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            Next posts <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </span>
                         {% endif %}
                     </nav>
@@ -120,13 +121,14 @@
                     </div>
                 </div>
             </section>
+            </main>
 
             {% include footer.html %}
         </div>
     </div>
 
-    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/blog.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/blog.js' | relative_url }}" defer></script>
 </body>
 
 </html>
