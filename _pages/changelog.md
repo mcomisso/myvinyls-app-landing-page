@@ -8,6 +8,60 @@ include_in_header: true
 # Changelog
 
 ## Latest
+### Version 3.14.0
+
+#### New Features
+- Record Store Day: Browse RSD 2026 exclusive releases and find participating stores on an interactive map
+  - Country filter and locate-me button for quick store discovery
+  - Infinite scroll through hundreds of releases
+  - Shop RSD releases on the Discogs marketplace
+- Colored Vinyl & Band Logos: See your records as they really look — colored, splatter, and picture discs
+  - Customize vinyl colors for any record in your collection
+  - Artist logos displayed on artist pages, powered by Fanart.tv
+- Sell Your Records: List records for sale on Discogs directly from the app
+  - Full listing wizard with price, condition, and shipping
+  - Automatic fee calculator
+  - Edit conditions and manage draft listings
+
+#### Improvements
+- Redesigned detail page with Liquid Glass effects (iOS 26)
+  - Customizable layout: choose what to show and hide
+  - Community stats card, collapsible identifiers, and inline format tags
+  - New action buttons in a clean ellipsis menu
+- Faster startup and smarter caching
+  - Spotlight indexing optimization
+  - Deferred non-critical work at launch
+  - Image processing and URL cache improvements
+- Cover Flow: Browse your collection in a visual carousel
+- Weekly subscription plan added
+- Onboarding visual refresh with smoother transitions
+
+#### Bug Fixes
+- Fixed logout issue with auto-login prevention
+- Fixed "locked" state after app reinstall
+- Multi-account token handling improvements
+- Various crash fixes and stability improvements
+
+---
+
+### Version 3.13.0
+
+#### Improvements
+- Discogs Notes: View, add, and edit your Discogs notes directly from the record detail page
+- Quick Add to Folder: Long-press the "Add to Collection" button to pick a folder instantly
+- Improved Cover Detection: Better perspective adjustment and auto-cropping of album art from Discogs
+- Multi-account and folder management fixes
+- UI polish and feature detection improvements
+
+---
+
+### Version 3.12.0
+
+#### Improvements
+- Smart Album Cover Detection: Automatically detects and crops album covers from photos — non-square images are intelligently processed for a cleaner look
+
+---
+
 ### Version 3.11.0
 
 #### Improvements
