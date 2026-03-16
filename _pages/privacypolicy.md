@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Privacy Policy
-description: Privacy policy for My Vinyls — how we handle your data, Discogs integration, and your rights.
+description: "Privacy policy for My Vinyls — how we handle your data, Discogs account integration, analytics, and your rights as a user of the app."
 include_in_header: false
 ---
 
