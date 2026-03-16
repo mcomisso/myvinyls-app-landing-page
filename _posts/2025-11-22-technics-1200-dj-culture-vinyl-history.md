@@ -101,4 +101,4 @@ That's worth something that specs can never capture.
 
 ---
 
-*Sources: [Wikipedia - Technics SL-1200](https://en.wikipedia.org/wiki/Technics_SL-1200), [Technics Official History](https://www.technics.com/global/), [The Vinyl Factory](https://www.thevinylfactory.com/features/a-brief-history-of-turntablism), [Soundstage Hi-Fi](https://www.soundstagehifi.co.uk/blog/technics-1200s-from-bronx-block-parties-to-uk-jungle-how-2-turntables-changed-everything)*
+*Sources: [Wikipedia - Technics SL-1200](https://en.wikipedia.org/wiki/Technics_SL-1200), Technics Official History, [The Vinyl Factory](https://www.thevinylfactory.com/features/a-brief-history-of-turntablism), [Soundstage Hi-Fi](https://www.soundstagehifi.co.uk/blog/technics-1200s-from-bronx-block-parties-to-uk-jungle-how-2-turntables-changed-everything)*

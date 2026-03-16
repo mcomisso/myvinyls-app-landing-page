@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ page.title }} | {{ site.app_name }}</title>
+    <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
 
     <link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
@@ -120,10 +120,10 @@
 
                     <h1 class="article-title">{{ page.title }}</h1>
 
-                    <div class="article-meta">
+                    <div class="article-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <span class="article-date">
                             <i class="far fa-calendar" aria-hidden="true"></i>
-                            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time>
                         </span>
                         <span class="article-reading-time">
                             <i class="far fa-clock" aria-hidden="true"></i>
@@ -131,7 +131,7 @@
                         </span>
                         <span class="article-author">
                             <i class="far fa-user" aria-hidden="true"></i>
-                            {{ page.author | default: site.your_name }}
+                            <span itemprop="name">{{ page.author | default: site.your_name }}</span>
                         </span>
                     </div>
                 </div>
@@ -168,14 +168,17 @@
                         <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on Twitter">
                             <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Share on Twitter</span>
                         </a>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on Facebook">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Share on Facebook</span>
                         </a>
                         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}"
                            class="share-button" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
                             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            <span class="sr-only">Share on LinkedIn</span>
                         </a>
                         <button class="share-button copy-link" data-url="{{ page.url | absolute_url }}" aria-label="Copy link">
                             <i class="fas fa-link" aria-hidden="true"></i>
@@ -192,7 +195,7 @@
                             {{ page.author | default: site.your_name | slice: 0 }}
                         </div>
                         <div class="author-info">
-                            <h4 class="author-name">{{ page.author | default: site.your_name }}</h4>
+                            <h3 class="author-name">{{ page.author | default: site.your_name }}</h3>
                             <p class="author-bio">Creator of My Vinyls, vinyl enthusiast, and music lover based in {{ site.your_city }}.</p>
                             <a href="{{ site.your_link }}" class="author-link" target="_blank" rel="noopener">
                                 <i class="fas fa-globe" aria-hidden="true"></i>
