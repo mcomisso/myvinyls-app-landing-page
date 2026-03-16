@@ -1,8 +1,8 @@
 ---
 layout: page
-title: What's New
-description: See the latest updates, new features, and improvements in My Vinyls — the vinyl collection manager for iPhone.
-include_in_header: true
+title: "What's New in My Vinyls"
+description: "See the latest updates, new features, and improvements in My Vinyls — the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
+include_in_header: false
 ---
 
 # Changelog

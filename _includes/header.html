@@ -8,13 +8,7 @@
 
         <ul class="nav-links">
             <li><a href="/blog/">Blog</a></li>
-            {% for page in site.pages %}
-            {% if page.include_in_header == true %}
-            <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-            <li><a href="https://myvinyls.betteruptime.com" target="_blank" rel="noopener">Status</a></li>
-            <li><a href="https://feedback.myvinyls.app" target="_blank" rel="noopener">Feedback</a></li>
+            <li><a href="/faq/">FAQ</a></li>
             <li>
                 <button class="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-moon" aria-hidden="true"></i>
@@ -22,8 +16,7 @@
             </li>
             <li>
                 <a href="{{ site.appstore_link }}" class="nav-download-btn" target="_blank" rel="noopener">
-                    <i class="fas fa-download" aria-hidden="true"></i>
-                    Download My Vinyls
+                    <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store" width="120" height="40">
                 </a>
             </li>
         </ul>

@@ -57,12 +57,12 @@
                 <div class="container">
                     <div class="blog-grid">
                         {% for post in paginator.posts %}
-                        {% include blog-card.html post=post %}
+                        {% include blog-card.html post=post heading="h2" %}
                         {% endfor %}
 
                         {% if paginator.posts.size == 0 %}
                         {% for post in site.posts limit:9 %}
-                        {% include blog-card.html post=post %}
+                        {% include blog-card.html post=post heading="h2" %}
                         {% endfor %}
                         {% endif %}
                     </div>
@@ -112,11 +112,11 @@
                         <div class="blog-cta-icon">
                             <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                         </div>
-                        <h3>Ready to organize your collection?</h3>
+                        <h2>Ready to organize your collection?</h2>
                         <p>Download My Vinyls and start cataloging your records today.</p>
                         <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
                             <i class="fab fa-apple" aria-hidden="true"></i>
-                            Download on App Store
+                            Download on the App Store
                         </a>
                     </div>
                 </div>

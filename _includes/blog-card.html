@@ -24,7 +24,8 @@ Usage: {% include blog-card.html post=post %}
 
         <div class="blog-card-content">
             <span class="blog-card-category">{{ category_name }}</span>
-            <h3 class="blog-card-title">{{ include.post.title }}</h3>
+            {% assign card_heading = include.heading | default: "h3" %}
+            <{{ card_heading }} class="blog-card-title">{{ include.post.title }}</{{ card_heading }}>
             <p class="blog-card-excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
             <div class="blog-card-meta">
                 <span class="blog-card-date">

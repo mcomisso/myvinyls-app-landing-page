@@ -12,32 +12,39 @@
 
         <div class="social-links">
             {% if site.instagram_username %}
-            <a href="https://instagram.com/{{ site.instagram_username }}" aria-label="Instagram" target="_blank" rel="noopener">
+            <a href="https://instagram.com/{{ site.instagram_username }}" aria-label="Follow My Vinyls on Instagram" target="_blank" rel="noopener">
                 <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
             </a>
             {% endif %}
             {% if site.twitter_username %}
-            <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter" target="_blank" rel="noopener">
+            <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Follow My Vinyls on Twitter" target="_blank" rel="noopener">
                 <i class="fab fa-twitter" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
             </a>
             {% endif %}
             {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub" target="_blank" rel="noopener">
+            <a href="https://github.com/{{ site.github_username }}" aria-label="My Vinyls on GitHub" target="_blank" rel="noopener">
                 <i class="fab fa-github" aria-hidden="true"></i>
+                <span class="sr-only">GitHub</span>
             </a>
             {% endif %}
             {% if site.email_address %}
-            <a href="/contact/" aria-label="Contact">
+            <a href="/contact/" aria-label="Contact My Vinyls">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span class="sr-only">Contact</span>
             </a>
             {% endif %}
         </div>
 
-        <nav class="footer-nav">
+        <nav class="footer-nav" aria-label="Footer navigation">
             <a href="/blog/">Blog</a>
-            {% for page in site.pages %}
-            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
-            {% endfor %}
+            <a href="/faq/">FAQ</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/changelog/">What's New</a>
+            <a href="/privacypolicy/">Privacy Policy</a>
+            <a href="/terms/">Terms</a>
             {% if site.presskit_download_link %}
             {% assign presskit_link = site.presskit_download_link %}
             {% if presskit_link contains "://" %}

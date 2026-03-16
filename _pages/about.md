@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About My Vinyls
-description: Learn who built My Vinyls, why it exists, and how it helps vinyl collectors organize and enjoy their records.
-include_in_header: true
+title: "About My Vinyls — The Story Behind the App"
+description: "Learn who built My Vinyls, why it exists, and how it helps vinyl collectors organize, catalog, and enjoy their record collections with Discogs sync."
+include_in_header: false
 ---
 
 # About My Vinyls

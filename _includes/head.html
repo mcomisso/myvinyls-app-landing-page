@@ -6,10 +6,14 @@
 
 	{% assign base_title = page.title | default: site.page_title %}
 	{% if paginator and paginator.page and paginator.page > 1 %}
-	{% assign base_title = base_title | append: " (Page " | append: paginator.page | append: ")" %}
+	{% assign base_title = base_title | append: " — Page " | append: paginator.page %}
 	{% endif %}
-	<title>{{ base_title | truncate: 45, "" }} | {{ site.app_name }}</title>
-	<meta name="description" content="{{ page.description | default: site.app_description }}">
+	<title>{{ base_title }} | {{ site.app_name }}</title>
+	{% assign base_description = page.description | default: site.app_description %}
+	{% if paginator and paginator.page and paginator.page > 1 %}
+	{% assign base_description = base_description | append: " Browse page " | append: paginator.page | append: " of " | append: paginator.total_pages | append: "." %}
+	{% endif %}
+	<meta name="description" content="{{ base_description }}">
 	<meta name="author" content="{{ page.author | default: site.your_name }}">
 
 	<!-- Canonical URL -->
@@ -45,6 +49,10 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ '/main.css' | relative_url }}">
+
+	<!-- LCP Preload Hints -->
+	<link rel="preload" href="{{ 'assets/appicon.webp' | relative_url }}" as="image">
+	<link rel="preload" href="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" as="image">
 
 	<!-- Fediverse -->
 	<meta name="fediverse:creator" content="@myvinyl@mastodon.social">
