@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Contact
-description: How to contact the My Vinyls team for support, feedback, and press inquiries.
-include_in_header: true
+title: "Contact the My Vinyls Team"
+description: "Get in touch with the My Vinyls team for app support, feature requests, bug reports, press inquiries, or partnership opportunities."
+include_in_header: false
 ---
 
 # Contact

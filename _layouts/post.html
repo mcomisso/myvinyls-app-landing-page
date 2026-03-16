@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ page.title | truncate: 45, "" }} | {{ site.app_name }}</title>
+    <title>{{ page.title }} | {{ site.app_name }}</title>
     <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
 
     <link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
@@ -78,6 +78,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Styles -->
@@ -207,7 +208,7 @@
             {% if related_posts.size > 0 %}
             <section class="related-posts-section">
                 <div class="container">
-                    <h3 class="related-posts-title">Related Articles</h3>
+                    <h2 class="related-posts-title">Related Articles</h2>
                     <div class="related-posts-grid">
                         {% for post in related_posts %}
                         {% include blog-card.html post=post %}
@@ -224,11 +225,11 @@
                         <div class="blog-cta-icon">
                             <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                         </div>
-                        <h3>Ready to organize your collection?</h3>
+                        <h2>Ready to organize your collection?</h2>
                         <p>Download My Vinyls and start cataloging your records today.</p>
                         <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
                             <i class="fab fa-apple" aria-hidden="true"></i>
-                            Download on App Store
+                            Download on the App Store
                         </a>
                     </div>
                 </div>

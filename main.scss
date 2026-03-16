@@ -113,6 +113,18 @@ img {
   left: 12px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 // ============================================
 // LAYOUT
 // ============================================
@@ -202,24 +214,19 @@ img {
 .nav-download-btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: 10px 20px;
-  background: var(--accent);
-  color: var(--white) !important;
-  border-radius: var(--radius-full);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0;
+  background: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 
-  i {
-    font-size: 0.75rem;
+  img {
+    display: block;
+    height: 34px;
+    width: auto;
   }
 
   &:hover {
-    background: var(--gray-700);
+    opacity: 0.8;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
 

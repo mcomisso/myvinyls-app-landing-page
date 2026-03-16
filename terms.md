@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Terms of Service
-description: Terms of Service for My Vinyls covering account usage, subscriptions, acceptable use, and legal responsibilities.
+title: "Terms of Service — My Vinyls"
+description: "Terms of Service for My Vinyls covering account usage, Discogs integration, subscriptions, acceptable use, and your legal responsibilities."
 ---
 
 # Terms of Service

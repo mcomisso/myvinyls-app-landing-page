@@ -122,4 +122,4 @@ Make the switch. Your future self will hear the difference.
 
 ---
 
-*Sources: [New Vinyl Day](https://newvinylday.com/best-record-sleeves-for-vinyl/), [Discogs](https://www.discogs.com/digs/gear/best-vinyl-record-sleeves/), [BCW Supplies](https://www.bcwsupplies.com/blog/2025/04/21/record-sleeve-materials/), [Sound Matters](https://www.yoursoundmatters.com/best-vinyl-record-inner-sleeves/)*
+*Sources: New Vinyl Day,[Discogs](https://www.discogs.com/digs/gear/best-vinyl-record-sleeves/), [BCW Supplies](https://www.bcwsupplies.com/blog/2025/04/21/record-sleeve-materials/), [Sound Matters](https://www.yoursoundmatters.com/best-vinyl-record-inner-sleeves/)*
