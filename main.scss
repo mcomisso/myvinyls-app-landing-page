@@ -1153,6 +1153,132 @@ img {
 }
 
 // ============================================
+// ANDROID WAITLIST SECTION
+// ============================================
+
+.android-waitlist-section {
+  padding: var(--space-4xl) var(--space-lg);
+  background: var(--bg-alt);
+}
+
+.android-waitlist-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+  gap: var(--space-2xl);
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-2xl);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    text-align: center;
+  }
+}
+
+.android-waitlist-copy {
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin: var(--space-md) 0 var(--space-md);
+  }
+
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 480px;
+
+    @media (max-width: 780px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.android-waitlist-form {
+  width: 100%;
+}
+
+.android-waitlist-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-sm);
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+
+  input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 var(--space-md);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--cream);
+    color: var(--text);
+    font: inherit;
+    font-size: 1rem;
+    letter-spacing: 0;
+
+    &::placeholder {
+      color: var(--gray-400);
+    }
+
+    &:focus {
+      outline: 3px solid rgba(212, 131, 107, 0.24);
+      border-color: var(--primary);
+    }
+  }
+
+  button {
+    min-height: 52px;
+    padding: 0 var(--space-lg);
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: var(--text);
+    color: var(--white);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(212, 131, 107, 0.32);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.android-waitlist-note {
+  margin-top: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+
+  @media (max-width: 780px) {
+    text-align: center;
+  }
+}
+
+.waitlist-honey {
+  display: none;
+}
+
+// ============================================
 // CTA SECTION
 // ============================================
 

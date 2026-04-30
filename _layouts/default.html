@@ -262,6 +262,34 @@
             </div>
         </section>
 
+        <!-- Android Waitlist Section -->
+        <section class="android-waitlist-section" id="android-waitlist">
+            <div class="container">
+                <div class="android-waitlist-card">
+                    <div class="android-waitlist-copy">
+                        <span class="section-tag">Android waitlist</span>
+                        <h2>Interested in Android?</h2>
+                        <p>Sign up to be the first to know when My Vinyl+ launches on Android.</p>
+                    </div>
+
+                    <form class="android-waitlist-form" action="https://formsubmit.co/{{ site.email_address }}" method="POST">
+                        <input type="hidden" name="_subject" value="New Android waitlist signup">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="{{ '/android-waitlist-thanks/' | absolute_url }}">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="waitlist-honey" aria-hidden="true">
+                        <input type="hidden" name="source" value="My Vinyl+ landing page Android waitlist">
+
+                        <label class="sr-only" for="android-waitlist-email">Email address</label>
+                        <div class="android-waitlist-fields">
+                            <input id="android-waitlist-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email address" required>
+                            <button type="submit">Notify me</button>
+                        </div>
+                        <p class="android-waitlist-note">No spam. Just the Android launch update.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA Section -->
         <section class="cta-section">
             <div class="cta-content">
