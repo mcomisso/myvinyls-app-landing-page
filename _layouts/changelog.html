@@ -1,0 +1,74 @@
+---
+# Changelog Layout - structured release history
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="changelog-body">
+    {% include header.html %}
+
+    <main id="main-content" tabindex="-1">
+        <section class="changelog-hero" aria-labelledby="changelog-title">
+            <div class="container">
+                {% include breadcrumbs.html %}
+
+                <div class="changelog-hero-grid">
+                    <div class="changelog-hero-copy">
+                        <p class="changelog-kicker">Release history</p>
+                        <h1 id="changelog-title">{{ page.title }}</h1>
+                        <p>{{ page.summary | default: page.description }}</p>
+                    </div>
+
+                    <aside class="changelog-latest-panel" aria-label="Latest release">
+                        <span>Latest version</span>
+                        <strong>{{ page.latest_version | default: "3.14.0" }}</strong>
+                        <p>{{ page.latest_summary | default: "New collector tools, better record detail, and focused stability fixes." }}</p>
+                        <a href="{{ site.appstore_link }}" class="changelog-store-link" target="_blank" rel="noopener">
+                            <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store" width="120" height="40">
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="changelog-section" aria-label="Release notes">
+            <div class="container changelog-layout">
+                <aside class="changelog-context">
+                    <div class="changelog-context-inner">
+                        <p class="changelog-context-title">What this page tracks</p>
+                        <p>Major app releases, feature additions, bug fixes, and collector-facing improvements since the first public versions.</p>
+                        <a href="/" class="changelog-home-link">View the app overview</a>
+                    </div>
+                </aside>
+
+                <div class="changelog-releases">
+                    {% assign release_parts = content | split: '<h3' %}
+                    {% for release_part in release_parts offset: 1 %}
+                        {% assign release_split = release_part | split: '</h3>' %}
+                        {% assign release_heading = release_split[0] %}
+
+                        <article class="changelog-release{% if forloop.first %} is-latest{% endif %}">
+                            <span class="changelog-release-marker" aria-hidden="true"></span>
+                            <header class="changelog-release-header">
+                                {% if forloop.first %}
+                                    <p class="changelog-latest-label">Latest release</p>
+                                {% endif %}
+                                <h2{{ release_heading }}</h2>
+                            </header>
+                            <div class="changelog-release-body">
+                                {% for release_body_part in release_split offset: 1 %}{{ release_body_part }}{% unless forloop.last %}</h3>{% endunless %}{% endfor %}
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>
