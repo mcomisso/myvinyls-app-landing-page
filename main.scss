@@ -1904,23 +1904,6 @@ img {
     margin-top: 0;
   }
 
-  h3 {
-    display: inline-flex;
-    align-items: center;
-    min-height: 30px;
-    margin: var(--space-xl) 0 var(--space-sm);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-full);
-    background: var(--gray-50);
-    color: var(--text);
-    font-size: 0.875rem;
-    font-weight: 700;
-  }
-
-  h3:first-child {
-    margin-top: 0;
-  }
-
   p {
     max-width: 68ch;
     margin-bottom: var(--space-md);
@@ -2077,7 +2060,6 @@ img {
     font-size: 0.9375rem;
     line-height: 1.65;
 
-    h3,
     h4 {
       margin-top: var(--space-lg);
     }
