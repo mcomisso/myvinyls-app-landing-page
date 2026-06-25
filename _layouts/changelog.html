@@ -36,21 +36,16 @@
 
         <section class="changelog-section" aria-label="Release notes">
             <div class="container changelog-layout">
-                <aside class="changelog-context">
-                    <div class="changelog-context-inner">
-                        <p class="changelog-context-title">What this page tracks</p>
-                        <p>Major app releases, feature additions, bug fixes, and collector-facing improvements since the first public versions.</p>
-                        <a href="/" class="changelog-home-link">View the app overview</a>
-                    </div>
-                </aside>
-
                 <div class="changelog-releases">
                     {% assign open_release_count = page.open_release_count | default: 3 | plus: 0 %}
+                    {% assign first_archived_index = open_release_count | plus: 1 %}
                     {% assign release_parts = content | split: '<h3' %}
                     {% for release_part in release_parts offset: 1 %}
                         {% assign release_split = release_part | split: '</h3>' %}
                         {% assign release_heading = release_split[0] %}
-                        {% assign summary_heading = release_heading | replace_first: '>', ' class="changelog-summary-title">' %}
+                        {% assign summary_heading = release_heading | replace_first: '>', ' class="changelog-summary-title" role="heading" aria-level="2">' %}
+                        {% capture release_body_html %}{% for release_body_part in release_split offset: 1 %}{{ release_body_part }}{% unless forloop.last %}</h3>{% endunless %}{% endfor %}{% endcapture %}
+                        {% assign release_body_html = release_body_html | replace: '<h4', '<h3' | replace: '</h4>', '</h3>' %}
 
                         {% if forloop.index <= open_release_count %}
                             <article class="changelog-release{% if forloop.first %} is-latest{% endif %}">
@@ -62,26 +57,38 @@
                                     <h2{{ release_heading }}</h2>
                                 </header>
                                 <div class="changelog-release-body">
-                                    {% for release_body_part in release_split offset: 1 %}{{ release_body_part }}{% unless forloop.last %}</h3>{% endunless %}{% endfor %}
+                                    {{ release_body_html }}
                                 </div>
                             </article>
                         {% else %}
+                            {% if forloop.index == first_archived_index %}
+                                <div class="changelog-history-break">
+                                    <span>Earlier releases</span>
+                                </div>
+                            {% endif %}
                             <details class="changelog-release changelog-release-disclosure">
                                 <summary class="changelog-release-summary">
                                     <span class="changelog-release-marker" aria-hidden="true"></span>
                                     <span class="changelog-summary-copy">
                                         <span{{ summary_heading }}</span>
-                                        <span class="changelog-summary-meta">Release notes</span>
                                     </span>
                                     <span class="changelog-summary-icon" aria-hidden="true"></span>
                                 </summary>
                                 <div class="changelog-release-body">
-                                    {% for release_body_part in release_split offset: 1 %}{{ release_body_part }}{% unless forloop.last %}</h3>{% endunless %}{% endfor %}
+                                    {{ release_body_html }}
                                 </div>
                             </details>
                         {% endif %}
                     {% endfor %}
                 </div>
+
+                <aside class="changelog-context">
+                    <div class="changelog-context-inner">
+                        <p class="changelog-context-title">What this page tracks</p>
+                        <p>Major app releases, feature additions, bug fixes, and collector-facing improvements since the first public versions.</p>
+                        <a href="/" class="changelog-home-link">View the app overview</a>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>

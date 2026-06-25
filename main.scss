@@ -1538,6 +1538,7 @@ img {
 
 .changelog-body {
   background: var(--bg);
+  letter-spacing: 0;
 }
 
 .changelog-hero {
@@ -1642,12 +1643,14 @@ img {
 .changelog-layout {
   display: grid;
   grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.7fr);
+  grid-template-areas: "context releases";
   gap: clamp(var(--space-xl), 6vw, var(--space-4xl));
   align-items: start;
 }
 
 .changelog-context {
   position: sticky;
+  grid-area: context;
   top: 104px;
 }
 
@@ -1684,9 +1687,10 @@ img {
 
 .changelog-releases {
   position: relative;
+  grid-area: releases;
   display: flex;
   flex-direction: column;
-  gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  gap: 0;
   padding-left: 44px;
 
   &::before {
@@ -1700,18 +1704,17 @@ img {
   }
 }
 
+.changelog-release + .changelog-release {
+  margin-top: clamp(var(--space-xl), 5vw, var(--space-3xl));
+}
+
 .changelog-release {
   position: relative;
   padding: clamp(var(--space-lg), 4vw, var(--space-2xl));
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--white);
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    border-color: rgba(212, 131, 107, 0.45);
-    transform: translateY(-2px);
-  }
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &.is-latest {
     border-color: rgba(212, 131, 107, 0.45);
@@ -1720,11 +1723,42 @@ img {
 }
 
 .changelog-release-disclosure {
+  padding: var(--space-xl);
   background: rgba(255, 255, 255, 0.72);
+
+  &:hover {
+    border-color: rgba(212, 131, 107, 0.45);
+  }
 
   &[open] {
     border-color: rgba(212, 131, 107, 0.32);
     background: var(--white);
+  }
+}
+
+.changelog-release-disclosure + .changelog-release-disclosure {
+  margin-top: var(--space-md);
+}
+
+.changelog-history-break {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  margin: clamp(var(--space-2xl), 6vw, var(--space-4xl)) 0 var(--space-lg);
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  span {
+    flex: 0 0 auto;
   }
 }
 
@@ -1750,6 +1784,7 @@ img {
 
 .changelog-release-header h2,
 .changelog-summary-title {
+  scroll-margin-top: 112px;
   color: var(--text);
   font-size: 2.125rem;
   font-weight: 700;
@@ -1788,19 +1823,13 @@ img {
 }
 
 .changelog-summary-copy {
-  display: grid;
+  display: block;
   min-width: 0;
-  gap: var(--space-xs);
 }
 
 .changelog-summary-title {
   display: block;
-}
-
-.changelog-summary-meta {
-  color: var(--gray-600);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 1.75rem;
 }
 
 .changelog-summary-icon {
@@ -1872,6 +1901,23 @@ img {
   }
 
   h4:first-child {
+    margin-top: 0;
+  }
+
+  h3 {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    margin: var(--space-xl) 0 var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    background: var(--gray-50);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  h3:first-child {
     margin-top: 0;
   }
 
@@ -1951,24 +1997,49 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .changelog-context {
-    position: static;
-    order: 2;
+  .changelog-layout {
+    grid-template-areas:
+      "releases"
+      "context";
   }
 
-  .changelog-releases {
-    order: 1;
+  .changelog-context {
+    position: static;
   }
 }
 
 @media (max-width: 640px) {
   .changelog-hero {
-    padding-top: 88px;
+    padding-top: 80px;
+    padding-bottom: var(--space-xl);
+  }
+
+  .changelog-hero .breadcrumbs {
+    padding-bottom: var(--space-lg);
+  }
+
+  .changelog-hero-grid {
+    gap: var(--space-lg);
   }
 
   .changelog-hero-copy h1 {
     max-width: 9ch;
-    font-size: 2.75rem;
+    margin-bottom: var(--space-md);
+    font-size: 2.5rem;
+    line-height: 1.02;
+  }
+
+  .changelog-hero-copy p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .changelog-kicker {
+    margin-bottom: var(--space-sm);
+  }
+
+  .changelog-latest-panel {
+    padding: var(--space-md);
   }
 
   .changelog-latest-panel,
@@ -1992,6 +2063,38 @@ img {
 
   .changelog-summary-icon {
     margin-top: 2px;
+  }
+
+  .changelog-release {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .changelog-release-disclosure {
+    padding: var(--space-md);
+  }
+
+  .changelog-release-body {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+
+    h3,
+    h4 {
+      margin-top: var(--space-lg);
+    }
+
+    > ul,
+    > ol {
+      gap: var(--space-xs);
+      margin-bottom: var(--space-md);
+    }
+
+    > ul > li {
+      padding-left: var(--space-md);
+    }
+  }
+
+  .changelog-history-break {
+    margin: var(--space-2xl) 0 var(--space-md);
   }
 
   .changelog-releases {
