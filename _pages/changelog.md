@@ -1,13 +1,141 @@
 ---
-layout: page
+layout: changelog
 title: "What's New in My Vinyls"
-description: "See the latest updates, new features, and improvements in My Vinyls — the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
+description: "See the latest updates, new features, and improvements in My Vinyls, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
+summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
+latest_version: "4.3.0"
+latest_summary: "Daily rediscovery, smarter search and scanning, offline-first library tools, and sharper record details lead the newest release."
 include_in_header: false
 ---
 
-# Changelog
+### Version 4.3.0
 
-## Latest
+#### New Features
+- Daily rediscovery: Find a Record of the Day from your own shelf and explore today's 1001 Albums pick with richer Discogs, artist, and playback details
+- Smarter search and scanning: Switch between record and song search, use bulk scanning more freely, and keep results visible while Discogs catches up
+- Offline-first library tools: Collection and Wantlist actions now use local cached data first, with pending changes that sync later
+- Sharper record details: Record pages now include artist logos, clearer vinyl-color controls, smoother playback lookups, and richer marketplace and export context
+- System search and App Intents improvements for opening records, continuing searches, and handing off visual search results
+
+#### Improvements
+- More reliable detail routing and Spotify decoding
+- Improved AI notes feedback, loading states, timeout handling, and detail-page visibility
+- Better rate-limit handling and release-loading recovery
+- Artist logo identity and self-hosted image handling improvements
+
+---
+
+### Version 4.2.4
+
+#### Bug Fixes
+- Coordinated Discogs login rate limits to reduce repeated login requests
+- Fixed a Discogs profile request storm that could slow sign-in and profile refresh
+- Cleaned up legacy Discogs login handling for a more reliable authentication flow
+
+---
+
+### Version 4.2.3
+
+#### Improvements
+- Record pricing tables now show clearer marketplace summaries and condition-based price suggestions
+- Wantlist browsing and changes are more resilient with local-first offline workspace updates
+- Core Spotlight indexing was rebuilt for better reliability across large libraries
+- Collection additions now include better telemetry for troubleshooting sync and import issues
+- Trial-ending reminders are scheduled more reliably
+
+#### Bug Fixes
+- Fixed a crash when opening Discogs URLs from Now Playing
+- Fixed marketplace decoding and stats fallback issues in pricing views
+- Fixed Wantlist filter presentation problems
+- Simplified collection error toasts so failures are clearer
+
+---
+
+### Version 4.2.2
+
+#### New Features
+- Bulk scanning now uses a clearer import session, with better duplicate handling and access through paid features
+- Diagnostics logs can now be attached to support emails with sensitive values redacted
+- Brazilian Portuguese and European Portuguese localization added
+- Bluesky and remote-configured social links added to About and support surfaces
+
+#### Improvements
+- Collection tools were moved toward a local-first workspace so browsing and edits feel faster
+- Paywall and onboarding flows were refined with clearer calls to action, trial guidance, and launch presentation
+- Failed syncs now have better retry classification and observability
+- Scrobbler and timeline views received interaction and presentation updates
+- Record spin and rotation behavior is more stable
+
+---
+
+### Version 4.2.1
+
+#### Bug Fixes
+- Restoring purchases now checks receipts more reliably
+- RevenueCat setup is deferred when the keychain is unavailable, reducing launch-time failures
+- Purchases sync automatically on launch without depending on a local marker
+- Login issue alerts are clearer and easier to recover from
+- Fixed a map crash and several onboarding polish issues
+
+---
+
+### Version 4.2.0
+
+#### New Features
+- Redesigned onboarding with a more focused first-run flow, notification permission timing, and premium setup path
+- Image CDN proxy support improves artwork loading in the app and widgets
+- Price history now uses local SwiftData storage for faster value and marketplace views
+- One-time offer and paywall experiments add more flexible trial and lifetime-plan presentation
+- Rate-limit status and release prices are easier to find from release menus
+
+#### Improvements
+- Spotlight indexing is more resilient for multi-account libraries and cold launches
+- Wantlist price tracking is more account-aware, with cleaner row state and marketplace stats
+- Artist discographies now present roles and main releases more clearly
+- Swift concurrency updates improve app stability and prepare more screens for Swift 6
+- Community star rendering and artist-release edge cases were fixed
+
+---
+
+### Version 4.1.0
+
+#### New Features
+- Scrobbler sharing: Create share cards from recent listening sessions with multiple templates
+- Adaptive scrobbler views now work better in portrait and landscape
+- iPad keyboard shortcuts added for faster library navigation
+- Widget tinted mode support added for newer Home Screen styles
+- Artist discography support expanded through the app and API
+- New liquid and yolk vinyl visualization types
+
+#### Improvements
+- Multi-account background sync now uses account-scoped API handling
+- Spotlight indexing performance was restored for larger collections
+- Collection value and statistics update more reliably after adding records
+- Share actions moved into the record toolbar for quicker access
+- Grandfathered subscription migration and offer-code flows were polished
+
+---
+
+### Version 4.0.0
+
+#### New Features
+- Major vinyl visual upgrade with marble, splatter, clear, and multi-color split record renderings
+- On-device AI can detect vinyl color from release notes and apply it automatically
+- Sleeve animation lets you pull a record out of its sleeve with physics-based motion
+- Collection value tracking uses marketplace data to show what your records are worth over time
+- Record Store Day tools help you browse RSD releases, find nearby stores, and share your wishlist
+- Refreshed Collection and Wantlist navigation with fluid swipe gestures
+- Liquid Glass interface updates for iOS 26
+- Siri Shortcuts for hands-free collection actions
+- Random Record and Collection Counter widgets for the Home Screen
+
+#### Improvements
+- Onboarding was improved for new collectors
+- Marketplace listings are easier to browse and understand
+- Visual polish and stability fixes across record details, widgets, and collection workflows
+
+---
+
 ### Version 3.14.0
 
 #### New Features
