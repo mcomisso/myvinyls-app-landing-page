@@ -5,6 +5,7 @@ description: "See the latest updates, new features, and improvements in My Vinyl
 summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
 latest_version: "4.3.0"
 latest_summary: "Daily rediscovery, smarter search and scanning, offline-first library tools, and sharper record details lead the newest release."
+open_release_count: 3
 include_in_header: false
 ---
 
