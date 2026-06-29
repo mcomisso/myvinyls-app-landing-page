@@ -17,23 +17,6 @@ include_in_header: false
 
 ---
 
-### Version 4.3.0
-
-#### New Features
-- Daily rediscovery: Find a Record of the Day from your own shelf and explore today's 1001 Albums pick with richer Discogs, artist, and playback details
-- Smarter search and scanning: Switch between record and song search, use bulk scanning more freely, and keep results visible while Discogs catches up
-- Offline-first library tools: Collection and Wantlist actions now use local cached data first, with pending changes that sync later
-- Sharper record details: Record pages now include artist logos, clearer vinyl-color controls, smoother playback lookups, and richer marketplace and export context
-- System search and App Intents improvements for opening records, continuing searches, and handing off visual search results
-
-#### Improvements
-- More reliable detail routing and Spotify decoding
-- Improved AI notes feedback, loading states, timeout handling, and detail-page visibility
-- Better rate-limit handling and release-loading recovery
-- Artist logo identity and self-hosted image handling improvements
-
----
-
 ### Version 4.2.4
 
 #### Bug Fixes
