@@ -3,10 +3,18 @@ layout: changelog
 title: "What's New in My Vinyls"
 description: "See the latest updates, new features, and improvements in My Vinyls, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
-latest_version: "4.3.0"
-latest_summary: "Daily rediscovery, smarter search and scanning, offline-first library tools, and sharper record details lead the newest release."
+latest_version: "4.2.5"
+latest_summary: "This release fixes a collection loading issue that could prevent some albums from appearing."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.2.5
+
+#### Bug Fixes
+- Fixed a collection loading issue where some Discogs collections could fail to display albums
+- Improved collection metadata handling so albums with incomplete optional details still appear reliably
+
 ---
 
 ### Version 4.3.0
