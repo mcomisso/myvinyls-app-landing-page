@@ -1,0 +1,41 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "382G4857JD.com.mcomisso.DiscogsClient"
+        ],
+        "components": [
+          {
+            "/": "/events/*",
+            "comment": "App Store In-App Event and campaign links."
+          },
+          {
+            "/": "/record/*",
+            "comment": "Record detail links."
+          },
+          {
+            "/": "/release/*",
+            "comment": "Release detail links."
+          },
+          {
+            "/": "/search",
+            "comment": "Search entry point."
+          },
+          {
+            "/": "/search/*",
+            "comment": "Search result links."
+          },
+          {
+            "/": "/collection",
+            "comment": "Collection entry point."
+          },
+          {
+            "/": "/marketplace",
+            "comment": "Marketplace entry point."
+          }
+        ]
+      }
+    ]
+  }
+}
