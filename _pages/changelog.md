@@ -3,10 +3,24 @@ layout: changelog
 title: "What's New in My Vinyls"
 description: "See the latest updates, new features, and improvements in My Vinyls, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
-latest_version: "4.2.5"
-latest_summary: "This release fixes a collection loading issue that could prevent some albums from appearing."
+latest_version: "4.3.1"
+latest_summary: "This release improves Last.fm scrobbling, adds a screen-awake control for active scrobbling, and fixes Collection side-index jumps."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.3.1
+
+#### New Features
+- Added a preference to keep the screen awake while the Last.fm scrobbler is active
+
+#### Improvements
+- Improved Last.fm scrobbling so active listening sessions feel smoother and more reliable
+- Refined the scrobbler view with better playback visualization and clearer active-listening presentation
+
+#### Bug Fixes
+- Fixed Collection side-index jumps so tapping a letter or section lands on the expected records more reliably
+
 ---
 
 ### Version 4.2.5
