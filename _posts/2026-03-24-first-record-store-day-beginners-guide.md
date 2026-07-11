@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, beginner, first-time, vinyl-collecting, rsd-2026]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2026-03-24-first-record-store-day-beginners-guide.webp
 ---
 
 You've probably seen the headlines. Vinyl sales crossed $1 billion in the US last year. Record Store Day is trending on social media every April. Your friends keep posting photos of coloured records and tagged locations at shops you didn't know existed.

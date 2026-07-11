@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [limited-edition, colored-vinyl, variants, collecting, exclusive]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-11-02-limited-edition-vinyl-collecting-guide.webp
 ---
 
 There's something about knowing only 500 copies exist. You're not just buying music—you're acquiring something scarce, something that might never be pressed again. That's the pull of limited edition vinyl: ownership in a streaming world where everything else is infinite.

@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, vinyl, collecting, exclusive-releases]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-03-24-record-store-day-2026-complete-guide.webp
 ---
 
 Record Store Day 2026 lands on April 18, and if you've never been, you're in for something. If you have been, you already know: it's the best and most exhausting day on the vinyl calendar.

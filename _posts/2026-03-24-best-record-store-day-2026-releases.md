@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, vinyl-releases, best-of, collecting]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2026-03-24-best-record-store-day-2026-releases.webp
 ---
 
 Every year, the RSD list drops and the internet collectively loses its mind trying to figure out which of the 350-odd titles are worth queuing for at dawn. Most of the list is fine. Some of it is filler. And a handful of releases are genuinely excellent.

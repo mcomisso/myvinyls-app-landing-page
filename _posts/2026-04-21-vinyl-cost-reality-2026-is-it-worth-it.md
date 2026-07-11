@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-collecting, vinyl-costs, vinyl-budget, record-collecting, vinyl-investment, vinyl-tips, vinyl-hobby]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-21-vinyl-cost-reality-2026-is-it-worth-it.webp
 ---
 
 A new vinyl release in 2026 costs somewhere between £25 and £50 for a standard LP. Limited editions, coloured pressings, and audiophile reissues go higher — sometimes significantly. A typical pre-order from an independent label with standard 180g pressing and printed inner sleeve might land at £30-£35 before shipping.

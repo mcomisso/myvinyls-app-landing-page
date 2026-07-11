@@ -7,6 +7,7 @@ category: music-discovery
 tags: [hip-hop, sampling, production, crate-digging, history]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2025-11-18-hip-hop-sampling-vinyl-producers-guide.webp
 ---
 
 There's a story every hip-hop producer knows. You're in a basement, or a dusty record shop, or a flea market at six in the morning. You pull out a dollar record with a water-stained sleeve. You've never heard of the artist. The genre says "easy listening." Something tells you to flip it over anyway.

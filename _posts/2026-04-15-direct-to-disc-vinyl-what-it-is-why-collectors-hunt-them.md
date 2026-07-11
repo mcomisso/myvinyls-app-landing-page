@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-collecting, direct-to-disc, audiophile, vinyl-recordings, sound-quality, collecting, audiophile-vinyl, analogue]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-15-direct-to-disc-vinyl-what-it-is-why-collectors-hunt-them.webp
 ---
 
 Most vinyl records go through the same basic pipeline: recorded in a studio onto multi-track tape, edited and mixed, then sent to a pressing plant where the final mix is cut onto a lacquer, which becomes the master for stampers, which become your record.

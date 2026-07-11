@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, uk, war-child, vinyl-collecting]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-03-24-record-store-day-uk-2026-guide.webp
 ---
 
 Record Store Day hits differently in the UK. Maybe it's the queue culture (we're built for this). Maybe it's the sheer density of brilliant independent shops packed into cities and towns across the country. Either way, RSD in Britain is a proper event, and 2026 is shaping up to be one of the strongest years yet.

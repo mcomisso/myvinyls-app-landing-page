@@ -7,6 +7,7 @@ category: music-discovery
 tags: [blue-note, jazz, collecting, first-pressing, audiophile]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2025-11-25-blue-note-records-collectors-guide.webp
 ---
 
 In 1939, two German-Jewish immigrants fleeing Europe—Alfred Lion and Max Margulis, soon joined by photographer Francis Wolff—started what would become the most revered jazz label in history. For collectors, Blue Note represents the ultimate challenge and the ultimate reward: difficult to master, expensive to collect seriously, and deeply satisfying when you find the right record at the right price.

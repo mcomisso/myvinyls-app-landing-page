@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl, new releases, 2026, spring, pre-order, collectors, new vinyl 2026]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-03-24-spring-2026-vinyl-releases-collectors-guide.webp
 ---
 
 Spring is shaping up to be one of the busiest stretches for new vinyl in recent memory. Between major label releases, indie comebacks, and some genuinely surprising debuts, there's a lot competing for your turntable time (and shelf space) over the next few months.

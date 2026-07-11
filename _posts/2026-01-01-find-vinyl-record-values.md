@@ -7,6 +7,7 @@ category: app-tips
 tags: [pricing, discogs, collection, app, value]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-01-01-find-vinyl-record-values.webp
 ---
 
 We've all been there. You're at a flea market, flipping through a crate of records, and you pull out something that looks... interesting. Maybe it's a name you don't recognize, or an album with a pressing you've never seen before. And that little voice in your head asks: *is this worth something?*

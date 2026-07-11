@@ -7,6 +7,7 @@ category: music-discovery
 tags: [technics, dj, turntablism, hip-hop, history]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-11-22-technics-1200-dj-culture-vinyl-history.webp
 ---
 
 There's a moment every DJ remembers: the first time they touched a Technics 1200. The weight of that tonearm. The smooth glide of the pitch fader. The way the platter responds to even the slightest touch. It feels like something built to last forever—because, in many cases, it has.

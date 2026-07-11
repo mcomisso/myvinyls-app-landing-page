@@ -7,6 +7,7 @@ category: music-discovery
 tags: [history, vinyl, timeline, invention, evolution]
 author: Matteo Comisso
 reading_time: 9
+image: /assets/blog/images/2025-12-08-history-of-vinyl-records-timeline.webp
 ---
 
 Every time you drop a needle on a record, you're participating in a 140-year-old ritual. The technology has evolved, the materials have changed, the format has nearly died multiple times—but here we are, still spinning discs, still watching needles trace grooves, still experiencing music the way our great-great-grandparents first learned they could.

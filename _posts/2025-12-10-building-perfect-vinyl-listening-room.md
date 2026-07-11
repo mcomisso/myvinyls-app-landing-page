@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [listening-room, acoustics, setup, audiophile, speakers]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2025-12-10-building-perfect-vinyl-listening-room.webp
 ---
 
 Here's a frustrating truth: you can spend thousands on a turntable and speakers, only to have your room undermine the whole thing. Sound bounces off walls, bass builds up in corners, reflections smear the stereo image. Your equipment might be capable of beautiful reproduction—but your room is getting in the way.

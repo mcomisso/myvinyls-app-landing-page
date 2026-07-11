@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [rare, valuable, auction, collecting, beatles]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-18-most-expensive-vinyl-records-ever-sold.webp
 ---
 
 What makes a piece of plastic worth more than a house? It's a question that gets asked every time one of these auction results makes headlines. The answer involves rarity, history, emotion, and sometimes just sheer audacity.

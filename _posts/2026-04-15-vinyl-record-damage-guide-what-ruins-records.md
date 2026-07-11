@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-collecting, vinyl-damage, vinyl-storage, vinyl-care, collecting, record-maintenance, vinyl-preservation, record-damage]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-15-vinyl-record-damage-guide-what-ruins-records.webp
 ---
 
 There's a reasonable amount of content out there about cleaning vinyl records. How to do it, what solutions work, how often to do it, ultrasonic cleaners versus manual cleaning. All of that is useful.

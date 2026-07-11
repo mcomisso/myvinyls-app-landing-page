@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [first-pressing, collecting, value, identification, rare]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-01-01-how-to-identify-first-pressing-vinyl.webp
 ---
 
 There's a story that circulates in collector circles about someone who bought a copy of *The Velvet Underground & Nico* at a yard sale for fifty cents. Looked like any other old record. Turns out it was a torso-cover first pressing—worth several thousand dollars. The seller had no idea. Neither did the buyer, at first.

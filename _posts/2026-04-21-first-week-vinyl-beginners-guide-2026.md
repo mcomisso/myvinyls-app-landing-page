@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-collecting, beginners-guide, vinyl-care, record-care, vinyl-storage, turntable-tips, new-vinyl]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-21-first-week-vinyl-beginners-guide-2026.webp
 ---
 
 If you picked up vinyl for the first time on Record Store Day last weekend, welcome. You've got a new record, probably a brand new turntable, and a format that rewards knowing a few basics. Here's what actually matters in the first week.

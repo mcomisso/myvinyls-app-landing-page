@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-reissues, april-2026, preorders, deluxe-editions, collectors]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-14-april-2026-vinyl-reissues-worth-preordering.webp
 ---
 
 New album roundups are useful, but they don't always help collectors make the harder call: which **reissues** are actually worth preordering now, before they become annoying, overpriced, or both.

@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, rsd-drops, vinyl-collecting, exclusive-releases, vinyl-releases, taylor-swift, pink-floyd, vinyl]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2026-04-21-rsd-drops-2026-what-comes-later.webp
 ---
 
 Record Store Day 2026 is done. The queues cleared, the Instagram posts went up, and if you didn't get the release you wanted, the secondary market was already doing its thing by Sunday morning.

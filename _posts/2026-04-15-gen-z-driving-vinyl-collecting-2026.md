@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-collecting, gen-z, vinyl-market, vinyl-trends, collecting, demographics, taylor-swift, kpop, vinyl-future]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-04-15-gen-z-driving-vinyl-collecting-2026.webp
 ---
 
 The story of vinyl's revival has always been told as a nostalgia play — ageing millennials reuniting with the records of their youth. That's a real part of it, but it's increasingly not the whole story.

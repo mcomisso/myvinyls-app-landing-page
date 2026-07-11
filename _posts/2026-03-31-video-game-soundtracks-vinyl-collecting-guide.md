@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [video-game-vinyl, vgm, chrono-trigger, record-store-day, soundtrack, collecting, vinyl-records]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-03-31-video-game-soundtracks-vinyl-collecting-guide.webp
 ---
 
 A few years ago, if you told someone you collected video game soundtracks on vinyl, you'd get a polite nod and a quick change of subject. Now? Labels are pressing them faster than collectors can keep up, Record Store Day has an entire gaming category, and a Chrono Trigger LP box set just sold out in days.

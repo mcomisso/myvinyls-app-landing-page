@@ -6,6 +6,7 @@ category: vinyl-collecting
 tags: [vinyl-care, climate-change, heat-damage, vinyl-storage, preservation, humidity, summer]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-04-19-vinyl-collecting-warming-world-climate-change.webp
 ---
 
 The summer of 2025 was grim in a lot of places. Phoenix hit 115°F for the fifth consecutive year. Athens recorded its highest-ever temperatures. Parts of Southern Europe went weeks without meaningful rainfall. In the UK, the summer wasn't dramatic by Mediterranean standards, but the writing is on the wall.

@@ -7,6 +7,7 @@ category: vinyl-care
 tags: [cleaning, maintenance, care, records, tips]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-28-how-to-clean-vinyl-records.webp
 ---
 
 There's nothing quite as deflating as dropping the needle on a record you've been excited to play, only to hear snap, crackle, and pop drowning out the music. We've all experienced it. And look, some surface noise is part of the vinyl charm—but when it starts competing with the actual song, something's wrong.

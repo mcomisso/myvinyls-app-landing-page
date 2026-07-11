@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [colored-vinyl, picture-disc, sound-quality, collecting, variants]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2025-12-20-colored-vinyl-picture-discs-sound-quality.webp
 ---
 
 Every vinyl collector has heard it: "Colored vinyl sounds worse." It's one of those truisms that gets passed around in forums and record stores, usually stated with absolute certainty by someone who heard it from someone else.
