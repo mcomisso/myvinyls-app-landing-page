@@ -7,6 +7,7 @@ category: vinyl-care
 tags: [cleaning, ultrasonic, maintenance, deep-clean, care]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-22-ultrasonic-vinyl-cleaning-guide.webp
 ---
 
 There's a moment every collector experiences with used records. You've done the brush, the wet wash, maybe even run it through a Spin-Clean—and there's still noise. That crackling, that underlying hiss that won't quit. You hold the record up to the light and it *looks* clean. But something's still in there, deep in those grooves, mocking your efforts.

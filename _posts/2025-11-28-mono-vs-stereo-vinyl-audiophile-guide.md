@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [mono, stereo, audiophile, sound-quality, collecting]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-11-28-mono-vs-stereo-vinyl-audiophile-guide.webp
 ---
 
 Spend enough time around serious vinyl collectors, and the mono versus stereo debate will come up. Strong opinions. Passionate arguments. Occasionally actual hostility over something that seems like it should be straightforward.

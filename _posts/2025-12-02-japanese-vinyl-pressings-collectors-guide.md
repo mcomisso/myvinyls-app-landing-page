@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [japanese-pressing, audiophile, obi, import, collecting]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-02-japanese-vinyl-pressings-collectors-guide.webp
 ---
 
 There's a particular excitement collectors feel when they spot a Japanese pressing in the wild. That distinctive OBI strip wrapped around the sleeve. The weight of the vinyl. The promise of something better than whatever the Western pressing offered.

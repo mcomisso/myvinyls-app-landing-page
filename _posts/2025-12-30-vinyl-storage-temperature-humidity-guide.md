@@ -7,6 +7,7 @@ category: vinyl-care
 tags: [storage, temperature, humidity, care, preservation]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2025-12-30-vinyl-storage-temperature-humidity-guide.webp
 ---
 
 A collector once shared a horror story that still makes people wince. He'd inherited his father's record collection—hundreds of LPs from the 1960s and 70s, including original pressings of albums that would make any collector jealous. Stored them in the attic for "safekeeping" while renovating the house. One hot summer later, he went to retrieve them and found a warped, mold-spotted disaster. Decades of careful collecting, destroyed by a few months of neglect.

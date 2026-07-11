@@ -6,6 +6,7 @@ category: vinyl-collecting
 tags: [vinyl-pressing, supply-chain, vinyl-industry, pressing-plants, vinyl-production, vinyl-market]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-04-19-pressing-plant-problem-why-records-take-12-months.webp
 ---
 
 Here's a scenario that's become routine for independent labels: you finish an album in September. You want it on vinyl for Record Store Day the following April. You contact the pressing plant in October. You get a slot booked for February. By the time the record reaches shelves, it's been a full year since you mixed the final track.

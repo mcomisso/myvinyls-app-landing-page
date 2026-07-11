@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [organization, storage, collecting, tips, catalog]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2025-11-15-how-to-organize-vinyl-collection.webp
 ---
 
 It happens gradually. First you have twenty records that fit comfortably on a single shelf. Then fifty. Then two hundred. One evening you're standing in front of your collection, wanting to hear a specific album, and you realize you have no idea where it is.

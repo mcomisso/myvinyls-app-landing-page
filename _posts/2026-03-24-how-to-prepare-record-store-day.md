@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-tips, vinyl-collecting, collection-management]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2026-03-24-how-to-prepare-record-store-day.webp
 ---
 
 There's a particular kind of defeat that only vinyl collectors understand: getting home from Record Store Day, buzzing with excitement, sliding a new record onto the shelf, and realising you already own it. Different pressing, same album. Forty quid, gone.

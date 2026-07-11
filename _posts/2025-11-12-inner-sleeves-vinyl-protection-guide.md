@@ -7,6 +7,7 @@ category: vinyl-care
 tags: [inner-sleeves, protection, storage, maintenance, care]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2025-11-12-inner-sleeves-vinyl-protection-guide.webp
 ---
 
 Every time a record slides into a paper sleeve, something bad happens. Not dramatically bad—no one hears it at first. But microscopic paper fibers are scratching the surface. Static is building. Dust is being attracted and held against the grooves.

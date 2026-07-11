@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl, collecting, beginner, turntable, records]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2026-01-02-beginners-guide-vinyl-collecting.webp
 ---
 
 There's a moment every vinyl collector remembers: that first time the needle drops and the room fills with music that feels different somehow. Warmer. More *present*. A friend of mine described it as "the first time I actually *listened* to an album instead of just having it on." That's the magic that pulls people in.

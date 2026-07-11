@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, vinyl-checklist, collecting, indie-record-shops]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2026-04-14-record-store-day-2026-last-minute-checklist.webp
 ---
 
 At this point, your Record Store Day list is probably already too long.

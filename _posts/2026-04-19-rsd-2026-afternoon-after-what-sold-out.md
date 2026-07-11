@@ -6,6 +6,7 @@ category: vinyl-collecting
 tags: [record-store-day, rsd-2026, vinyl-collecting, secondary-market, exclusive-releases, taylor-swift, discogs]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-04-19-rsd-2026-afternoon-after-what-sold-out.webp
 ---
 
 If you were in a queue outside a record shop at 7 AM yesterday, you already lived it. If you weren't — here's what you're walking into today.

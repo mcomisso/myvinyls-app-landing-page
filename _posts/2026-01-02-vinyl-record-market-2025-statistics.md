@@ -7,6 +7,7 @@ category: music-discovery
 tags: [vinyl, statistics, market, trends, sales]
 author: Matteo Comisso
 reading_time: 5
+image: /assets/blog/images/2026-01-02-vinyl-record-market-2025-statistics.webp
 ---
 
 Remember when people thought vinyl was dead? That streaming would completely wipe out physical media? Well, about that...

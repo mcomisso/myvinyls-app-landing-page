@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl, pressing plants, manufacturing, supply chain, production, vinyl delays, wait times]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2026-03-24-vinyl-pressing-plants-supply-chain-2026.webp
 ---
 
 You pre-ordered that limited pressing three months ago. The estimated ship date came and went. Then the revised estimate. You check your email for updates that don't come. Eventually it arrives, five months after you paid for it.

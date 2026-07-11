@@ -7,6 +7,7 @@ category: music-discovery
 tags: [subscription, record-club, vinyl-me-please, discovery, collecting]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-11-08-vinyl-subscription-services-guide-2025.webp
 ---
 
 Remember Columbia House? Twelve CDs for a penny, then years of overpriced obligations and confusing cancellation processes. The record club concept had some baggage.

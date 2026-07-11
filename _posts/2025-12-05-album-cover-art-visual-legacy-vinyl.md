@@ -7,6 +7,7 @@ category: music-discovery
 tags: [album-art, design, artwork, history, covers]
 author: Matteo Comisso
 reading_time: 8
+image: /assets/blog/images/2025-12-05-album-cover-art-visual-legacy-vinyl.webp
 ---
 
 Before music videos existed, before streaming apps with their tiny thumbnails, there was this: a 12-inch canvas that became one of the 20th century's most vibrant art galleries. Album covers weren't just packaging—they were cultural statements, brand identities, and sometimes revolutionary artworks that people hung on their walls.

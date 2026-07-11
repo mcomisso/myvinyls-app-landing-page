@@ -7,6 +7,7 @@ category: music-discovery
 tags: [manufacturing, pressing, vinyl, behind-the-scenes, process]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-14-how-vinyl-records-are-made.webp
 ---
 
 There's something almost magical about holding a vinyl record—this physical thing that somehow contains music. But what actually happens between an artist finishing a record and that album showing up at your local store?

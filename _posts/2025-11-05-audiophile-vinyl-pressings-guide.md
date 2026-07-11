@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [audiophile, mofi, analog-productions, mastering, sound-quality]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-11-05-audiophile-vinyl-pressings-guide.webp
 ---
 
 There's a moment that converts skeptics. You put on an audiophile pressing of an album you've heard hundreds of times, and suddenly there are details you've never noticed. A breath before a vocal. The room sound around a piano. Texture in the bass that was always there but never quite audible.

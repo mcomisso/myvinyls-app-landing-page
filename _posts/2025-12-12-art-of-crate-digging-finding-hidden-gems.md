@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [crate-digging, thrift, rare, hunting, collecting]
 author: Matteo Comisso
 reading_time: 7
+image: /assets/blog/images/2025-12-12-art-of-crate-digging-finding-hidden-gems.webp
 ---
 
 There's a feeling that online shopping will never replicate: your fingers flip past another Herb Alpert, another Christmas compilation, another copy of Frampton Comes Alive... and then they stop. Something catches your eye. You pull it out. Your heart rate picks up a little. Could this be...?

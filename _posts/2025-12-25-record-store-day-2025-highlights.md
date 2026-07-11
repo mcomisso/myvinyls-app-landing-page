@@ -7,6 +7,7 @@ category: music-discovery
 tags: [record-store-day, rsd, exclusive, vinyl, releases]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2025-12-25-record-store-day-2025-highlights.webp
 ---
 
 There's something almost absurd about waking up at 5 AM to stand in line outside a record store. You're clutching a coffee, nodding at the other bleary-eyed people in line, all of you silently hoping that one release you really want doesn't sell out before you get inside.

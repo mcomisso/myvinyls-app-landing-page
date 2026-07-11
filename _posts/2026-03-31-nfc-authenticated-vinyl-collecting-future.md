@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [nfc, authentication, alliance-authentic, vinyl-tech, collecting, counterfeit, vinyl-authentication, vinyl-provenance]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-03-31-nfc-authenticated-vinyl-collecting-future.webp
 ---
 
 Vinyl collecting has always been a trust game. Is that first pressing real or a convincing reissue? Is the "sealed" copy on eBay actually unsealed and resealed? When you're spending serious money on rare records, provenance matters — and until recently, verifying it meant relying on visual inspection, matrix numbers, and your own experience.

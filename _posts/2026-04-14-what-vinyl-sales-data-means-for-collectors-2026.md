@@ -7,6 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-sales, market-trends, collectors, record-shops, 2026]
 author: Matteo Comisso
 reading_time: 6
+image: /assets/blog/images/2026-04-14-what-vinyl-sales-data-means-for-collectors-2026.webp
 ---
 
 Every few months, a new vinyl headline does the rounds.
