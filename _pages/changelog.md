@@ -3,10 +3,21 @@ layout: changelog
 title: "What's New in My Vinyls"
 description: "See the latest updates, new features, and improvements in My Vinyls, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
-latest_version: "4.3.1"
-latest_summary: "This release improves Last.fm scrobbling, adds a screen-awake control for active scrobbling, and fixes Collection side-index jumps."
+latest_version: "4.3.2"
+latest_summary: "This release fixes camera scanner loading and adds a reminder before a cancelled My Vinyl+ subscription ends."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.3.2
+
+#### New Features
+- Added a reminder one week before a cancelled My Vinyl+ subscription ends, with a path back to Settings to renew
+
+#### Bug Fixes
+- Fixed a camera scanner loading issue that could prevent the scanner from opening under certain conditions
+- Restored the scanner as a full-screen flow from Search so barcode scans can return cleanly to matching record results
+
 ---
 
 ### Version 4.3.1
