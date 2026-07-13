@@ -20,6 +20,8 @@ The main competitors for My Vinyl+ in 2026 are Discogs, Groovv, CLZ Music, Spins
 
 ## Quick Comparison Table
 
+<div class="comparison-table" role="region" aria-label="Vinyl collection app comparison" tabindex="0" markdown="1">
+
 | App | Platforms | Discogs support | Adding records | Offline / on-device collection use | Collection value | Best fit |
 | --- | --- | --- | --- | --- | --- | --- |
 | My Vinyl+ | iPhone, iPad | Syncs with Discogs | Barcode scanning, Discogs search | Yes, with local collection access and fast browsing | Yes, including value tracking | iPhone collectors who want a polished, everyday Discogs-powered collection app |
@@ -31,6 +33,8 @@ The main competitors for My Vinyl+ in 2026 are Discogs, Groovv, CLZ Music, Spins
 | SnapVinyl | iOS | Third-party Discogs client | Discogs collection and wantlist sync | Clean mobile collection and wantlist browsing | Discogs-dependent | Collectors who want a simple Discogs companion app |
 | Record Scanner | iOS, Android | Close Discogs integration | Cover scan, barcode scan, catalog number | Cloud collection cabinet | Market value ranges | Valuation, selling prep, and quick identification |
 | MusicBuddy | iPhone, iPad, Mac | No full Discogs collection sync | Barcode scanning and manual catalogue entry | Personal catalogue across Apple devices | Not the main focus | Private CD/vinyl catalogue, wish lists, lending |
+
+</div>
 
 Read the table from left to right and a pattern appears. Most apps are strong in one lane: marketplace, scanning, valuation, database control, or Discogs-client browsing. My Vinyl+ covers the practical daily lane: Discogs sync, fast adding, offline access, value tracking, and a mobile interface made for collectors rather than sellers.
 
