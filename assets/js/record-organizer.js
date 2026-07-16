@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const liveRegion = stage.querySelector("[data-organizer-status]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const organizeOnHover = stage.dataset.organizeOnHover !== "false";
+  const showsVinylPreview = stage.dataset.vinylPreview === "true";
+  const vinylLabelColors = ["#d47f66", "#e7aa62", "#6d91a7", "#ca7187", "#82a687"];
 
   const scatteredLayout = [
     { x: 3, y: 63, rotate: -12, depth: 8 },
@@ -143,6 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
     phone.classList.add("is-scanning", "is-visible");
     liveRegion.textContent = `Scanning ${record.dataset.title} by ${record.dataset.artist}`;
     setCount();
+    stage.dispatchEvent(new CustomEvent("recordorganizer:scan", {
+      detail: { record, slotIndex }
+    }));
 
     window.setTimeout(() => {
       const position = measureSlotPosition(slotIndex);
@@ -151,6 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
       record.setAttribute("aria-label", `${record.dataset.title} by ${record.dataset.artist}, organized`);
       if (position) applyRecordPosition(record, position);
       liveRegion.textContent = `${record.dataset.title} by ${record.dataset.artist} added to the organized collection`;
+      stage.dispatchEvent(new CustomEvent("recordorganizer:organized", {
+        detail: { record, slotIndex }
+      }));
       if (currentSequence === scanSequence) phone.classList.remove("is-scanning");
     }, reducedMotion ? 0 : 620);
   };
@@ -168,12 +177,16 @@ document.addEventListener("DOMContentLoaded", () => {
     liveRegion.textContent = "The records are scattered again";
     setCount();
     scheduleLayout();
+    stage.dispatchEvent(new CustomEvent("recordorganizer:scatter", {
+      detail: { records }
+    }));
   };
 
   const makeRecord = (album, index) => {
     const record = document.createElement("button");
     const artwork = document.createElement("img");
     const scanLine = document.createElement("span");
+    const vinyl = document.createElement("span");
 
     record.type = "button";
     record.className = "record-sleeve";
@@ -188,9 +201,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index > 3) artwork.loading = "lazy";
     scanLine.className = "record-sleeve__scan";
     scanLine.setAttribute("aria-hidden", "true");
+    if (showsVinylPreview) {
+      vinyl.className = "record-sleeve__vinyl";
+      vinyl.setAttribute("aria-hidden", "true");
+      vinyl.style.setProperty("--vinyl-label", vinylLabelColors[index % vinylLabelColors.length]);
+      record.append(vinyl);
+    }
     record.append(artwork, scanLine);
-    record.addEventListener("pointerenter", () => organize(record));
-    record.addEventListener("focus", () => organize(record));
+    if (organizeOnHover) {
+      record.addEventListener("pointerenter", () => organize(record));
+      record.addEventListener("focus", () => organize(record));
+    }
     record.addEventListener("click", () => organize(record));
     return record;
   };
@@ -208,7 +229,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       requestAnimationFrame(() => {
-        scheduleLayout();
+        layoutRecords();
+        stage.dispatchEvent(new CustomEvent("recordorganizer:ready", {
+          detail: { records }
+        }));
         if (reducedMotion) records.slice(0, grid.children.length).forEach(organize);
       });
     })

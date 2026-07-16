@@ -1,0 +1,26 @@
+---
+# Experimental collection organizer page.
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="beta-page{% if page.beta_effect %} beta-has-effect beta-effect-{{ page.beta_effect }}{% endif %}">
+    {% include header.html %}
+
+    <main id="main-content" tabindex="-1">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/record-organizer.js' | relative_url }}" defer></script>
+    {% if page.beta_effect %}
+    <script type="module" src="{{ '/assets/js/beta-effect-' | append: page.beta_effect | append: '.js' | relative_url }}"></script>
+    {% endif %}
+</body>
+
+</html>
