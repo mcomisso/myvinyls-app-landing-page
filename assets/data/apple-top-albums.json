@@ -1,0 +1,135 @@
+{
+  "prototype_only": true,
+  "source": "https://rss.marketingtools.apple.com/api/v2/gb/music/most-played/25/albums.json",
+  "generated_at": "2026-07-16T14:58:55Z",
+  "albums": [
+    {
+      "id": "1889992111",
+      "name": "you seem pretty sad for a girl so in love",
+      "artist": "Olivia Rodrigo",
+      "release_date": "2026-06-12",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/you-seem-pretty-sad-for-a-girl-so-in-love/1889992111"
+    },
+    {
+      "id": "1892545087",
+      "name": "CONFESSIONS II",
+      "artist": "Madonna",
+      "release_date": "2026-07-03",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/confessions-ii/1892545087"
+    },
+    {
+      "id": "6769568449",
+      "name": "ICEMAN",
+      "artist": "Drake",
+      "release_date": "2026-05-15",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/35/b9/06/35b90629-a873-14f8-4789-ffc324960038/26UMGIM63614.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/iceman/6769568449"
+    },
+    {
+      "id": "6784327271",
+      "name": "The Real Me",
+      "artist": "Future",
+      "release_date": "2026-07-10",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8e/a0/75/8ea0757a-6859-9c50-e92b-944979cc0d53/196874557198.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/the-real-me/6784327271"
+    },
+    {
+      "id": "1894997820",
+      "name": "The Great Divide: The Last Of The Bugs",
+      "artist": "Noah Kahan",
+      "release_date": "2026-04-25",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/aa/69/f9aa6992-40ca-a756-85ca-b27c48f7c720/26UMGIM02802.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/the-great-divide-the-last-of-the-bugs/1894997820"
+    },
+    {
+      "id": "1817609404",
+      "name": "The Art of Loving",
+      "artist": "Olivia Dean",
+      "release_date": "2025-09-26",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/e2/21/08e22164-7c0b-1522-818f-e0e74f62dc49/25UMGIM69703.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/the-art-of-loving/1817609404"
+    },
+    {
+      "id": "6769552402",
+      "name": "Visitor (Deluxe)",
+      "artist": "SIENNA SPIRO",
+      "release_date": "2026-07-03",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/e5/61/f4e561f5-3e73-68c7-7ca4-295ac5a063ed/26UMGIM51351.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/visitor-deluxe/6769552402"
+    },
+    {
+      "id": "1870984032",
+      "name": "Kiss All The Time. Disco, Occasionally.",
+      "artist": "Harry Styles",
+      "release_date": "2026-03-06",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/kiss-all-the-time-disco-occasionally/1870984032"
+    },
+    {
+      "id": "374487786",
+      "name": "Footie Anthems",
+      "artist": "The Football Classics Band",
+      "release_date": "2010-05-17",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1a/27/12/1a2712a2-b670-db6f-dca6-3a6620509ff7/mzi.jxepwtan.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/footie-anthems/374487786"
+    },
+    {
+      "id": "1895941732",
+      "name": "Foreign Tongues",
+      "artist": "The Rolling Stones",
+      "release_date": "2026-07-10",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/c5/ad/c2c5ad0d-e9c9-041c-e803-a8466a23ce54/26UMGIM36901.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/foreign-tongues/1895941732"
+    },
+    {
+      "id": "1831729178",
+      "name": "To Fall Asleep To",
+      "artist": "Rain Sounds",
+      "release_date": "2022-04-02",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/20/2c/e5/202ce578-3c96-12e7-7f55-72618aeffd60/850113.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/to-fall-asleep-to/1831729178"
+    },
+    {
+      "id": "1820264137",
+      "name": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
+      "artist": "KPop Demon Hunters Cast, HUNTR/X & Saja Boys",
+      "release_date": "2025-06-20",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/kpop-demon-hunters-soundtrack-from-the-netflix-film/1820264137"
+    },
+    {
+      "id": "1065946325",
+      "name": "Baby Lullaby: Relaxing Piano Lullabies and Natural Sleep Aid for Baby Sleep Music",
+      "artist": "Baby Lullaby Academy",
+      "release_date": "2015-11-24",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/cb/17/abcb1725-a2e0-c4bc-8666-136f5782635a/859714545211_cover.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/baby-lullaby-relaxing-piano-lullabies-and-natural/1065946325"
+    },
+    {
+      "id": "6781379418",
+      "name": "My Reckless Abandon",
+      "artist": "Bella Kay",
+      "release_date": "2026-07-12",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ec/eb/23/eceb2396-35c1-679b-e302-2d0b7b274606/075679570116.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/my-reckless-abandon/6781379418"
+    },
+    {
+      "id": "1156310650",
+      "name": "The Black Parade",
+      "artist": "My Chemical Romance",
+      "release_date": "2006-10-24",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/56/99/8a/56998a1c-efe7-fdf0-2b1d-e2da88d8df52/093624917724.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/the-black-parade/1156310650"
+    },
+    {
+      "id": "1517447039",
+      "name": "(What's the Story) Morning Glory?",
+      "artist": "Oasis",
+      "release_date": "1995-10-02",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/04/92/e0/0492e08b-cbcc-9969-9ad6-8f5a0888068c/5051961007107.jpg/240x240bb.jpg",
+      "url": "https://music.apple.com/gb/album/whats-the-story-morning-glory/1517447039"
+    }
+  ]
+}
