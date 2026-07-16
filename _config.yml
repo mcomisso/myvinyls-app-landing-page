@@ -161,6 +161,7 @@ exclude:
   - squirrel.toml
   - skills
   - docs
+  - scripts
 
 # Sitemap defaults — exclude duplicate public/ paths
 defaults:
