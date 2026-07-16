@@ -15,6 +15,9 @@
 	{% endif %}
 	<meta name="description" content="{{ base_description }}">
 	<meta name="author" content="{{ page.author | default: site.your_name }}">
+	{% if page.robots %}
+	<meta name="robots" content="{{ page.robots }}">
+	{% endif %}
 
 	<!-- Canonical URL -->
 	<link rel="canonical" href="{{ page.url | absolute_url }}">

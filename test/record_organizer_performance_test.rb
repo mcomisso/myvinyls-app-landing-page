@@ -6,6 +6,7 @@ class RecordOrganizerPerformanceTest < Minitest::Test
   ROOT = File.expand_path("..", __dir__)
   SCRIPT = File.read(File.join(ROOT, "assets/js/record-organizer.js"))
   STYLES = File.read(File.join(ROOT, "main.scss"))
+  BETA_ORGANIZER = File.read(File.join(ROOT, "_includes/beta-organizer.html"))
   REFRESH_SCRIPT = File.read(File.join(ROOT, "scripts/refresh_apple_chart.rb"))
   CHART_DATA = File.read(File.join(ROOT, "assets/data/apple-top-albums.json"))
 
@@ -14,6 +15,21 @@ class RecordOrganizerPerformanceTest < Minitest::Test
     assert_includes SCRIPT, 'stage.addEventListener("pointermove", schedulePhoneMove)'
     assert_includes SCRIPT, "if (phoneFrameRequest !== null) return"
     assert_includes SCRIPT, "phoneFrameRequest = null"
+  end
+
+  def test_organizer_exposes_effect_events_without_moving_state_out_of_the_dom
+    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:ready"'
+    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:scan"'
+    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:organized"'
+    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:scatter"'
+  end
+
+  def test_hover_organization_can_be_disabled_for_preview_effects
+    assert_includes SCRIPT, 'stage.dataset.organizeOnHover !== "false"'
+    assert_match(/if \(organizeOnHover\).*?pointerenter.*?focus/m, SCRIPT)
+    assert_includes SCRIPT, 'record.addEventListener("click", () => organize(record))'
+    assert_includes SCRIPT, 'stage.dataset.vinylPreview === "true"'
+    assert_includes SCRIPT, 'vinyl.className = "record-sleeve__vinyl"'
   end
 
   def test_record_layout_batches_measurement_before_mutation
@@ -46,6 +62,9 @@ class RecordOrganizerPerformanceTest < Minitest::Test
   def test_phone_frame_uses_a_small_web_asset
     asset = File.join(ROOT, "assets/iphone-frame.png")
 
+    assert_includes BETA_ORGANIZER, "assets/iphone-frame.png"
+    refute_includes BETA_ORGANIZER, "Frames/iPhone 14 Pro Portrait.png"
+    assert_match(/width="90" height="183"/, BETA_ORGANIZER)
     assert_path_exists asset
     assert_operator File.size(asset), :<, 50_000
 

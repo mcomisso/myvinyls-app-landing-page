@@ -1,0 +1,58 @@
+<section class="hero-section collection-hero">
+    <div class="collection-hero__inner">
+        <div class="hero-content collection-hero__copy">
+            <div class="hero-badge-top">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+                <span>{{ include.prototype_label }}</span>
+            </div>
+            <h1 class="hero-title">{{ include.heading }} <span>{{ include.heading_accent }}</span></h1>
+
+            <p class="collection-hero__instruction">
+                <i class="fas fa-mobile-screen-button" aria-hidden="true"></i>
+                <span>{{ include.instruction }}</span>
+            </p>
+        </div>
+
+        <div class="record-organizer" data-record-organizer
+            data-feed="{{ '/assets/data/apple-top-albums.json' | relative_url }}"
+            data-organize-on-hover="{% if include.organize_on_hover == false %}false{% else %}true{% endif %}"
+            data-vinyl-preview="{% if include.vinyl_preview %}true{% else %}false{% endif %}"
+            aria-label="Interactive record collection organizer">
+            <div class="record-organizer__toolbar">
+                <span class="record-organizer__count" data-organized-count>0 records organized</span>
+                <button class="record-organizer__reset" type="button" data-organizer-reset>
+                    <i class="fas fa-shuffle" aria-hidden="true"></i>
+                    Scatter again
+                </button>
+            </div>
+
+            <div class="organized-grid" data-organized-grid aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="record-layer" data-record-layer></div>
+
+            <div class="scanner-phone" data-scanner-phone aria-hidden="true">
+                <div class="scanner-phone__screen">
+                    <img data-scanner-cover src="{{ 'assets/appicon.webp' | relative_url }}" alt="">
+                    <span class="scanner-phone__beam"></span>
+                </div>
+                <img class="scanner-phone__frame" src="{{ 'assets/iphone-frame.png' | relative_url }}" alt=""
+                    width="90" height="183">
+            </div>
+
+            <div class="record-found" data-found-card aria-hidden="true">
+                <span class="record-found__check"><i class="fas fa-check" aria-hidden="true"></i></span>
+                <span>
+                    <strong>Record found</strong>
+                    <small data-found-title></small>
+                    <small data-found-artist></small>
+                </span>
+            </div>
+
+            <p class="sr-only" aria-live="polite" data-organizer-status>Loading the record collection</p>
+            <p class="record-organizer__error">The prototype record feed is unavailable right now.</p>
+        </div>
+    </div>
+</section>
