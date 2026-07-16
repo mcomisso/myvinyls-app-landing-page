@@ -1,1 +1,19 @@
-document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".site-header"),t=()=>{window.scrollY>20?e.classList.add("scrolled"):e.classList.remove("scrolled")};window.addEventListener("scroll",t,{passive:true}),t();const r={threshold:.1,rootMargin:"0px 0px -50px 0px"},o=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)",o.unobserve(e.target))}))}),r),n=window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=[".step-card",".testimonial-card",".faq-item",".bento-card",".gallery-item",".comparison-card"];n||s.forEach((e=>{document.querySelectorAll(e).forEach(((e,t)=>{e.style.opacity="0",e.style.transform="translateY(20px)",e.style.transition=`opacity 0.5s ease ${t*0.05}s, transform 0.5s ease ${t*0.05}s`,o.observe(e)}))})),document.querySelectorAll('a[href^="#"]').forEach((e=>{e.addEventListener("click",function(t){t.preventDefault();const r=document.querySelector(this.getAttribute("href"));r&&r.scrollIntoView({behavior:"smooth",block:"start"})})}))});
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  const updateHeader = () => {
+    header?.classList.toggle("scrolled", window.scrollY > 20);
+  };
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+});

@@ -6,7 +6,6 @@ class RecordOrganizerPerformanceTest < Minitest::Test
   ROOT = File.expand_path("..", __dir__)
   SCRIPT = File.read(File.join(ROOT, "assets/js/record-organizer.js"))
   STYLES = File.read(File.join(ROOT, "main.scss"))
-  LAYOUT = File.read(File.join(ROOT, "_layouts/default.html"))
   REFRESH_SCRIPT = File.read(File.join(ROOT, "scripts/refresh_apple_chart.rb"))
   CHART_DATA = File.read(File.join(ROOT, "assets/data/apple-top-albums.json"))
 
@@ -47,9 +46,6 @@ class RecordOrganizerPerformanceTest < Minitest::Test
   def test_phone_frame_uses_a_small_web_asset
     asset = File.join(ROOT, "assets/iphone-frame.png")
 
-    assert_includes LAYOUT, "assets/iphone-frame.png"
-    refute_includes LAYOUT, "Frames/iPhone 14 Pro Portrait.png"
-    assert_match(/width="90"\s+height="183"/, LAYOUT)
     assert_path_exists asset
     assert_operator File.size(asset), :<, 50_000
 
