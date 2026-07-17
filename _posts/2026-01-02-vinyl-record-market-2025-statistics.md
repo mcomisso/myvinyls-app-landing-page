@@ -72,7 +72,7 @@ And as always—collect what you love. The investment angle is real, but it shou
 
 ## Stay in the Loop
 
-Apps like [My Vinyls](/) make it easy to track what your collection's actually worth in real-time. It's useful for insurance purposes, for knowing when something you own has spiked, or just for the satisfaction of watching your shelves gain value while you enjoy them.
+Apps like [My Vinyl+](/) make it easy to track what your collection's actually worth in real-time. It's useful for insurance purposes, for knowing when something you own has spiked, or just for the satisfaction of watching your shelves gain value while you enjoy them.
 
 But the real value isn't the number. It's the music.
 

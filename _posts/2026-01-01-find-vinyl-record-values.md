@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to Find Vinyl Record Values with My Vinyls"
-description: "Learn how to quickly check vinyl record prices, track your collection's worth, and identify valuable pressings using the My Vinyls app and Discogs integration."
+title: "How to Find Vinyl Record Values with My Vinyl+"
+description: "Learn how to quickly check vinyl record prices, track your collection's worth, and identify valuable pressings using the My Vinyl+ app and Discogs integration."
 date: 2026-01-01 10:00:00 +0000
 category: app-tips
 tags: [pricing, discogs, collection, app, value]
@@ -36,7 +36,7 @@ So what makes the difference?
 
 Here's where things get practical.
 
-[My Vinyls](/) pulls pricing data directly from Discogs, which means you've got access to real market information—what records are listed for, what they've actually sold for, and how prices have moved over time.
+[My Vinyl+](/) pulls pricing data directly from Discogs, which means you've got access to real market information—what records are listed for, what they've actually sold for, and how prices have moved over time.
 
 The process is pretty simple. Open the app, scan the barcode, and the app matches it to the specific pressing. You'll see the lowest current listing, the median price from recent sales (usually the most useful number), and what top-condition copies are going for.
 
@@ -74,7 +74,7 @@ The people who build the most valuable collections usually aren't trying to inve
 
 That said, if you want to be smart about it:
 
-Buy fewer records in better condition rather than lots of worn copies. Store them properly—vertical, away from heat, in good sleeves. Keep track of what you paid and what condition things were in when you got them (My Vinyls has notes for exactly this purpose).
+Buy fewer records in better condition rather than lots of worn copies. Store them properly—vertical, away from heat, in good sleeves. Keep track of what you paid and what condition things were in when you got them (My Vinyl+ has notes for exactly this purpose).
 
 And don't get too caught up in the numbers. The real value of a record collection isn't on a spreadsheet. It's in those nights when you put something on and remember exactly where you were when you first heard it.
 

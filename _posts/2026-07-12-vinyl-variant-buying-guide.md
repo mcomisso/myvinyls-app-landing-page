@@ -81,7 +81,7 @@ Use a simple rule before you buy:
 
 Your rule can be personal. It just needs to exist before the checkout page.
 
-In My Vinyls, this is a good place to use notes or wantlist entries. Add the specific edition you are considering, why it is the one you prefer, and the maximum delivered price you are willing to pay. If another variant appears later, you can compare it against your own criteria instead of starting from zero again.
+In My Vinyl+, this is a good place to use notes or wantlist entries. Add the specific edition you are considering, why it is the one you prefer, and the maximum delivered price you are willing to pay. If another variant appears later, you can compare it against your own criteria instead of starting from zero again.
 
 ## Do a Duplicate Check Before You Click Buy
 

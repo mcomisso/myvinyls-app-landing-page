@@ -8,6 +8,7 @@ class BetaPageTest < Minitest::Test
   LAYOUT = File.read(File.join(ROOT, "_layouts/beta.html"))
   ORGANIZER = File.read(File.join(ROOT, "_includes/beta-organizer.html"))
   STYLES = File.read(File.join(ROOT, "main.scss"))
+  SMARTPHONE_CURSOR = File.join(ROOT, "assets/smartphone-cursor.svg")
 
   def test_beta_route_owns_the_interactive_organizer
     assert_includes PAGE, "permalink: /beta/"
@@ -17,34 +18,35 @@ class BetaPageTest < Minitest::Test
     assert_includes LAYOUT, "assets/js/record-organizer.js"
   end
 
-  def test_three_prototypes_have_isolated_routes_and_effects
-    (1..3).each do |number|
-      prototype = File.read(File.join(ROOT, "_pages/beta-#{number}.html"))
-      effect = File.read(File.join(ROOT, "assets/js/beta-effect-#{number}.js"))
+  def test_record_scanner_is_the_only_numbered_prototype
+    prototype = File.read(File.join(ROOT, "_pages/beta-2.html"))
 
-      assert_includes prototype, "permalink: /beta/#{number}/"
-      assert_includes prototype, "beta_effect: #{number}"
-      assert_includes prototype, "sitemap: false"
-      assert_includes effect, 'from "./three-effect-utils.js"'
-      assert_includes effect, "createThreeLayer"
-    end
-
-    assert_includes LAYOUT, "beta-effect-"
+    assert_includes prototype, "permalink: /beta/2/"
+    assert_includes prototype, "beta_effect: 2"
+    assert_includes prototype, "sitemap: false"
+    assert_includes prototype, "Prototype 2 · Record scanner"
+    assert_includes prototype, "cursor_scanner=true"
+    assert_includes ORGANIZER, "data-cursor-scanner="
+    refute_path_exists File.join(ROOT, "_pages/beta-1.html")
+    refute_path_exists File.join(ROOT, "_pages/beta-3.html")
+    refute_path_exists File.join(ROOT, "assets/js/beta-effect-1.js")
+    refute_path_exists File.join(ROOT, "assets/js/beta-effect-2.js")
+    refute_path_exists File.join(ROOT, "assets/js/beta-effect-3.js")
+    refute_path_exists File.join(ROOT, "assets/js/three-effect-utils.js")
+    refute_includes LAYOUT, 'type="module"'
   end
 
-  def test_three_effects_do_not_load_on_the_baseline_beta_page
+  def test_numbered_variant_styles_do_not_apply_to_the_baseline_beta_page
     refute_includes PAGE, "beta_effect:"
   end
 
-  def test_vinyl_reveal_previews_on_hover_and_collects_on_click
-    prototype = File.read(File.join(ROOT, "_pages/beta-1.html"))
+  def test_record_scanner_uses_a_small_iphone_cursor
+    assert_path_exists SMARTPHONE_CURSOR
+    cursor = File.read(SMARTPHONE_CURSOR)
 
-    assert_includes prototype, "organize_on_hover=false"
-    assert_includes prototype, "vinyl_preview=true"
-    assert_includes ORGANIZER, "data-organize-on-hover="
-    assert_includes ORGANIZER, "data-vinyl-preview="
-    assert_match(/\.beta-has-effect \.record-sleeve:not\(\.is-organized\).*?cursor: pointer;/m, STYLES)
-    assert_includes STYLES, ".record-sleeve__vinyl"
+    assert_includes cursor, 'width="28" height="48"'
+    assert_includes cursor, 'width="10" height="3.5"'
+    assert_match(/\.beta-effect-2 \.record-organizer,.*?smartphone-cursor\.svg.*?14 5, pointer;/m, STYLES)
   end
 
   def test_beta_page_is_not_indexed

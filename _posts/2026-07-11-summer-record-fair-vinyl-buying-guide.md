@@ -60,7 +60,7 @@ That means the danger points after a fair are predictable:
 
 **Long walks after the fair.** If the day is genuinely hot, plan the boring route home: shortest walk, least direct sun, least standing around. The rare record can wait for a nicer photo later.
 
-This is where My Vinyls can be quietly useful. If you spot something interesting but the condition is borderline, add it to your wantlist or notes rather than buying out of panic. A fair is not a one-time portal to every record on earth. You are allowed to leave something behind.
+This is where My Vinyl+ can be quietly useful. If you spot something interesting but the condition is borderline, add it to your wantlist or notes rather than buying out of panic. A fair is not a one-time portal to every record on earth. You are allowed to leave something behind.
 
 ## Ask Better Questions at the Table
 
@@ -108,7 +108,7 @@ Before you leave:
 - Bring one or two spare outer sleeves
 - Check the day's route home, especially if public transport is disrupted by heat
 - Decide your budget before the room starts working on you
-- Add wantlist priorities to My Vinyls or Discogs so you are not relying on memory
+- Add wantlist priorities to My Vinyl+ or Discogs so you are not relying on memory
 
 At the fair:
 

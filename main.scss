@@ -584,6 +584,10 @@ img {
   letter-spacing: 0.02em;
 }
 
+.collection-hero__mobile-video {
+  display: none;
+}
+
 .record-organizer {
   --record-size: clamp(82px, 8vw, 116px);
   position: relative;
@@ -690,29 +694,6 @@ img {
   transform-style: preserve-3d;
 }
 
-.record-effects-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-  contain: strict;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-.record-effects-canvas.is-foreground {
-  z-index: 35;
-}
-
-.record-organizer.has-three-effects .record-sleeve {
-  transition-duration: 0.68s;
-}
-
-.record-organizer.has-three-effects .record-sleeve.is-effect-hidden {
-  opacity: 0;
-}
-
 .beta-has-effect .scanner-phone,
 .beta-has-effect .record-found {
   display: none;
@@ -785,61 +766,6 @@ img {
   opacity: 0;
   background: #ff8a69;
   box-shadow: 0 0 14px 4px rgba(255, 115, 83, 0.62);
-}
-
-.beta-effect-1 .record-sleeve {
-  overflow: visible;
-  background: transparent;
-
-  img {
-    position: relative;
-    z-index: 2;
-    border-radius: inherit;
-  }
-
-  &::after {
-    z-index: 3;
-    border-radius: inherit;
-  }
-
-  &:hover,
-  &:focus-visible,
-  &.is-scanning {
-    .record-sleeve__vinyl {
-      box-shadow: 0 8px 14px rgba(28, 22, 20, 0.34);
-      transform: translateX(72%) rotate(165deg) scale(1.03);
-    }
-  }
-
-  &.is-organized .record-sleeve__vinyl {
-    opacity: 0;
-    transform: translateX(12%) rotate(190deg) scale(0.92);
-  }
-}
-
-.record-sleeve__vinyl {
-  --vinyl-label: var(--primary);
-  position: absolute;
-  inset: 1px;
-  z-index: 1;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle,
-      #f7eee8 0 2.5%,
-      var(--vinyl-label) 3% 13%,
-      #171616 13.5% 17%,
-      transparent 17.5%),
-    repeating-radial-gradient(circle,
-      #0b0b0c 0 2px,
-      #29282a 3px 4px,
-      #101011 5px 7px);
-  box-shadow: 0 5px 9px rgba(28, 22, 20, 0.24);
-  pointer-events: none;
-  transform: translateX(24%) rotate(-18deg) scale(0.96);
-  transition:
-    opacity 0.28s ease,
-    transform 0.52s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.28s ease;
 }
 
 @keyframes record-scan-line {
@@ -1003,6 +929,16 @@ img {
     cursor: default;
   }
 
+  .beta-effect-2 .record-organizer,
+  .beta-effect-2 .record-sleeve:not(.is-organized) {
+    cursor: url('/assets/smartphone-cursor.svg') 14 5, pointer;
+  }
+
+  .record-organizer[data-cursor-scanner="true"],
+  .record-organizer[data-cursor-scanner="true"] .record-sleeve:not(.is-organized) {
+    cursor: url('/assets/smartphone-cursor.svg') 14 5, pointer;
+  }
+
   .record-organizer__reset {
     cursor: pointer;
   }
@@ -1082,6 +1018,19 @@ img {
     right: 8%;
     bottom: 26%;
   }
+
+  .collection-hero--with-mobile-video {
+    .record-organizer,
+    .collection-hero__instruction {
+      display: none;
+    }
+
+    .collection-hero__mobile-video {
+      display: flex;
+      order: -1;
+      margin: 0 auto var(--space-xl);
+    }
+  }
 }
 
 @media (max-width: 580px) {
@@ -1124,7 +1073,6 @@ img {
 
 @media (prefers-reduced-motion: reduce) {
   .record-sleeve,
-  .record-sleeve__vinyl,
   .record-found,
   .scanner-phone {
     transition: none;

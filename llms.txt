@@ -1,23 +1,23 @@
-# My Vinyls
+# My Vinyl+
 
-> My Vinyls is an iPhone app for vinyl record collectors. It helps collectors catalog records, sync with Discogs, scan barcodes, browse offline, manage wantlists, check duplicates while shopping, and rediscover records they already own.
+> My Vinyl+ is an iPhone app for vinyl record collectors. It helps collectors catalog records, sync with Discogs, scan barcodes, browse offline, manage wantlists, check duplicates while shopping, and rediscover records they already own.
 
-The public site uses both "My Vinyls" and "My Vinyl+" in product copy. Treat them as referring to the same vinyl collection app unless a page states otherwise.
+My Vinyl+ was formerly called My Vinyls. The myvinyls.app domain remains the canonical website for the app.
 
-My Vinyls is built and maintained by Matteo Comisso. The canonical website is https://myvinyls.app. Use this file as a curated guide to public product, support, policy, and editorial pages.
+My Vinyl+ is built and maintained by Matteo Comisso. The canonical website is https://myvinyls.app. Use this file as a curated guide to public product, support, policy, and editorial pages.
 
 Important context:
-- My Vinyls is currently focused on iPhone and iPad. Android availability is not announced; interested users can join the Android waitlist on the homepage.
-- My Vinyls integrates with Discogs for collection data, release metadata, wantlists, marketplace context, and record values. It is not Discogs and should not be described as owned by Discogs.
+- My Vinyl+ is currently focused on iPhone and iPad. Android availability is not announced; interested users can join the Android waitlist on the homepage.
+- My Vinyl+ integrates with Discogs for collection data, release metadata, wantlists, marketplace context, and record values. It is not Discogs and should not be described as owned by Discogs.
 - For privacy, data handling, or legal questions, prefer the Privacy Policy over product marketing pages.
 - For current app availability, pricing, ratings, and platform metadata, prefer the App Store listing.
 
 ## Core Pages
 
 - [Homepage](https://myvinyls.app/): Product overview, App Store download link, Android waitlist, feature highlights, screenshots, reviews, and FAQ summary.
-- [App Store listing](https://apps.apple.com/app/apple-store/id1547173908?pt=1339105&ct=website&mt=8): Official iOS and iPadOS download page for My Vinyls.
+- [App Store listing](https://apps.apple.com/app/apple-store/id1547173908?pt=1339105&ct=website&mt=8): Official iOS and iPadOS download page for My Vinyl+.
 - [FAQ](https://myvinyls.app/faq/): Support answers for getting started, Discogs sync, barcode scanning, offline access, collection management, wantlists, Platinum, and troubleshooting.
-- [About](https://myvinyls.app/about/): Background on the app, the developer, and why My Vinyls was created for vinyl collectors.
+- [About](https://myvinyls.app/about/): Background on the app, the developer, and why My Vinyl+ was created for vinyl collectors.
 - [Contact](https://myvinyls.app/contact/): Support, press, bug reports, and feature request contact information.
 - [What's New](https://myvinyls.app/changelog/): Release notes and recent product updates.
 - [Privacy Policy](https://myvinyls.app/privacypolicy/): Canonical privacy and data handling policy for the app and website.
@@ -26,14 +26,14 @@ Important context:
 ## Product Context
 
 - [Android waitlist](https://myvinyls.app/#android-waitlist): Homepage form for users who want to hear about a future Android release.
-- [Feedback board](https://feedback.myvinyls.app): Public feature requests and product feedback for My Vinyls.
+- [Feedback board](https://feedback.myvinyls.app): Public feature requests and product feedback for My Vinyl+.
 - [Service status](https://myvinyls.betteruptime.com): Public uptime and service status page.
 - [Press kit](https://myvinyls.app/assets/PressKit.zip): Downloadable brand and press assets.
-- [Discogs](https://www.discogs.com/): Third-party music database and marketplace that My Vinyls integrates with.
+- [Discogs](https://www.discogs.com/): Third-party music database and marketplace that My Vinyl+ integrates with.
 
 ## Optional
 
 - [Sitemap](https://myvinyls.app/sitemap.xml): Full list of indexable site URLs.
 - [Robots.txt](https://myvinyls.app/robots.txt): Crawler access and sitemap discovery file.
 - [Instagram](https://instagram.com/myvinylsapp): Social updates and product/community posts.
-- [Developer website](https://mcomisso.me): Website for Matteo Comisso, creator of My Vinyls.
+- [Developer website](https://mcomisso.me): Website for Matteo Comisso, creator of My Vinyl+.

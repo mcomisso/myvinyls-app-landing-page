@@ -75,7 +75,7 @@ Weak reasons:
 - You forgot what you already own.
 - You assume every reissue will become scarce.
 
-That is where cataloging helps. Before buying, check your shelf, your Discogs collection, or your My Vinyls library. Look at the exact edition, condition notes, and whether you actually play it. If you cannot remember owning a copy, that is a catalog problem, not a buying signal.
+That is where cataloging helps. Before buying, check your shelf, your Discogs collection, or your My Vinyl+ library. Look at the exact edition, condition notes, and whether you actually play it. If you cannot remember owning a copy, that is a catalog problem, not a buying signal.
 
 ## Check the Edition Details Before You Click
 

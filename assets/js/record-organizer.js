@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const liveRegion = stage.querySelector("[data-organizer-status]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
-  const organizeOnHover = stage.dataset.organizeOnHover !== "false";
-  const showsVinylPreview = stage.dataset.vinylPreview === "true";
-  const vinylLabelColors = ["#d47f66", "#e7aa62", "#6d91a7", "#ca7187", "#82a687"];
+  const cursorScanner = stage.dataset.cursorScanner === "true";
 
   const scatteredLayout = [
     { x: 3, y: 63, rotate: -12, depth: 8 },
@@ -138,17 +136,16 @@ document.addEventListener("DOMContentLoaded", () => {
     organizedCount += 1;
     record.dataset.slot = slotIndex;
     record.classList.add("is-scanning");
-    phoneCover.src = record.dataset.artwork;
-    phoneCover.alt = "";
-    foundTitle.textContent = record.dataset.title;
-    foundArtist.textContent = record.dataset.artist;
-    foundCard.classList.add("is-visible");
-    phone.classList.add("is-scanning", "is-visible");
+    if (!cursorScanner) {
+      phoneCover.src = record.dataset.artwork;
+      phoneCover.alt = "";
+      foundTitle.textContent = record.dataset.title;
+      foundArtist.textContent = record.dataset.artist;
+      foundCard.classList.add("is-visible");
+      phone.classList.add("is-scanning", "is-visible");
+    }
     liveRegion.textContent = `Scanning ${record.dataset.title} by ${record.dataset.artist}`;
     setCount();
-    stage.dispatchEvent(new CustomEvent("recordorganizer:scan", {
-      detail: { record, slotIndex }
-    }));
 
     window.setTimeout(() => {
       const position = measureSlotPosition(slotIndex);
@@ -157,10 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       record.setAttribute("aria-label", `${record.dataset.title} by ${record.dataset.artist}, organized`);
       if (position) applyRecordPosition(record, position);
       liveRegion.textContent = `${record.dataset.title} by ${record.dataset.artist} added to the organized collection`;
-      stage.dispatchEvent(new CustomEvent("recordorganizer:organized", {
-        detail: { record, slotIndex }
-      }));
-      if (currentSequence === scanSequence) phone.classList.remove("is-scanning");
+      if (!cursorScanner && currentSequence === scanSequence) phone.classList.remove("is-scanning");
     }, reducedMotion ? 0 : 620);
   };
 
@@ -172,21 +166,19 @@ document.addEventListener("DOMContentLoaded", () => {
       delete record.dataset.slot;
       record.setAttribute("aria-label", `Scan ${record.dataset.title} by ${record.dataset.artist}`);
     });
-    phone.classList.remove("is-scanning");
-    foundCard.classList.remove("is-visible");
+    if (!cursorScanner) {
+      phone.classList.remove("is-scanning");
+      foundCard.classList.remove("is-visible");
+    }
     liveRegion.textContent = "The records are scattered again";
     setCount();
     scheduleLayout();
-    stage.dispatchEvent(new CustomEvent("recordorganizer:scatter", {
-      detail: { records }
-    }));
   };
 
   const makeRecord = (album, index) => {
     const record = document.createElement("button");
     const artwork = document.createElement("img");
     const scanLine = document.createElement("span");
-    const vinyl = document.createElement("span");
 
     record.type = "button";
     record.className = "record-sleeve";
@@ -201,17 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index > 3) artwork.loading = "lazy";
     scanLine.className = "record-sleeve__scan";
     scanLine.setAttribute("aria-hidden", "true");
-    if (showsVinylPreview) {
-      vinyl.className = "record-sleeve__vinyl";
-      vinyl.setAttribute("aria-hidden", "true");
-      vinyl.style.setProperty("--vinyl-label", vinylLabelColors[index % vinylLabelColors.length]);
-      record.append(vinyl);
-    }
     record.append(artwork, scanLine);
-    if (organizeOnHover) {
-      record.addEventListener("pointerenter", () => organize(record));
-      record.addEventListener("focus", () => organize(record));
-    }
+    record.addEventListener("pointerenter", () => organize(record));
+    record.addEventListener("focus", () => organize(record));
     record.addEventListener("click", () => organize(record));
     return record;
   };
@@ -230,9 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       requestAnimationFrame(() => {
         layoutRecords();
-        stage.dispatchEvent(new CustomEvent("recordorganizer:ready", {
-          detail: { records }
-        }));
         if (reducedMotion) records.slice(0, grid.children.length).forEach(organize);
       });
     })
@@ -241,15 +222,17 @@ document.addEventListener("DOMContentLoaded", () => {
       stage.classList.add("has-feed-error");
     });
 
-  stage.addEventListener("pointermove", schedulePhoneMove);
-  stage.addEventListener("pointerleave", () => {
-    pendingPhonePosition = null;
-    if (phoneFrameRequest !== null) {
-      cancelAnimationFrame(phoneFrameRequest);
-      phoneFrameRequest = null;
-    }
-    if (!phone.classList.contains("is-scanning")) phone.classList.remove("is-visible");
-  });
+  if (!cursorScanner) {
+    stage.addEventListener("pointermove", schedulePhoneMove);
+    stage.addEventListener("pointerleave", () => {
+      pendingPhonePosition = null;
+      if (phoneFrameRequest !== null) {
+        cancelAnimationFrame(phoneFrameRequest);
+        phoneFrameRequest = null;
+      }
+      if (!phone.classList.contains("is-scanning")) phone.classList.remove("is-visible");
+    });
+  }
   reset.addEventListener("click", scatterAll);
   window.addEventListener("resize", scheduleLayout, { passive: true });
   setCount();

@@ -1,22 +1,42 @@
-<section class="hero-section collection-hero">
+<section class="hero-section collection-hero{% if include.mobile_video %} collection-hero--with-mobile-video{% endif %}">
     <div class="collection-hero__inner">
         <div class="hero-content collection-hero__copy">
             <div class="hero-badge-top">
-                <i class="fas fa-flask" aria-hidden="true"></i>
+                <i class="{{ include.badge_icon | default: 'fas fa-flask' }}" aria-hidden="true"></i>
                 <span>{{ include.prototype_label }}</span>
             </div>
-            <h1 class="hero-title">{{ include.heading }} <span>{{ include.heading_accent }}</span></h1>
+            <h1 class="hero-title">{{ include.heading }}{% if include.heading_accent %} <span>{{ include.heading_accent }}</span>{% endif %}</h1>
+
+            {% if include.description %}
+            <p class="hero-subtitle">{{ include.description }}</p>
+            {% endif %}
+
+            {% if include.show_actions %}
+            <div class="hero-buttons collection-hero__actions">
+                <a href="{{ site.appstore_link }}" class="appstore-badge" target="_blank" rel="noopener">
+                    <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download My Vinyl+ on the App Store"
+                        width="152" height="52">
+                </a>
+                <a href="#android-waitlist" class="hero-waitlist-button">
+                    <i class="fab fa-android" aria-hidden="true"></i>
+                    <span>{{ include.android_cta }}</span>
+                </a>
+                <span class="hero-badge">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    {{ include.supporting_copy }}
+                </span>
+            </div>
+            {% endif %}
 
             <p class="collection-hero__instruction">
-                <i class="fas fa-mobile-screen-button" aria-hidden="true"></i>
+                <i class="{{ include.instruction_icon | default: 'fas fa-mobile-screen-button' }}" aria-hidden="true"></i>
                 <span>{{ include.instruction }}</span>
             </p>
         </div>
 
         <div class="record-organizer" data-record-organizer
             data-feed="{{ '/assets/data/apple-top-albums.json' | relative_url }}"
-            data-organize-on-hover="{% if include.organize_on_hover == false %}false{% else %}true{% endif %}"
-            data-vinyl-preview="{% if include.vinyl_preview %}true{% else %}false{% endif %}"
+            data-cursor-scanner="{% if include.cursor_scanner %}true{% else %}false{% endif %}"
             aria-label="Interactive record collection organizer">
             <div class="record-organizer__toolbar">
                 <span class="record-organizer__count" data-organized-count>0 records organized</span>
@@ -45,14 +65,26 @@
             <div class="record-found" data-found-card aria-hidden="true">
                 <span class="record-found__check"><i class="fas fa-check" aria-hidden="true"></i></span>
                 <span>
-                    <strong>Record found</strong>
+                    <strong>{{ include.success_label | default: "Record found" }}</strong>
                     <small data-found-title></small>
                     <small data-found-artist></small>
                 </span>
             </div>
 
             <p class="sr-only" aria-live="polite" data-organizer-status>Loading the record collection</p>
-            <p class="record-organizer__error">The prototype record feed is unavailable right now.</p>
+            <p class="record-organizer__error">{{ include.error_message | default: "The prototype record feed is unavailable right now." }}</p>
         </div>
+
+        {% if include.mobile_video %}
+        <div class="hero-image collection-hero__mobile-video">
+            <video autoplay muted loop playsinline width="380" height="824"
+                poster="{{ 'assets/media/hero-poster.webp' | relative_url }}">
+                <source src="{{ 'assets/media/hero-swift.mp4' | relative_url }}" type="video/mp4"
+                    media="(max-width: 920px)">
+                <track kind="captions" srclang="en" label="English"
+                    src="{{ 'assets/media/hero-swift.vtt' | relative_url }}">
+            </video>
+        </div>
+        {% endif %}
     </div>
 </section>

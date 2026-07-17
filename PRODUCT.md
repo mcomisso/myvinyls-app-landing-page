@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-My Vinyls serves record collectors who want a faster, calmer way to check what they own, add records, browse their library, and understand collection details on iPhone. Website visitors are usually evaluating whether the app fits their collecting habits before downloading it from the App Store.
+My Vinyl+ serves record collectors who want a faster, calmer way to check what they own, add records, browse their library, and understand collection details on iPhone. Website visitors are usually evaluating whether the app fits their collecting habits before downloading it from the App Store.
 
 ## Product Purpose
 
-The site explains and sells My Vinyls as a focused vinyl collection manager with Discogs sync, barcode scanning, offline access, marketplace context, and collector-friendly insights. Success means a visitor quickly understands the app, trusts that it is actively maintained, and moves to the App Store with confidence.
+The site explains and sells My Vinyl+ as a focused vinyl collection manager with Discogs sync, barcode scanning, offline access, marketplace context, and collector-friendly insights. Success means a visitor quickly understands the app, trusts that it is actively maintained, and moves to the App Store with confidence.
 
 ## Brand Personality
 

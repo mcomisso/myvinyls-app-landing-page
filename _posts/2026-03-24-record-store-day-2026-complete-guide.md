@@ -80,4 +80,4 @@ See you in the queue on April 18.
 
 ---
 
-*Want to make sure you don't accidentally buy something you already own? Check out [My Vinyls](/) for keeping your collection organised and searchable, even while you're standing in line.*
+*Want to make sure you don't accidentally buy something you already own? Check out [My Vinyl+](/) for keeping your collection organised and searchable, even while you're standing in line.*
