@@ -8,62 +8,21 @@
 
         <main id="main-content" tabindex="-1">
             <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <div class="hero-badge-top">
-                            <i class="fab fa-apple" aria-hidden="true"></i>
-                            <span>Built for iPhone collectors</span>
-                        </div>
-                        <h1 class="hero-title">Your vinyl records, wherever you are.</h1>
-                        <p class="hero-subtitle">Track, scan, and browse your record collection with an iPhone app built
-                            for real vinyl collectors. Sync with Discogs, check duplicates fast, and rediscover what you
-                            already own. See the <a href="{{ '/faq/' | relative_url }}" class="contextual-link">My
-                                Vinyls FAQ</a> for setup, sync, and pricing details.</p>
-
-                        <div class="hero-stats">
-                            <div class="hero-stat">
-                                <span class="stat-number">15M+</span>
-                                <span class="stat-label">Releases</span>
-                            </div>
-                            <div class="hero-stat-divider"></div>
-                            <div class="hero-stat">
-                                <span class="stat-number">4.8</span>
-                                <span class="stat-label">App Store</span>
-                            </div>
-                            <div class="hero-stat-divider"></div>
-                            <div class="hero-stat">
-                                <span class="stat-number">20K+</span>
-                                <span class="stat-label">Collectors</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-buttons">
-                            <a href="{{ site.appstore_link }}" class="appstore-badge" target="_blank" rel="noopener">
-                                <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store"
-                                    width="152" height="52">
-                            </a>
-                            <a href="#android-waitlist" class="hero-waitlist-button">
-                                <i class="fab fa-android" aria-hidden="true"></i>
-                                <span>Wantlist for Android</span>
-                            </a>
-                            <span class="hero-badge">
-                                <i class="fas fa-download" aria-hidden="true"></i>
-                                Free to download, one-time unlock available
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="hero-image">
-                        <video autoplay muted loop playsinline width="380" height="824"
-                            poster="{{ 'assets/media/hero-poster.webp' | relative_url }}">
-                            <source src="{{ 'assets/media/hero-swift.mp4' | relative_url }}" type="video/mp4">
-                            <track kind="captions" srclang="en" label="English"
-                                src="{{ 'assets/media/hero-swift.vtt' | relative_url }}">
-                        </video>
-                    </div>
-                </div>
-            </section>
+            {% include beta-organizer.html
+                prototype_label="Built for iPhone collectors"
+                badge_icon="fab fa-apple"
+                heading="Your vinyl records, wherever you are."
+                description="Track, scan, and browse your collection. Sync with Discogs, check what you own while shopping, and find the right pressing faster."
+                show_actions=true
+                android_cta="Join the Android waitlist"
+                supporting_copy="Free to download. One-time unlock available."
+                instruction="Hover over a record to add it to the collection."
+                instruction_icon="fas fa-arrow-pointer"
+                cursor_scanner=true
+                success_label="Added to collection"
+                error_message="We couldn’t load the records. Try again in a moment."
+                mobile_video=true
+            %}
 
             <!-- Problem / Value Prop Section -->
             <section class="features-section">
@@ -71,9 +30,9 @@
                     <div class="section-header">
                         <span class="section-tag">Why collectors use it</span>
                         <h2 class="section-title">Made for record shopping, not just cataloging</h2>
-                        <p class="section-subtitle">My Vinyl+ is at its best in the moments that matter most, when
-                            you're deciding what to buy, which pressing you have, and what to play next. For collecting
-                            guides and record-care tips, read <a href="{{ '/blog/' | relative_url }}"
+                        <p class="section-subtitle">Use My Vinyl+ to check what you own while shopping, identify the
+                            right pressing, and choose what to play next. For collecting guides and record-care tips,
+                            read <a href="{{ '/blog/' | relative_url }}"
                                 class="contextual-link">The Vinyl Journal</a>.</p>
                     </div>
 
@@ -81,7 +40,7 @@
                         <div class="bento-card accent">
                             <div class="bento-content centered">
                                 <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                <h3>Never buy the same record twice</h3>
+                                <h3>Avoid buying the same record twice</h3>
                                 <p>Check your collection in seconds while crate digging, at fairs, or in the shop.</p>
                             </div>
                         </div>
@@ -99,8 +58,8 @@
                             <div class="bento-content centered">
                                 <i class="fas fa-record-vinyl" aria-hidden="true"></i>
                                 <h3>Enjoy your collection more</h3>
-                                <p>Browse, revisit, and rediscover the records you already own with a collector-first
-                                    experience.</p>
+                                <p>Browse, revisit, and rediscover the records you already own, whether you're choosing
+                                    tonight's album or browsing your shelves.</p>
                             </div>
                         </div>
                     </div>
@@ -115,43 +74,43 @@
                 </div>
                 <div class="gallery-grid">
                     <!-- <div class="gallery-item">
-                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyls iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="eager" fetchpriority="high">
+                    <img src="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" alt="My Vinyl+ iPhone app collection view showing vinyl record album grid" width="390" height="844" loading="eager" fetchpriority="high">
                 </div> -->
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-album-detail-vinyl-disc.webp' | relative_url }}"
-                            alt="My Vinyls app album detail page with spinning vinyl disc animation" width="390"
+                            alt="My Vinyl+ app album detail page with spinning vinyl disc animation" width="390"
                             height="844" loading="lazy">
                     </div>
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-album-detail-genres.webp' | relative_url }}"
-                            alt="My Vinyls app showing album details with genre tags" width="390" height="844"
+                            alt="My Vinyl+ app showing album details with genre tags" width="390" height="844"
                             loading="lazy">
                     </div>
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-artist-profile.webp' | relative_url }}"
-                            alt="My Vinyls app artist profile page with biography" width="390" height="844"
+                            alt="My Vinyl+ app artist profile page with biography" width="390" height="844"
                             loading="lazy">
                     </div>
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-release-detail-artwork.webp' | relative_url }}"
-                            alt="My Vinyls app release detail with album artwork and vinyl record" width="390"
+                            alt="My Vinyl+ app release detail with album artwork and vinyl record" width="390"
                             height="844" loading="lazy">
                     </div>
                     <!-- <div class="gallery-item">
-                    <img src="{{ 'assets/screens/my-vinyls-wantlist-album-view.webp' | relative_url }}" alt="My Vinyls app album view with wantlist and collection options" width="390" height="844" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-wantlist-album-view.webp' | relative_url }}" alt="My Vinyl+ app album view with wantlist and collection options" width="390" height="844" loading="lazy">
                 </div> -->
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-album-release-info.webp' | relative_url }}"
-                            alt="My Vinyls app album page showing genre tags and release info" width="390" height="844"
+                            alt="My Vinyl+ app album page showing genre tags and release info" width="390" height="844"
                             loading="lazy">
                     </div>
                     <div class="gallery-item">
                         <img src="{{ 'assets/screens/my-vinyls-album-artwork-display.webp' | relative_url }}"
-                            alt="My Vinyls app showcasing album artwork with vinyl record detail" width="390"
+                            alt="My Vinyl+ app showcasing album artwork with vinyl record detail" width="390"
                             height="844" loading="lazy">
                     </div>
                     <!-- <div class="gallery-item">
-                    <img src="{{ 'assets/screens/my-vinyls-album-images-gallery.webp' | relative_url }}" alt="My Vinyls app album page with image gallery and release details" width="390" height="844" loading="lazy">
+                    <img src="{{ 'assets/screens/my-vinyls-album-images-gallery.webp' | relative_url }}" alt="My Vinyl+ app album page with image gallery and release details" width="390" height="844" loading="lazy">
                 </div> -->
                 </div>
             </section>
@@ -340,9 +299,9 @@
                 <div class="cta-content">
                     <span class="section-tag">Get Started</span>
                     <h2>Take your collection record shopping.</h2>
-                    <p>Join 20,000+ collectors using My Vinyl+ to track what they own, check duplicates fast, and enjoy
-                        their collection more. See <a href="{{ '/changelog/' | relative_url }}"
-                            class="contextual-link">what's new in My Vinyls</a> before you download.</p>
+                    <p>Use My Vinyl+ to track what you own, check duplicates fast, and enjoy your collection more. See
+                        <a href="{{ '/changelog/' | relative_url }}" class="contextual-link">what's new in My Vinyl+</a>
+                        before you download.</p>
 
                     <div class="cta-buttons">
                         <a href="{{ site.appstore_link }}" class="appstore-badge large" target="_blank" rel="noopener">
@@ -408,11 +367,11 @@
         {
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            "name": "My Vinyls App Preview — Vinyl Collection Manager for iPhone",
-            "description": "A quick preview of the My Vinyls iOS app interface showing collection browsing, album details, and Discogs sync features.",
+            "name": "My Vinyl+ App Preview — Vinyl Collection Manager for iPhone",
+            "description": "A quick preview of the My Vinyl+ iOS app interface showing collection browsing, album details, and Discogs sync features.",
             "thumbnailUrl": "{{ 'assets/media/hero-poster.webp' | absolute_url }}",
             "uploadDate": "2026-02-01",
-            "duration": "PT15S",
+            "duration": "PT6S",
             "contentUrl": "{{ 'assets/media/hero-swift.mp4' | absolute_url }}",
             "embedUrl": "{{ 'assets/media/hero-swift.mp4' | absolute_url }}"
         }
@@ -423,7 +382,7 @@
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "My Vinyls",
+            "name": "My Vinyl+",
             "operatingSystem": "iOS",
             "applicationCategory": "MusicApplication",
             "description": "Track your record collection, check duplicates while shopping, and sync with Discogs. My Vinyl+ is the iPhone app built for real vinyl collectors.",
@@ -443,11 +402,6 @@
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "20000"
             }
         }
         </script>
@@ -499,7 +453,7 @@
         {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "My Vinyls",
+            "name": "My Vinyl+",
             "url": "https://myvinyls.app",
             "logo": "{{ site.app_icon | absolute_url }}",
             "sameAs": [
@@ -520,12 +474,13 @@
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "My Vinyls",
+            "name": "My Vinyl+",
             "url": "https://myvinyls.app"
         }
         </script>
 
         <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
+        <script src="{{ '/assets/js/record-organizer.js' | relative_url }}" defer></script>
     </body>
 
 </html>

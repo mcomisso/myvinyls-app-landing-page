@@ -118,4 +118,4 @@ Good luck out there. May your queue be short and your want list be long.
 
 ---
 
-*Keeping track of what you own (and what you're still hunting) is half the hobby. Check out [My Vinyls](/) for a dead-simple way to catalogue your collection.*
+*Keeping track of what you own (and what you're still hunting) is half the hobby. Check out [My Vinyl+](/) for a dead-simple way to catalogue your collection.*

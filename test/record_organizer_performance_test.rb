@@ -17,19 +17,11 @@ class RecordOrganizerPerformanceTest < Minitest::Test
     assert_includes SCRIPT, "phoneFrameRequest = null"
   end
 
-  def test_organizer_exposes_effect_events_without_moving_state_out_of_the_dom
-    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:ready"'
-    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:scan"'
-    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:organized"'
-    assert_includes SCRIPT, 'new CustomEvent("recordorganizer:scatter"'
-  end
-
-  def test_hover_organization_can_be_disabled_for_preview_effects
-    assert_includes SCRIPT, 'stage.dataset.organizeOnHover !== "false"'
-    assert_match(/if \(organizeOnHover\).*?pointerenter.*?focus/m, SCRIPT)
-    assert_includes SCRIPT, 'record.addEventListener("click", () => organize(record))'
-    assert_includes SCRIPT, 'stage.dataset.vinylPreview === "true"'
-    assert_includes SCRIPT, 'vinyl.className = "record-sleeve__vinyl"'
+  def test_cursor_scanner_skips_the_large_phone_overlay_work
+    assert_includes SCRIPT, 'stage.dataset.cursorScanner === "true"'
+    assert_match(/if \(!cursorScanner\).*?phoneCover\.src/m, SCRIPT)
+    assert_match(/if \(!cursorScanner\).*?stage\.addEventListener\("pointermove"/m, SCRIPT)
+    refute_includes SCRIPT, "new CustomEvent"
   end
 
   def test_record_layout_batches_measurement_before_mutation

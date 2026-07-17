@@ -98,7 +98,7 @@ And please, upgrade those paper inner sleeves to poly-lined ones. Paper sleeves 
 
 Once you get past a hundred records or so, things start to get fuzzy. Did I already buy this album? Which pressing do I have? Is this worth anything?
 
-That's where apps like [My Vinyls](/) come in handy. Scan barcodes to log records instantly, pull in all the detailed release info from Discogs, and always know exactly what you own—even when you're standing in a record store trying to remember if that's a duplicate.
+That's where apps like [My Vinyl+](/) come in handy. Scan barcodes to log records instantly, pull in all the detailed release info from Discogs, and always know exactly what you own—even when you're standing in a record store trying to remember if that's a duplicate.
 
 ## The Real Secret
 

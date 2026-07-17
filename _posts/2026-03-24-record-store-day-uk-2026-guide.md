@@ -98,4 +98,4 @@ April 18. See you out there.
 
 ---
 
-*Find your nearest participating shop and browse the full RSD UK list at [recordstoreday.co.uk](https://recordstoreday.co.uk). For keeping your growing collection in order, check out [My Vinyls](/).*
+*Find your nearest participating shop and browse the full RSD UK list at [recordstoreday.co.uk](https://recordstoreday.co.uk). For keeping your growing collection in order, check out [My Vinyl+](/).*

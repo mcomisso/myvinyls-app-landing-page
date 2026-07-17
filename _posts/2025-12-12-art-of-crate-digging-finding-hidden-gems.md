@@ -92,7 +92,7 @@ Certain genres hide more value than casual sellers recognize: Northern Soul 45s,
 
 Purists dig without digital assistance. There's something to that—part of the joy is discovery without a safety net.
 
-But realistically, technology helps. The Discogs app lets you scan barcodes for quick identification and check recent sale prices. [My Vinyls](/) tracks your collection so you don't accidentally buy duplicates. Use tools to inform decisions, but don't spend your entire dig staring at a screen.
+But realistically, technology helps. The Discogs app lets you scan barcodes for quick identification and check recent sale prices. [My Vinyl+](/) tracks your collection so you don't accidentally buy duplicates. Use tools to inform decisions, but don't spend your entire dig staring at a screen.
 
 ## The Trap
 

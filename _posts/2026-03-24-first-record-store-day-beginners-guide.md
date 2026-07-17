@@ -88,4 +88,4 @@ And if you get hooked, well, the shop will be there next Saturday too. And the o
 
 ---
 
-*New to collecting and want to keep track of what you're building? [My Vinyls](/) makes it easy to catalogue your records from day one. Scan, log, and never lose track of your growing collection.*
+*New to collecting and want to keep track of what you're building? [My Vinyl+](/) makes it easy to catalogue your records from day one. Scan, log, and never lose track of your growing collection.*

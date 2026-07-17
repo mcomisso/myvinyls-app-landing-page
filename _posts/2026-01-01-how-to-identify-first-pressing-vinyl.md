@@ -86,7 +86,7 @@ When you find a record you want to verify:
 3. Compare every detail you can against the documented first pressing
 4. Check the photos users have uploaded of confirmed copies
 
-Apps like [My Vinyls](/) can speed this up—scan a barcode to pull up release info, cross-reference against Discogs data, and keep notes on what you've verified. Building this habit saves you from expensive mistakes and helps you spot deals others miss.
+Apps like [My Vinyl+](/) can speed this up—scan a barcode to pull up release info, cross-reference against Discogs data, and keep notes on what you've verified. Building this habit saves you from expensive mistakes and helps you spot deals others miss.
 
 ## Developing the Eye
 

@@ -1,12 +1,12 @@
-# My Vinyls website
+# My Vinyl+ website
 
 This repository contains the public marketing and editorial website for
-[My Vinyls](https://myvinyls.app), an iPhone app for managing a vinyl record
+[My Vinyl+](https://myvinyls.app), an iPhone app for managing a vinyl record
 collection with Discogs sync, barcode scanning, offline access, and
 collector-focused insights.
 
 The site is a customised Jekyll project hosted with GitHub Pages. It is not the
-My Vinyls iOS app or a reusable landing-page template. The app source lives in
+My Vinyl+ iOS app or a reusable landing-page template. The app source lives in
 `/Users/matcom/Developer/MCSoftware/MyVinyl/iOS`.
 
 ## What is in this repository
@@ -103,5 +103,5 @@ in their owning repositories.
 ## License and origins
 
 The site began from Emil Baehr's Automatic App Landing Page template and has
-since been substantially customised for My Vinyls. See [LICENSE](LICENSE) for
+since been substantially customised for My Vinyl+. See [LICENSE](LICENSE) for
 the repository licence.

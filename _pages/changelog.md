@@ -1,8 +1,8 @@
 ---
 layout: changelog
-title: "What's New in My Vinyls"
-description: "See the latest updates, new features, and improvements in My Vinyls, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
-summary: "Follow the features, fixes, and collector workflows added to My Vinyls across each release."
+title: "What's New in My Vinyl+"
+description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
+summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
 latest_version: "4.3.2"
 latest_summary: "This release fixes camera scanner loading and adds a reminder before a cancelled My Vinyl+ subscription ends."
 open_release_count: 3

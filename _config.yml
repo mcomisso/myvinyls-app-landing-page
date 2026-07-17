@@ -2,7 +2,7 @@
 url                                       : "https://myvinyls.app"
 
 #page title
-page_title                                : My Vinyls                                          # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
+page_title                                : My Vinyl+                                          # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
 
 # App Info
 ios_app_id                                : 1547173908                                # Required. Enter iOS app ID to automatically populate name, price and icons (e.g. 718043190).
@@ -14,9 +14,9 @@ presskit_download_link                    : /assets/PressKit.zip                
                                                                                       # Or upload your press kit file to assets and set path accordingly (e.g. "assets/your_press_kit.zip").
 
 app_icon                                  : assets/appicon.webp                       # App icon for header and favicon
-app_name                                  : My Vinyls                                 # App name for header and branding
+app_name                                  : My Vinyl+                                 # App name for header and branding
 app_price                                 :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : My Vinyls is a fast, beautiful vinyl collection manager for iPhone with Discogs sync, barcode scanning, offline access, and intelligent insights so you always know what you own.
+app_description                           : My Vinyl+ is a fast, beautiful vinyl collection manager for iPhone with Discogs sync, barcode scanning, offline access, and intelligent insights so you always know what you own.
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -121,7 +121,7 @@ blog_categories:
     description: Tips and guides for building your vinyl collection
   - name: App Tips
     slug: app-tips
-    description: Get the most out of My Vinyls
+    description: Get the most out of My Vinyl+
   - name: Music Discovery
     slug: music-discovery
     description: Discover new and classic records
