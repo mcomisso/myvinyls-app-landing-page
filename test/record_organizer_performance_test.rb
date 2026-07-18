@@ -10,18 +10,25 @@ class RecordOrganizerPerformanceTest < Minitest::Test
   REFRESH_SCRIPT = File.read(File.join(ROOT, "scripts/refresh_apple_chart.rb"))
   CHART_DATA = File.read(File.join(ROOT, "assets/data/apple-top-albums.json"))
 
-  def test_pointer_updates_are_coalesced_into_animation_frames
-    assert_includes SCRIPT, "requestAnimationFrame(flushPhonePosition)"
-    assert_includes SCRIPT, 'stage.addEventListener("pointermove", schedulePhoneMove)'
-    assert_includes SCRIPT, "if (phoneFrameRequest !== null) return"
-    assert_includes SCRIPT, "phoneFrameRequest = null"
+  def test_records_land_in_the_collection_grid_inside_the_phone
+    assert_match(/class="organizer-phone".*?class="organized-grid" data-organized-grid/m, BETA_ORGANIZER)
+    assert_includes BETA_ORGANIZER, 'class="app-collection-title">Collection'
+    assert_includes BETA_ORGANIZER, 'class="app-record-slot"'
+    assert_includes SCRIPT, 'slot.querySelector("img").src = record.dataset.artwork'
+    assert_includes SCRIPT, 'slot.querySelector("strong").textContent = record.dataset.title'
+    assert_includes SCRIPT, 'slot.querySelector("small").textContent = record.dataset.artist'
   end
 
-  def test_cursor_scanner_skips_the_large_phone_overlay_work
-    assert_includes SCRIPT, 'stage.dataset.cursorScanner === "true"'
-    assert_match(/if \(!cursorScanner\).*?phoneCover\.src/m, SCRIPT)
-    assert_match(/if \(!cursorScanner\).*?stage\.addEventListener\("pointermove"/m, SCRIPT)
-    refute_includes SCRIPT, "new CustomEvent"
+  def test_fixed_phone_does_not_follow_pointer
+    refute_includes SCRIPT, "schedulePhoneMove"
+    refute_includes SCRIPT, 'stage.addEventListener("pointermove"'
+    refute_includes SCRIPT, "phoneFrameRequest"
+  end
+
+  def test_reset_cancels_records_that_are_still_flying
+    assert_includes SCRIPT, "record.dataset.scanToken = scanToken"
+    assert_includes SCRIPT, "if (record.dataset.scanToken !== scanToken) return"
+    assert_includes SCRIPT, "delete record.dataset.scanToken"
   end
 
   def test_record_layout_batches_measurement_before_mutation
@@ -40,6 +47,7 @@ class RecordOrganizerPerformanceTest < Minitest::Test
     assert_includes apply_section, "applyRecordPosition"
     refute_includes apply_section, "getBoundingClientRect"
     assert_includes position_write_section, ".style.transform"
+    assert_includes position_write_section, "position.scale"
     refute_includes position_write_section, "getBoundingClientRect"
   end
 
@@ -56,7 +64,7 @@ class RecordOrganizerPerformanceTest < Minitest::Test
 
     assert_includes BETA_ORGANIZER, "assets/iphone-frame.png"
     refute_includes BETA_ORGANIZER, "Frames/iPhone 14 Pro Portrait.png"
-    assert_match(/width="90" height="183"/, BETA_ORGANIZER)
+    assert_match(/width="300" height="610"/, BETA_ORGANIZER)
     assert_path_exists asset
     assert_operator File.size(asset), :<, 50_000
 

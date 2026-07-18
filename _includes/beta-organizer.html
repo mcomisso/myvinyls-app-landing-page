@@ -39,37 +39,53 @@
             data-cursor-scanner="{% if include.cursor_scanner %}true{% else %}false{% endif %}"
             aria-label="Interactive record collection organizer">
             <div class="record-organizer__toolbar">
-                <span class="record-organizer__count" data-organized-count>0 records organized</span>
+                <span class="record-organizer__count" data-organized-count>0 records scanned</span>
                 <button class="record-organizer__reset" type="button" data-organizer-reset>
                     <i class="fas fa-shuffle" aria-hidden="true"></i>
                     Scatter again
                 </button>
             </div>
 
-            <div class="organized-grid" data-organized-grid aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
+            <div class="organizer-phone" aria-hidden="true">
+                <div class="organizer-phone__screen">
+                    <div class="app-status-bar">
+                        <span>9:41</span>
+                        <span class="app-status-bar__icons"><i></i><i></i><i></i></span>
+                    </div>
+                    <div class="app-collection-header">
+                        <span class="app-avatar"></span>
+                        <span class="app-header-actions"><i class="fas fa-sliders" aria-hidden="true"></i><i class="fas fa-plus" aria-hidden="true"></i></span>
+                    </div>
+                    <strong class="app-collection-title">Collection</strong>
+                    <div class="app-search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i>Title, Artist, Album, ID...</div>
+                    <div class="app-collection-meta">
+                        <span data-phone-count>0 VINYLS</span>
+                        <span>ALL</span>
+                        <i class="fas fa-list" aria-hidden="true"></i>
+                    </div>
+                    <div class="organized-grid" data-organized-grid>
+                        {% for slot in (1..10) %}
+                        <span class="app-record-slot">
+                            <img alt="">
+                            <strong></strong>
+                            <small></small>
+                        </span>
+                        {% endfor %}
+                    </div>
+                    <div class="app-tab-bar">
+                        <span><i class="fas fa-compass" aria-hidden="true"></i><small>Discover</small></span>
+                        <span class="is-current"><i class="fas fa-record-vinyl" aria-hidden="true"></i><small>Collection</small></span>
+                        <span><i class="fas fa-layer-group" aria-hidden="true"></i><small>Wantlist</small></span>
+                        <span><i class="fas fa-user-group" aria-hidden="true"></i><small>Following</small></span>
+                        <span><i class="fas fa-ellipsis" aria-hidden="true"></i><small>More</small></span>
+                    </div>
+                </div>
             </div>
 
             <div class="record-layer" data-record-layer></div>
 
-            <div class="scanner-phone" data-scanner-phone aria-hidden="true">
-                <div class="scanner-phone__screen">
-                    <img data-scanner-cover src="{{ 'assets/appicon.webp' | relative_url }}" alt="">
-                    <span class="scanner-phone__beam"></span>
-                </div>
-                <img class="scanner-phone__frame" src="{{ 'assets/iphone-frame.png' | relative_url }}" alt=""
-                    width="90" height="183">
-            </div>
-
-            <div class="record-found" data-found-card aria-hidden="true">
-                <span class="record-found__check"><i class="fas fa-check" aria-hidden="true"></i></span>
-                <span>
-                    <strong>{{ include.success_label | default: "Record found" }}</strong>
-                    <small data-found-title></small>
-                    <small data-found-artist></small>
-                </span>
-            </div>
+            <img class="organizer-phone__frame" src="{{ 'assets/iphone-frame.png' | relative_url }}" alt=""
+                width="300" height="610" aria-hidden="true">
 
             <p class="sr-only" aria-live="polite" data-organizer-status>Loading the record collection</p>
             <p class="record-organizer__error">{{ include.error_message | default: "The prototype record feed is unavailable right now." }}</p>

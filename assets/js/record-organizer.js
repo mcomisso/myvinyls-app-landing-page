@@ -5,16 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const layer = stage.querySelector("[data-record-layer]");
   const grid = stage.querySelector("[data-organized-grid]");
   const count = stage.querySelector("[data-organized-count]");
+  const phoneCount = stage.querySelector("[data-phone-count]");
   const reset = stage.querySelector("[data-organizer-reset]");
-  const phone = stage.querySelector("[data-scanner-phone]");
-  const phoneCover = stage.querySelector("[data-scanner-cover]");
-  const foundCard = stage.querySelector("[data-found-card]");
-  const foundTitle = stage.querySelector("[data-found-title]");
-  const foundArtist = stage.querySelector("[data-found-artist]");
   const liveRegion = stage.querySelector("[data-organizer-status]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
-  const cursorScanner = stage.dataset.cursorScanner === "true";
 
   const scatteredLayout = [
     { x: 3, y: 63, rotate: -12, depth: 8 },
@@ -33,18 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let organizedCount = 0;
   let scanSequence = 0;
   let layoutFrameRequest = null;
-  let phoneFrameRequest = null;
-  let pendingPhonePosition = null;
 
   const setCount = () => {
-    count.textContent = `${organizedCount} ${organizedCount === 1 ? "record" : "records"} organized`;
+    count.textContent = `${organizedCount} ${organizedCount === 1 ? "record" : "records"} scanned`;
+    phoneCount.textContent = `${organizedCount} ${organizedCount === 1 ? "VINYL" : "VINYLS"}`;
   };
 
   const applyRecordPosition = (record, position) => {
-    record.style.transform = `translate3d(${position.x}px, ${position.y}px, ${position.depth}px) rotateZ(${position.rotate}deg)`;
+    record.style.transform = `translate3d(${position.x}px, ${position.y}px, ${position.depth}px) rotateZ(${position.rotate}deg) scale(${position.scale ?? 1})`;
   };
 
-  const measureSlotPosition = (slotIndex) => {
+  const measureSlotPosition = (record, slotIndex) => {
     const slot = grid.children[slotIndex];
     if (!slot) return null;
     const stageRect = stage.getBoundingClientRect();
@@ -53,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       x: slotRect.left - stageRect.left,
       y: slotRect.top - stageRect.top,
       rotate: 0,
-      depth: 40
+      depth: 40,
+      scale: slotRect.width / record.offsetWidth
     };
   };
 
@@ -71,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
           x: slotRect.left - stageRect.left,
           y: slotRect.top - stageRect.top,
           rotate: 0,
-          depth: 40
+          depth: 40,
+          scale: slotRect.width / recordSize
         };
       }
 
@@ -81,7 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
         x: ((stageRect.width - recordSize) * position.x) / 100,
         y: ((stageRect.height - recordSize) * position.y) / 100,
         rotate: position.rotate,
-        depth: position.depth
+        depth: position.depth,
+        scale: 1
       };
     });
   };
@@ -105,71 +101,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  const flushPhonePosition = () => {
-    phoneFrameRequest = null;
-    const position = pendingPhonePosition;
-    pendingPhonePosition = null;
-    if (!position) return;
-
-    const rect = stage.getBoundingClientRect();
-    const phoneWidth = phone.offsetWidth;
-    const phoneHeight = phone.offsetHeight;
-    const x = Math.min(Math.max(position.clientX - rect.left + 18, 4), rect.width - phoneWidth - 4);
-    const y = Math.min(Math.max(position.clientY - rect.top - phoneHeight / 2, 86), rect.height - phoneHeight - 8);
-    phone.style.transform = `translate3d(${x}px, ${y}px, 90px) rotateZ(8deg) rotateY(-7deg)`;
-    phone.classList.add("is-visible");
-  };
-
-  const schedulePhoneMove = (event) => {
-    if (coarsePointer || reducedMotion) return;
-    pendingPhonePosition = { clientX: event.clientX, clientY: event.clientY };
-    if (phoneFrameRequest !== null) return;
-    phoneFrameRequest = requestAnimationFrame(flushPhonePosition);
-  };
-
   const organize = (record) => {
     if (record.classList.contains("is-organized") || record.classList.contains("is-scanning")) return;
     if (organizedCount >= grid.children.length) return;
 
-    const currentSequence = ++scanSequence;
+    const scanToken = String(++scanSequence);
     const slotIndex = organizedCount;
     organizedCount += 1;
     record.dataset.slot = slotIndex;
+    record.dataset.scanToken = scanToken;
     record.classList.add("is-scanning");
-    if (!cursorScanner) {
-      phoneCover.src = record.dataset.artwork;
-      phoneCover.alt = "";
-      foundTitle.textContent = record.dataset.title;
-      foundArtist.textContent = record.dataset.artist;
-      foundCard.classList.add("is-visible");
-      phone.classList.add("is-scanning", "is-visible");
-    }
     liveRegion.textContent = `Scanning ${record.dataset.title} by ${record.dataset.artist}`;
     setCount();
 
     window.setTimeout(() => {
-      const position = measureSlotPosition(slotIndex);
+      if (record.dataset.scanToken !== scanToken) return;
+      const position = measureSlotPosition(record, slotIndex);
       record.classList.remove("is-scanning");
-      record.classList.add("is-organized");
+      record.classList.add("is-organized", "has-landed");
       record.setAttribute("aria-label", `${record.dataset.title} by ${record.dataset.artist}, organized`);
       if (position) applyRecordPosition(record, position);
+      const slot = grid.children[slotIndex];
+      if (slot) {
+        slot.querySelector("img").src = record.dataset.artwork;
+        slot.querySelector("strong").textContent = record.dataset.title;
+        slot.querySelector("small").textContent = record.dataset.artist;
+        slot.classList.add("is-filled");
+      }
       liveRegion.textContent = `${record.dataset.title} by ${record.dataset.artist} added to the organized collection`;
-      if (!cursorScanner && currentSequence === scanSequence) phone.classList.remove("is-scanning");
-    }, reducedMotion ? 0 : 620);
+    }, reducedMotion ? 0 : 780);
   };
 
   const scatterAll = () => {
     scanSequence += 1;
     organizedCount = 0;
     records.forEach((record) => {
-      record.classList.remove("is-organized", "is-scanning");
+      record.classList.remove("is-organized", "is-scanning", "has-landed");
       delete record.dataset.slot;
+      delete record.dataset.scanToken;
       record.setAttribute("aria-label", `Scan ${record.dataset.title} by ${record.dataset.artist}`);
     });
-    if (!cursorScanner) {
-      phone.classList.remove("is-scanning");
-      foundCard.classList.remove("is-visible");
-    }
+    Array.from(grid.children).forEach((slot) => {
+      slot.classList.remove("is-filled");
+      slot.querySelector("img").removeAttribute("src");
+      slot.querySelector("strong").textContent = "";
+      slot.querySelector("small").textContent = "";
+    });
     liveRegion.textContent = "The records are scattered again";
     setCount();
     scheduleLayout();
@@ -222,17 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
       stage.classList.add("has-feed-error");
     });
 
-  if (!cursorScanner) {
-    stage.addEventListener("pointermove", schedulePhoneMove);
-    stage.addEventListener("pointerleave", () => {
-      pendingPhonePosition = null;
-      if (phoneFrameRequest !== null) {
-        cancelAnimationFrame(phoneFrameRequest);
-        phoneFrameRequest = null;
-      }
-      if (!phone.classList.contains("is-scanning")) phone.classList.remove("is-visible");
-    });
-  }
   reset.addEventListener("click", scatterAll);
   window.addEventListener("resize", scheduleLayout, { passive: true });
   setCount();
