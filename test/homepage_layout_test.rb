@@ -17,7 +17,7 @@ class HomepageLayoutTest < Minitest::Test
     assert_includes LAYOUT, 'heading="Your vinyl records, wherever you are."'
     assert_includes LAYOUT, 'android_cta="Join the Android waitlist"'
     assert_includes LAYOUT, 'supporting_copy="Free to download. One-time unlock available."'
-    assert_includes LAYOUT, 'instruction="Hover over a record to add it to the collection."'
+    assert_includes LAYOUT, 'instruction="Hover over a record to scan it into the app."'
     assert_includes LAYOUT, "assets/js/record-organizer.js"
     refute_includes LAYOUT, 'class="hero-stats"'
   end
