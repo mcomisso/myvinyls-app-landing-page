@@ -6,21 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = stage.querySelector("[data-organized-grid]");
   const count = stage.querySelector("[data-organized-count]");
   const phoneCount = stage.querySelector("[data-phone-count]");
+  const phone = stage.querySelector(".organizer-phone");
+  const phoneEmptyState = stage.querySelector("[data-phone-empty-state]");
   const reset = stage.querySelector("[data-organizer-reset]");
   const liveRegion = stage.querySelector("[data-organizer-status]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const scatteredLayout = [
-    { x: 3, y: 63, rotate: -12, depth: 8 },
-    { x: 19, y: 74, rotate: 8, depth: 22 },
-    { x: 36, y: 59, rotate: -6, depth: 14 },
-    { x: 54, y: 76, rotate: 13, depth: 30 },
-    { x: 73, y: 60, rotate: -9, depth: 12 },
-    { x: 84, y: 77, rotate: 7, depth: 20 },
-    { x: 8, y: 86, rotate: 5, depth: 26 },
-    { x: 29, y: 87, rotate: -11, depth: 10 },
-    { x: 62, y: 88, rotate: 9, depth: 18 },
-    { x: 80, y: 91, rotate: -5, depth: 24 }
+    { rotate: -4, depth: 8 },
+    { rotate: 3, depth: 22 },
+    { rotate: 2, depth: 14 },
+    { rotate: -3, depth: 30 },
+    { rotate: -2, depth: 12 },
+    { rotate: 4, depth: 20 },
+    { rotate: 3, depth: 26 },
+    { rotate: -4, depth: 10 },
+    { rotate: -2, depth: 18 },
+    { rotate: 3, depth: 24 }
   ];
 
   let records = [];
@@ -53,7 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const measureRecordPositions = () => {
     const stageRect = stage.getBoundingClientRect();
+    const phoneRect = phone.getBoundingClientRect();
     const recordSize = records[0]?.offsetWidth ?? 0;
+    const scatterGap = stageRect.width <= 580 ? 14 : 22;
+    const scatterTop = 72;
+    const recordZoneLeft = phoneRect.right - stageRect.left + scatterGap;
+    const recordZoneWidth = Math.max(recordSize, stageRect.width - recordZoneLeft);
+    const columns = recordZoneWidth >= recordSize * 3 + scatterGap * 2 ? 3 : 2;
+    const rows = Math.ceil(records.length / columns);
+    const columnStep = columns > 1 ? (recordZoneWidth - recordSize) / (columns - 1) : 0;
+    const rowStep = rows > 1 ? (stageRect.height - scatterTop - recordSize - 20) / (rows - 1) : 0;
 
     return records.map((record, index) => {
       if (record.classList.contains("is-organized")) {
@@ -71,10 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const position = scatteredLayout[index % scatteredLayout.length];
+      const column = index % columns;
+      const row = Math.floor(index / columns);
       return {
         record,
-        x: ((stageRect.width - recordSize) * position.x) / 100,
-        y: ((stageRect.height - recordSize) * position.y) / 100,
+        x: recordZoneLeft + column * columnStep,
+        y: scatterTop + row * rowStep,
         rotate: position.rotate,
         depth: position.depth,
         scale: 1
@@ -127,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slot.querySelector("strong").textContent = record.dataset.title;
         slot.querySelector("small").textContent = record.dataset.artist;
         slot.classList.add("is-filled");
+        phoneEmptyState.classList.add("is-hidden");
       }
       liveRegion.textContent = `${record.dataset.title} by ${record.dataset.artist} added to the organized collection`;
     }, reducedMotion ? 0 : 780);
@@ -147,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slot.querySelector("strong").textContent = "";
       slot.querySelector("small").textContent = "";
     });
+    phoneEmptyState.classList.remove("is-hidden");
     liveRegion.textContent = "The records are scattered again";
     setCount();
     scheduleLayout();

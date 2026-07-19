@@ -19,6 +19,24 @@ class RecordOrganizerPerformanceTest < Minitest::Test
     assert_includes SCRIPT, 'slot.querySelector("small").textContent = record.dataset.artist'
   end
 
+  def test_phone_has_a_clear_scan_empty_state
+    assert_includes BETA_ORGANIZER, 'data-phone-empty-state'
+    assert_includes BETA_ORGANIZER, '<strong>Scan records</strong>'
+    assert_includes SCRIPT, 'phoneEmptyState.classList.add("is-hidden")'
+    assert_includes SCRIPT, 'phoneEmptyState.classList.remove("is-hidden")'
+  end
+
+  def test_scattered_records_are_laid_out_beside_the_phone
+    assert_includes SCRIPT, "const phoneRect = phone.getBoundingClientRect()"
+    assert_includes SCRIPT, "const recordZoneLeft = phoneRect.right - stageRect.left"
+    assert_includes SCRIPT, "x: recordZoneLeft + column * columnStep"
+    assert_includes SCRIPT, "const columns = recordZoneWidth >= recordSize * 3"
+    phone_position_styles = STYLES[/\.organizer-phone,\n\.organizer-phone__frame \{(?<body>.*?)\n\}/m, :body]
+    refute_nil phone_position_styles
+    assert_includes phone_position_styles, "left: clamp(8px, 3%, 24px)"
+    refute_includes phone_position_styles, "left: 50%"
+  end
+
   def test_fixed_phone_does_not_follow_pointer
     refute_includes SCRIPT, "schedulePhoneMove"
     refute_includes SCRIPT, 'stage.addEventListener("pointermove"'
