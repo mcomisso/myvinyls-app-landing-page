@@ -669,10 +669,9 @@ img {
 .organizer-phone__frame {
   position: absolute;
   top: 50px;
-  left: 50%;
+  left: clamp(8px, 3%, 24px);
   width: 300px;
   height: 610px;
-  transform: translateX(-50%);
 }
 
 .organizer-phone {
@@ -814,6 +813,39 @@ img {
   height: 420px;
   padding: 3px 26px 72px;
   overflow: hidden;
+}
+
+.app-empty-state {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  color: #d9d9d9;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.18s ease;
+
+  i {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: #111;
+    background: #f2e8e1;
+    border-radius: 50%;
+    font-size: 1rem;
+  }
+
+  strong {
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+  }
 }
 
 .app-record-slot {
@@ -1083,8 +1115,8 @@ img {
   .organizer-phone,
   .organizer-phone__frame {
     top: 46px;
-    transform: translateX(-50%) scale(0.86);
-    transform-origin: top center;
+    transform: scale(0.86);
+    transform-origin: top left;
   }
 
   .collection-hero--with-mobile-video {
@@ -1108,7 +1140,7 @@ img {
   }
 
   .record-organizer {
-    --record-size: clamp(55px, 16vw, 72px);
+    --record-size: clamp(44px, 12vw, 52px);
     height: 500px;
   }
 
@@ -1122,7 +1154,7 @@ img {
 
   .organizer-phone,
   .organizer-phone__frame {
-    transform: translateX(-50%) scale(0.74);
+    transform: scale(0.62);
   }
 }
 
@@ -1131,6 +1163,10 @@ img {
   .app-record-slot img,
   .app-record-slot strong,
   .app-record-slot small {
+    transition: none;
+  }
+
+  .app-empty-state {
     transition: none;
   }
 
