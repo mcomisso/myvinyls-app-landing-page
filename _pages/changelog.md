@@ -3,10 +3,18 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.3.2"
-latest_summary: "This release fixes camera scanner loading and adds a reminder before a cancelled My Vinyl+ subscription ends."
+latest_version: "4.3.3"
+latest_summary: "This release fixes advanced vinyl color and style rendering so custom pressings display correctly."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.3.3
+
+#### Bug Fixes
+- Fixed advanced vinyl color and style rendering so marble, splatter, smoke, yolk, and liquid pressings display correctly
+- Improved reliability for custom pressing visuals by ensuring every advanced vinyl effect loads from the app's packaged renderer
+
 ---
 
 ### Version 4.3.2
