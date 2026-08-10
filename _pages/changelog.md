@@ -3,10 +3,22 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.3.5"
-latest_summary: "This release makes the Discover collection value banner load and refresh more reliably."
+latest_version: "4.3.6"
+latest_summary: "This release restores Dashboard translations and makes Collection Value history updates more reliable."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.3.6
+
+#### Improvements
+- Improved Collection Value history updates so saved valuations refresh more reliably in the foreground and during background updates
+- Reduced duplicate Collection Value entries when the latest Discogs valuation has not meaningfully changed
+
+#### Bug Fixes
+- Fixed missing Dashboard and Insights translations that could show raw text keys instead of localized labels
+- Improved Dashboard stability and layout coverage around collection-value refreshes
+
 ---
 
 ### Version 4.3.5
