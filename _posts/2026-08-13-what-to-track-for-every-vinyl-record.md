@@ -2,7 +2,7 @@
 layout: post
 title: "What Should You Track for Every Vinyl Record in Your Collection?"
 description: "The most useful fields to track for each vinyl record, from pressing details and condition to value, cleaning notes, storage, and duplicate checks."
-date: 2026-08-13 09:00:00 +0000
+date: 2026-08-13 07:50:00 +0000
 category: vinyl-collecting
 tags: [vinyl-record-tracking, record-condition, collection-value, vinyl-catalog, discogs, my-vinyl-plus]
 author: Matteo Comisso

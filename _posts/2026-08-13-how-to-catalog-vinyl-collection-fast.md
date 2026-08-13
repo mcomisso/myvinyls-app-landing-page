@@ -2,7 +2,7 @@
 layout: post
 title: "How to Catalog Your Vinyl Collection Fast Without Turning It Into a Chore"
 description: "A practical workflow for cataloging a vinyl collection quickly, using barcode scanning, Discogs data, folders, and a simple record-by-record routine."
-date: 2026-08-13 08:15:00 +0000
+date: 2026-08-13 07:15:00 +0000
 category: app-tips
 tags: [catalog-vinyl-collection, vinyl-collection-app, discogs, barcode-scanning, record-collecting, my-vinyl-plus]
 author: Matteo Comisso
