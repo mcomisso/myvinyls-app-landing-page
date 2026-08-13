@@ -2,7 +2,7 @@
 layout: post
 title: "Back Up Your Vinyl Collection Before You Need It"
 description: "Why vinyl collectors should keep a digital record of their collection for insurance, selling, moving house, duplicate checks, and peace of mind."
-date: 2026-08-13 09:15:00 +0000
+date: 2026-08-13 07:55:00 +0000
 category: vinyl-collecting
 tags: [vinyl-collection-backup, record-insurance, discogs-sync, vinyl-catalog, collection-value, my-vinyl-plus]
 author: Matteo Comisso

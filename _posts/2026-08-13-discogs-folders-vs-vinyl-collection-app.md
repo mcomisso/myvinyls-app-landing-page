@@ -2,7 +2,7 @@
 layout: post
 title: "Discogs Folders vs a Vinyl Collection App: What Should You Use?"
 description: "A practical guide to using Discogs folders and a dedicated vinyl collection app together for browsing, shopping, cleaning, selling, and value tracking."
-date: 2026-08-13 08:45:00 +0000
+date: 2026-08-13 07:45:00 +0000
 category: app-tips
 tags: [discogs-folders, vinyl-collection-app, record-organization, discogs-sync, vinyl-catalog, my-vinyl-plus]
 author: Matteo Comisso

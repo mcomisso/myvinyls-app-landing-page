@@ -2,7 +2,7 @@
 layout: post
 title: "How to Check If You Already Own a Record While Digging"
 description: "A record-shop workflow for avoiding duplicate vinyl buys with a searchable collection, barcode scanning, Discogs sync, and offline access."
-date: 2026-08-13 08:30:00 +0000
+date: 2026-08-13 07:30:00 +0000
 category: app-tips
 tags: [duplicate-records, record-shopping, vinyl-collection-app, discogs-sync, vinyl-digging, my-vinyl-plus]
 author: Matteo Comisso
