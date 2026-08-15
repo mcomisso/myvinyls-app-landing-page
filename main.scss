@@ -381,8 +381,10 @@ img {
   }
 }
 
-.appstore-badge {
+.appstore-badge,
+.playstore-badge {
   display: inline-block;
+  position: relative;
   transition: transform 0.2s ease;
 
   img {
@@ -394,46 +396,35 @@ img {
     transform: translateY(-2px);
   }
 
+  &:focus-visible {
+    outline: 3px solid rgba(212, 131, 107, 0.34);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+  }
+
   &.large img {
     height: 56px;
   }
 }
 
-.hero-waitlist-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  min-height: 52px;
-  padding: 0 var(--space-lg);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  color: var(--text);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  white-space: nowrap;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-
-  i {
-    color: var(--primary);
-    font-size: 1.125rem;
-  }
-
-  &:hover {
-    border-color: var(--primary);
-    color: var(--primary-dark);
-    transform: translateY(-2px);
-  }
-
-  &:focus-visible {
-    outline: 3px solid rgba(212, 131, 107, 0.32);
-    outline-offset: 2px;
-  }
-
-  @media (max-width: 520px) {
-    width: 100%;
+.playstore-badge {
+  .beta-stamp {
+    position: absolute;
+    z-index: 1;
+    top: -9px;
+    right: -8px;
+    padding: 3px 9px;
+    border: 1px solid rgba(28, 26, 23, 0.18);
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    color: var(--gray-900);
+    box-shadow: 0 5px 12px rgba(28, 26, 23, 0.18);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transform: rotate(4deg);
   }
 }
 
@@ -552,7 +543,8 @@ img {
 .collection-hero__actions {
   margin-bottom: var(--space-lg);
 
-  .appstore-badge img {
+  .appstore-badge img,
+  .playstore-badge img {
     height: 58px;
   }
 }
@@ -1885,15 +1877,15 @@ img {
 }
 
 // ============================================
-// ANDROID WAITLIST SECTION
+// ANDROID BETA SECTION
 // ============================================
 
-.android-waitlist-section {
+.android-beta-section {
   padding: var(--space-4xl) var(--space-lg);
   background: var(--bg-alt);
 }
 
-.android-waitlist-card {
+.android-beta-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
   gap: var(--space-2xl);
@@ -1913,7 +1905,7 @@ img {
   }
 }
 
-.android-waitlist-copy {
+.android-beta-copy {
   h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     line-height: 1.1;
@@ -1935,79 +1927,26 @@ img {
   }
 }
 
-.android-waitlist-form {
-  width: 100%;
-}
+.android-beta-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
 
-.android-waitlist-fields {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-sm);
-
-  @media (max-width: 520px) {
-    grid-template-columns: 1fr;
+  p {
+    max-width: 360px;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
-
-  input {
-    width: 100%;
-    min-height: 52px;
-    padding: 0 var(--space-md);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--cream);
-    color: var(--text);
-    font: inherit;
-    font-size: 1rem;
-    letter-spacing: 0;
-
-    &::placeholder {
-      color: var(--gray-400);
-    }
-
-    &:focus {
-      outline: 3px solid rgba(212, 131, 107, 0.24);
-      border-color: var(--primary);
-    }
-  }
-
-  button {
-    min-height: 52px;
-    padding: 0 var(--space-lg);
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: var(--text);
-    color: var(--white);
-    font: inherit;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-
-    &:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    &:focus-visible {
-      outline: 3px solid rgba(212, 131, 107, 0.32);
-      outline-offset: 2px;
-    }
-  }
-}
-
-.android-waitlist-note {
-  margin-top: var(--space-sm);
-  font-size: 0.8125rem;
-  color: var(--text-muted);
 
   @media (max-width: 780px) {
-    text-align: center;
-  }
-}
+    align-items: center;
 
-.waitlist-honey {
-  display: none;
+    p {
+      text-align: center;
+    }
+  }
 }
 
 // ============================================
