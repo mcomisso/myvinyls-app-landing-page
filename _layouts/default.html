@@ -9,12 +9,11 @@
         <main id="main-content" tabindex="-1">
             <!-- Hero Section -->
             {% include beta-organizer.html
-                prototype_label="Built for iPhone collectors"
+                prototype_label="Built for record collectors"
                 badge_icon="fab fa-apple"
                 heading="Your vinyl records, wherever you are."
                 description="Track, scan, and browse your collection. Sync with Discogs, check what you own while shopping, and find the right pressing faster."
                 show_actions=true
-                android_cta="Join the Android waitlist"
                 supporting_copy="Free to download. One-time unlock available."
                 instruction="Hover over a record to scan it into the app."
                 instruction_icon="fas fa-arrow-pointer"
@@ -263,33 +262,23 @@
                 </div>
             </section>
 
-            <!-- Android Waitlist Section -->
-            <section class="android-waitlist-section" id="android-waitlist">
+            <!-- Android Beta Section -->
+            <section class="android-beta-section" id="android-beta">
                 <div class="container">
-                    <div class="android-waitlist-card">
-                        <div class="android-waitlist-copy">
-                            <span class="section-tag">Android waitlist</span>
-                            <h2>Interested in Android?</h2>
-                            <p>Sign up to be the first to know when My Vinyl+ launches on Android.</p>
+                    <div class="android-beta-card">
+                        <div class="android-beta-copy">
+                            <span class="section-tag">Now testing on Android</span>
+                            <h2>Help shape the Android app.</h2>
+                            <p>Join the public beta through Google Play. You will get updates directly from the Play Store and can send private feedback while My Vinyl+ is still being refined.</p>
                         </div>
-
-                        <form class="android-waitlist-form"
-                            action="https://formsubmit.co/1ad76cc0d8fe5e1bc8dd86267d11cd3f" method="POST">
-                            <input type="hidden" name="_subject" value="New Android waitlist signup">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="{{ '/android-waitlist-thanks/' | absolute_url }}">
-                            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="waitlist-honey"
-                                aria-hidden="true">
-                            <input type="hidden" name="source" value="My Vinyl+ landing page Android waitlist">
-
-                            <label class="sr-only" for="android-waitlist-email">Email address</label>
-                            <div class="android-waitlist-fields">
-                                <input id="android-waitlist-email" name="email" type="email" inputmode="email"
-                                    autocomplete="email" placeholder="Email address" required>
-                                <button type="submit">Notify me</button>
-                            </div>
-                            <p class="android-waitlist-note">No spam. Just the Android launch update.</p>
-                        </form>
+                        <div class="android-beta-action">
+                            <a href="{{ site.playstore_link }}" class="playstore-badge large" target="_blank" rel="noopener"
+                                aria-label="Join the My Vinyl+ beta on Google Play">
+                                <span class="beta-stamp" aria-hidden="true">Beta</span>
+                                <img src="{{ 'assets/playstore.png' | relative_url }}" alt="" width="190" height="56" loading="lazy">
+                            </a>
+                            <p>Requires a Google account. Beta feedback does not affect the app's public rating.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -307,6 +296,11 @@
                         <a href="{{ site.appstore_link }}" class="appstore-badge large" target="_blank" rel="noopener">
                             <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store"
                                 width="164" height="56" loading="lazy">
+                        </a>
+                        <a href="{{ site.playstore_link }}" class="playstore-badge large" target="_blank" rel="noopener"
+                            aria-label="Get the My Vinyl+ beta on Google Play">
+                            <span class="beta-stamp" aria-hidden="true">Beta</span>
+                            <img src="{{ 'assets/playstore.png' | relative_url }}" alt="" width="190" height="56" loading="lazy">
                         </a>
                     </div>
 
@@ -367,7 +361,7 @@
         {
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            "name": "My Vinyl+ App Preview — Vinyl Collection Manager for iPhone",
+            "name": "My Vinyl+ App Preview — Vinyl Collection Manager",
             "description": "A quick preview of the My Vinyl+ iOS app interface showing collection browsing, album details, and Discogs sync features.",
             "thumbnailUrl": "{{ 'assets/media/hero-poster.webp' | absolute_url }}",
             "uploadDate": "2026-02-01",
@@ -385,7 +379,7 @@
             "name": "My Vinyl+",
             "operatingSystem": "iOS",
             "applicationCategory": "MusicApplication",
-            "description": "Track your record collection, check duplicates while shopping, and sync with Discogs. My Vinyl+ is the iPhone app built for real vinyl collectors.",
+            "description": "Track your record collection, check duplicates while shopping, and sync with Discogs. My Vinyl+ is available on iPhone, iPad, and as an Android beta through Google Play.",
             "url": "https://myvinyls.app",
             "downloadUrl": "{{ site.appstore_link }}",
             "screenshot": [

@@ -13,13 +13,22 @@ class HomepageLayoutTest < Minitest::Test
 
   def test_homepage_promotes_the_interactive_collection_hero
     assert_includes LAYOUT, "beta-organizer.html"
-    assert_includes LAYOUT, 'prototype_label="Built for iPhone collectors"'
+    assert_includes LAYOUT, 'prototype_label="Built for record collectors"'
     assert_includes LAYOUT, 'heading="Your vinyl records, wherever you are."'
-    assert_includes LAYOUT, 'android_cta="Join the Android waitlist"'
     assert_includes LAYOUT, 'supporting_copy="Free to download. One-time unlock available."'
     assert_includes LAYOUT, 'instruction="Hover over a record to scan it into the app."'
     assert_includes LAYOUT, "assets/js/record-organizer.js"
     refute_includes LAYOUT, 'class="hero-stats"'
+  end
+
+  def test_homepage_links_to_the_google_play_beta
+    assert_includes ORGANIZER, 'class="playstore-badge"'
+    assert_includes ORGANIZER, 'class="beta-stamp"'
+    assert_includes LAYOUT, 'id="android-beta"'
+    assert_includes LAYOUT, "Join the public beta through Google Play"
+    assert_includes LAYOUT, 'class="playstore-badge large"'
+    refute_includes LAYOUT, "Android waitlist"
+    refute_includes LAYOUT, "formsubmit.co"
   end
 
   def test_mobile_hero_retains_the_product_video
