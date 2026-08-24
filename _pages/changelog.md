@@ -3,10 +3,28 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.3.6"
-latest_summary: "This release restores Dashboard translations and makes Collection Value history updates more reliable."
+latest_version: "4.3.8"
+latest_summary: "This release improves TIDAL playback availability, album recognition flows, Shortcuts support, and collection exports."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.3.8
+
+#### New Features
+- Added deeper Shortcuts support for searching your collection, opening owned records, recognizing music, and exporting collection data
+- Added the foundation for album-cover recognition with a guided camera capture flow and manual-search fallback where recognition is available
+- Added TIDAL as a playback-provider option behind availability controls so it can roll out safely alongside Apple Music and Spotify
+
+#### Improvements
+- Improved TIDAL provider handling so unavailable integrations resolve cleanly to Off in Settings and playback controls
+- Improved collection export generation with clearer filenames and reusable export packaging
+- Improved camera capture guidance for sleeve-cover recognition while preserving the existing vinyl-color scanner flow
+
+#### Bug Fixes
+- Fixed account-scoped navigation from Shortcuts so collection searches and record opens target the correct active Discogs account
+- Fixed visual-search record handoff so recognized records open through the correct app navigation path
+
 ---
 
 ### Version 4.3.6
