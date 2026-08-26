@@ -1,5 +1,23 @@
 import { describe, expect, it } from "vitest";
-import { isPublicReleaseSnapshot, isValidDiscogsWebURL, MAX_RELEASE_ID, parseReleasePath, parseReportPath } from "../src/contracts";
+import {
+  isPublicReleaseCanaryAllowed,
+  isPublicReleaseSnapshot,
+  isValidDiscogsWebURL,
+  MAX_RELEASE_ID,
+  parseReleasePath,
+  parseReportPath,
+} from "../src/contracts";
+
+describe("isPublicReleaseCanaryAllowed", () => {
+  it("requires an explicit ID, or an explicit all-routes marker", () => {
+    expect(isPublicReleaseCanaryAllowed(undefined, 42n)).toBe(false);
+    expect(isPublicReleaseCanaryAllowed("", 42n)).toBe(false);
+    expect(isPublicReleaseCanaryAllowed("42, 9223372036854775807", 42n)).toBe(true);
+    expect(isPublicReleaseCanaryAllowed("42, 9223372036854775807", 43n)).toBe(false);
+    expect(isPublicReleaseCanaryAllowed("*", 43n)).toBe(true);
+    expect(isPublicReleaseCanaryAllowed("*,42", 43n)).toBe(false);
+  });
+});
 
 describe("parseReleasePath", () => {
   it("accepts the canonical signed int64 path", () => {

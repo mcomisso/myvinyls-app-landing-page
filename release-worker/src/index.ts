@@ -1,4 +1,10 @@
-import { isPublicReleaseSnapshot, parseReleasePath, parseReportPath, type ProblemDetails } from "./contracts";
+import {
+  isPublicReleaseCanaryAllowed,
+  isPublicReleaseSnapshot,
+  parseReleasePath,
+  parseReportPath,
+  type ProblemDetails,
+} from "./contracts";
 import { negotiateLocale, SUPPORTED_LOCALES, type SupportedLocale } from "./localization";
 import { ReleaseRateLimiter } from "./rate-limiter";
 import { renderProblemPage, renderReleasePage, renderReportPage } from "./render";
@@ -7,7 +13,10 @@ export { ReleaseRateLimiter };
 
 interface Env {
   BACKEND_ORIGIN: string;
+  BACKEND_ORIGIN_TOKEN?: string;
   PUBLIC_RELEASES_ENABLED: string;
+  PUBLIC_RELEASE_CANARY_IDS?: string;
+  DISABLED_PASSTHROUGH?: string;
   RENDERER_VERSION: string;
   DISCOGS_NON_AFFILIATION_NOTICE?: string;
   PURGE_TOKEN?: string;
@@ -25,17 +34,29 @@ interface RateDecision {
 export default {
   async fetch(request: Request, env: Env, context: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
-    if (url.pathname === "/__internal/cache/purge") return purgeRequest(request, env);
     const locale = negotiateLocale(request.headers.get("accept-language"));
+    if (url.pathname === "/__internal/cache/purge") return purgeRequest(request, env);
+    if (env.PUBLIC_RELEASES_ENABLED !== "true") {
+      if (env.DISABLED_PASSTHROUGH === "true") return fetch(request);
+      return problemResponse(503, "release_pages_disabled", undefined, 300, locale);
+    }
 
     const report = parseReportPath(url);
-    if (report.kind === "report") return reportRequest(request, env, report.id, locale);
+    if (report.kind === "report") {
+      if (!isPublicReleaseCanaryAllowed(env.PUBLIC_RELEASE_CANARY_IDS, report.id)) {
+        return problemResponse(404, "not_found", undefined, undefined, locale);
+      }
+      return reportRequest(request, env, report.id, locale);
+    }
 
     const parsed = parseReleasePath(url);
-
-    const rate = await checkRate(request, env, "release", parsed.kind === "release" ? parsed.id.toString() : undefined);
-    if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
     if (parsed.kind === "not-found") return problemResponse(404, "not_found", undefined, undefined, locale);
+    if (!isPublicReleaseCanaryAllowed(env.PUBLIC_RELEASE_CANARY_IDS, parsed.id)) {
+      return problemResponse(404, "not_found", undefined, undefined, locale);
+    }
+
+    const rate = await checkRate(request, env, "release", parsed.id.toString());
+    if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
 
     const canonicalURL = `https://myvinyls.app${parsed.canonicalPath}`;
     const isStagingPreview = url.hostname === env.STAGING_PREVIEW_HOST;
@@ -53,7 +74,7 @@ export default {
     }
 
     if (isVerifiedCrawler(request)) return problemResponse(403, "crawler_denied", undefined, undefined, locale);
-    if (env.PUBLIC_RELEASES_ENABLED !== "true" || !env.DISCOGS_NON_AFFILIATION_NOTICE) {
+    if (!env.DISCOGS_NON_AFFILIATION_NOTICE) {
       return problemResponse(503, "release_pages_disabled", canonicalURL, 300, locale);
     }
 
@@ -63,7 +84,11 @@ export default {
 
     const traceId = request.headers.get("cf-ray") ?? crypto.randomUUID();
     const backendResponse = await fetch(`${env.BACKEND_ORIGIN}/v1/public/releases/${parsed.id}`, {
-      headers: { Accept: "application/json", "X-Request-ID": traceId },
+      headers: {
+        Accept: "application/json",
+        "X-Request-ID": traceId,
+        ...backendOriginHeaders(env),
+      },
     });
 
     if (backendResponse.status !== 200) {
@@ -105,6 +130,12 @@ export default {
   },
 } satisfies ExportedHandler<Env>;
 
+function backendOriginHeaders(env: Env): Record<string, string> {
+  return env.BACKEND_ORIGIN_TOKEN
+    ? { "X-Public-Release-Origin-Token": env.BACKEND_ORIGIN_TOKEN }
+    : {};
+}
+
 async function checkRate(request: Request, env: Env, kind: "release" | "report", releaseId?: string): Promise<RateDecision> {
   const source = request.headers.get("cf-connecting-ip") ?? "unknown";
   const id = env.RATE_LIMITER.idFromName(source);
@@ -143,6 +174,7 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint, loca
       "Authorization": `Bearer ${env.REPORT_ORIGIN_TOKEN}`,
       "Content-Type": "application/json",
       "X-Public-Release-Source-Hash": sourceHash,
+      ...backendOriginHeaders(env),
     },
     body: JSON.stringify({
       category,

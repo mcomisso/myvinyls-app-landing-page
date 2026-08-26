@@ -8,7 +8,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "deploy:staging": "wrangler deploy --env staging",
-    "deploy:production": "wrangler deploy --env production"
+    "dry-run:production": "wrangler versions upload --env production --dry-run",
+    "readback:staging": "./scripts/readback.sh staging",
+    "readback:production": "./scripts/readback.sh production"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.22.0",

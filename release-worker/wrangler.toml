@@ -5,6 +5,7 @@ workers_dev = true
 
 [vars]
 PUBLIC_RELEASES_ENABLED = "false"
+PUBLIC_RELEASE_CANARY_IDS = "*"
 BACKEND_ORIGIN = "https://api.myvinyls.app"
 RENDERER_VERSION = "2"
 
@@ -21,8 +22,10 @@ name = "myvinyl-public-release-staging"
 workers_dev = true
 
 [env.staging.vars]
-PUBLIC_RELEASES_ENABLED = "false"
-BACKEND_ORIGIN = "https://myvinyls-django.fly.dev"
+PUBLIC_RELEASES_ENABLED = "true"
+PUBLIC_RELEASE_CANARY_IDS = "*"
+DISABLED_PASSTHROUGH = "false"
+BACKEND_ORIGIN = "https://myvinyls-django-staging.fly.dev"
 RENDERER_VERSION = "2"
 STAGING_PREVIEW_HOST = "myvinyl-public-release-staging.teomatteo89.workers.dev"
 
@@ -41,6 +44,8 @@ routes = [
 
 [env.production.vars]
 PUBLIC_RELEASES_ENABLED = "false"
+PUBLIC_RELEASE_CANARY_IDS = ""
+DISABLED_PASSTHROUGH = "true"
 BACKEND_ORIGIN = "https://api.myvinyls.app"
 RENDERER_VERSION = "2"
 
