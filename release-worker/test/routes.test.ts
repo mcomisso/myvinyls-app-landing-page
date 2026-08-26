@@ -1,5 +1,6 @@
 import { SELF } from "cloudflare:test";
 import { describe, expect, it } from "vitest";
+import { conditionalResponse } from "../src/index";
 
 describe("Public Release Worker routes", () => {
   it("permanently canonicalizes aliases before the disabled content gate", async () => {
@@ -30,5 +31,21 @@ describe("Public Release Worker routes", () => {
     const response = await SELF.fetch("https://myvinyls.app/release/9223372036854775808");
     expect(response.status).toBe(404);
     expect(await response.text()).not.toContain('rel="canonical"');
+  });
+});
+
+describe("conditional responses", () => {
+  it("returns 304 for an exact ETag without leaking a body", async () => {
+    const request = new Request("https://myvinyls.app/release/42", { headers: { "If-None-Match": '"snapshot-42"' } });
+    const response = conditionalResponse(request, new Response("private body", { headers: { ETag: '"snapshot-42"' } }));
+    expect(response.status).toBe(304);
+    expect(await response.text()).toBe("");
+  });
+
+  it("preserves a response when the validator differs", async () => {
+    const request = new Request("https://myvinyls.app/release/42", { headers: { "If-None-Match": '"old"' } });
+    const response = conditionalResponse(request, new Response("current", { headers: { ETag: '"new"' } }));
+    expect(response.status).toBe(200);
+    expect(await response.text()).toBe("current");
   });
 });
