@@ -32,6 +32,16 @@ The Android waitlist is closed and this website no longer collects email address
 
 I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
 
+## Public Release Links
+
+MyVinyl may provide link-accessible catalogue Release pages. These pages do not use visitor analytics, cookies, local storage, fingerprinting, third-party embeds, or signed-in account lookups. They do not expose collector identity, Collection, Wantlist, Owned Copy, account, or recipient information.
+
+To keep these pages reliable and protect them from abuse, operational systems may briefly process a source IP address and user agent. Identifiable operational logs are retained for no more than seven days. They may include a timestamp, request ID, numeric Discogs Release ID, response status, latency, cache result, crawler classification, and rate-limit outcome. Referrers, query parameters, cookies, account identity, and Release metadata are excluded. Non-linkable aggregate service metrics may be retained for no more than 30 days.
+
+Public Release pages link to validated external destinations, including Discogs. Navigation is always user-activated and the page sends no referrer information. Search and social crawlers are denied Release content at the edge, Release routes are disallowed in robots.txt, and the pages request that crawlers do not index or archive them. These controls reduce discovery but cannot guarantee that every third party will comply.
+
+Anyone may use the accessible Report This Page route without an account to report privacy or publicity harm, copyright or trademark claims, impersonation, malicious links, or inaccurate rights claims. A report includes the Release URL, category, explanation, optional contact email, follow-up permission, timestamps, and review outcome. It accepts no uploads. Reporter-identifying data is deleted 90 days after a report is closed unless a documented legal hold applies. Reports are reviewed by an authorized person and never suppress a page automatically.
+
 ## Cookies
 
 Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
@@ -65,7 +75,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2023-04-14
+This policy is effective as of 2026-08-26
 
 ## Contact Us
 

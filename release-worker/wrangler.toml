@@ -1,0 +1,54 @@
+name = "myvinyl-public-release"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+[vars]
+PUBLIC_RELEASES_ENABLED = "false"
+PUBLIC_RELEASE_CANARY_IDS = "*"
+BACKEND_ORIGIN = "https://api.myvinyls.app"
+RENDERER_VERSION = "2"
+
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "ReleaseRateLimiter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ReleaseRateLimiter"]
+
+[env.staging]
+name = "myvinyl-public-release-staging"
+workers_dev = true
+
+[env.staging.vars]
+PUBLIC_RELEASES_ENABLED = "true"
+PUBLIC_RELEASE_CANARY_IDS = "*"
+DISABLED_NOT_FOUND = "false"
+BACKEND_ORIGIN = "https://myvinyls-django-staging.fly.dev"
+RENDERER_VERSION = "2"
+STAGING_PREVIEW_HOST = "myvinyl-public-release-staging.teomatteo89.workers.dev"
+
+[[env.staging.durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "ReleaseRateLimiter"
+
+[env.production]
+name = "myvinyl-public-release-production"
+workers_dev = false
+routes = [
+  { pattern = "myvinyls.app/release/*", zone_name = "myvinyls.app" },
+  { pattern = "myvinyls.app/record/*", zone_name = "myvinyls.app" },
+  { pattern = "myvinyls.app/__internal/cache/purge", zone_name = "myvinyls.app" }
+]
+
+[env.production.vars]
+PUBLIC_RELEASES_ENABLED = "false"
+PUBLIC_RELEASE_CANARY_IDS = ""
+DISABLED_NOT_FOUND = "true"
+BACKEND_ORIGIN = "https://api.myvinyls.app"
+RENDERER_VERSION = "2"
+
+[[env.production.durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "ReleaseRateLimiter"

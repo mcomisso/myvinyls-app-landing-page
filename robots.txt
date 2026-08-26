@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /release/
+Disallow: /record/
+
+Sitemap: https://myvinyls.app/sitemap.xml
