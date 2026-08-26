@@ -1,4 +1,5 @@
 import { isPublicReleaseSnapshot, parseReleasePath, parseReportPath, type ProblemDetails } from "./contracts";
+import { negotiateLocale, SUPPORTED_LOCALES, type SupportedLocale } from "./localization";
 import { ReleaseRateLimiter } from "./rate-limiter";
 import { renderProblemPage, renderReleasePage, renderReportPage } from "./render";
 
@@ -20,21 +21,20 @@ interface RateDecision {
   retry_after: number;
 }
 
-const SUPPORTED_LOCALES = ["en"];
-
 export default {
   async fetch(request: Request, env: Env, context: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if (url.pathname === "/__internal/cache/purge") return purgeRequest(request, env);
+    const locale = negotiateLocale(request.headers.get("accept-language"));
 
     const report = parseReportPath(url);
-    if (report.kind === "report") return reportRequest(request, env, report.id);
+    if (report.kind === "report") return reportRequest(request, env, report.id, locale);
 
     const parsed = parseReleasePath(url);
 
     const rate = await checkRate(request, env, "release", parsed.kind === "release" ? parsed.id.toString() : undefined);
-    if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after);
-    if (parsed.kind === "not-found") return problemResponse(404, "not_found");
+    if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
+    if (parsed.kind === "not-found") return problemResponse(404, "not_found", undefined, undefined, locale);
 
     const canonicalURL = `https://myvinyls.app${parsed.canonicalPath}`;
     if (parsed.needsRedirect) {
@@ -44,12 +44,12 @@ export default {
       });
     }
 
-    if (isVerifiedCrawler(request)) return problemResponse(403, "crawler_denied");
+    if (isVerifiedCrawler(request)) return problemResponse(403, "crawler_denied", undefined, undefined, locale);
     if (env.PUBLIC_RELEASES_ENABLED !== "true" || !env.DISCOGS_NON_AFFILIATION_NOTICE) {
-      return problemResponse(503, "release_pages_disabled", canonicalURL, 300);
+      return problemResponse(503, "release_pages_disabled", canonicalURL, 300, locale);
     }
 
-    const cacheKey = new Request(`https://release-cache.invalid${parsed.canonicalPath}?locale=en&renderer=${encodeURIComponent(env.RENDERER_VERSION)}`);
+    const cacheKey = releaseCacheKey(parsed.canonicalPath, locale, env.RENDERER_VERSION);
     const cached = await caches.default.match(cacheKey);
     if (cached) return conditionalResponse(request, cached);
 
@@ -65,23 +65,24 @@ export default {
         problem.reason_code ?? problem.code ?? "temporary_failure",
         canonicalURL,
         retryAfter(backendResponse),
+        locale,
       );
     }
 
     const snapshot: unknown = await backendResponse.json();
-    if (!isPublicReleaseSnapshot(snapshot, parsed.id)) return problemResponse(503, "invalid_snapshot", canonicalURL, 60);
+    if (!isPublicReleaseSnapshot(snapshot, parsed.id)) return problemResponse(503, "invalid_snapshot", canonicalURL, 60, locale);
 
     const expiry = Date.parse(snapshot.display_expires_at);
     if (!Number.isFinite(expiry) || expiry <= Date.now()) {
-      return problemResponse(503, "snapshot_expired", canonicalURL, 60);
+      return problemResponse(503, "snapshot_expired", canonicalURL, 60, locale);
     }
 
     const ttl = Math.max(1, Math.min(300, Math.floor((expiry - Date.now()) / 1000)));
-    const response = htmlResponse(renderReleasePage(snapshot, canonicalURL, env.DISCOGS_NON_AFFILIATION_NOTICE), 200, {
+    const response = htmlResponse(renderReleasePage(snapshot, canonicalURL, env.DISCOGS_NON_AFFILIATION_NOTICE, locale), 200, {
       "Cache-Control": `private, max-age=60, must-revalidate`,
       "CDN-Cache-Control": `public, max-age=${ttl}`,
-      ETag: backendResponse.headers.get("etag") ?? `"${env.RENDERER_VERSION}-${parsed.id}"`,
-    });
+      ETag: localizedETag(backendResponse.headers.get("etag"), env.RENDERER_VERSION, parsed.id, locale),
+    }, locale);
 
     const edgeResponse = new Response(response.body, response);
     edgeResponse.headers.set("Cache-Control", `public, max-age=${ttl}`);
@@ -101,16 +102,16 @@ async function checkRate(request: Request, env: Env, kind: "release" | "report",
   return response.json<RateDecision>();
 }
 
-async function reportRequest(request: Request, env: Env, releaseId: bigint): Promise<Response> {
+async function reportRequest(request: Request, env: Env, releaseId: bigint, locale: SupportedLocale): Promise<Response> {
   if (request.method === "GET" || request.method === "HEAD") {
-    return htmlResponse(request.method === "HEAD" ? "" : renderReportPage(releaseId), 200, { "Cache-Control": "no-store" });
+    return htmlResponse(request.method === "HEAD" ? "" : renderReportPage(releaseId, "form", locale), 200, { "Cache-Control": "no-store" }, locale);
   }
   if (request.method !== "POST") return methodNotAllowed("GET, HEAD, POST");
-  if (!sameOrigin(request)) return problemResponse(403, "invalid_origin");
-  if (!env.REPORT_ORIGIN_TOKEN || !env.REPORT_SOURCE_SALT) return problemResponse(503, "reporting_disabled", undefined, 300);
+  if (!sameOrigin(request)) return problemResponse(403, "invalid_origin", undefined, undefined, locale);
+  if (!env.REPORT_ORIGIN_TOKEN || !env.REPORT_SOURCE_SALT) return problemResponse(503, "reporting_disabled", undefined, 300, locale);
 
   const rate = await checkRate(request, env, "report");
-  if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after);
+  if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
 
   const form = await request.formData();
   const category = textField(form, "category", 40);
@@ -118,7 +119,7 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint): Pro
   const contactEmail = textField(form, "contact_email", 254);
   const permission = form.get("permission_to_follow_up") === "true";
   if (!REPORT_CATEGORIES.has(category) || explanation.length < 10 || (contactEmail && !validEmail(contactEmail)) || (permission && !contactEmail)) {
-    return htmlResponse(renderReportPage(releaseId, "invalid"), 400, { "Cache-Control": "no-store" });
+    return htmlResponse(renderReportPage(releaseId, "invalid", locale), 400, { "Cache-Control": "no-store" }, locale);
   }
 
   const sourceHash = await hashSource(request.headers.get("cf-connecting-ip") ?? "unknown", env.REPORT_SOURCE_SALT);
@@ -137,9 +138,9 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint): Pro
     }),
   });
   if (response.status !== 202) {
-    return problemResponse(normalizeStatus(response.status), "report_submission_failed", undefined, retryAfter(response));
+    return problemResponse(normalizeStatus(response.status), "report_submission_failed", undefined, retryAfter(response), locale);
   }
-  return htmlResponse(renderReportPage(releaseId, "accepted"), 202, { "Cache-Control": "no-store" });
+  return htmlResponse(renderReportPage(releaseId, "accepted", locale), 202, { "Cache-Control": "no-store" }, locale);
 }
 
 async function purgeRequest(request: Request, env: Env): Promise<Response> {
@@ -155,8 +156,9 @@ async function purgeRequest(request: Request, env: Env): Promise<Response> {
   } catch {
     return problemResponse(400, "invalid_purge_request");
   }
-  const key = new Request(`https://release-cache.invalid/release/${releaseId}?locale=en&renderer=${encodeURIComponent(env.RENDERER_VERSION)}`);
-  await caches.default.delete(key);
+  await Promise.all(
+    SUPPORTED_LOCALES.map((locale) => caches.default.delete(releaseCacheKey(`/release/${releaseId}`, locale, env.RENDERER_VERSION))),
+  );
   return new Response(null, { status: 204, headers: securityHeaders({ "Cache-Control": "no-store" }) });
 }
 
@@ -218,7 +220,13 @@ function retryAfter(response: Response): number | undefined {
   return Number.isFinite(value) && value > 0 ? Math.ceil(value) : undefined;
 }
 
-function problemResponse(status: number, reason: string, canonicalURL?: string, retry?: number): Response {
+function problemResponse(
+  status: number,
+  reason: string,
+  canonicalURL?: string,
+  retry?: number,
+  locale: SupportedLocale = "en",
+): Response {
   const problem: ProblemDetails = {
     type: `https://myvinyls.app/problems/${reason}`,
     title: status === 404 ? "Release not found" : "Release unavailable",
@@ -227,14 +235,35 @@ function problemResponse(status: number, reason: string, canonicalURL?: string, 
   };
   const headers: Record<string, string> = { "Cache-Control": status === 404 ? "public, max-age=60" : "no-store" };
   if (retry) headers["Retry-After"] = String(retry);
-  return htmlResponse(renderProblemPage(problem, status === 503 || status === 429 ? canonicalURL : undefined), status, headers);
+  return htmlResponse(
+    renderProblemPage(problem, status === 503 || status === 429 ? canonicalURL : undefined, locale),
+    status,
+    headers,
+    locale,
+  );
 }
 
-function htmlResponse(body: string, status: number, headers: Record<string, string>): Response {
+function htmlResponse(body: string, status: number, headers: Record<string, string>, locale: SupportedLocale): Response {
   return new Response(body, {
     status,
-    headers: securityHeaders({ "Content-Type": "text/html; charset=utf-8", ...headers }),
+    headers: securityHeaders({
+      "Content-Language": locale,
+      "Content-Type": "text/html; charset=utf-8",
+      Vary: "Accept-Language",
+      ...headers,
+    }),
   });
+}
+
+export function releaseCacheKey(canonicalPath: string, locale: SupportedLocale, rendererVersion: string): Request {
+  const parameters = new URLSearchParams({ locale, renderer: rendererVersion });
+  return new Request(`https://release-cache.invalid${canonicalPath}?${parameters}`);
+}
+
+function localizedETag(etag: string | null, rendererVersion: string, releaseId: bigint, locale: SupportedLocale): string {
+  const source = etag ?? `${rendererVersion}-${releaseId}`;
+  const safeSource = source.replace(/[^!#-~]/g, "").replaceAll('"', "");
+  return `"${safeSource}:renderer=${rendererVersion}:locale=${locale}"`;
 }
 
 function securityHeaders(extra: Record<string, string>): Headers {

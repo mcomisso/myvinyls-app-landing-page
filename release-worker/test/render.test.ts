@@ -31,6 +31,17 @@ describe("renderReleasePage", () => {
     expect(html).not.toContain("og:image");
     expect(html).not.toContain("analytics");
   });
+
+  it("localizes UI copy while preserving provider metadata and mandatory Discogs text", () => {
+    const html = renderReleasePage(snapshot, "https://myvinyls.app/release/42", "Required notice", "de");
+    expect(html).toContain('<html lang="de">');
+    expect(html).toContain("In MyVinyl öffnen");
+    expect(html).toContain("Trackliste");
+    expect(html).toContain("Miles &amp; Davis - Kind &lt;of&gt; Blue");
+    expect(html).toContain("Columbia");
+    expect(html).toContain("Data provided by Discogs");
+    expect(html).toContain('<p lang="en">Required notice</p>');
+  });
 });
 
 describe("renderProblemPage", () => {
@@ -51,6 +62,18 @@ describe("renderProblemPage", () => {
     expect(html).not.toContain("View on Discogs");
     expect(html).not.toContain('rel="canonical"');
   });
+
+  it("renders localized problem recovery copy", () => {
+    const html = renderProblemPage(
+      { type: "about:blank", title: "Busy", status: 429, reason_code: "rate_limited" },
+      "https://myvinyls.app/release/42",
+      "fr",
+    );
+    expect(html).toContain('<html lang="fr">');
+    expect(html).toContain("Détails de l&#39;édition temporairement indisponibles");
+    expect(html).toContain("Réessayer");
+    expect(html).toContain("Ouvrir dans MyVinyl");
+  });
 });
 
 describe("renderReportPage", () => {
@@ -62,5 +85,14 @@ describe("renderReportPage", () => {
     expect(html).toContain('name="permission_to_follow_up"');
     expect(html).not.toContain('type="file"');
     expect(html).not.toContain('rel="canonical"');
+  });
+
+  it("localizes the report form without changing field names or category values", () => {
+    const html = renderReportPage(42n, "form", "ja");
+    expect(html).toContain('<html lang="ja">');
+    expect(html).toContain("このページを報告");
+    expect(html).toContain("報告を送信");
+    expect(html).toContain('name="explanation"');
+    expect(html).toContain('value="copyright_trademark"');
   });
 });
