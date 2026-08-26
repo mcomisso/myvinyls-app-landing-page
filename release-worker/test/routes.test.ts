@@ -24,6 +24,24 @@ describe("Public Release Worker routes", () => {
     expect(html).not.toContain('rel="canonical"');
   });
 
+  it("keeps the canonical staging path on staging for dark runtime proof", async () => {
+    const response = await SELF.fetch("https://myvinyl-public-release-staging.teomatteo89.workers.dev/release/42");
+    expect(response.status).toBe(503);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(await response.text()).not.toContain('rel="canonical"');
+  });
+
+  it("canonicalizes a staging alias without escaping to production", async () => {
+    const response = await SELF.fetch(
+      "https://myvinyl-public-release-staging.teomatteo89.workers.dev/record/0042?campaign=test",
+      { redirect: "manual" },
+    );
+    expect(response.status).toBe(308);
+    expect(response.headers.get("location")).toBe(
+      "https://myvinyl-public-release-staging.teomatteo89.workers.dev/release/42",
+    );
+  });
+
   it("serves the anonymous report form without enabling Release content", async () => {
     const response = await SELF.fetch("https://myvinyls.app/release/42/report", {
       headers: { "Accept-Language": "zh-CN" },
