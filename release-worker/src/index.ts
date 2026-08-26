@@ -98,7 +98,7 @@ export default {
       ETag: localizedETag(backendResponse.headers.get("etag"), env.RENDERER_VERSION, parsed.id, locale),
     }, locale);
 
-    const edgeResponse = new Response(response.body, response);
+    const edgeResponse = response.clone();
     edgeResponse.headers.set("Cache-Control", `public, max-age=${ttl}`);
     context.waitUntil(caches.default.put(cacheKey, edgeResponse));
     return conditionalResponse(request, response);
@@ -147,7 +147,7 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint, loca
     body: JSON.stringify({
       category,
       explanation,
-      contact_email: contactEmail || null,
+      ...(contactEmail ? { contact_email: contactEmail } : {}),
       permission_to_follow_up: permission,
     }),
   });
