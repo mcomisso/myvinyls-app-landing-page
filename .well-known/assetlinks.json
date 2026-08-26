@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mcsoftware.myvinyl",
+      "sha256_cert_fingerprints": [
+        "42:E4:1F:A4:B1:F3:13:26:E8:5B:20:34:DE:7D:E1:17:8D:92:CA:DE:35:41:20:FC:6A:B0:84:7D:B4:C2:45:58"
+      ]
+    }
+  }
+]
