@@ -16,6 +16,7 @@ interface RateRequest {
 const MINUTE_MS = 60_000;
 const ENUMERATION_WINDOW_MS = 10 * MINUTE_MS;
 const REPORT_WINDOW_MS = 60 * MINUTE_MS;
+const STATE_RETENTION_MS = REPORT_WINDOW_MS;
 
 export class ReleaseRateLimiter implements DurableObject {
   constructor(private readonly state: DurableObjectState) {}
@@ -25,6 +26,7 @@ export class ReleaseRateLimiter implements DurableObject {
 
     const input = await request.json<RateRequest>();
     const now = input.now ?? Date.now();
+    await this.state.storage.setAlarm(now + STATE_RETENTION_MS);
     const current = (await this.state.storage.get<RateState>("rate")) ?? {
       minuteStartedAt: now,
       minuteCount: 0,
@@ -66,6 +68,10 @@ export class ReleaseRateLimiter implements DurableObject {
       ? current.enumerationStartedAt + ENUMERATION_WINDOW_MS - now
       : current.minuteStartedAt + MINUTE_MS - now;
     return result(minuteAllowed && enumerationAllowed, retryAfter);
+  }
+
+  async alarm(): Promise<void> {
+    await this.state.storage.deleteAll();
   }
 }
 

@@ -18,6 +18,7 @@ function environment(originToken?: string) {
     DISCOGS_NON_AFFILIATION_NOTICE: "Test notice",
     REPORT_ORIGIN_TOKEN: "report-token",
     REPORT_SOURCE_SALT: "report-source-salt",
+    RATE_LIMIT_SOURCE_SALT: "rate-limit-source-salt",
     RATE_LIMITER,
   } as never;
 }

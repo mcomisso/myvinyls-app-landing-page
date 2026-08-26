@@ -14,6 +14,7 @@ const ENVIRONMENT = {
   DISABLED_NOT_FOUND: "false",
   DISCOGS_NON_AFFILIATION_NOTICE: "Test notice",
   STAGING_PREVIEW_HOST: STAGING_HOST,
+  RATE_LIMIT_SOURCE_SALT: "rate-limit-source-salt",
   RATE_LIMITER,
 } as never;
 
