@@ -1,4 +1,5 @@
 import type { ProblemDetails, PublicReleaseSnapshot } from "./contracts";
+import { copy, type SupportedLocale } from "./localization";
 
 const ATTRIBUTION_TEXT = "Data provided by Discogs";
 
@@ -6,7 +7,9 @@ export function renderReleasePage(
   snapshot: PublicReleaseSnapshot,
   canonicalURL: string,
   nonAffiliationNotice: string,
+  locale: SupportedLocale = "en",
 ): string {
+  const text = copy[locale];
   const releaseId = BigInt(snapshot.discogs_release_id);
   const artist = snapshot.artists.filter(Boolean).join(", ");
   const heading = [artist, snapshot.title].filter(Boolean).join(" - ");
@@ -17,103 +20,112 @@ export function renderReleasePage(
   ].filter(Boolean);
 
   return documentShell({
-    title: `${heading || `Release ${releaseId}`} | MyVinyl`,
+    locale,
+    title: `${heading || `${text.releaseFallback} ${releaseId}`} | MyVinyl`,
     canonicalURL,
     body: `
-      <header class="site-header"><a href="/" aria-label="MyVinyl home">MyVinyl</a></header>
+      <header class="site-header"><a href="/" aria-label="${escapeAttribute(text.homeLabel)}">MyVinyl</a></header>
       <main id="main" tabindex="-1">
         <section aria-labelledby="release-title" class="hero">
-          <p class="eyebrow">Catalogue Release</p>
+          <p class="eyebrow">${escapeHTML(text.catalogueRelease)}</p>
           <h1 id="release-title">${escapeHTML(heading || snapshot.title)}</h1>
           ${edition.length ? `<p class="edition">${edition.map(String).map(escapeHTML).join(" · ")}</p>` : ""}
-          <p class="updated">Release data updated <time datetime="${escapeAttribute(snapshot.provider_fetched_at)}">${escapeHTML(formatDate(snapshot.provider_fetched_at))}</time></p>
+          <p class="updated">${escapeHTML(text.updated)} <time datetime="${escapeAttribute(snapshot.provider_fetched_at)}">${escapeHTML(formatDate(snapshot.provider_fetched_at, locale))}</time></p>
           ${attribution(snapshot.discogs_web_url)}
         </section>
-        ${renderPublishing(snapshot)}
-        <nav class="handoffs" aria-label="Release destinations">
-          <a class="primary" href="${escapeAttribute(canonicalURL)}">Open in MyVinyl</a>
-          <a href="${escapeAttribute(snapshot.discogs_web_url)}" rel="noreferrer noopener">View on Discogs <span class="visually-hidden">external link</span></a>
-          <a href="/get/">Get MyVinyl</a>
+        ${renderPublishing(snapshot, locale)}
+        <nav class="handoffs" aria-label="${escapeAttribute(text.releaseDestinations)}">
+          <a class="primary" href="${escapeAttribute(canonicalURL)}">${escapeHTML(text.openInMyVinyl)}</a>
+          <a href="${escapeAttribute(snapshot.discogs_web_url)}" rel="noreferrer noopener">${escapeHTML(text.viewOnDiscogs)} <span class="visually-hidden">${escapeHTML(text.externalLink)}</span></a>
+          <a href="/get/">${escapeHTML(text.getMyVinyl)}</a>
         </nav>
-        ${renderTracklist(snapshot)}
-        ${renderIdentifiers(snapshot)}
-        ${renderGenres(snapshot)}
-        <p><a href="${escapeAttribute(new URL(`/release/${releaseId}/report`, canonicalURL).toString())}">Report This Page</a></p>
+        ${renderTracklist(snapshot, locale)}
+        ${renderIdentifiers(snapshot, locale)}
+        ${renderGenres(snapshot, locale)}
+        <p><a href="${escapeAttribute(new URL(`/release/${releaseId}/report`, canonicalURL).toString())}">${escapeHTML(text.reportThisPage)}</a></p>
       </main>
       <footer>
         <p lang="en">${escapeHTML(nonAffiliationNotice)}</p>
-        <p><a href="/privacypolicy/">Privacy</a> · <a href="/terms/">Terms</a></p>
+        <p><a href="/privacypolicy/">${escapeHTML(text.privacy)}</a> · <a href="/terms/">${escapeHTML(text.terms)}</a></p>
       </footer>`,
   });
 }
 
-export function renderProblemPage(problem: ProblemDetails, canonicalURL?: string): string {
-  const copy = problemCopy(problem.status, problem.reason_code);
+export function renderProblemPage(problem: ProblemDetails, canonicalURL?: string, locale: SupportedLocale = "en"): string {
+  const text = copy[locale];
+  const problemText = problemCopy(problem.status, problem.reason_code, locale);
   const retry = problem.status === 503 || problem.status === 429;
   return documentShell({
-    title: `${copy.heading} | MyVinyl`,
+    locale,
+    title: `${problemText.heading} | MyVinyl`,
     body: `
       <header class="site-header"><a href="/">MyVinyl</a></header>
       <main id="main" tabindex="-1" aria-live="polite">
         <section class="recovery">
-          <p class="eyebrow">Catalogue Release</p>
-          <h1>${escapeHTML(copy.heading)}</h1>
-          <p>${escapeHTML(copy.detail)}</p>
+          <p class="eyebrow">${escapeHTML(text.catalogueRelease)}</p>
+          <h1>${escapeHTML(problemText.heading)}</h1>
+          <p>${escapeHTML(problemText.detail)}</p>
           <div class="handoffs">
-            ${retry ? '<a class="primary" href="">Retry</a>' : ""}
-            ${canonicalURL ? `<a href="${escapeAttribute(canonicalURL)}">Open in MyVinyl</a>` : ""}
-            <a href="/">MyVinyl home</a>
+            ${retry ? `<a class="primary" href="">${escapeHTML(text.retry)}</a>` : ""}
+            ${canonicalURL ? `<a href="${escapeAttribute(canonicalURL)}">${escapeHTML(text.openInMyVinyl)}</a>` : ""}
+            <a href="/">${escapeHTML(text.myVinylHome)}</a>
           </div>
         </section>
       </main>`,
   });
 }
 
-export function renderReportPage(releaseId: bigint, state: "form" | "accepted" | "invalid" = "form"): string {
+export function renderReportPage(
+  releaseId: bigint,
+  state: "form" | "accepted" | "invalid" = "form",
+  locale: SupportedLocale = "en",
+): string {
+  const text = copy[locale];
   const status = state === "accepted"
-    ? "Thank you. Your report has been queued for human review."
+    ? text.reportQueued
     : state === "invalid"
-      ? "Check the required fields and try again."
-      : "Reports are reviewed by an authorized person and never suppress a page automatically.";
+      ? text.reportInvalid
+      : text.reportReviewNotice;
   return documentShell({
-    title: `Report Release ${releaseId} | MyVinyl`,
+    locale,
+    title: `${text.reportTitle} ${releaseId} | MyVinyl`,
     body: `
       <header class="site-header"><a href="/">MyVinyl</a></header>
       <main id="main" tabindex="-1">
         <section class="recovery">
-          <p class="eyebrow">Catalogue Release</p>
-          <h1>Report This Page</h1>
+          <p class="eyebrow">${escapeHTML(text.catalogueRelease)}</p>
+          <h1>${escapeHTML(text.reportThisPage)}</h1>
           <p role="status">${escapeHTML(status)}</p>
           ${state === "accepted" ? "" : `<form method="post" action="/release/${releaseId}/report">
-            <label>Reason
+            <label>${escapeHTML(text.reason)}
               <select name="category" required>
-                <option value="">Choose a reason</option>
-                <option value="privacy_publicity">Privacy or publicity harm</option>
-                <option value="copyright_trademark">Copyright or trademark claim</option>
-                <option value="impersonation">Impersonation</option>
-                <option value="malicious_link">Malicious link</option>
-                <option value="inaccurate_rights">Inaccurate rights claim</option>
-                <option value="other">Other</option>
+                <option value="">${escapeHTML(text.chooseReason)}</option>
+                <option value="privacy_publicity">${escapeHTML(text.privacyPublicity)}</option>
+                <option value="copyright_trademark">${escapeHTML(text.copyrightTrademark)}</option>
+                <option value="impersonation">${escapeHTML(text.impersonation)}</option>
+                <option value="malicious_link">${escapeHTML(text.maliciousLink)}</option>
+                <option value="inaccurate_rights">${escapeHTML(text.inaccurateRights)}</option>
+                <option value="other">${escapeHTML(text.other)}</option>
               </select>
             </label>
-            <label>What happened?
+            <label>${escapeHTML(text.whatHappened)}
               <textarea name="explanation" required minlength="10" maxlength="1000"></textarea>
             </label>
-            <label>Email for follow-up, optional
+            <label>${escapeHTML(text.followUpEmail)}
               <input name="contact_email" type="email" maxlength="254" autocomplete="email">
             </label>
-            <label class="check"><input name="permission_to_follow_up" type="checkbox" value="true"> MyVinyl may contact me about this report</label>
-            <button class="primary" type="submit">Submit report</button>
+            <label class="check"><input name="permission_to_follow_up" type="checkbox" value="true"> ${escapeHTML(text.followUpPermission)}</label>
+            <button class="primary" type="submit">${escapeHTML(text.submitReport)}</button>
           </form>`}
-          <p><a href="/release/${releaseId}">Back to Release</a></p>
+          <p><a href="/release/${releaseId}">${escapeHTML(text.backToRelease)}</a></p>
         </section>
       </main>`,
   });
 }
 
-function documentShell(input: { title: string; canonicalURL?: string; body: string }): string {
+function documentShell(input: { locale: SupportedLocale; title: string; canonicalURL?: string; body: string }): string {
   return `<!doctype html>
-<html lang="en">
+<html lang="${input.locale}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,36 +136,36 @@ function documentShell(input: { title: string; canonicalURL?: string; body: stri
   <style>${styles}</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to release details</a>
+  <a class="skip" href="#main">${escapeHTML(copy[input.locale].skipToDetails)}</a>
   ${input.body}
 </body>
 </html>`;
 }
 
-function renderPublishing(snapshot: PublicReleaseSnapshot): string {
+function renderPublishing(snapshot: PublicReleaseSnapshot, locale: SupportedLocale): string {
   if (!snapshot.labels.length) return "";
   const items = snapshot.labels
     .map((label) => `<li>${escapeHTML([label.name, label.catalog_number].filter(Boolean).join(" · "))}</li>`)
     .join("");
-  return `<section><h2>Publishing</h2><ul>${items}</ul>${attribution(snapshot.discogs_web_url)}</section>`;
+  return `<section><h2>${escapeHTML(copy[locale].publishing)}</h2><ul>${items}</ul>${attribution(snapshot.discogs_web_url)}</section>`;
 }
 
-function renderTracklist(snapshot: PublicReleaseSnapshot): string {
+function renderTracklist(snapshot: PublicReleaseSnapshot, locale: SupportedLocale): string {
   if (!snapshot.tracklist.length) return "";
   const rows = snapshot.tracklist.map((track) => `<li><span>${escapeHTML(track.position)}</span> <strong>${escapeHTML(track.title)}</strong>${track.duration ? ` <span>${escapeHTML(track.duration)}</span>` : ""}</li>`).join("");
-  return `<section><h2>Tracklist</h2><ol class="tracklist">${rows}</ol>${attribution(snapshot.discogs_web_url)}</section>`;
+  return `<section><h2>${escapeHTML(copy[locale].tracklist)}</h2><ol class="tracklist">${rows}</ol>${attribution(snapshot.discogs_web_url)}</section>`;
 }
 
-function renderIdentifiers(snapshot: PublicReleaseSnapshot): string {
+function renderIdentifiers(snapshot: PublicReleaseSnapshot, locale: SupportedLocale): string {
   if (!snapshot.identifiers.length) return "";
   const items = snapshot.identifiers.map((identifier) => `<li><strong>${escapeHTML(identifier.type)}</strong> ${escapeHTML(identifier.value)}</li>`).join("");
-  return `<section><details><summary>Release identifiers</summary><ul>${items}</ul>${attribution(snapshot.discogs_web_url)}</details></section>`;
+  return `<section><details><summary>${escapeHTML(copy[locale].releaseIdentifiers)}</summary><ul>${items}</ul>${attribution(snapshot.discogs_web_url)}</details></section>`;
 }
 
-function renderGenres(snapshot: PublicReleaseSnapshot): string {
+function renderGenres(snapshot: PublicReleaseSnapshot, locale: SupportedLocale): string {
   const values = [...snapshot.genres, ...snapshot.styles];
   if (!values.length) return "";
-  return `<section><h2>Genres and styles</h2><p>${values.map(escapeHTML).join(" · ")}</p>${attribution(snapshot.discogs_web_url)}</section>`;
+  return `<section><h2>${escapeHTML(copy[locale].genresAndStyles)}</h2><p>${values.map(escapeHTML).join(" · ")}</p>${attribution(snapshot.discogs_web_url)}</section>`;
 }
 
 function attribution(url: string): string {
@@ -166,20 +178,21 @@ function formatText(format: PublicReleaseSnapshot["formats"][number]): string {
     .join(", ");
 }
 
-function formatDate(value: string): string {
+function formatDate(value: string, locale: SupportedLocale): string {
   const date = new Date(value);
   return Number.isNaN(date.valueOf())
     ? value
-    : new Intl.DateTimeFormat("en", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(date);
+    : new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(date);
 }
 
-function problemCopy(status: number, reason?: string): { heading: string; detail: string } {
-  if (status === 404) return { heading: "Release not found", detail: "We couldn't find a release for this link." };
-  if (status === 410) return { heading: "Release no longer available", detail: "This release is no longer available." };
-  if (status === 403) return { heading: "Release Page Unavailable", detail: "This release page is unavailable." };
-  if (reason === "snapshot_expired") return { heading: "Release details temporarily unavailable", detail: "We couldn't refresh this release within the required freshness window." };
-  if (status === 429) return { heading: "Release details temporarily unavailable", detail: "The release data service is busy. Please try again shortly." };
-  return { heading: "Release details temporarily unavailable", detail: "We couldn't load this release right now. Please try again." };
+function problemCopy(status: number, reason: string | undefined, locale: SupportedLocale): { heading: string; detail: string } {
+  const text = copy[locale];
+  if (status === 404) return { heading: text.notFoundHeading, detail: text.notFoundDetail };
+  if (status === 410) return { heading: text.goneHeading, detail: text.goneDetail };
+  if (status === 403) return { heading: text.unavailableHeading, detail: text.unavailableDetail };
+  if (reason === "snapshot_expired") return { heading: text.unavailableHeading, detail: text.freshnessDetail };
+  if (status === 429) return { heading: text.unavailableHeading, detail: text.busyDetail };
+  return { heading: text.unavailableHeading, detail: text.unavailableDetail };
 }
 
 export function escapeHTML(value: string): string {
