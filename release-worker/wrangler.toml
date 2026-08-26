@@ -37,6 +37,8 @@ class_name = "ReleaseRateLimiter"
 name = "myvinyl-public-release-production"
 workers_dev = false
 routes = [
+  { pattern = "myvinyls.app/.well-known/apple-app-site-association", zone_name = "myvinyls.app" },
+  { pattern = "myvinyls.app/.well-known/assetlinks.json", zone_name = "myvinyls.app" },
   { pattern = "myvinyls.app/release/*", zone_name = "myvinyls.app" },
   { pattern = "myvinyls.app/record/*", zone_name = "myvinyls.app" },
   { pattern = "myvinyls.app/__internal/cache/purge", zone_name = "myvinyls.app" }

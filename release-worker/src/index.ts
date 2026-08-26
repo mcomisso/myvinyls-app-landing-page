@@ -5,6 +5,7 @@ import {
   parseReportPath,
   type ProblemDetails,
 } from "./contracts";
+import { associationDocument } from "./associations";
 import { negotiateLocale, SUPPORTED_LOCALES, type SupportedLocale } from "./localization";
 import { ReleaseRateLimiter } from "./rate-limiter";
 import { renderProblemPage, renderReleasePage, renderReportPage } from "./render";
@@ -35,6 +36,8 @@ export default {
   async fetch(request: Request, env: Env, context: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const locale = negotiateLocale(request.headers.get("accept-language"));
+    const association = associationDocument(url.pathname);
+    if (association !== undefined) return associationResponse(request, association);
     if (url.pathname === "/__internal/cache/purge") return purgeRequest(request, env);
     if (env.PUBLIC_RELEASES_ENABLED !== "true") {
       if (env.DISABLED_PASSTHROUGH === "true") return fetch(request);
@@ -129,6 +132,17 @@ export default {
     return conditionalResponse(request, response);
   },
 } satisfies ExportedHandler<Env>;
+
+function associationResponse(request: Request, document: unknown): Response {
+  if (request.method !== "GET" && request.method !== "HEAD") return methodNotAllowed("GET, HEAD");
+  return new Response(request.method === "HEAD" ? null : JSON.stringify(document), {
+    status: 200,
+    headers: securityHeaders({
+      "Cache-Control": "public, max-age=300",
+      "Content-Type": "application/json; charset=utf-8",
+    }),
+  });
+}
 
 function backendOriginHeaders(env: Env): Record<string, string> {
   return env.BACKEND_ORIGIN_TOKEN
