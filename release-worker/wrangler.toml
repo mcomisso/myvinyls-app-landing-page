@@ -36,6 +36,7 @@ class_name = "ReleaseRateLimiter"
 [env.production]
 name = "myvinyl-public-release-production"
 workers_dev = false
+logpush = false
 routes = [
   { pattern = "myvinyls.app/release/*", zone_name = "myvinyls.app" },
   { pattern = "myvinyls.app/record/*", zone_name = "myvinyls.app" },
@@ -48,6 +49,18 @@ PUBLIC_RELEASE_CANARY_IDS = ""
 DISABLED_NOT_FOUND = "true"
 BACKEND_ORIGIN = "https://api.myvinyls.app"
 RENDERER_VERSION = "2"
+
+[env.production.observability]
+enabled = false
+
+[env.production.observability.logs]
+enabled = false
+invocation_logs = false
+persist = false
+
+[env.production.observability.traces]
+enabled = false
+persist = false
 
 [[env.production.durable_objects.bindings]]
 name = "RATE_LIMITER"

@@ -20,6 +20,7 @@ interface Env {
   RENDERER_VERSION: string;
   DISCOGS_NON_AFFILIATION_NOTICE?: string;
   PURGE_TOKEN?: string;
+  RATE_LIMIT_SOURCE_SALT?: string;
   REPORT_ORIGIN_TOKEN?: string;
   REPORT_SOURCE_SALT?: string;
   STAGING_PREVIEW_HOST?: string;
@@ -58,6 +59,7 @@ export default {
     }
 
     const rate = await checkRate(request, env, "release", parsed.id.toString());
+    if (!rate) return problemResponse(503, "rate_limiting_unavailable", undefined, 300, locale);
     if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
 
     const canonicalURL = `https://myvinyls.app${parsed.canonicalPath}`;
@@ -84,11 +86,10 @@ export default {
     const cached = await caches.default.match(cacheKey);
     if (cached) return cachedBrowserResponse(request, cached);
 
-    const traceId = request.headers.get("cf-ray") ?? crypto.randomUUID();
     const backendResponse = await fetch(`${env.BACKEND_ORIGIN}/v1/public/releases/${parsed.id}`, {
       headers: {
         Accept: "application/json",
-        "X-Request-ID": traceId,
+        "X-Request-ID": crypto.randomUUID(),
         ...backendOriginHeaders(env),
       },
     });
@@ -138,9 +139,16 @@ function backendOriginHeaders(env: Env): Record<string, string> {
     : {};
 }
 
-async function checkRate(request: Request, env: Env, kind: "release" | "report", releaseId?: string): Promise<RateDecision> {
+async function checkRate(
+  request: Request,
+  env: Env,
+  kind: "release" | "report",
+  releaseId?: string,
+): Promise<RateDecision | undefined> {
+  if (!env.RATE_LIMIT_SOURCE_SALT) return undefined;
   const source = request.headers.get("cf-connecting-ip") ?? "unknown";
-  const id = env.RATE_LIMITER.idFromName(source);
+  const sourcePartition = await hashSource(source, env.RATE_LIMIT_SOURCE_SALT);
+  const id = env.RATE_LIMITER.idFromName(sourcePartition);
   const stub = env.RATE_LIMITER.get(id);
   const response = await stub.fetch("https://rate.internal/release", {
     method: "POST",
@@ -158,6 +166,7 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint, loca
   if (!env.REPORT_ORIGIN_TOKEN || !env.REPORT_SOURCE_SALT) return problemResponse(503, "reporting_disabled", undefined, 300, locale);
 
   const rate = await checkRate(request, env, "report");
+  if (!rate) return problemResponse(503, "rate_limiting_unavailable", undefined, 300, locale);
   if (!rate.allowed) return problemResponse(429, "rate_limited", undefined, rate.retry_after, locale);
 
   const form = await request.formData();
