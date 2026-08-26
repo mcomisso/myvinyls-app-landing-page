@@ -1,5 +1,12 @@
 export const MAX_RELEASE_ID = 9_223_372_036_854_775_807n;
 
+export function isPublicReleaseCanaryAllowed(value: string | undefined, releaseId: bigint): boolean {
+  const configured = value?.trim();
+  if (!configured) return false;
+  if (configured === "*") return true;
+  return configured.split(",").some((candidate) => candidate.trim() === releaseId.toString());
+}
+
 export interface PublicReleaseSnapshot {
   schema_version: number;
   discogs_release_id: string;

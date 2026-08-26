@@ -3,10 +3,10 @@ import { describe, expect, it } from "vitest";
 import { cachedBrowserResponse, conditionalResponse, releaseCacheKey } from "../src/index";
 
 describe("Public Release Worker routes", () => {
-  it("permanently canonicalizes aliases before the disabled content gate", async () => {
+  it("does not canonicalize aliases while the Worker is disabled", async () => {
     const response = await SELF.fetch("https://myvinyls.app/record/0042/?campaign=test", { redirect: "manual" });
-    expect(response.status).toBe(308);
-    expect(response.headers.get("location")).toBe("https://myvinyls.app/release/42");
+    expect(response.status).toBe(503);
+    expect(response.headers.get("location")).toBeNull();
     expect(response.headers.get("x-content-type-options")).toBe("nosniff");
   });
 
@@ -31,31 +31,29 @@ describe("Public Release Worker routes", () => {
     expect(await response.text()).not.toContain('rel="canonical"');
   });
 
-  it("canonicalizes a staging alias without escaping to production", async () => {
+  it("keeps staging aliases dark while the Worker is disabled", async () => {
     const response = await SELF.fetch(
       "https://myvinyl-public-release-staging.teomatteo89.workers.dev/record/0042?campaign=test",
       { redirect: "manual" },
     );
-    expect(response.status).toBe(308);
-    expect(response.headers.get("location")).toBe(
-      "https://myvinyl-public-release-staging.teomatteo89.workers.dev/release/42",
-    );
+    expect(response.status).toBe(503);
+    expect(response.headers.get("location")).toBeNull();
   });
 
-  it("serves the anonymous report form without enabling Release content", async () => {
+  it("does not expose the anonymous report form while the Worker is disabled", async () => {
     const response = await SELF.fetch("https://myvinyls.app/release/42/report", {
       headers: { "Accept-Language": "zh-CN" },
     });
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(503);
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(response.headers.get("content-language")).toBe("zh-CN");
     expect(response.headers.get("vary")).toBe("Accept-Language");
-    expect(await response.text()).toContain("举报此页面");
+    expect(await response.text()).not.toContain("举报此页面");
   });
 
-  it("rejects invalid identifiers without a canonical tag", async () => {
+  it("does not expose identifier validity while the Worker is disabled", async () => {
     const response = await SELF.fetch("https://myvinyls.app/release/9223372036854775808");
-    expect(response.status).toBe(404);
+    expect(response.status).toBe(503);
     expect(await response.text()).not.toContain('rel="canonical"');
   });
 });
