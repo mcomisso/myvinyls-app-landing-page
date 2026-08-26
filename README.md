@@ -28,6 +28,24 @@ My Vinyl+ iOS app or a reusable landing-page template. The app source lives in
 The dynamic discovery site at `dig.myvinyls.app` is a separate project in
 `../the-crate`. Backend APIs are maintained in `../vinyly_backend`.
 
+### Public Release Worker
+
+`release-worker/` is the isolated Cloudflare Worker for canonical Public
+Release routes. It server-renders `/release/{id}` and redirects the inbound
+`/record/{id}` alias while every other apex route remains on GitHub Pages. The
+Worker is disabled by default in every environment. Production enablement
+requires the external clearance and signed-device gates recorded in
+`mcsoftwareltd/My-Vinyl#76`.
+
+Run its focused checks with:
+
+```sh
+cd release-worker
+npm install
+npm run check
+npm test
+```
+
 ## Run locally
 
 The project uses Ruby and Bundler. Install the locked dependencies, then start
