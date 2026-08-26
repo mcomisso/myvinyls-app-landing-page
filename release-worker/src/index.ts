@@ -127,7 +127,7 @@ async function reportRequest(request: Request, env: Env, releaseId: bigint): Pro
     headers: {
       "Authorization": `Bearer ${env.REPORT_ORIGIN_TOKEN}`,
       "Content-Type": "application/json",
-      "X-MyVinyl-Source-Hash": sourceHash,
+      "X-Public-Release-Source-Hash": sourceHash,
     },
     body: JSON.stringify({
       category,
@@ -177,9 +177,16 @@ function sameOrigin(request: Request): boolean {
 }
 
 async function hashSource(source: string, salt: string): Promise<string> {
-  const bytes = new TextEncoder().encode(`${salt}:${source}`);
-  const digest = await crypto.subtle.digest("SHA-256", bytes);
-  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(salt),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(source));
+  return [...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
 function methodNotAllowed(allow: string): Response {
