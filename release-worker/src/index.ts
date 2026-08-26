@@ -16,7 +16,7 @@ interface Env {
   BACKEND_ORIGIN_TOKEN?: string;
   PUBLIC_RELEASES_ENABLED: string;
   PUBLIC_RELEASE_CANARY_IDS?: string;
-  DISABLED_PASSTHROUGH?: string;
+  DISABLED_NOT_FOUND?: string;
   RENDERER_VERSION: string;
   DISCOGS_NON_AFFILIATION_NOTICE?: string;
   PURGE_TOKEN?: string;
@@ -37,7 +37,9 @@ export default {
     const locale = negotiateLocale(request.headers.get("accept-language"));
     if (url.pathname === "/__internal/cache/purge") return purgeRequest(request, env);
     if (env.PUBLIC_RELEASES_ENABLED !== "true") {
-      if (env.DISABLED_PASSTHROUGH === "true") return fetch(request);
+      if (env.DISABLED_NOT_FOUND === "true") {
+        return problemResponse(404, "not_found", undefined, undefined, locale, "no-store");
+      }
       return problemResponse(503, "release_pages_disabled", undefined, 300, locale);
     }
 
@@ -278,6 +280,7 @@ function problemResponse(
   canonicalURL?: string,
   retry?: number,
   locale: SupportedLocale = "en",
+  cacheControl?: string,
 ): Response {
   const problem: ProblemDetails = {
     type: `https://myvinyls.app/problems/${reason}`,
@@ -285,7 +288,9 @@ function problemResponse(
     status,
     reason_code: reason,
   };
-  const headers: Record<string, string> = { "Cache-Control": status === 404 ? "public, max-age=60" : "no-store" };
+  const headers: Record<string, string> = {
+    "Cache-Control": cacheControl ?? (status === 404 ? "public, max-age=60" : "no-store"),
+  };
   if (retry) headers["Retry-After"] = String(retry);
   return htmlResponse(
     renderProblemPage(problem, status === 503 || status === 429 ? canonicalURL : undefined, locale),

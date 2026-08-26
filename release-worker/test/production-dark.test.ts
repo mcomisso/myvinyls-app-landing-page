@@ -7,7 +7,7 @@ describe("bound production dark mode", () => {
   it.each([
     "https://myvinyls.app/record/0042?campaign=test",
     "https://myvinyls.app/release/42/report",
-  ])("passes %s through to the existing origin", async (url) => {
+  ])("returns a fail-closed 404 for %s without a same-zone subrequest", async (url) => {
     const originFetch = vi.fn(async (_request: Request) => new Response("existing origin", {
       status: 404,
       headers: { "X-Existing-Origin": "true" },
@@ -18,15 +18,16 @@ describe("bound production dark mode", () => {
       new Request(url),
       {
         PUBLIC_RELEASES_ENABLED: "false",
-        DISABLED_PASSTHROUGH: "true",
+        DISABLED_NOT_FOUND: "true",
       } as never,
       {} as ExecutionContext,
     );
 
     expect(response.status).toBe(404);
-    expect(response.headers.get("x-existing-origin")).toBe("true");
-    expect(originFetch).toHaveBeenCalledOnce();
-    expect(originFetch.mock.calls[0]?.[0].url).toBe(url);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("location")).toBeNull();
+    expect(await response.text()).not.toContain('rel="canonical"');
+    expect(originFetch).not.toHaveBeenCalled();
   });
 
   it("keeps authenticated cache purge reachable while public routes are dark", async () => {
@@ -44,7 +45,7 @@ describe("bound production dark mode", () => {
       }),
       {
         PUBLIC_RELEASES_ENABLED: "false",
-        DISABLED_PASSTHROUGH: "true",
+        DISABLED_NOT_FOUND: "true",
         PURGE_TOKEN: "purge-token",
         RENDERER_VERSION: "2",
       } as never,
