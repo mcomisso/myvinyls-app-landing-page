@@ -32,6 +32,18 @@ describe("renderReleasePage", () => {
     expect(html).not.toContain("analytics");
   });
 
+  it("keeps staging report navigation on staging while metadata stays canonical", () => {
+    const html = renderReleasePage(
+      snapshot,
+      "https://myvinyls.app/release/42",
+      "Required notice",
+      "en",
+      "https://public-release-staging.example",
+    );
+    expect(html).toContain('<link rel="canonical" href="https://myvinyls.app/release/42">');
+    expect(html).toContain('href="https://public-release-staging.example/release/42/report"');
+  });
+
   it("localizes UI copy while preserving provider metadata and mandatory Discogs text", () => {
     const html = renderReleasePage(snapshot, "https://myvinyls.app/release/42", "Required notice", "de");
     expect(html).toContain('<html lang="de">');

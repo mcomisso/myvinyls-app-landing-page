@@ -24,6 +24,7 @@ workers_dev = true
 PUBLIC_RELEASES_ENABLED = "false"
 BACKEND_ORIGIN = "https://myvinyls-django.fly.dev"
 RENDERER_VERSION = "2"
+STAGING_PREVIEW_HOST = "myvinyl-public-release-staging.teomatteo89.workers.dev"
 
 [[env.staging.durable_objects.bindings]]
 name = "RATE_LIMITER"

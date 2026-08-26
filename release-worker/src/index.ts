@@ -13,6 +13,7 @@ interface Env {
   PURGE_TOKEN?: string;
   REPORT_ORIGIN_TOKEN?: string;
   REPORT_SOURCE_SALT?: string;
+  STAGING_PREVIEW_HOST?: string;
   RATE_LIMITER: DurableObjectNamespace;
 }
 
@@ -37,11 +38,18 @@ export default {
     if (parsed.kind === "not-found") return problemResponse(404, "not_found", undefined, undefined, locale);
 
     const canonicalURL = `https://myvinyls.app${parsed.canonicalPath}`;
+    const isStagingPreview = url.hostname === env.STAGING_PREVIEW_HOST;
     if (parsed.needsRedirect) {
-      return new Response(null, {
-        status: 308,
-        headers: securityHeaders({ Location: canonicalURL, "Cache-Control": "public, max-age=31536000, immutable" }),
-      });
+      const previewPathIsCanonical = isStagingPreview &&
+        url.pathname === parsed.canonicalPath &&
+        url.search.length === 0;
+      if (!previewPathIsCanonical) {
+        const location = isStagingPreview ? `${url.origin}${parsed.canonicalPath}` : canonicalURL;
+        return new Response(null, {
+          status: 308,
+          headers: securityHeaders({ Location: location, "Cache-Control": "public, max-age=31536000, immutable" }),
+        });
+      }
     }
 
     if (isVerifiedCrawler(request)) return problemResponse(403, "crawler_denied", undefined, undefined, locale);
@@ -78,7 +86,13 @@ export default {
     }
 
     const ttl = Math.max(1, Math.min(300, Math.floor((expiry - Date.now()) / 1000)));
-    const response = htmlResponse(renderReleasePage(snapshot, canonicalURL, env.DISCOGS_NON_AFFILIATION_NOTICE, locale), 200, {
+    const response = htmlResponse(renderReleasePage(
+      snapshot,
+      canonicalURL,
+      env.DISCOGS_NON_AFFILIATION_NOTICE,
+      locale,
+      isStagingPreview ? url.origin : undefined,
+    ), 200, {
       "Cache-Control": `private, max-age=60, must-revalidate`,
       "CDN-Cache-Control": `public, max-age=${ttl}`,
       ETag: localizedETag(backendResponse.headers.get("etag"), env.RENDERER_VERSION, parsed.id, locale),

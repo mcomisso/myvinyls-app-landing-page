@@ -8,6 +8,7 @@ export function renderReleasePage(
   canonicalURL: string,
   nonAffiliationNotice: string,
   locale: SupportedLocale = "en",
+  routeOrigin?: string,
 ): string {
   const text = copy[locale];
   const releaseId = BigInt(snapshot.discogs_release_id);
@@ -42,7 +43,7 @@ export function renderReleasePage(
         ${renderTracklist(snapshot, locale)}
         ${renderIdentifiers(snapshot, locale)}
         ${renderGenres(snapshot, locale)}
-        <p><a href="${escapeAttribute(new URL(`/release/${releaseId}/report`, canonicalURL).toString())}">${escapeHTML(text.reportThisPage)}</a></p>
+        <p><a href="${escapeAttribute(new URL(`/release/${releaseId}/report`, routeOrigin ?? canonicalURL).toString())}">${escapeHTML(text.reportThisPage)}</a></p>
       </main>
       <footer>
         <p lang="en">${escapeHTML(nonAffiliationNotice)}</p>
