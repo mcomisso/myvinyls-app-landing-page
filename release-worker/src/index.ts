@@ -51,7 +51,7 @@ export default {
 
     const cacheKey = new Request(`https://release-cache.invalid${parsed.canonicalPath}?locale=en&renderer=${encodeURIComponent(env.RENDERER_VERSION)}`);
     const cached = await caches.default.match(cacheKey);
-    if (cached) return cached;
+    if (cached) return conditionalResponse(request, cached);
 
     const traceId = request.headers.get("cf-ray") ?? crypto.randomUUID();
     const backendResponse = await fetch(`${env.BACKEND_ORIGIN}/v1/public/releases/${parsed.id}`, {
@@ -86,7 +86,7 @@ export default {
     const edgeResponse = new Response(response.body, response);
     edgeResponse.headers.set("Cache-Control", `public, max-age=${ttl}`);
     context.waitUntil(caches.default.put(cacheKey, edgeResponse));
-    return response;
+    return conditionalResponse(request, response);
   },
 } satisfies ExportedHandler<Env>;
 
@@ -184,6 +184,14 @@ async function hashSource(source: string, salt: string): Promise<string> {
 
 function methodNotAllowed(allow: string): Response {
   return new Response(null, { status: 405, headers: securityHeaders({ Allow: allow, "Cache-Control": "no-store" }) });
+}
+
+export function conditionalResponse(request: Request, response: Response): Response {
+  const candidate = request.headers.get("if-none-match");
+  const etag = response.headers.get("etag");
+  if (!candidate || !etag) return response;
+  const matches = candidate === "*" || candidate.split(",").some((value) => value.trim() === etag);
+  return matches ? new Response(null, { status: 304, headers: response.headers }) : response;
 }
 
 async function readProblem(response: Response): Promise<ProblemDetails> {
