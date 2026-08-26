@@ -59,7 +59,7 @@ export default {
 
     const cacheKey = releaseCacheKey(parsed.canonicalPath, locale, env.RENDERER_VERSION);
     const cached = await caches.default.match(cacheKey);
-    if (cached) return conditionalResponse(request, cached);
+    if (cached) return cachedBrowserResponse(request, cached);
 
     const traceId = request.headers.get("cf-ray") ?? crypto.randomUUID();
     const backendResponse = await fetch(`${env.BACKEND_ORIGIN}/v1/public/releases/${parsed.id}`, {
@@ -215,6 +215,12 @@ export function conditionalResponse(request: Request, response: Response): Respo
   if (!candidate || !etag) return response;
   const matches = candidate === "*" || candidate.split(",").some((value) => value.trim() === etag);
   return matches ? new Response(null, { status: 304, headers: response.headers }) : response;
+}
+
+export function cachedBrowserResponse(request: Request, cached: Response): Response {
+  const response = new Response(cached.body, cached);
+  response.headers.set("Cache-Control", "private, max-age=60, must-revalidate");
+  return conditionalResponse(request, response);
 }
 
 async function readProblem(response: Response): Promise<ProblemDetails> {
