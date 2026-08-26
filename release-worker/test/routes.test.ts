@@ -1,6 +1,6 @@
 import { SELF } from "cloudflare:test";
 import { describe, expect, it } from "vitest";
-import { conditionalResponse, releaseCacheKey } from "../src/index";
+import { cachedBrowserResponse, conditionalResponse, releaseCacheKey } from "../src/index";
 
 describe("Public Release Worker routes", () => {
   it("permanently canonicalizes aliases before the disabled content gate", async () => {
@@ -71,6 +71,17 @@ describe("localized edge cache keys", () => {
 });
 
 describe("conditional responses", () => {
+  it("restores the private browser policy on a cached response", async () => {
+    const request = new Request("https://myvinyls.app/release/42");
+    const cached = new Response("cached", { headers: { "Cache-Control": "public, max-age=300" } });
+
+    const response = cachedBrowserResponse(request, cached);
+
+    expect(response.headers.get("cache-control")).toBe("private, max-age=60, must-revalidate");
+    expect(await response.text()).toBe("cached");
+    expect(cached.headers.get("cache-control")).toBe("public, max-age=300");
+  });
+
   it("returns 304 for an exact ETag without leaking a body", async () => {
     const request = new Request("https://myvinyls.app/release/42", { headers: { "If-None-Match": '"snapshot-42"' } });
     const response = conditionalResponse(request, new Response("private body", { headers: { ETag: '"snapshot-42"' } }));
