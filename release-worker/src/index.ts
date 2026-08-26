@@ -62,7 +62,7 @@ export default {
       const problem = await readProblem(backendResponse);
       return problemResponse(
         normalizeStatus(backendResponse.status),
-        problem.reason_code ?? "temporary_failure",
+        problem.reason_code ?? problem.code ?? "temporary_failure",
         canonicalURL,
         retryAfter(backendResponse),
       );

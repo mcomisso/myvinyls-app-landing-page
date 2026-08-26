@@ -38,6 +38,7 @@ export interface ProblemDetails {
   status: number;
   detail?: string;
   reason_code?: string;
+  code?: string;
 }
 
 export type ParsedReleasePath =
