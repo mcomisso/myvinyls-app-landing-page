@@ -7,7 +7,7 @@ category: vinyl-collecting
 tags: [inner-groove-distortion, turntable-setup, cartridge-alignment, vinyl-playback, stylus, record-condition, my-vinyl-plus]
 author: Matteo Comisso
 reading_time: 8
-image: /assets/blog/images/2026-09-08-inner-groove-distortion-vinyl-fix.webp
+image: /assets/blog/images/2026-09-08-inner-groove-distortion-vinyl-fix.webp?v=905187b
 ---
 
 The first song sounds open and clean. By the last chorus on the side, vocals spit, cymbals turn brittle, and busy passages seem to collapse into fuzz.
