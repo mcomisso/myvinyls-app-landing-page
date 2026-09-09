@@ -7,7 +7,7 @@ category: vinyl-collecting
 tags: [shipping-vinyl-records, selling-vinyl, record-mailers, seam-splits, vinyl-care, discogs, collection-management, my-vinyl-plus]
 author: Matteo Comisso
 reading_time: 8
-image: /assets/blog/images/2026-09-09-how-to-pack-ship-vinyl-records.webp
+image: /assets/blog/images/2026-09-09-how-to-pack-ship-vinyl-records.webp?v=4792919
 ---
 
 The record can be graded perfectly and still disappoint the buyer.
