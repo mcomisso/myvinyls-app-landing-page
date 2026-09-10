@@ -7,7 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-catalog-number, pressing-identification, discogs, vinyl-labels, record-buying, vinyl-catalog, collection-management, my-vinyl-plus]
 author: Matteo Comisso
 reading_time: 9
-image: /assets/blog/images/2026-09-10-vinyl-catalog-numbers-explained.webp
+image: /assets/blog/images/2026-09-10-vinyl-catalog-numbers-explained.webp?v=acca90c
 ---
 
 A catalog number is often the fastest way to narrow down a vinyl pressing. It is also one of the easiest clues to trust too much.
