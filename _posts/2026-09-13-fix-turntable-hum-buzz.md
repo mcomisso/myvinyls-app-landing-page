@@ -7,7 +7,7 @@ category: vinyl-collecting
 tags: [turntable-hum, turntable-buzz, grounding, phono-preamp, turntable-setup, vinyl-playback, troubleshooting, my-vinyl-plus]
 author: Matteo Comisso
 reading_time: 9
-image: /assets/blog/images/2026-09-13-fix-turntable-hum-buzz.webp
+image: /assets/blog/images/2026-09-13-fix-turntable-hum-buzz.webp?v=d40e41b
 ---
 
 A quiet hiss with the volume turned up is normal in many vinyl systems. A loud hum or buzz that follows you across every record is not.
