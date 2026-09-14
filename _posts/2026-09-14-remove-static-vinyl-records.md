@@ -7,7 +7,7 @@ category: vinyl-collecting
 tags: [vinyl-static, anti-static-brush, record-care, vinyl-cleaning, surface-noise, inner-sleeves, vinyl-playback, my-vinyl-plus]
 author: Matteo Comisso
 reading_time: 8
-image: /assets/blog/images/2026-09-14-remove-static-vinyl-records.webp
+image: /assets/blog/images/2026-09-14-remove-static-vinyl-records.webp?v=ee9a195
 ---
 
 You lift a record and the mat comes with it. The inner sleeve clings to the disc. Dust seems to land on the grooves before the stylus does.
