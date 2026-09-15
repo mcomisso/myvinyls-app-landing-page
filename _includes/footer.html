@@ -1,8 +1,13 @@
 <footer class="site-footer">
     <div class="footer-content">
+        {% if include.journal %}
+        <label class="journal-appearance" hidden>Appearance
+            <select id="journal-theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+        </label>
+        {% endif %}
         {% if site.your_name %}
         <p class="copyright">
-            Made with <i class="fas fa-heart" aria-hidden="true" style="color: var(--primary);"></i> by
+            {% if include.journal %}Made by{% else %}Made with <i class="fas fa-heart" aria-hidden="true" style="color: var(--primary);"></i> by{% endif %}
             {% if site.your_link %}<a href="{{ site.your_link }}" target="_blank" rel="noopener">{% endif %}
             {{ site.your_name }}
             {% if site.your_link %}</a>{% endif %}

@@ -1,0 +1,11 @@
+{% assign story_heading = include.heading | default: 'h2' %}
+<article class="blog-card journal-story" data-category="{{ include.post.category | escape }}">
+  {% if include.number %}<span class="journal-track" aria-hidden="true">{{ include.number | prepend: '0' | slice: -2, 2 }}</span>{% endif %}
+  <div class="journal-story-copy">
+    {% include journal-meta.html post=include.post %}
+    <{{ story_heading }} class="blog-card-title"><a href="{{ include.post.url | relative_url }}">{{ include.post.title | escape }}</a></{{ story_heading }}>
+    <p class="blog-card-excerpt">{{ include.post.description | default: include.post.excerpt | strip_html | escape }}</p>
+    <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%-d %b %Y' }}</time>
+  </div>
+  {% if include.post.image %}<a class="journal-story-image" href="{{ include.post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ include.post.image | relative_url }}" alt="" width="120" height="120" loading="lazy"></a>{% endif %}
+</article>
