@@ -3,9 +3,9 @@
 /* The approved sleeve direction. These styles only load on journal pages. */
 :root { color-scheme: light; --paper:#f8f6ef; --panel:#eae7da; --ink:#262820; --muted:#606154; --line:#d6d5c9; --accent:#a43d20; --serif:'DM Serif Display',Georgia,serif; --sans:'DM Sans',Arial,sans-serif; }
 * { box-sizing:border-box; }
-:root[data-theme='dark'] { color-scheme:dark; --paper:#202622; --panel:#2e352d; --ink:#f0ede0; --muted:#b7bcae; --line:#596154; --accent:#efac77; }
+:root[data-theme='dark'] { color-scheme:dark; --paper:#111214; --panel:#1b1d20; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --accent:#efa56e; }
 @media(prefers-color-scheme:dark) {
-  :root:not([data-theme='light']) { color-scheme:dark; --paper:#202622; --panel:#2e352d; --ink:#f0ede0; --muted:#b7bcae; --line:#596154; --accent:#efac77; }
+  :root:not([data-theme='light']) { color-scheme:dark; --paper:#111214; --panel:#1b1d20; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --accent:#efa56e; }
 }
 .journal-appearance { display:flex; align-items:center; gap:12px; }
 .journal-appearance select { font:inherit; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:8px 10px; }
@@ -31,6 +31,7 @@ p { max-width:70ch; }
 .journal-header nav>a:first-child { font-weight:700; }
 .journal-app-link { border:1px solid var(--line); padding:9px 16px; border-radius:5px; }
 .journal-app-link span { padding-left:12px; }
+.theme-toggle { display:grid; place-items:center; flex-shrink:0; width:44px; height:44px; border:1px solid var(--line); border-radius:5px; background:transparent; color:var(--ink); }
 .skip-link { position:fixed; top:-100px; left:20px; padding:10px; background:var(--ink); color:var(--paper); z-index:100; }
 .skip-link:focus { top:10px; }
 .journal-masthead { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:42px 0 38px; }
@@ -136,6 +137,7 @@ p { max-width:70ch; }
   .journal-header { min-height:78px; gap:12px; }
   .journal-header nav { gap:19px; font-size:12px; }
   .journal-header nav>a:nth-child(2) { display:none; }
+  .journal-header .journal-app-link { display:none; }
   .journal-brand { font-size:18px; gap:7px; }
   .journal-brand img { width:28px; height:28px; }
   .journal-app-link { padding:7px 9px; } .journal-app-link span { padding-left:0; }

@@ -8,5 +8,6 @@
     <a href="{{ '/blog/' | relative_url }}"{% if page.layout == 'blog' %} aria-current="page"{% endif %}>Journal</a>
     <a href="{{ '/faq/' | relative_url }}">FAQ</a>
     <a class="journal-app-link" href="{{ '/' | relative_url }}">Explore the app <span aria-hidden="true">↗</span></a>
+    {% include theme-toggle.html %}
   </nav>
 </header>

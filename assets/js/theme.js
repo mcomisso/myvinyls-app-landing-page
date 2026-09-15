@@ -9,10 +9,14 @@
         const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
         document.documentElement.dataset.theme = theme;
         document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
-            meta.content = theme === 'dark' ? '#202622' : '#f8f6ef';
+            meta.content = theme === 'dark' ? (meta.dataset.themeDark || '#111214') : (meta.dataset.themeLight || '#f8f6ef');
         });
-        const select = document.getElementById('journal-theme');
-        if (select) select.value = preference;
+        document.querySelectorAll('[data-theme-select]').forEach(select => { select.value = preference; });
+        document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+            button.hidden = false;
+            button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+            button.setAttribute('aria-pressed', String(theme === 'dark'));
+        });
     }
     apply();
     system.addEventListener('change', apply);
@@ -22,14 +26,18 @@
         apply();
     });
     document.addEventListener('DOMContentLoaded', () => {
-        const select = document.getElementById('journal-theme');
-        if (!select) return;
-        select.closest('.journal-appearance').hidden = false;
-        select.value = preference;
-        select.addEventListener('change', () => {
-            preference = select.value;
+        function save(next) {
+            preference = next;
             try { localStorage.setItem('theme', preference); } catch (_) {}
             apply();
+        }
+        document.querySelectorAll('[data-theme-select]').forEach(select => {
+            select.closest('.site-appearance').hidden = false;
+            select.addEventListener('change', () => save(select.value));
         });
+        document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+            button.addEventListener('click', () => save(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+        });
+        apply();
     });
 })();

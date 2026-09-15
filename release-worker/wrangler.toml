@@ -7,7 +7,7 @@ workers_dev = true
 PUBLIC_RELEASES_ENABLED = "false"
 PUBLIC_RELEASE_CANARY_IDS = "*"
 BACKEND_ORIGIN = "https://api.myvinyls.app"
-RENDERER_VERSION = "2"
+RENDERER_VERSION = "3"
 
 [[durable_objects.bindings]]
 name = "RATE_LIMITER"
@@ -26,7 +26,7 @@ PUBLIC_RELEASES_ENABLED = "true"
 PUBLIC_RELEASE_CANARY_IDS = "*"
 DISABLED_NOT_FOUND = "false"
 BACKEND_ORIGIN = "https://myvinyls-django-staging.fly.dev"
-RENDERER_VERSION = "2"
+RENDERER_VERSION = "3"
 STAGING_PREVIEW_HOST = "myvinyl-public-release-staging.teomatteo89.workers.dev"
 
 [[env.staging.durable_objects.bindings]]
@@ -48,7 +48,7 @@ PUBLIC_RELEASES_ENABLED = "false"
 PUBLIC_RELEASE_CANARY_IDS = ""
 DISABLED_NOT_FOUND = "true"
 BACKEND_ORIGIN = "https://api.myvinyls.app"
-RENDERER_VERSION = "2"
+RENDERER_VERSION = "3"
 
 [env.production.observability]
 enabled = false

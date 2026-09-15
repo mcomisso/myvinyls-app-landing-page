@@ -8,12 +8,16 @@ sitemap: false
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" data-theme-light="#ffffff" data-theme-dark="#111214" />
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
     <meta name="apple-itunes-app" content="app-id={{ site.ios_app_id }}">
     <link rel="shortcut icon" href="{{ site.app_icon | relative_url }}" />
     <link rel="apple-touch-icon" href="{{ site.app_icon | relative_url }}" />
     <title>Get {{ site.app_name }}</title>
     <style>
+        :root { color-scheme: light; --get-bg:#fff; --get-text:#1a1a1a; --get-muted:#626872; --get-border:#e5e7eb; }
+        :root[data-theme="dark"] { color-scheme:dark; --get-bg:#111214; --get-text:#f0f0eb; --get-muted:#b4b6ba; --get-border:#383c41; }
+        @media(prefers-color-scheme:dark) { :root:not([data-theme="light"]) { color-scheme:dark; --get-bg:#111214; --get-text:#f0f0eb; --get-muted:#b4b6ba; --get-border:#383c41; } }
         * {
             margin: 0;
             padding: 0;
@@ -23,15 +27,15 @@ sitemap: false
         body {
             min-height: 100vh;
             min-height: 100dvh;
-            background-color: white;
-            color: #1a1a1a;
+            background-color: var(--get-bg);
+            color: var(--get-text);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             flex-direction: column;
         }
 
         .header {
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--get-border);
             padding: 12px 20px;
             display: flex;
             align-items: center;
@@ -46,7 +50,7 @@ sitemap: false
         }
 
         .app-name {
-            color: #1a1a1a;
+            color: var(--get-text);
             font-size: 1.25rem;
             font-weight: 700;
             line-height: 1;
@@ -71,7 +75,7 @@ sitemap: false
         }
 
         .redirect-title {
-            color: #1a1a1a;
+            color: var(--get-text);
             font-size: 1.5rem;
             font-weight: 700;
             line-height: 1.3;
@@ -79,7 +83,7 @@ sitemap: false
         }
 
         .redirect-subtitle {
-            color: #6b7280;
+            color: var(--get-muted);
             font-size: 1rem;
             line-height: 1.5;
             margin-bottom: 32px;
