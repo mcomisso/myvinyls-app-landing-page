@@ -149,6 +149,7 @@ include:
   - .well-known
 
 exclude:
+  - blog/prototype
   - LICENSE
   - README.md
   - CNAME

@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- Five throwaway blog variants on the existing /blog/ route. No winning direction selected. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>The Vinyl Journal | My Vinyl+ prototypes</title>
+  <link rel="stylesheet" href="/blog/prototype/fonts/fonts.css">
+  <link rel="stylesheet" href="/blog/prototype/style.css">
+</head>
+<body>
+  <div class="preview-page">
+  <a class="skip" href="#main">Skip to articles</a>
+  <header class="header"><a class="brand" href="https://myvinyls.app"><img src="/assets/appicon.webp" width="34" height="34" alt="">My Vinyl<span>+</span></a><nav aria-label="Main navigation"><a href="/blog/?variant=A" id="home" aria-current="page">Journal</a><a href="https://myvinyls.app/faq/">FAQ</a><a class="app-link" href="https://myvinyls.app">Explore the app <span aria-hidden="true">↗</span></a></nav></header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer"><a class="brand" href="https://myvinyls.app">My Vinyl+</a><p>Good records. Well kept.</p><a href="https://myvinyls.app/blog/">Visit the published journal ↗</a></footer>
+  </div>
+  <aside class="switcher" aria-label="Prototype controls" hidden><button id="previous" aria-label="Previous prototype">←</button><div><span class="prototype-label">DESIGN PROTOTYPE <span id="count"></span></span><select aria-label="Select prototype" id="variant"><option value="A">A · The sleeve</option><option value="B">B · Liner notes</option><option value="C">C · The catalogue</option><option value="D">D · Listening room</option><option value="E">E · The quarterly</option></select></div><button id="next" aria-label="Next prototype">→</button></aside>
+  <script src="/blog/prototype/app.js"></script>
+</body>
+</html>
