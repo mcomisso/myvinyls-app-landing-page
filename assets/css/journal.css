@@ -18,7 +18,7 @@ button { cursor:pointer; }
 img { display:block; max-width:100%; height:auto; }
 [hidden] { display:none !important; }
 :focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
-::selection { background:var(--accent); color:white; }
+::selection { background:var(--accent); color:var(--paper); }
 h1,h2,h3,p { margin:0; }
 h1,h2,h3 { text-wrap:balance; }
 h1,h2,h3 { font-weight:400; letter-spacing:-.025em; line-height:1.15; }
