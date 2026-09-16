@@ -6,7 +6,7 @@ The user selected prototype A, The sleeve, on 16 September 2026. The five-direct
 
 The blog is a reading surface. A record-sleeve feature gives the leading article equal space for photography and text. The circular journal stamp reinforces the vinyl identity. Subsequent articles use a two-column tracklist on desktop and one column on phones.
 
-Warm paper `#f8f6ef`, dark olive ink `#262820`, muted olive `#606154`, and rust `#a43d20` carry the approved design. DM Serif Display is the title face; DM Sans handles navigation and metadata. Article prose uses Georgia at 20px with 1.8 line height and a 690px maximum width, reducing to 19px on phones. Fonts are bundled under `assets/fonts/journal` with their licenses.
+Warm paper `#f8f6ef`, charcoal ink `#111214`, muted gray `#5b5d5e`, and charcoal accents `#111214` carry the approved design. DM Serif Display is the title face; DM Sans handles navigation and metadata. Article prose uses Georgia at 20px with 1.8 line height and a 690px maximum width, reducing to 19px on phones. Fonts are bundled under `assets/fonts/journal` with their licenses.
 
 The header and footer retain links into the existing product site. Journal CSS is loaded only by blog and article layouts. The whole website shares its appearance preference through `assets/js/theme.js`. System appearance is the default; header buttons toggle light/dark and the footer offers a saved System / Light / Dark choice. Dark mode uses neutral vinyl black and graphite. Theme colors are applied before content paints. Without JavaScript the system theme still works and article content remains visible. No animated reveals are used on the reading surface. See `appearance.md` for shared implementation details.
 

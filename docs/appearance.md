@@ -1,6 +1,6 @@
 # Website appearance
 
-The website supports system, light, and dark appearance. Dark mode uses neutral vinyl black `#111214`, graphite surfaces, off-white text, and restrained orange accents. Light mode retains the existing paper palette. Album artwork and simulated app screens retain their original colors.
+The website supports system, light, and dark appearance. Dark mode uses neutral vinyl black `#111214`, graphite surfaces, off-white text, and ivory accents. Light mode retains the existing paper palette. Album artwork and simulated app screens retain their original colors.
 
 `assets/js/theme.js` runs before styles paint on all Jekyll layouts and the `/get/` redirect. It reads the shared `theme` local-storage key and follows system changes when no explicit preference is saved. Header buttons toggle light/dark; the footer selector also offers System. Storage failure leaves appearance controls usable for the current page. CSS supports system appearance with JavaScript disabled.
 

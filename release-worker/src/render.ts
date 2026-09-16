@@ -219,9 +219,9 @@ function escapeAttribute(value: string): string {
 const styles = `
 :root { color-scheme:light; --paper:#f7f7f7; --ink:#292626; --muted:#626060; --line:#aaa7a7; --focus:#111; --control:#fff; --on-primary:#fff; }
 @media (prefers-color-scheme:dark) {
-  :root:not([data-theme="light"]) { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#efa56e; --control:#1b1d20; --on-primary:#111214; }
+  :root:not([data-theme="light"]) { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#f0f0eb; --control:#1b1d20; --on-primary:#111214; }
 }
-:root[data-theme="dark"] { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#efa56e; --control:#1b1d20; --on-primary:#111214; }
+:root[data-theme="dark"] { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#f0f0eb; --control:#1b1d20; --on-primary:#111214; }
 * { box-sizing: border-box; }
 body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.55 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; overflow-wrap:anywhere; }
 a { color:inherit; text-underline-offset:.2em; }
