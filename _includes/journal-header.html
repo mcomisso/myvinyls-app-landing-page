@@ -1,0 +1,13 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="journal-header journal-container">
+  <a class="journal-brand" href="{{ '/' | relative_url }}">
+    <img src="{{ site.app_icon | relative_url }}" width="34" height="34" alt="">
+    <span>{{ site.app_name }}</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="{{ '/blog/' | relative_url }}"{% if page.layout == 'blog' %} aria-current="page"{% endif %}>Journal</a>
+    <a href="{{ '/faq/' | relative_url }}">FAQ</a>
+    <a class="journal-app-link" href="{{ '/' | relative_url }}">Explore the app <span aria-hidden="true">↗</span></a>
+    {% include theme-toggle.html %}
+  </nav>
+</header>

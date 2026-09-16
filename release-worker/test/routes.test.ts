@@ -3,6 +3,19 @@ import { describe, expect, it } from "vitest";
 import { cachedBrowserResponse, conditionalResponse, releaseCacheKey } from "../src/index";
 
 describe("Public Release Worker routes", () => {
+  it("only permits the exact appearance bootstrap through its script policy", async () => {
+    const response = await SELF.fetch("https://myvinyls.app/release/42");
+    const html = await response.text();
+    const script = html.match(/<script>(.*?)<\/script>/s)?.[1];
+    expect(script).toBeTruthy();
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(script));
+    const hash = btoa(String.fromCharCode(...new Uint8Array(digest)));
+    const policy = response.headers.get("content-security-policy")!;
+    expect(policy.split(";").map(part => part.trim())).toContain(`script-src 'sha256-${hash}'`);
+    expect(policy).toContain("default-src 'none'");
+    expect(policy).toContain("frame-ancestors 'none'");
+  });
+
   it("does not canonicalize aliases while the Worker is disabled", async () => {
     const response = await SELF.fetch("https://myvinyls.app/record/0042/?campaign=test", { redirect: "manual" });
     expect(response.status).toBe(503);

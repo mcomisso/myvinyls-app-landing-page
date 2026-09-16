@@ -7,7 +7,7 @@ import {
 } from "./contracts";
 import { negotiateLocale, SUPPORTED_LOCALES, type SupportedLocale } from "./localization";
 import { ReleaseRateLimiter } from "./rate-limiter";
-import { renderProblemPage, renderReleasePage, renderReportPage } from "./render";
+import { appearanceScriptHash, renderProblemPage, renderReleasePage, renderReportPage } from "./render";
 
 export { ReleaseRateLimiter };
 
@@ -334,7 +334,7 @@ function localizedETag(etag: string | null, rendererVersion: string, releaseId: 
 
 function securityHeaders(extra: Record<string, string>): Headers {
   return new Headers({
-    "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+    "Content-Security-Policy": `default-src 'none'; script-src '${appearanceScriptHash}'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'`,
     "Permissions-Policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()",
     "Referrer-Policy": "no-referrer",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",

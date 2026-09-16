@@ -1,5 +1,13 @@
 - The main iOS app resides in /Users/matcom/Developer/MCSoftware/MyVinyl/iOS
 
+## Light and dark mode
+
+- Every website page and component must support both light and dark mode.
+- Follow the system appearance by default and respect an explicit saved theme choice.
+- Use theme-aware colors for backgrounds, text, borders, controls, and interaction states.
+- Verify affected pages in both themes at desktop and mobile widths before completing UI changes. Check text contrast, imagery, focus states, and form controls.
+- For appearance implementation, shared preferences, and the release worker's script policy, see `docs/appearance.md`.
+
 <claude-mem-context>
 # Memory Context
 

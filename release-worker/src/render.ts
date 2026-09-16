@@ -3,6 +3,10 @@ import { copy, type SupportedLocale } from "./localization";
 
 const ATTRIBUTION_TEXT = "Data provided by Discogs";
 
+// Keep this static: its exact bytes are allowlisted by the response CSP.
+export const appearanceScript = `(()=>{let p="system";const m=matchMedia("(prefers-color-scheme: dark)");try{p=localStorage.getItem("theme")||"system"}catch{}const apply=()=>{document.documentElement.dataset.theme=p==="light"||p==="dark"?p:m.matches?"dark":"light"};apply();m.addEventListener("change",apply);addEventListener("storage",e=>{if(e.key==="theme"){p=e.newValue;apply()}})})();`;
+export const appearanceScriptHash = "sha256-ZOBhrULfOymxImhW1qpAN3H3SZWXEv+mT57IMSyd2/o=";
+
 export function renderReleasePage(
   snapshot: PublicReleaseSnapshot,
   canonicalURL: string,
@@ -130,10 +134,12 @@ function documentShell(input: { locale: SupportedLocale; title: string; canonica
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="robots" content="noindex,follow,noarchive,nosnippet">
   <meta name="referrer" content="no-referrer">
   ${input.canonicalURL ? `<link rel="canonical" href="${escapeAttribute(input.canonicalURL)}">` : ""}
   <title>${escapeHTML(input.title)}</title>
+  <script>${appearanceScript}</script>
   <style>${styles}</style>
 </head>
 <body>
@@ -211,12 +217,16 @@ function escapeAttribute(value: string): string {
 }
 
 const styles = `
-:root { color-scheme: light; --canvas:#d8d7d7; --paper:#f7f7f7; --ink:#292626; --muted:#626060; --line:#aaa7a7; --focus:#111; }
+:root { color-scheme:light; --paper:#f7f7f7; --ink:#292626; --muted:#626060; --line:#aaa7a7; --focus:#111; --control:#fff; --on-primary:#fff; }
+@media (prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#f0f0eb; --control:#1b1d20; --on-primary:#111214; }
+}
+:root[data-theme="dark"] { color-scheme:dark; --paper:#111214; --ink:#f0f0eb; --muted:#b4b6ba; --line:#383c41; --focus:#f0f0eb; --control:#1b1d20; --on-primary:#111214; }
 * { box-sizing: border-box; }
 body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.55 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; overflow-wrap:anywhere; }
 a { color:inherit; text-underline-offset:.2em; }
-a:focus-visible, summary:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
-.skip { position:absolute; left:1rem; top:-5rem; padding:.75rem 1rem; background:#000; color:#fff; z-index:2; }
+a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
+.skip { position:absolute; left:1rem; top:-5rem; padding:.75rem 1rem; background:var(--ink); color:var(--on-primary); z-index:2; }
 .skip:focus { top:1rem; }
 .site-header, main, footer { width:min(100% - 2rem, 46rem); margin-inline:auto; }
 .site-header { padding-block:1.5rem; font-weight:800; }
@@ -229,16 +239,16 @@ h2 { margin-top:2.5rem; }
 .updated,.attribution { color:var(--muted); font-size:.9rem; }
 .handoffs { display:flex; flex-wrap:wrap; gap:.75rem; margin:2rem 0; }
 .handoffs a { min-height:44px; display:inline-flex; align-items:center; padding:.7rem 1rem; border:1px solid var(--ink); border-radius:999px; }
-.handoffs .primary { background:var(--ink); color:#fff; }
+.handoffs .primary { background:var(--ink); color:var(--on-primary); }
 ul,ol { padding-left:1.25rem; }
 .tracklist li { display:grid; grid-template-columns:minmax(2.5rem,auto) 1fr auto; gap:.75rem; padding:.55rem 0; border-bottom:1px solid var(--line); }
 summary { min-height:44px; display:flex; align-items:center; cursor:pointer; font-weight:700; }
 form { display:grid; gap:1.25rem; max-width:38rem; }
 label { display:grid; gap:.35rem; font-weight:700; }
 label.check { grid-template-columns:auto 1fr; align-items:start; font-weight:400; }
-input,select,textarea,button { font:inherit; min-height:44px; padding:.65rem; border:1px solid var(--ink); border-radius:.35rem; background:#fff; color:var(--ink); }
+input,select,textarea,button { font:inherit; min-height:44px; padding:.65rem; border:1px solid var(--ink); border-radius:.35rem; background:var(--control); color:var(--ink); accent-color:var(--ink); }
 textarea { min-height:9rem; resize:vertical; }
-button.primary { justify-self:start; background:var(--ink); color:#fff; cursor:pointer; }
+button.primary { justify-self:start; background:var(--ink); color:var(--on-primary); cursor:pointer; }
 footer { border-top:1px solid var(--line); margin-top:4rem; padding:2rem 0 4rem; }
 .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 @media (max-width:320px) { .handoffs { flex-direction:column; } .handoffs a { width:100%; justify-content:center; } .tracklist li { grid-template-columns:2.5rem 1fr; } .tracklist li span:last-child { grid-column:2; } }

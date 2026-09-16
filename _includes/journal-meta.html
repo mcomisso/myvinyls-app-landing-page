@@ -1,0 +1,5 @@
+{% assign category_name = include.post.category %}
+{% for category in site.blog_categories %}
+  {% if category.slug == include.post.category %}{% assign category_name = category.name %}{% endif %}
+{% endfor %}
+<p class="journal-meta"><span class="blog-card-category">{{ category_name | escape }}</span><span aria-hidden="true"> · </span>{{ include.post.reading_time | default: 5 }} min read</p>

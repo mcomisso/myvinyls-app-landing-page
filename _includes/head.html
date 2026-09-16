@@ -2,7 +2,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#FAF7F5">
+	{% if include.journal %}
+	<meta name="theme-color" content="#f8f6ef" data-theme-light="#f8f6ef" data-theme-dark="#111214">
+	{% else %}
+	<meta name="theme-color" content="#F8F6EF" data-theme-light="#F8F6EF" data-theme-dark="#111214">
+	{% endif %}
+	<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 
 	{% assign base_title = page.title | default: site.page_title %}
 	{% if paginator and paginator.page and paginator.page > 1 %}
@@ -40,6 +45,9 @@
 	<meta name="twitter:title" content="{{ page.title | default: site.page_title }}">
 	<meta name="twitter:description" content="{{ page.description | default: site.app_description }}">
 
+	{% if include.journal %}
+	<link rel="stylesheet" href="{{ '/assets/css/journal.css' | relative_url }}">
+	{% else %}
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +64,8 @@
 	<!-- LCP Preload Hints -->
 	<link rel="preload" href="{{ 'assets/appicon.webp' | relative_url }}" as="image">
 	<link rel="preload" href="{{ 'assets/screens/my-vinyls-collection-grid-view.webp' | relative_url }}" as="image">
+
+	{% endif %}
 
 	<!-- Fediverse -->
 	<meta name="fediverse:creator" content="@myvinyl@mastodon.social">

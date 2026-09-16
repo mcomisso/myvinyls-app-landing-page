@@ -10,8 +10,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+    <title>{{ page.title | escape }}</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}">
 
     <link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
     <link rel="apple-touch-icon" href="{{ site.app_icon | relative_url }}">
@@ -23,228 +23,114 @@
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
-    <meta property="og:image" content="{{ page.image | default: site.app_icon | absolute_url }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}">
+    <meta property="og:image" content="{{ page.image | default: site.app_icon | absolute_url | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url | escape }}">
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-    <meta property="article:author" content="{{ page.author | default: site.your_name }}">
+    <meta property="article:author" content="{{ page.author | default: site.your_name | escape }}">
     {% for tag in page.tags %}
-    <meta property="article:tag" content="{{ tag }}">
+    <meta property="article:tag" content="{{ tag | escape }}">
     {% endfor %}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
-    <meta name="twitter:image" content="{{ page.image | default: site.app_icon | absolute_url }}">
+    <meta name="twitter:title" content="{{ page.title | escape }}">
+    <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}">
+    <meta name="twitter:image" content="{{ page.image | default: site.app_icon | absolute_url | escape }}">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url | escape }}">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "{{ page.title | escape }}",
-        "image": "{{ page.image | default: site.app_icon | absolute_url }}",
-        "datePublished": "{{ page.date | date_to_xmlschema }}",
-        "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+        "headline": {{ page.title | jsonify }},
+        "image": {{ page.image | default: site.app_icon | absolute_url | jsonify }},
+        "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+        "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
         "author": {
             "@type": "Person",
-            "name": "{{ page.author | default: site.your_name }}",
-            "url": "{{ site.your_link }}"
+            "name": {{ page.author | default: site.your_name | jsonify }},
+            "url": {{ site.your_link | jsonify }}
         },
         "publisher": {
             "@type": "Organization",
-            "name": "{{ site.app_name }}",
+            "name": {{ site.app_name | jsonify }},
             "logo": {
                 "@type": "ImageObject",
-                "url": "{{ site.app_icon | absolute_url }}"
+                "url": {{ site.app_icon | absolute_url | jsonify }}
             }
         },
-        "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+        "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "{{ page.url | absolute_url }}"
+            "@id": {{ page.url | absolute_url | jsonify }}
         }
     }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ '/main.css' | relative_url }}">
-
-    <!-- Fediverse -->
+    <meta name="theme-color" content="#f8f6ef">
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/journal.css' | relative_url }}">
     <meta name="fediverse:creator" content="@myvinyl@mastodon.social">
 </head>
-
-<body>
-    <div class="main-wrapper">
-        <!-- Animated Background -->
-        <div class="glass-background">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-        </div>
-
-        <div class="content-container">
-            {% include header.html %}
-            {% include breadcrumbs.html %}
-
-            <main id="main-content" tabindex="-1">
-            <!-- Article Header -->
-            <header class="article-header">
-                <div class="container">
-                    <a href="/blog/" class="article-back-link">
-                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                        Back to Blog
-                    </a>
-
-                    {% assign category_name = page.category %}
-                    {% for cat in site.blog_categories %}
-                        {% if cat.slug == page.category %}
-                            {% assign category_name = cat.name %}
-                        {% endif %}
-                    {% endfor %}
-                    <span class="article-category">{{ category_name }}</span>
-
-                    <h1 class="article-title">{{ page.title }}</h1>
-
-                    <div class="article-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        <span class="article-date">
-                            <i class="far fa-calendar" aria-hidden="true"></i>
-                            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time>
-                        </span>
-                        <span class="article-reading-time">
-                            <i class="far fa-clock" aria-hidden="true"></i>
-                            <span class="reading-time">5 min read</span>
-                        </span>
-                        <span class="article-author">
-                            <i class="far fa-user" aria-hidden="true"></i>
-                            <span itemprop="name">{{ page.author | default: site.your_name }}</span>
-                        </span>
-                    </div>
-                </div>
+<body class="journal-page">
+    {% include journal-header.html %}
+    <main id="main-content" class="journal-container" tabindex="-1">
+        <a href="{{ '/blog/' | relative_url }}" class="journal-back">← Back to the journal</a>
+        <article class="reader">
+            <header class="reader-header">
+                {% include journal-meta.html post=page %}
+                <h1>{{ page.title | escape }}</h1>
+                {% if page.description %}<p class="reader-deck">{{ page.description | escape }}</p>{% endif %}
+                <p class="reader-byline">By {{ page.author | default: site.your_name | escape }} <span aria-hidden="true">·</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
             </header>
-
-            <!-- Featured Image -->
             {% if page.image %}
-            <div class="article-featured-image">
-                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" width="900" height="506">
-            </div>
+            <img class="reader-image" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" width="900" height="506" fetchpriority="high">
             {% endif %}
-
-            <!-- Article Content -->
-            <article class="article-content">
-                {{ content }}
-            </article>
-
-            <!-- Tags -->
+            <div class="article-content">{{ content }}</div>
             {% if page.tags.size > 0 %}
-            <div class="article-tags">
-                <div class="container">
-                    {% for tag in page.tags %}
-                    <span class="article-tag">#{{ tag }}</span>
-                    {% endfor %}
-                </div>
+            <div class="article-tags" aria-label="Article tags">
+                {% for tag in page.tags %}<span class="article-tag">#{{ tag | escape }}</span>{% endfor %}
             </div>
             {% endif %}
-
-            <!-- Share -->
-            <div class="article-share">
-                <div class="container">
-                    <span class="share-label">Share this article</span>
-                    <div class="share-buttons">
-                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
-                           class="share-button" target="_blank" rel="noopener" aria-label="Share on Twitter">
-                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Share on Twitter</span>
-                        </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
-                           class="share-button" target="_blank" rel="noopener" aria-label="Share on Facebook">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                            <span class="sr-only">Share on Facebook</span>
-                        </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}"
-                           class="share-button" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                            <span class="sr-only">Share on LinkedIn</span>
-                        </a>
-                        <button class="share-button copy-link" data-url="{{ page.url | absolute_url }}" aria-label="Copy link">
-                            <i class="fas fa-link" aria-hidden="true"></i>
-                        </button>
+            <section class="article-share" aria-labelledby="share-title">
+                <h2 id="share-title">Share this article</h2>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&amp;url={{ page.url | absolute_url | url_encode }}" class="share-button" target="_blank" rel="noopener">Twitter / X</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" class="share-button" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" class="share-button" target="_blank" rel="noopener">LinkedIn</a>
+                    <button type="button" class="share-button copy-link" data-url="{{ page.url | absolute_url | escape }}"><span data-copy-label aria-live="polite">Copy link</span></button>
+                </div>
+            </section>
+            <section class="article-author-section" aria-labelledby="author-name">
+                <div class="author-card">
+                    <span class="author-avatar" aria-hidden="true">{{ page.author | default: site.your_name | slice: 0 | escape }}</span>
+                    <div class="author-info">
+                        <h2 class="author-name" id="author-name">{{ page.author | default: site.your_name | escape }}</h2>
+                        <p class="author-bio">Creator of My Vinyl+, vinyl enthusiast, and music lover based in {{ site.your_city | escape }}.</p>
+                        <a href="{{ site.your_link | escape }}" class="author-link" target="_blank" rel="noopener">Author website ↗</a>
                     </div>
                 </div>
+            </section>
+        </article>
+        {% assign related_posts = site.posts | where: "category", page.category | where_exp: "post", "post.url != page.url" %}
+        {% if related_posts.size > 0 %}
+        <section class="related-posts-section" aria-labelledby="related-title">
+            <div class="section-title"><h2 id="related-title">Related articles</h2><span>The Vinyl Journal</span></div>
+            <div class="journal-stories">
+                {% for post in related_posts limit: 3 %}
+                {% include journal-story.html post=post heading="h3" %}
+                {% endfor %}
             </div>
-
-            <!-- Author Bio -->
-            <section class="article-author-section">
-                <div class="container">
-                    <div class="author-card">
-                        <div class="author-avatar">
-                            {{ page.author | default: site.your_name | slice: 0 }}
-                        </div>
-                        <div class="author-info">
-                            <h3 class="author-name">{{ page.author | default: site.your_name }}</h3>
-                            <p class="author-bio">Creator of My Vinyl+, vinyl enthusiast, and music lover based in {{ site.your_city }}.</p>
-                            <a href="{{ site.your_link }}" class="author-link" target="_blank" rel="noopener">
-                                <i class="fas fa-globe" aria-hidden="true"></i>
-                                Author website
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Related Posts -->
-            {% assign related_posts = site.posts | where: "category", page.category | where_exp: "post", "post.url != page.url" | limit: 3 %}
-            {% if related_posts.size > 0 %}
-            <section class="related-posts-section">
-                <div class="container">
-                    <h2 class="related-posts-title">Related Articles</h2>
-                    <div class="related-posts-grid">
-                        {% for post in related_posts %}
-                        {% include blog-card.html post=post %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
-            {% endif %}
-
-            <!-- CTA Section -->
-            <section class="blog-cta-section">
-                <div class="container">
-                    <div class="blog-cta-card">
-                        <div class="blog-cta-icon">
-                            <i class="fas fa-record-vinyl" aria-hidden="true"></i>
-                        </div>
-                        <h2>Ready to organize your collection?</h2>
-                        <p>Download My Vinyl+ and start cataloging your records today.</p>
-                        <a href="{{ site.appstore_link }}" class="blog-cta-button" target="_blank" rel="noopener">
-                            <i class="fab fa-apple" aria-hidden="true"></i>
-                            Download on the App Store
-                        </a>
-                    </div>
-                </div>
-            </section>
-            </main>
-
-            {% include footer.html %}
-        </div>
-    </div>
-
-    <script src="{{ '/assets/js/animations.js' | relative_url }}" defer></script>
+        </section>
+        {% endif %}
+        {% include journal-cta.html %}
+    </main>
+    {% include journal-footer.html %}
     <script src="{{ '/assets/js/blog.js' | relative_url }}" defer></script>
 </body>
-
 </html>
