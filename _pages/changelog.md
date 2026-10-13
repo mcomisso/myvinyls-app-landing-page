@@ -3,10 +3,96 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.3.8"
-latest_summary: "This release improves TIDAL playback availability, album recognition flows, Shortcuts support, and collection exports."
+latest_version: "4.4.3"
+latest_summary: "Fixes launch and listening crashes and preserves custom vinyl data across app updates."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.4.3
+
+Released on the App Store: 2026-10-10 (UTC).
+
+What's New in My Vinyl+ 4.4.3:
+
+- Fixed a crash at launch on iOS 26 and later when the last selected tab was hidden by Tab Bar personalization or by your subscription status.
+- Fixed a crash when opening the listening screen on a Mac running the iPad app.
+- Your custom vinyl colours, custom fields and activity journal now survive app updates: the local database is no longer reset after a migration, and a database that cannot be opened is kept on disk instead of deleted.
+- Updated Firebase, which fixes a crash in its analytics component.
+
+If you enjoy My Vinyl+, please consider leaving an App Store review. It helps other record collectors find the app.
+
+Thanks for using My Vinyl!
+Matteo
+
+---
+
+### Version 4.4.2
+
+Released on the App Store: 2026-10-07 (UTC).
+
+What's New in My Vinyl+ 4.4.2:
+
+- Selling a record is smooth again: typing comments or private notes in a listing no longer lags, drops characters or freezes the app.
+- Drafts in My Listings open again with everything you saved.
+- Fixed a crash that could occur when opening a record on iPad.
+- Fixed a rare crash caused by an issue with an analytics service.
+
+If you enjoy My Vinyl+, please consider leaving an App Store review. It helps other record collectors find the app!
+
+Thanks for using My Vinyl!
+Matteo
+
+---
+
+### Version 4.4.1
+
+Released on the App Store: 2026-10-01 (UTC).
+
+What's New in My Vinyl+ 4.4.1:
+
+- A few minor fixes for Siri AI.
+
+- Improvements to iPadOS visualisations. In list view, you can now sort by individual columns, toggle their visibility and perform more actions.
+
+If you missed it, here's what's new in My Vinyl+ 4.4.0, the big release for iOS 27!
+
+- Siri and Shortcuts go much further. Search your collection with richer results, view recent additions, move records between folders, read or update personal notes, manage Wantlist price tracking and let My Vinyl+ choose a record from your collection.
+
+- Discover has a new story-style design with daily album picks, highlights from your collection and a clearer view of its value.
+
+- Browse more efficiently with new Smart Folders for genres and decades, plus quicker Move, Edit and Delete actions throughout your collection.
+
+- Enjoy more flexible layouts across iPhone and iPad, refreshed record visuals, new app icons, and fixes for Discogs sign-in, camera, search and appearance.
+
+If you enjoy My Vinyl+, please consider leaving an App Store review. It helps other record collectors find the app.
+
+Thanks for using My Vinyl!
+Matteo
+
+---
+
+### Version 4.4.0
+
+Released on the App Store: 2026-09-15 (UTC).
+
+What’s New in My Vinyl+ 4.4.0:
+
+iOS 27 takes centre stage in this release:
+
+- Siri and Shortcuts go much deeper. Search your collection with richer results, view recent additions, move records between folders, read or update personal notes, manage wantlist price tracking, and let My Vinyl+ pick a record from your collection.
+
+- Discover has a new story-style design with daily album picks, highlights from your collection, and a clearer view of its value.
+
+- Browse smarter with new Smart Folders for genres and decades, plus quicker Move, Edit and Delete actions throughout your collection.
+
+- Enjoy more flexible layouts across iPhone and iPad, refreshed record visuals, new app icons, and fixes for Discogs sign-in, camera, search and appearance.
+
+If you enjoy My Vinyl+, please consider leaving an App Store review. It helps other record collectors find the app.
+
+Thanks for using My Vinyl!
+Matteo
+
 ---
 
 ### Version 4.3.8
@@ -27,6 +113,21 @@ include_in_header: false
 
 ---
 
+### Version 4.3.7
+
+Released on the App Store: 2026-08-10 (UTC).
+
+What’s New in My Vinyl+ 4.3.7:
+
+- Improved background refresh reliability
+
+If you like the app, please consider leaving a review on the App Store. It helps other collectors discover the app!
+
+Thanks for using My Vinyl!  
+Matteo
+
+---
+
 ### Version 4.3.6
 
 #### Improvements
@@ -44,6 +145,20 @@ include_in_header: false
 #### Bug Fixes
 - Fixed the Discover collection value banner so it waits for saved value data before showing the latest collection total
 - Improved the banner refresh path so newly updated collection values appear without leaving the card stuck on a placeholder or stale value
+
+---
+
+### Version 4.3.4
+
+Released on the App Store: 2026-07-28 (UTC).
+
+- Improvements to the request ratings banner
+- The app will fetch the record of the day in the relevant language, if available. (Thanks for the suggestion!)
+
+If you like the app, please consider leaving a review on the App Store. It helps a lot!
+
+Thanks for using My Vinyl!
+- Matteo
 
 ---
 
@@ -77,6 +192,20 @@ include_in_header: false
 
 #### Bug Fixes
 - Fixed Collection side-index jumps so tapping a letter or section lands on the expected records more reliably
+
+---
+
+### Version 4.3.0
+
+Released on the App Store: 2026-07-02 (UTC).
+
+What's New in My Vinyl+ 4.3.0:
+
+- Added Last.fm scrobbling for Platinum members, including automatic scrobbling from music recognition and a new “Scrobble this” action from record details.
+- Improved Discogs account reliability, especially for private collections, reconnect flows, account switching, Collection, Wantlist, and marketplace data.
+- Refined the Platinum upgrade experience with clearer plan choices, simpler feature explanations, and richer previews of what Pro unlocks.
+- Expanded Siri, Shortcuts, and Apple Intelligence support with better collection search, Discogs release lookup, release ID actions, and clearer result previews.
+- Polished record details, widgets, artwork loading, iPad behaviour, and several smaller stability fixes across Collection, Wantlist, Search, and Now Playing.
 
 ---
 
@@ -235,6 +364,20 @@ include_in_header: false
 
 ---
 
+### Version 3.13.1
+
+Released on the App Store: 2026-02-19 (UTC).
+
+What’s New in My Vinyl+ 3.13.1
+
+- Faster launch and smoother scrolling for big collections.
+- Quicker record deletions – cuts out the waiting.
+- Widgets now refresh more reliably after background sync.
+- 1001 Albums daily notifications are now switched on by default.
+- Minor upgrades to AI-powered record insights.
+
+---
+
 ### Version 3.13.0
 
 #### Improvements
@@ -321,6 +464,128 @@ include_in_header: false
 #### Bug Fixes
 - Crash fixes for widgets and background operations
 
+### Version 3.9.9
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Expanded Discogs search with a filter panel for releases, artists and labels.
+- Added wantlist format filters and sorting by date added, artist, title or year.
+- Updated the app's controls and record detail views for iOS 26.
+- Added a choice about sharing app analytics and a toggle in Settings.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.9).
+
+---
+
+### Version 3.9.8
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Made condition-based record price suggestions available without a Platinum membership.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.8).
+
+---
+
+### Version 3.9.7
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added a record image gallery with full-screen viewing and swiping between images.
+- Added drag and drop to move records between collection folders.
+- Improved accessibility labels and hints in the account and image gallery views.
+
+#### Bug fixes
+- Fixed theme and collection label display issues.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.7).
+
+---
+
+### Version 3.9.6
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Improved text contrast on the daily record card and made the card tappable to open its details.
+- Improved the display of artist names.
+
+#### Bug fixes
+- Fixed the daily record card background when artwork colours are unavailable.
+- Improved widget handling when artwork cannot be loaded.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.6).
+
+---
+
+### Version 3.9.5
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Maintenance update to account and purchase handling for existing collectors. [View source changes](https://github.com/mcsoftwareltd/My-Vinyls/compare/3.9.4...3.9.5).
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.5).
+
+---
+
+### Version 3.9.4
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Adjusted collection synchronisation to wait longer before retrying when Discogs limits requests.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.4).
+
+---
+
+### Version 3.9.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added a progress indicator while your collection synchronises.
+- Sorted the collection folder list.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.3).
+
+---
+
+### Version 3.9.2
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Updated the collection controls and sorting without additional Discogs requests.
+
+#### Bug fixes
+- Fixed loading records when Discogs omits their folder information.
+- Fixed the collection loading state after a full synchronisation.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.2).
+
+---
+
+### Version 3.9.1
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Made full-collection Discogs synchronisation the default approach to address missing records.
+
+#### Bug fixes
+- Fixed wantlist crashes when removing records or moving them to your collection.
+- Restored notifications confirming whether an operation succeeded or failed.
+- Fixed loading errors affecting some records, including The Existential Soul of Tim Maia.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.9.1).
+
+---
+
 ### Version 3.9.0
 
 #### Improvements
@@ -356,6 +621,160 @@ include_in_header: false
 - Fixed stuttering animations
 - Various crash fixes and stability improvements
 
+### Version 3.8.12
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added dark app icons.
+- Updated transitions when opening records from the collection and Discover page on iOS 18.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.12).
+
+---
+
+### Version 3.8.11
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Improved recognition of existing Platinum purchases when the app starts.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.11).
+
+---
+
+### Version 3.8.10
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed Platinum access not being recognised when the app starts.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.10).
+
+---
+
+### Version 3.8.9
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added condition-based record price suggestions for Platinum members.
+- Added the option to rename collection folders.
+- Added an in-app text size setting that can override your system text size.
+
+#### Bug fixes
+- Fixed folder deletion and improved Spotify searches.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.9).
+
+---
+
+### Version 3.8.8
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added access to your account from the Discover page.
+- Made settings rows easier to tap.
+
+#### Bug fixes
+- Fixed the folder view disappearing while editing folders or adding records.
+- Fixed folder record counts not updating.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.8).
+
+---
+
+### Version 3.8.7
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Historical maintenance release. No additional collector-facing changes can be confirmed from the tagged source changes. [View source changes](https://github.com/mcsoftwareltd/My-Vinyls/compare/3.8.6...3.8.7).
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.7).
+
+---
+
+### Version 3.8.6
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed record-loading errors when linked music videos have no description.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.6).
+
+---
+
+### Version 3.8.5
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Maintenance update to loading Discogs record details. The tagged history does not establish a specific new feature or reported bug fix. [View source changes](https://github.com/mcsoftwareltd/My-Vinyls/compare/3.8.4...3.8.5).
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.5).
+
+---
+
+### Version 3.8.4
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed loading of records without additional artist credits.
+- Fixed navigation and crashes on iOS 18, including iPad navigation.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.4).
+
+---
+
+### Version 3.8.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added an experimental option in Labs to download your entire Discogs collection, with a progress indicator and completion message.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.3).
+
+---
+
+### Version 3.8.2
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added a Labs section in preferences for experimental tools.
+- Search across supported media formats is now enabled by default. You can still change this in settings.
+- Updated song recognition and made stopping listening update the recognition screen.
+- Removed the Google Ads integration.
+
+#### Bug fixes
+- You can retry signing in after a failed login attempt.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.2).
+
+---
+
+### Version 3.8.1
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Renamed the app to My Vinyl+.
+- Added a delete option for records in the collection grid.
+
+#### Bug fixes
+- Fixed a possible crash when displaying subscription trial dates.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.8.1).
+
+---
+
 ### Version 3.8.0
 
 #### Improvements
@@ -389,6 +808,52 @@ include_in_header: false
 - Performance & Architecture: Migrated to iOS 17's Observation framework for better performance
 - SwiftData for faster, more reliable local storage
 - Smoother animations and reduced memory usage
+
+### Version 3.7.6
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Updated advertising and Platinum access handling. [View the changes](https://github.com/mcsoftwareltd/My-Vinyls/compare/3.7.5...3.7.6).
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.7.6).
+
+---
+
+### Version 3.7.5
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added advertising banners to the collection, search and Discover pages for users without Platinum.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.7.5).
+
+---
+
+### Version 3.7.4
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed creating new folders for Platinum users.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.7.4).
+
+---
+
+### Version 3.7.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- View record and sleeve condition on the release detail page.
+- Platinum users can add or edit record and sleeve condition.
+- Added a setting to keep the detail page navigation bar background visible for better contrast.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.7.3).
+
+---
 
 ### Version 3.7.2
 
@@ -437,6 +902,47 @@ include_in_header: false
 - Fixed color selection issues
 - Fixed move record functionality
 - Various stability improvements
+
+### Version 3.6.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Open matching Discogs release details from the daily album page.
+
+#### Bug fixes
+- Restored access to information about the daily album recommendations.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.6.3).
+
+---
+
+### Version 3.6.2
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Enabled the daily album recommendation from 1001 Albums Generator by default and updated its detail page.
+
+#### Bug fixes
+- Fixed moving records between folders.
+- Fixed the wantlist not refreshing after moving a record to your collection.
+- Fixed selected colours resetting and incorrect colours in dark mode.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.6.2).
+
+---
+
+### Version 3.6.1
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Apple Music playback now uses the system Music player.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.6.1).
+
+---
 
 ### Version 3.6.0
 
@@ -539,6 +1045,40 @@ Not sure which one to pick? The random album widget will display a new one multi
 - Spinning records now display the whole artwork instead of a zoomed-in picture
 - Some minor fixes and corrected typos
 
+### Version 3.2.5
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed a crash when opening your profile.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.2.5).
+
+---
+
+### Version 3.2.4
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed changing the app icon on iPad.
+- The spinning record label now fits the full cover image.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.2.4).
+
+---
+
+### Version 3.2.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Your collection now remembers the selected sorting method and order.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.2.3).
+
+---
+
 ### Version 3.2.2
 
 #### Improvements
@@ -570,6 +1110,20 @@ Not sure which one to pick? The random album widget will display a new one multi
 - AI notes was failing most of the times, mostly because generating that content is a slow task. My Vinyls will keep the connection open for longer, and give another chance to the server to reply back.
 - A few UI enhancement when display Artist's names
 - International links for the suggested records. It will load your local Amazon store where supported.
+
+### Version 3.1.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added a link in preferences for suggesting features through the feedback site.
+
+#### Bug fixes
+- Corrected folder choices and confirmation prompts when moving or removing records.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/3.1.3).
+
+---
 
 ### Version 3.1.2
 
@@ -642,6 +1196,39 @@ I am switching to a subscription model - *My Vinyls **Platinum*** -, hoping that
 - Additional app icons to choose from
 - Smaller packaged app!
 
+### Version 2.1.3
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Bug fixes
+- Fixed collection values failing to display.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/2.1.3).
+
+---
+
+### Version 2.1.2
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- The profile page now labels your collection and wantlist totals beside the collection progress gauge.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/2.1.2).
+
+---
+
+### Version 2.1.1
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Added a loading indicator while a tip purchase is in progress.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/2.1.1).
+
+---
+
 ### Version 2.1.0 (released 19th September 2022)
 
 #### What's New
@@ -712,3 +1299,35 @@ I am switching to a subscription model - *My Vinyls **Platinum*** -, hoping that
 - Smaller fixes under the hood
 
 <br>
+
+### Version 1.1.0
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Search results now show whether a record is already in your collection or wantlist.
+- Watch videos linked to a release from its detail page.
+- Browse additional pages of your wantlist and swipe to remove records.
+
+#### Bug fixes
+- Fixed the wantlist refresh button and its completion state.
+- Fixed a crash when the app could not load your folders.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/1.1.0).
+
+---
+
+### Version 1.0.0
+
+Reconstructed historical notes from repository tag history. The App Store release date is unknown.
+
+#### Improvements
+- Search for vinyl releases and add records to your collection or wantlist.
+- Browse release details, track information and artists.
+- Browse your collection folders.
+- View animated records and turn off the disc motion in settings.
+
+[Existing GitHub release](https://github.com/mcsoftwareltd/My-Vinyls/releases/tag/1.0.0).
+
+---
+
