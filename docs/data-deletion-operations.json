@@ -266,6 +266,21 @@
       },
       "report_cleanup_scope": "Clears contact_email, source_address_hash and permission_to_follow_up. Explanation, category, review outcome and audit reason/actor history remain. No report-content/review-history expiry was found.",
       "limits": "A point-in-time scheduler and aggregate check does not guarantee future job success or cover infrastructure logs, backups, support mail or other processors. No row identifiers, report text or other customer contents were returned."
+    },
+    "backup_provider_preflight": {
+      "checked_on": "2026-10-20",
+      "source": "Read-only production Django settings through the existing Fly deployment access. Only provider/host metadata was returned, never credentials or customer records.",
+      "provider": "Supabase PostgreSQL",
+      "project_ref": "xlvotuicystbohtsyisk",
+      "region": "eu-central-1",
+      "tls": "sslmode=require",
+      "fly_volumes": "The production API app has no Fly volumes. The identified database is Supabase, so Fly volume snapshot settings do not establish its backup policy.",
+      "settings_url": "https://supabase.com/dashboard/project/xlvotuicystbohtsyisk/database/backups",
+      "cli_result": "The read-only backups list query returned no metadata and was cancelled. This was not a confirmed permissions denial.",
+      "dashboard_result": "The backup dashboard redirected to Supabase sign-in. Owner sign-in was requested; no login, restore, backup download or setting change was performed.",
+      "verified_retention_days": null,
+      "storage_limit": "Supabase documents that database backups contain Storage metadata, not the stored objects. This does not establish any separately configured object backup or retention policy.",
+      "documentation": "https://supabase.com/docs/guides/platform/backups"
     }
   },
   "remaining_engineering_gap": {
@@ -293,7 +308,8 @@
     "https://help.ahrefs.com/en/articles/10247870-about-ahrefs-web-analytics",
     "https://business.safety.google/adsservices/",
     "https://business.safety.google/adscontrollerterms/",
-    "https://ico.org.uk/for-the-public/time-limits-for-responding-to-data-protection-rights-requests/"
+    "https://ico.org.uk/for-the-public/time-limits-for-responding-to-data-protection-rights-requests/",
+    "https://supabase.com/docs/guides/platform/backups"
   ],
   "fulfillment_audit": {
     "reviewed_on": "2026-10-20",
@@ -326,6 +342,14 @@
       "Integration coverage with disposable identities for partial failures, retries, old tokens and attempted automatic recreation."
     ],
     "intake_evidence": "The existing iOS Settings support email includes premiumStatus.supportUserId (RevenueCat appUserID) in FeedbackConfiguration.swift. This can help locate a purchase identity privately; an ID alone is not proof of ownership. That email uses feedback@myvinyls.app, whose delivery/monitoring is also unverified.",
-    "validation_limits": "Source audit and read-only production settings, scheduler metadata and aggregate counts. No provider deletion or disposable-account rehearsal, no customer deletion, no production mutations."
+    "validation_limits": "Source audit and read-only production settings, scheduler metadata and aggregate counts. No provider deletion or disposable-account rehearsal, no customer deletion, no production mutations.",
+    "rehearsal_preflight": {
+      "checked_on": "2026-10-20",
+      "firebase": "Existing Firebase authentication and an exact lookup of an uncreated synthetic UID succeeded. Only the production My Vinyl project was available. Cloud create/delete permission was not exercised or denied.",
+      "staging": "Fly staging exists but is stopped. Its configured secret names cover database and public-release services, not Firebase, RevenueCat or analytics. It is not an integrated deletion test environment.",
+      "local_option": "Installed Firebase CLI 15.12.0 includes an Auth emulator. A demo project and synthetic UID could test local Firebase deletion mechanics without production credentials; that would not verify the complete support process.",
+      "execution": "No emulator was started and no account was created or deleted.",
+      "remaining": "Configure an integrated nonproduction test environment before rehearsing deletion across services. The emulator-only test is insufficient evidence for the publication gate."
+    }
   }
 }
