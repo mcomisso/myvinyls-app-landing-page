@@ -30,7 +30,7 @@ The app uses the following services where configured for your app version:
 *   [Firebase](https://firebase.google.com/support/privacy/) supports app authentication, notifications, app configuration, security checks and crash diagnostics. [Google Analytics](https://policies.google.com/privacy) measures app use.
 *   [RevenueCat](https://www.revenuecat.com/privacy) processes app customer identifiers and purchase information to provide and manage paid access.
 *   [Google AdMob](https://policies.google.com/privacy) serves optional rewarded ads when that feature is available. Its ads SDK can process device identifiers, approximate location, advertising and app interactions, and diagnostics to serve ads, measure performance and prevent fraud. Supported app versions present the consent controls required by Google's consent service for your region and status; the available controls can differ by region.
-*   [TelemetryDeck](https://telemetrydeck.com/privacy/) and [PostHog](https://posthog.com/privacy) may process app events and installation identifiers for analytics in versions where these services are enabled.
+*   [TelemetryDeck](https://telemetrydeck.com/privacy/) and [PostHog](https://posthog.com/privacy) may process app events and installation identifiers for analytics in versions where these services are enabled. On iOS, enabled PostHog analytics can also use your Discogs username as an account identifier.
 
 On Android, the analytics setting controls custom app analytics events. Automatic Firebase Analytics and Crashlytics collection can still occur in release versions; that setting does not disable every diagnostic or operational service.
 

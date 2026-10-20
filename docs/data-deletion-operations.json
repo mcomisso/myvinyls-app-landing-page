@@ -1,7 +1,7 @@
 {
   "reviewed_on": "2026-10-20",
   "source_paths_relative_to": "The landing-page repository root, with ../vinyly_backend referring to the adjacent backend repository.",
-  "status": "Publication held after the owner requested fulfillment verification. Copy corrected and support receipt/monitoring confirmed by the owner. A complete deletion rehearsal and retained-data inventory remain unverified. No customer data was deleted.",
+  "status": "The fulfillment review supports publishing the corrected privacy policy and manual deletion-request page. The owner confirmed that the intake inbox receives mail and is monitored. Publication does not certify completed deletion, automatic account closure or store compliance. A complete deletion rehearsal and retained-data inventory remain unverified. No customer data was deleted.",
   "local_validation": {
     "date": "2026-10-20",
     "site_build": "Jekyll build passed using the existing pinned Ruby 3.4.9 and github-pages bundle. No dependency versions were changed.",
@@ -16,7 +16,7 @@
     ],
     "visual_review": "The main agent verified both pages through the Codex browser at 1440x1000 and 390x844 in light and dark themes. Text was readable and page width matched the viewport without horizontal overflow. Keyboard activation of the deletion link reached the expected page. System theme was restored and the viewport override cleared.",
     "limits": "Website build, generated content and visual checks only. Production Public Release settings, scheduler metadata and aggregate-only overdue checks are recorded separately in retention_evidence. No live website deployment, processor deletion, disposable-account rehearsal or native account-deletion test was performed.",
-    "fulfillment_revision": "After the fulfillment audit corrections, the Jekyll build passed again using Ruby 3.4.9 and the existing bundle. Both revised pages were checked at 1440x1000 and 390x844 in light and dark. Browser content matched the revised source; no horizontal overflow. The internal runbook remains excluded from public output."
+    "fulfillment_revision": "After the fulfillment audit corrections, the Jekyll build passed again using Ruby 3.4.9 and the existing bundle. Both revised pages were checked at 1440x1000 and 390x844 in light and dark. Browser content matched the revised source; no horizontal overflow. The final iOS PostHog username disclosure was then added, rebuilt successfully and visually checked at the same desktop/mobile sizes in both themes. System appearance and the normal viewport were restored. The internal runbook remains excluded from public output."
   },
   "public_request_url": "https://myvinyls.app/delete-account/",
   "support_address": "website@myvinyls.app",
@@ -173,7 +173,8 @@
     {
       "system": "PostHog",
       "capability": "Server-side data deletion requests can target an actual distinct ID.",
-      "limit": "The app uses an anonymous installation identity, never a Discogs account identifier. PostHog.reset() rotates or unlinks local identity; it does not erase server data. Resolve the deployed project and distinct ID before requesting deletion.",
+      "limit": "The inspected Android app uses an anonymous installation identity. The inspected iOS app passes the signed-in Discogs account username through Analytics.identify to PostHogSDK.identify, so Android's identity model must not be generalized to iOS. PostHog.reset() rotates or unlinks local identity; it does not erase server data. Resolve the platform, deployed project and actual distinct ID before requesting deletion.",
+      "ios_source": "iOS feature/premium-passes: iOS/App/AppViewModel+Analytics.swift registers PostHogTransport for enabled Release analytics and identifies account.username; Packages/Analytics/Sources/Analytics/AnalyticsImplementation.swift forwards it; iOS/App/PostHogAnalytics+Transport.swift passes it to PostHogSDK.shared.identify.",
       "source": "https://posthog.com/docs/api/data-deletion-requests"
     },
     {
@@ -236,7 +237,7 @@
       "Public Release cleanup applies seven-day raw-record and thirty-day aggregate thresholds. Hourly scheduled cleanup is not a strict maximum age if jobs fail, run late or exhaust their budget."
     ],
     "not_verified": [
-      "Production backup expiration and restore procedures.",
+      "Exact provider erasure deadlines for expired backups, any separately held copies or Storage-object backups, and a rehearsed procedure to prevent restored data from undoing completed deletions.",
       "General retention execution outside the verified Public Release cleanup.",
       "Processor and support-inbox per-user retention or legal holds."
     ],
@@ -277,9 +278,29 @@
       "fly_volumes": "The production API app has no Fly volumes. The identified database is Supabase, so Fly volume snapshot settings do not establish its backup policy.",
       "settings_url": "https://supabase.com/dashboard/project/xlvotuicystbohtsyisk/database/backups",
       "cli_result": "The read-only backups list query returned no metadata and was cancelled. This was not a confirmed permissions denial.",
-      "dashboard_result": "The backup dashboard redirected to Supabase sign-in. Owner sign-in was requested; no login, restore, backup download or setting change was performed.",
+      "dashboard_result": "After the owner confirmed sign-in was ready, the existing GitHub sign-in route opened the authenticated backup dashboard. The breadcrumb identified MC Software, Pro, MyVinyl, and main PRODUCTION for this exact project. Scheduled backups and the Point in Time tab were inspected read-only.",
+      "plan_observed": "Pro",
+      "backup_type_observed": "PHYSICAL",
+      "schedule_observed": "Daily, around midnight in the project's region.",
+      "scheduled_backups_observed_utc": [
+        "2026-10-20T01:34:42Z",
+        "2026-10-19T01:14:43Z",
+        "2026-10-18T01:16:38Z",
+        "2026-10-17T01:20:04Z",
+        "2026-10-16T01:21:31Z",
+        "2026-10-15T01:22:04Z",
+        "2026-10-14T01:18:50Z",
+        "2026-10-13T01:17:58Z"
+      ],
+      "point_in_time_recovery_enabled": false,
+      "point_in_time_recovery_evidence": "The Point in Time tab displayed that PITR is available as an add-on and offered Enable add-on. No add-on was enabled.",
+      "point_in_time_recovery_url": "https://supabase.com/dashboard/project/xlvotuicystbohtsyisk/database/backups/pitr",
+      "documented_pro_recovery_window_days": 7,
+      "recovery_window_limit": "Supabase documents access to the last seven days of daily backups for Pro. The dashboard displayed eight daily snapshots spanning 13-20 October. A recovery window and a point-in-time inventory do not establish an exact provider erasure deadline.",
       "verified_retention_days": null,
-      "storage_limit": "Supabase documents that database backups contain Storage metadata, not the stored objects. This does not establish any separately configured object backup or retention policy.",
+      "verified_retention_days_scope": "An exact deadline for erasure of an individual's data from provider backups remains unverified.",
+      "storage_limit": "Both the dashboard and Supabase documentation state that database backups contain Storage metadata, not stored objects. Restoring a database backup does not restore objects deleted since that backup. This does not establish any separately configured object backup or retention policy.",
+      "action_limits": "No restore, backup download, setting change, customer-data query or deletion was performed.",
       "documentation": "https://supabase.com/docs/guides/platform/backups"
     }
   },
@@ -294,8 +315,8 @@
     ],
     "apple_status": "Existing iOS Delete account goes to Discogs. This separate app-account deletion gap remains open.",
     "play_status": "The local request page is not a live deletion URL until deployed and checked. The Data safety declaration remains incomplete.",
-    "public_retention_readiness": "Narrow Public Release cleanup settings and current overdue checks are verified. Complete support, backup and processor retention inventory remains unverified. Do not generalize the Public Release thresholds or claim store compliance.",
-    "existing_privacy_policy": "The fulfillment audit corrected inherited unsupported absolutes as well as processor disclosures. Corrected copy does not establish a working cross-service deletion process; publication remains held pending the release gates."
+    "public_retention_readiness": "Narrow Public Release cleanup settings and current overdue checks are verified. Supabase Pro daily physical backups and disabled PITR are confirmed, with the documented recovery window distinguished from an exact erasure deadline. Complete support and processor retention, separate backup copies and restore handling remain unverified. Do not generalize these findings or claim store compliance.",
+    "existing_privacy_policy": "The fulfillment audit corrected inherited unsupported absolutes as well as processor disclosures. The limited public commitment is manual intake, ownership assessment and a case-specific response. A full automatic account-closure implementation is not a prerequisite for publishing these corrections. Verify each relevant deletion operation and retained-data reason/period before reporting a particular request complete."
   },
   "references": [
     "https://support.google.com/googleplay/android-developer/answer/13327111",
@@ -313,12 +334,13 @@
   ],
   "fulfillment_audit": {
     "reviewed_on": "2026-10-20",
-    "publication_ready": false,
+    "publication_ready": true,
     "scope": "Claims on the deletion request page and privacy policy, including inherited Public Release and cookie promises. Not a certification of every marketing claim or legal compliance.",
     "supported": [
       "The owner confirmed on 2026-10-20 that website@myvinyls.app receives mail and is monitored by them. The manual request intake address is verified.",
       "The source contains distinct per-system deletion capabilities listed below. These require verified identities, operator permissions and independent readback.",
       "Production Public Release cleanup is scheduled hourly and a completed run plus aggregate-only overdue checks were verified.",
+      "The authenticated Supabase dashboard shows Pro daily physical backups, eight snapshots spanning 13-20 October and disabled PITR. Database backups exclude Storage objects. Recovery availability does not prove an exact erasure deadline.",
       "The ordinary website loads GoatCounter and Ahrefs; appearance preference is stored in browser local storage. The separate Public Release renderer also reads that preference."
     ],
     "corrected_public_claims": [
@@ -330,10 +352,16 @@
       "Removed immediate children-data deletion, universal cookie controls, inferred consent merely by using the app, and the blanket restriction on all provider processing purposes.",
       "Disclosed ordinary website analytics and functional local storage; narrowed advertising choice wording to supported versions, region and consent status."
     ],
-    "release_gates": [
-      "Rehearse a request using a controlled disposable identity across every relevant system, including processor permissions, identity verification, failure handling and readback. Do not use an existing customer for testing.",
-      "Record retained categories and actual retention periods for support, backups and applicable processors. No general verified retention inventory currently exists.",
-      "Do not describe this page as a working store-compliant account-deletion service until the request process can be fulfilled. Native account-closure gaps remain open."
+    "publication_basis": [
+      "The owner confirmed that the advertised inbox receives mail and is monitored.",
+      "The canonical pages explain manual handling, separate service identities, incomplete native closure, persistent device identifiers and possible record recreation. They do not promise automatic, immediate, permanent or universal erasure.",
+      "The pages require a case-specific response explaining identifiable records, agreed deletion steps, timing and retained information. The operator must establish those facts for the actual request before claiming completion.",
+      "The corrected pages passed Jekyll generation and desktop/mobile light/dark review. Deployment and live URL verification remain separate from these local checks."
+    ],
+    "deletion_completion_gates": [
+      "Before claiming the complete deletion process has been tested, rehearse a request using a controlled disposable identity across every relevant system, including processor permissions, identity verification, failure handling and readback. Do not use an existing customer for testing.",
+      "For each actual request, verify the relevant per-system operations before agreeing or reporting deletion complete. Record retained categories, reasons and applicable periods for support, backups and processors. A general verified retention inventory does not yet exist.",
+      "Do not describe policy publication as proof of a working store-compliant account-deletion service. Native account-closure gaps remain open."
     ],
     "durable_closure_gap": "The iOS purchase UUID survives logout/reinstall in synchronizable Keychain. Startup signs into Firebase with it and syncs RevenueCat purchases. The backend has no deleted-identity check and does not check revoked Firebase ID tokens. Server-only deletion can therefore be undone by subsequent app activity.",
     "minimum_closure_changes": [
@@ -349,7 +377,7 @@
       "staging": "Fly staging exists but is stopped. Its configured secret names cover database and public-release services, not Firebase, RevenueCat or analytics. It is not an integrated deletion test environment.",
       "local_option": "Installed Firebase CLI 15.12.0 includes an Auth emulator. A demo project and synthetic UID could test local Firebase deletion mechanics without production credentials; that would not verify the complete support process.",
       "execution": "No emulator was started and no account was created or deleted.",
-      "remaining": "Configure an integrated nonproduction test environment before rehearsing deletion across services. The emulator-only test is insufficient evidence for the publication gate."
+      "remaining": "An integrated nonproduction environment is needed for a full cross-service rehearsal. An emulator-only test cannot prove the complete deletion process. This limits claims of tested deletion fulfillment; it does not block publication of the corrected manual-intake and privacy explanations."
     }
   }
 }
