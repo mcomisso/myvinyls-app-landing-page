@@ -1,7 +1,7 @@
 {
   "reviewed_on": "2026-10-20",
   "source_paths_relative_to": "The landing-page repository root, with ../vinyly_backend referring to the adjacent backend repository.",
-  "status": "Publication held after the owner requested fulfillment verification. Copy corrected; a complete deletion rehearsal and support receipt/monitoring remain unverified. No customer data was deleted.",
+  "status": "Publication held after the owner requested fulfillment verification. Copy corrected and support receipt/monitoring confirmed by the owner. A complete deletion rehearsal and retained-data inventory remain unverified. No customer data was deleted.",
   "local_validation": {
     "date": "2026-10-20",
     "site_build": "Jekyll build passed using the existing pinned Ruby 3.4.9 and github-pages bundle. No dependency versions were changed.",
@@ -21,6 +21,14 @@
   "public_request_url": "https://myvinyls.app/delete-account/",
   "support_address": "website@myvinyls.app",
   "support_address_source": "_config.yml email_address and _pages/contact.md",
+  "support_address_confirmation": {
+    "address": "website@myvinyls.app",
+    "confirmed_on": "2026-10-20",
+    "source": "Direct owner confirmation in this task",
+    "receives_mail": true,
+    "monitored_by": "Owner",
+    "limits": "This confirmation does not verify other aliases, processor deletion permissions, request completion or retention periods."
+  },
   "scope": "My Vinyl+ account and associated personal data, or selected personal data. A request may cover more than one device or platform. Discogs accounts and store subscriptions remain separate.",
   "policy_boundaries": [
     "A public email request path is supported by Google Play's account-deletion guidance, subject to an actual accessible page and an operational deletion process.",
@@ -292,7 +300,7 @@
     "publication_ready": false,
     "scope": "Claims on the deletion request page and privacy policy, including inherited Public Release and cookie promises. Not a certification of every marketing claim or legal compliance.",
     "supported": [
-      "The website can provide a manual email request route using the existing public support address. Actual receipt and monitoring require owner confirmation.",
+      "The owner confirmed on 2026-10-20 that website@myvinyls.app receives mail and is monitored by them. The manual request intake address is verified.",
       "The source contains distinct per-system deletion capabilities listed below. These require verified identities, operator permissions and independent readback.",
       "Production Public Release cleanup is scheduled hourly and a completed run plus aggregate-only overdue checks were verified.",
       "The ordinary website loads GoatCounter and Ahrefs; appearance preference is stored in browser local storage. The separate Public Release renderer also reads that preference."
@@ -307,7 +315,6 @@
       "Disclosed ordinary website analytics and functional local storage; narrowed advertising choice wording to supported versions, region and consent status."
     ],
     "release_gates": [
-      "Confirm website@myvinyls.app receives mail, is monitored and has a responsible operator. A DNS MX record is insufficient.",
       "Rehearse a request using a controlled disposable identity across every relevant system, including processor permissions, identity verification, failure handling and readback. Do not use an existing customer for testing.",
       "Record retained categories and actual retention periods for support, backups and applicable processors. No general verified retention inventory currently exists.",
       "Do not describe this page as a working store-compliant account-deletion service until the request process can be fulfilled. Native account-closure gaps remain open."
