@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Privacy Policy
-description: "Privacy policy for My Vinyl+ — how we handle your data, Discogs account integration, analytics, and your rights as a user of the app."
+description: "How My Vinyl+ handles app and website data, Discogs integration, analytics and deletion requests."
 include_in_header: false
 redirect_from:
   - /privacy/
@@ -17,11 +17,7 @@ make a request without reinstalling the app. The page explains how to contact
 us, what we need to verify, and how My Vinyl+ data differs from your Discogs
 account and store subscriptions.
 
-Matteo Comisso built the My Vinyl+ app as a Freemium app. This SERVICE is provided by Matteo Comisso at no cost and is intended for use as is.
-
-This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
-
-If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+Matteo Comisso develops My Vinyl+, which has free and paid features. This policy describes how the app and website handle information, the services they use, and how to contact us about your data.
 
 The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are available on this website unless otherwise defined in this Privacy Policy.
 
@@ -33,7 +29,7 @@ The app uses the following services where configured for your app version:
 
 *   [Firebase](https://firebase.google.com/support/privacy/) supports app authentication, notifications, app configuration, security checks and crash diagnostics. [Google Analytics](https://policies.google.com/privacy) measures app use.
 *   [RevenueCat](https://www.revenuecat.com/privacy) processes app customer identifiers and purchase information to provide and manage paid access.
-*   [Google AdMob](https://policies.google.com/privacy) serves optional rewarded ads when that feature is available. Its ads SDK can process device identifiers, approximate location, advertising and app interactions, and diagnostics to serve ads, measure performance and prevent fraud. Available consent choices are presented in the app.
+*   [Google AdMob](https://policies.google.com/privacy) serves optional rewarded ads when that feature is available. Its ads SDK can process device identifiers, approximate location, advertising and app interactions, and diagnostics to serve ads, measure performance and prevent fraud. Supported app versions present the consent controls required by Google's consent service for your region and status; the available controls can differ by region.
 *   [TelemetryDeck](https://telemetrydeck.com/privacy/) and [PostHog](https://posthog.com/privacy) may process app events and installation identifiers for analytics in versions where these services are enabled.
 
 On Android, the analytics setting controls custom app analytics events. Automatic Firebase Analytics and Crashlytics collection can still occur in release versions; that setting does not disable every diagnostic or operational service.
@@ -42,23 +38,33 @@ The Android waitlist is closed and this website no longer collects email address
 
 ## Log Data
 
-I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+App, server and service-provider diagnostics can include network addresses, device and operating system information, app configuration, timestamps, errors and usage information. These records help investigate faults, operate the service and prevent abuse.
+
+## Website analytics and appearance
+
+The main website loads [GoatCounter](https://www.goatcounter.com/help/privacy) and [Ahrefs Web Analytics](https://help.ahrefs.com/en/articles/10247870-about-ahrefs-web-analytics) to measure visits. Their scripts receive page and browser information and can derive approximate location from a network address. Their linked documentation explains the data they process and aggregate. This is separate from analytics in the mobile apps.
+
+The website saves your appearance choice in browser local storage. Choosing System makes the site follow your device's appearance setting. Browser controls can clear site storage or restrict scripts; doing so may affect website features.
 
 ## Public Release Links
 
-MyVinyl may provide link-accessible catalogue Release pages. These pages do not use visitor analytics, cookies, local storage, fingerprinting, third-party embeds, or signed-in account lookups. They do not expose collector identity, Collection, Wantlist, Owned Copy, account, or recipient information.
+Where available, Public Release links display catalogue information about a record. Their separate page renderer does not include the main website's analytics scripts, tracking cookies, fingerprinting, third-party embeds or signed-in account lookups. It reads the saved appearance preference from browser local storage. These pages are designed to show catalogue information without a collector's collection, wantlist or account details.
 
-To keep these pages reliable and protect them from abuse, operational systems may briefly process a source IP address and user agent. Identifiable operational logs are retained for no more than seven days. They may include a timestamp, request ID, numeric Discogs Release ID, response status, latency, cache result, crawler classification, and rate-limit outcome. Referrers, query parameters, cookies, account identity, and Release metadata are excluded. Non-linkable aggregate service metrics may be retained for no more than 30 days.
+Operational systems may process a source IP address and user agent to serve requests and protect against abuse. The application's Public Release request records include request timing, a request ID, a numeric Discogs Release ID, response status, cache and rate-limit information. The application excludes referrers, query parameters, cookies, account identity and Release metadata from those records.
 
-Public Release pages link to validated external destinations, including Discogs. Navigation is always user-activated and the page sends no referrer information. Search and social crawlers are denied Release content at the edge, Release routes are disallowed in robots.txt, and the pages request that crawlers do not index or archive them. These controls reduce discovery but cannot guarantee that every third party will comply.
+The backend is configured to run cleanup hourly, removing these request records once they are older than seven days and aggregate service metrics once they are older than 30 days. These settings apply to those application records, not to every infrastructure log or backup. A configured schedule is not a guarantee of an exact deletion time if a cleanup run fails.
 
-Anyone may use the accessible Report This Page route without an account to report privacy or publicity harm, copyright or trademark claims, impersonation, malicious links, or inaccurate rights claims. A report includes the Release URL, category, explanation, optional contact email, follow-up permission, timestamps, and review outcome. It accepts no uploads. Reporter-identifying data is deleted 90 days after a report is closed unless a documented legal hold applies. Reports are reviewed by an authorized person and never suppress a page automatically.
+Public Release pages use validated external links and a no-referrer policy. They request that crawlers do not index or archive their content. These controls cannot guarantee that every third party will comply.
+
+If a Public Release page offers a Report This Page link, you can submit a report without signing in. Reports contain your explanation and optional contact email, so avoid including unnecessary personal information. Submissions are stored for manual review; submitting a report does not automatically remove a page. If the form is unavailable, contact [website@myvinyls.app](mailto:website@myvinyls.app).
+
+For closed reports, scheduled cleanup clears the contact email, source-address hash and follow-up permission after 90 days. It does not erase the explanation or review history, which currently have no automatic expiry. You can include a specific report in a [deletion request](/delete-account/).
 
 ## Cookies
 
 Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
 
-This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+Browser cookie and site-storage controls depend on your browser. Third-party sites opened from My Vinyl+ have their own controls and policies. App advertising consent controls, where available, do not control every website, analytics service or diagnostic record.
 
 ## Service Providers
 
@@ -69,7 +75,7 @@ I may employ third-party companies and individuals due to the following reasons:
 *   To perform Service-related services; or
 *   To assist us in analyzing how our Service is used.
 
-I want to inform users of this Service that these third parties have access to their Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+Providers process information under their applicable terms and privacy policies. Some act on our behalf; others, including advertising providers, may determine their own processing purposes. See the linked policies for their uses and controls.
 
 ## Security
 
@@ -81,7 +87,7 @@ This Service may contain links to other sites. If you click on a third-party lin
 
 ## Children's Privacy
 
-These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do the necessary actions.
+My Vinyl+ is not directed at children under 13. If you believe a child has provided personal information, contact [website@myvinyls.app](mailto:website@myvinyls.app) so we can investigate, identify the relevant records and handle the necessary deletion steps. Deletion can involve more than one service and is not an immediate automatic operation.
 
 ## Changes to This Privacy Policy
 
@@ -91,6 +97,6 @@ This policy is effective as of 2026-10-20
 
 ## Contact Us
 
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at matteo@mcomisso.me.
+For questions about this policy or your information, contact [website@myvinyls.app](mailto:website@myvinyls.app). The [deletion request page](/delete-account/) explains what information helps us locate the relevant records.
 
 This privacy policy page was created at [privacypolicytemplate.net](https://privacypolicytemplate.net) and modified/generated by [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)

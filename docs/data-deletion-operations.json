@@ -1,7 +1,7 @@
 {
   "reviewed_on": "2026-10-20",
   "source_paths_relative_to": "The landing-page repository root, with ../vinyly_backend referring to the adjacent backend repository.",
-  "status": "Operator request process prepared. No customer data was deleted. Public page awaits deployment.",
+  "status": "Publication held after the owner requested fulfillment verification. Copy corrected; a complete deletion rehearsal and support receipt/monitoring remain unverified. No customer data was deleted.",
   "local_validation": {
     "date": "2026-10-20",
     "site_build": "Jekyll build passed using the existing pinned Ruby 3.4.9 and github-pages bundle. No dependency versions were changed.",
@@ -11,10 +11,12 @@
       "Privacy Policy has a prominent /delete-account/ link; the deletion page links back to /privacypolicy/.",
       "The /privacy/ alias returns the generated redirect to https://myvinyls.app/privacypolicy/.",
       "The deletion page appears in the sitemap, and docs/data-deletion-operations.json is excluded from the public build.",
-      "The generated privacy page no longer contains the blanket on-device-only claim and includes the observed processor descriptions."
+      "The generated privacy page no longer contains the blanket on-device-only claim and includes the observed processor descriptions.",
+      "Revised policy discloses website analytics, functional appearance storage and retained report content; the request page explains persistent purchase identity and manual handling."
     ],
     "visual_review": "The main agent verified both pages through the Codex browser at 1440x1000 and 390x844 in light and dark themes. Text was readable and page width matched the viewport without horizontal overflow. Keyboard activation of the deletion link reached the expected page. System theme was restored and the viewport override cleared.",
-    "limits": "These are local website checks. No live deployment, processor deletion, production retention check or native account-deletion test was performed."
+    "limits": "Website build, generated content and visual checks only. Production Public Release settings, scheduler metadata and aggregate-only overdue checks are recorded separately in retention_evidence. No live website deployment, processor deletion, disposable-account rehearsal or native account-deletion test was performed.",
+    "fulfillment_revision": "After the fulfillment audit corrections, the Jekyll build passed again using Ruby 3.4.9 and the existing bundle. Both revised pages were checked at 1440x1000 and 390x844 in light and dark. Browser content matched the revised source; no horizontal overflow. The internal runbook remains excluded from public output."
   },
   "public_request_url": "https://myvinyls.app/delete-account/",
   "support_address": "website@myvinyls.app",
@@ -33,7 +35,8 @@
         "Use the existing support inbox. Confirm whether the request covers all My Vinyl+ data or selected data, and which platforms or devices were used.",
         "Accept requests without requiring the user to reinstall the app, provide a password, or cancel a subscription.",
         "Explain that My Vinyl+ cannot delete a Discogs account or independently held Apple or Google records.",
-        "Set a case-specific expected completion time after identifying the systems involved. Do not promise an unverified universal retention or deletion period."
+        "Set a case-specific expected completion time after identifying the systems involved. Do not promise an unverified universal retention or deletion period.",
+        "Record the receipt date, applicable legal response deadline and responsible operator. For UK data protection requests, the normal response deadline is one calendar month; check lawful identity-verification or extension rules and explain any permitted extension within the original deadline. A case-specific estimate must not replace the applicable legal deadline."
       ]
     },
     {
@@ -222,13 +225,40 @@
     "known_source_behavior": [
       "General backend retention settings are configurable. Zero may retain a table indefinitely. Source defaults are not proof of production settings or successful job execution.",
       "Recognition cleanup removes private storage bytes before metadata and records failures for retry.",
-      "Public Release operational raw logs are hard-capped in code at seven days and aggregates at thirty days. These narrow limits must not be reused as whole-app or support-inbox promises."
+      "Public Release cleanup applies seven-day raw-record and thirty-day aggregate thresholds. Hourly scheduled cleanup is not a strict maximum age if jobs fail, run late or exhaust their budget."
     ],
     "not_verified": [
       "Production backup expiration and restore procedures.",
-      "Actual deployed retention settings and successful cleanup execution.",
+      "General retention execution outside the verified Public Release cleanup.",
       "Processor and support-inbox per-user retention or legal holds."
-    ]
+    ],
+    "production_read_only_check": {
+      "observed_at_utc": "2026-10-20T09:32:27Z",
+      "deployment_release": 210,
+      "cleanup_mode": "scheduled",
+      "schedule": "public-release-retention-cleanup, hourly, repeats=-1",
+      "latest_recorded_success_utc": {
+        "started": "2026-10-20T08:31:02Z",
+        "completed": "2026-10-20T08:31:04Z"
+      },
+      "effective_days": {
+        "public_release_raw": 7,
+        "public_release_aggregates": 30,
+        "recognition_submissions": 30,
+        "notifications": 180
+      },
+      "aggregate_only_checks": {
+        "raw_logs_total": 0,
+        "raw_logs_overdue": 0,
+        "aggregates_total": 1,
+        "aggregates_overdue": 0,
+        "closed_reports_total": 1,
+        "overdue_reporter_fields": 0,
+        "reports_missing_expiry": 0
+      },
+      "report_cleanup_scope": "Clears contact_email, source_address_hash and permission_to_follow_up. Explanation, category, review outcome and audit reason/actor history remain. No report-content/review-history expiry was found.",
+      "limits": "A point-in-time scheduler and aggregate check does not guarantee future job success or cover infrastructure logs, backups, support mail or other processors. No row identifiers, report text or other customer contents were returned."
+    }
   },
   "remaining_engineering_gap": {
     "automatic_account_deletion": "There is no existing complete function covering Firebase, Django/Supabase, RevenueCat, analytics identities and local state. Adding a single wrapper around SupabaseService.delete_user would not delete a mobile app account.",
@@ -241,8 +271,8 @@
     ],
     "apple_status": "Existing iOS Delete account goes to Discogs. This separate app-account deletion gap remains open.",
     "play_status": "The local request page is not a live deletion URL until deployed and checked. The Data safety declaration remains incomplete.",
-    "public_retention_readiness": "Google expects retained data types and retention periods to be disclosed. The page currently offers a case-specific explanation because no complete deployed retention inventory is verified. Define and verify the applicable retained categories and periods before claiming the page satisfies all requirements.",
-    "existing_privacy_policy": "The prepared policy now removes the incorrect blanket on-device-only claim and describes the observed Firebase, Google Analytics, RevenueCat, optional AdMob, and conditional TelemetryDeck/PostHog services. It also explains that Android's analytics setting does not disable automatic Firebase Analytics or Crashlytics collection. These focused corrections and the deletion route do not verify every deployed flow, retention rule or store disclosure."
+    "public_retention_readiness": "Narrow Public Release cleanup settings and current overdue checks are verified. Complete support, backup and processor retention inventory remains unverified. Do not generalize the Public Release thresholds or claim store compliance.",
+    "existing_privacy_policy": "The fulfillment audit corrected inherited unsupported absolutes as well as processor disclosures. Corrected copy does not establish a working cross-service deletion process; publication remains held pending the release gates."
   },
   "references": [
     "https://support.google.com/googleplay/android-developer/answer/13327111",
@@ -250,6 +280,45 @@
     "https://supabase.com/docs/guides/auth/managing-user-data",
     "https://firebase.google.com/docs/auth/admin/manage-users",
     "https://firebase.google.com/docs/auth/admin/manage-sessions",
-    "https://www.revenuecat.com/docs/customers/user-ids"
-  ]
+    "https://www.revenuecat.com/docs/customers/user-ids",
+    "https://www.goatcounter.com/help/privacy",
+    "https://help.ahrefs.com/en/articles/10247870-about-ahrefs-web-analytics",
+    "https://business.safety.google/adsservices/",
+    "https://business.safety.google/adscontrollerterms/",
+    "https://ico.org.uk/for-the-public/time-limits-for-responding-to-data-protection-rights-requests/"
+  ],
+  "fulfillment_audit": {
+    "reviewed_on": "2026-10-20",
+    "publication_ready": false,
+    "scope": "Claims on the deletion request page and privacy policy, including inherited Public Release and cookie promises. Not a certification of every marketing claim or legal compliance.",
+    "supported": [
+      "The website can provide a manual email request route using the existing public support address. Actual receipt and monitoring require owner confirmation.",
+      "The source contains distinct per-system deletion capabilities listed below. These require verified identities, operator permissions and independent readback.",
+      "Production Public Release cleanup is scheduled hourly and a completed run plus aggregate-only overdue checks were verified.",
+      "The ordinary website loads GoatCounter and Ahrefs; appearance preference is stored in browser local storage. The separate Public Release renderer also reads that preference."
+    ],
+    "corrected_public_claims": [
+      "Replaced the unconditional cross-service deletion promise with a manual request, identity verification and response process. Do not call this completed account closure.",
+      "Explained Android local removal, the iOS Discogs account link, persistent iCloud Keychain purchase identity and possible recreation on later use.",
+      "Replaced the seven/30-day maximum guarantees with the verified scheduled cleanup settings and precise application-table scope.",
+      "Named the reporter contact fields cleared after 90 days; disclosed that report explanation and review history have no automatic expiry.",
+      "Made the report form conditional on availability; submission stores a report for manual review and does not automatically suppress content.",
+      "Removed immediate children-data deletion, universal cookie controls, inferred consent merely by using the app, and the blanket restriction on all provider processing purposes.",
+      "Disclosed ordinary website analytics and functional local storage; narrowed advertising choice wording to supported versions, region and consent status."
+    ],
+    "release_gates": [
+      "Confirm website@myvinyls.app receives mail, is monitored and has a responsible operator. A DNS MX record is insufficient.",
+      "Rehearse a request using a controlled disposable identity across every relevant system, including processor permissions, identity verification, failure handling and readback. Do not use an existing customer for testing.",
+      "Record retained categories and actual retention periods for support, backups and applicable processors. No general verified retention inventory currently exists.",
+      "Do not describe this page as a working store-compliant account-deletion service until the request process can be fulfilled. Native account-closure gaps remain open."
+    ],
+    "durable_closure_gap": "The iOS purchase UUID survives logout/reinstall in synchronizable Keychain. Startup signs into Firebase with it and syncs RevenueCat purchases. The backend has no deleted-identity check and does not check revoked Firebase ID tokens. Server-only deletion can therefore be undone by subsequent app activity.",
+    "minimum_closure_changes": [
+      "An authenticated deletion state checked by token issuance and authenticated writes, with session revocation and a deliberate rejoin path.",
+      "Both clients must stop background registration and purchase synchronization for a deleted identity, clear the relevant local identity, and handle closure across devices.",
+      "Integration coverage with disposable identities for partial failures, retries, old tokens and attempted automatic recreation."
+    ],
+    "intake_evidence": "The existing iOS Settings support email includes premiumStatus.supportUserId (RevenueCat appUserID) in FeedbackConfiguration.swift. This can help locate a purchase identity privately; an ID alone is not proof of ownership. That email uses feedback@myvinyls.app, whose delivery/monitoring is also unverified.",
+    "validation_limits": "Source audit and read-only production settings, scheduler metadata and aggregate counts. No provider deletion or disposable-account rehearsal, no customer deletion, no production mutations."
+  }
 }
