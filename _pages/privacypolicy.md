@@ -3,9 +3,19 @@ layout: page
 title: Privacy Policy
 description: "Privacy policy for My Vinyl+ — how we handle your data, Discogs account integration, analytics, and your rights as a user of the app."
 include_in_header: false
+redirect_from:
+  - /privacy/
 ---
 
 # Privacy Policy
+
+## Request deletion of your My Vinyl+ data
+
+To request deletion of your My Vinyl+ account and associated personal data, or
+selected data, visit [Delete My Vinyl+ account data](/delete-account/). You can
+make a request without reinstalling the app. The page explains how to contact
+us, what we need to verify, and how My Vinyl+ data differs from your Discogs
+account and store subscriptions.
 
 Matteo Comisso built the My Vinyl+ app as a Freemium app. This SERVICE is provided by Matteo Comisso at no cost and is intended for use as is.
 
@@ -17,14 +27,16 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
 
 ## Information Collection and Use
 
-For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.
+My Vinyl+ stores some information on your device and sends other information to our servers and service providers to support app authentication, purchases, notifications, analytics and diagnostics. This can include app or device identifiers, purchase records, app interactions and diagnostic information. The data involved depends on your platform, app version, enabled features and privacy choices.
 
-The app does use third-party services that may collect information used to identify you.
+The app uses the following services where configured for your app version:
 
-Link to the privacy policy of third-party service providers used by the app
+*   [Firebase](https://firebase.google.com/support/privacy/) supports app authentication, notifications, app configuration, security checks and crash diagnostics. [Google Analytics](https://policies.google.com/privacy) measures app use.
+*   [RevenueCat](https://www.revenuecat.com/privacy) processes app customer identifiers and purchase information to provide and manage paid access.
+*   [Google AdMob](https://policies.google.com/privacy) serves optional rewarded ads when that feature is available. Its ads SDK can process device identifiers, approximate location, advertising and app interactions, and diagnostics to serve ads, measure performance and prevent fraud. Available consent choices are presented in the app.
+*   [TelemetryDeck](https://telemetrydeck.com/privacy/) and [PostHog](https://posthog.com/privacy) may process app events and installation identifiers for analytics in versions where these services are enabled.
 
-*   [Firebase Crashlytics](https://firebase.google.com/support/privacy/)
-*   [RevenueCat](https://www.revenuecat.com/privacy)
+On Android, the analytics setting controls custom app analytics events. Automatic Firebase Analytics and Crashlytics collection can still occur in release versions; that setting does not disable every diagnostic or operational service.
 
 The Android waitlist is closed and this website no longer collects email addresses for it. If you previously joined, you can ask me to remove your waitlist information at any time by contacting me.
 
@@ -75,7 +87,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2026-08-26
+This policy is effective as of 2026-10-20
 
 ## Contact Us
 

@@ -1,0 +1,255 @@
+{
+  "reviewed_on": "2026-10-20",
+  "source_paths_relative_to": "The landing-page repository root, with ../vinyly_backend referring to the adjacent backend repository.",
+  "status": "Operator request process prepared. No customer data was deleted. Public page awaits deployment.",
+  "local_validation": {
+    "date": "2026-10-20",
+    "site_build": "Jekyll build passed using the existing pinned Ruby 3.4.9 and github-pages bundle. No dependency versions were changed.",
+    "generated_content": [
+      "Deletion page and canonical privacy page return HTTP 200 in the local preview.",
+      "The deletion mailto uses the existing website@myvinyls.app support address and the intended subject.",
+      "Privacy Policy has a prominent /delete-account/ link; the deletion page links back to /privacypolicy/.",
+      "The /privacy/ alias returns the generated redirect to https://myvinyls.app/privacypolicy/.",
+      "The deletion page appears in the sitemap, and docs/data-deletion-operations.json is excluded from the public build.",
+      "The generated privacy page no longer contains the blanket on-device-only claim and includes the observed processor descriptions."
+    ],
+    "visual_review": "The main agent verified both pages through the Codex browser at 1440x1000 and 390x844 in light and dark themes. Text was readable and page width matched the viewport without horizontal overflow. Keyboard activation of the deletion link reached the expected page. System theme was restored and the viewport override cleared.",
+    "limits": "These are local website checks. No live deployment, processor deletion, production retention check or native account-deletion test was performed."
+  },
+  "public_request_url": "https://myvinyls.app/delete-account/",
+  "support_address": "website@myvinyls.app",
+  "support_address_source": "_config.yml email_address and _pages/contact.md",
+  "scope": "My Vinyl+ account and associated personal data, or selected personal data. A request may cover more than one device or platform. Discogs accounts and store subscriptions remain separate.",
+  "policy_boundaries": [
+    "A public email request path is supported by Google Play's account-deletion guidance, subject to an actual accessible page and an operational deletion process.",
+    "This page and email process do not implement Apple's in-app account deletion requirement for a non-regulated app.",
+    "No automatic account deletion endpoint was added. The backend has separate identity stores and processor operations, not a single existing complete deletion function."
+  ],
+  "operator_steps": [
+    {
+      "step": 1,
+      "action": "Acknowledge and scope the request",
+      "details": [
+        "Use the existing support inbox. Confirm whether the request covers all My Vinyl+ data or selected data, and which platforms or devices were used.",
+        "Accept requests without requiring the user to reinstall the app, provide a password, or cancel a subscription.",
+        "Explain that My Vinyl+ cannot delete a Discogs account or independently held Apple or Google records.",
+        "Set a case-specific expected completion time after identifying the systems involved. Do not promise an unverified universal retention or deletion period."
+      ]
+    },
+    {
+      "step": 2,
+      "action": "Verify ownership and build a private identity map",
+      "details": [
+        "A public Discogs username or an email alone is not proof of ownership of a My Vinyl+ purchase identity.",
+        "Treat the RevenueCat App User ID and Firebase UID as sensitive. The backend documents purchase UUIDs as capabilities. Do not ask users to post them in a public ticket or include them in repository logs.",
+        "Use the minimum verified account or purchase evidence needed through a private support exchange. Do not collect raw authentication tokens or full payment details.",
+        "Map each verified identity independently: Django account ID, Supabase binding if present, Firebase purchase UID, RevenueCat customer and aliases, notification installation IDs, and any processor-specific analytics identity.",
+        "If a record cannot be safely linked to the requester, explain the limit. Never guess that the same Discogs, Google or Apple login represents the same installation identity."
+      ]
+    },
+    {
+      "step": 3,
+      "action": "Inventory before deleting",
+      "details": [
+        "Use the exact verified identities to preview affected rows and processor records. Keep the case inventory outside Git and general logs.",
+        "For a Django account, inspect the ORM deletion cascade and any protected/shared shop records before deleting the user.",
+        "For a mobile purchase UID, inspect shops.DeviceToken.purchase_id and the SHA-256 uid_hash in FirebaseCustomTokenBinding separately. Mobile installation identity is not automatically a Django account.",
+        "Check open support conversations, identifiable analytics or diagnostic records, and any specific contribution or report referenced by the requester.",
+        "Review active jobs or clients that could recreate records. Explain that later app use may create new records; do not claim permanent blocking is implemented."
+      ]
+    },
+    {
+      "step": 4,
+      "action": "Use existing per-system deletion capabilities",
+      "details": [
+        "Delete or request deletion only for records confirmed in the case inventory. The capabilities below are separate operations and require separate readback.",
+        "Do not use generic table-wide cleanup or expiry jobs as a substitute for an individual request.",
+        "Do not mark the request complete while a required processor deletion or failed storage removal is pending."
+      ]
+    },
+    {
+      "step": 5,
+      "action": "Verify and close",
+      "details": [
+        "Read back each affected system and confirm the expected records are absent, or record the processor's pending deletion status.",
+        "Check that authentication cannot use the deleted account and that notification registration does not remain active.",
+        "Tell the requester what was deleted, what could not be linked, and any specific information retained with its reason and verified retention period.",
+        "Minimize the support case after completion. Keep only what the actual support, security or legal process requires, with an explicit recorded reason and expiry where applicable.",
+        "Do not claim that backups, anonymous aggregates, store billing history or independently controlled third-party data were individually erased without supporting evidence."
+      ]
+    }
+  ],
+  "existing_capabilities": [
+    {
+      "system": "Django account and related records",
+      "source": "../vinyly_backend/auth_app/models.py and shops/models.py",
+      "capability": "The existing Django user model and ORM can delete an exact verified user. UserProfile, wantlist, follows, collector locations, user-owned device tokens and notifications have cascade relationships.",
+      "requirements": "Inspect the actual cascade first, including shop ownership and protected references. Supabase identity and string-keyed records do not disappear merely because a Django user is deleted."
+    },
+    {
+      "system": "Django refresh sessions",
+      "source": "../vinyly_backend/auth_app/revocation.py and auth_app/signals.py",
+      "capability": "revoke_user_refresh_tokens(user) revokes known refresh tokens. Saving is_active=False triggers revocation and blocks Django account authentication.",
+      "requirements": "Do not use QuerySet.update() expecting save signals. Deactivation is a preliminary control, not completed account deletion."
+    },
+    {
+      "system": "Supabase Auth",
+      "source": "../vinyly_backend/auth_app/supabase_service.py",
+      "capability": "SupabaseService.delete_user(verified_supabase_id) already wraps the server-side Admin API.",
+      "requirements": "Resolve the exact UserProfile.supabase_id. Handle owned Storage objects first when applicable. Deletion does not retroactively invalidate already issued stateless access JWTs; account-specific session behavior requires verification."
+    },
+    {
+      "system": "Firebase Auth",
+      "source": "../vinyly_backend/auth_app/firebase_tokens.py and api/firebase_authentication.py",
+      "capability": "The configured Firebase Admin SDK supports deletion of an exact verified UID and refresh-token revocation.",
+      "requirements": "The current backend verify_id_token calls do not set check_revoked=True. Revocation alone is not immediate invalidation of all issued ID tokens. No current account-deletion orchestration is implemented."
+    },
+    {
+      "system": "Mobile notification registrations",
+      "source": "../vinyly_backend/shops/models.py and engagement/views.py",
+      "capability": "An exact DeviceToken queryset can be removed through the Django ORM after inventory. The existing installation DELETE route only deactivates registrations.",
+      "requirements": "Deactivation or DeviceToken.retire() retains a row and is not erasure. Include all verified purchase UID and installation rows."
+    },
+    {
+      "system": "Custom-token proof binding",
+      "source": "../vinyly_backend/auth_app/custom_token_proof.py and auth_app/models.py",
+      "capability": "FirebaseCustomTokenBinding is keyed by the SHA-256 of the exact purchase UID.",
+      "requirements": "Keep this separate from Django and Firebase user deletion. Current clients may mint or recreate an identity later; there is no deletion tombstone or cross-device stop signal."
+    },
+    {
+      "system": "RevenueCat",
+      "source": "https://www.revenuecat.com/docs/dashboard-and-metrics/customer-profile",
+      "capability": "The dashboard and customer APIs provide customer deletion.",
+      "requirements": "Inspect aliases and both app stores. Customer deletion does not cancel the underlying store subscription; later restore or purchase activity can recreate customer data. Verify the intended customer, not only an email or Discogs username."
+    },
+    {
+      "system": "Recognition contributions",
+      "source": "../vinyly_backend/aihelper/recognition/submissions.py and aihelper/models.py",
+      "capability": "RecognitionSubmissionStorage.remove(paths) removes private objects. Existing cleanup deletes metadata only after storage deletion succeeds.",
+      "requirements": "Use exact, verified contribution identifiers. Current stored submissions have no direct account or purchase UID field. Do not infer ownership from an album, timestamp or photo alone, and do not run expiry cleanup with an artificial date to erase unrelated contributions."
+    },
+    {
+      "system": "String-keyed votes, public reports and administrative references",
+      "source": "../vinyly_backend/aihelper/models.py, public_releases/models.py and engagement/models.py",
+      "capability": "DescriptionVote.voter, PublicReleaseReport.contact_email and PremiumOffer purchase-ID fields can hold attributable information outside account foreign-key cascades.",
+      "requirements": "Review exact verified matches and existing service/admin invariants. Do not alter publication state, aggregate counters, running offer cursors or other users' records through a blanket user-delete assumption."
+    },
+    {
+      "system": "Analytics, diagnostics and support",
+      "capability": "Processor and support deletion must be performed using the identity and controls actually available for each service.",
+      "requirements": "Firebase Analytics, Crashlytics, PostHog, TelemetryDeck, AdMob and support email do not all share the RevenueCat UID. Confirm the processor-specific identifier and deletion control; report unlinked or anonymous data honestly. Deleting Firebase Auth does not by itself erase these systems."
+    }
+  ],
+  "processor_identity_limits": [
+    {
+      "system": "Firebase Installations",
+      "capability": "Deletion uses the exact Firebase installation ID. Google documents deletion of FID-associated service data within 180 days.",
+      "limit": "This does not delete Google Analytics data. The Firebase UID, purchase UID and installation ID are different identifiers.",
+      "source": "https://firebase.google.com/docs/projects/manage-installations"
+    },
+    {
+      "system": "Google Analytics",
+      "capability": "submitUserDeletion accepts supported property-specific identifiers, including an app instance ID or configured user ID.",
+      "limit": "Resolve the actual Analytics property and identifier. Do not substitute a RevenueCat customer ID or Firebase Auth UID without evidence of a configured mapping.",
+      "source": "https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/properties/submitUserDeletion"
+    },
+    {
+      "system": "Firebase Crashlytics",
+      "capability": "deleteCrashReports supports reports associated with a user ID previously set through the Crashlytics SDK.",
+      "limit": "No Crashlytics setUserId call was found in the inspected Android app source. Purchase identity therefore cannot be assumed to locate these reports.",
+      "source": "https://firebase.google.com/docs/reference/crashlytics/rest/v1alpha/projects.apps.users/deleteCrashReports"
+    },
+    {
+      "system": "PostHog",
+      "capability": "Server-side data deletion requests can target an actual distinct ID.",
+      "limit": "The app uses an anonymous installation identity, never a Discogs account identifier. PostHog.reset() rotates or unlinks local identity; it does not erase server data. Resolve the deployed project and distinct ID before requesting deletion.",
+      "source": "https://posthog.com/docs/api/data-deletion-requests"
+    },
+    {
+      "system": "TelemetryDeck",
+      "capability": "The vendor documents anonymized identifiers and retained analytics when an account closes.",
+      "limit": "No per-user erasure operation or reliable mapping from purchase identity was verified. Do not promise individual erasure of anonymous aggregates.",
+      "source": "https://telemetrydeck.com/docs/guides/privacy-faq/"
+    }
+  ],
+  "android_sdk_disclosure_inventory": {
+    "scope": "Source-backed inventory for the inspected feature/premium-passes worktree. It is not a completed whole-app Play Data safety declaration or proof of the currently distributed APK.",
+    "source_root": "../../Android_MyVinyl/.claude/worktrees/premium-passes",
+    "versions_observed": {
+      "Firebase_BoM": "35.0.2",
+      "RevenueCat": "10.28.1",
+      "TelemetryDeck": "6.0.1",
+      "PostHog": "3.58.0"
+    },
+    "source_files": [
+      "gradle/libs.versions.toml",
+      "core/analytics/build.gradle.kts",
+      "core/analytics/src/main/java/com/mcsoftware/myvinyl/analytics/Analytics.kt",
+      "core/analytics/src/main/java/com/mcsoftware/myvinyl/analytics/transport/PostHogTransport.kt",
+      "core/data/src/main/java/com/mcsoftware/myvinyl/data/preferences/UserPreferencesRepository.kt",
+      "app/src/main/java/com/mcsoftware/myvinyl/MyVinylApplication.kt",
+      "app/src/main/java/com/mcsoftware/myvinyl/engagement/FirebaseAppIdentity.kt"
+    ],
+    "minimum_categories_beyond_ads": [
+      "Purchase history: RevenueCat provides purchase functionality and analytics; transaction records are not ephemeral.",
+      "User IDs: Firebase custom-token authentication uses the app purchase identity. This does not by itself establish email, phone number or real-name collection.",
+      "Device or other IDs: Firebase installations, Crashlytics installation identifiers and Google Analytics app instance or advertising identifiers.",
+      "App interactions: Analytics sessions, screen views and purchase events, plus the app's custom analytics events.",
+      "Crash logs and diagnostics: Crashlytics reports, sessions and handled errors. No Firebase Performance Monitoring dependency was observed.",
+      "Approximate location: Already required for Ads; Google Analytics also documents coarse location derived from masked IP information."
+    ],
+    "collection_controls": [
+      "The app analytics preference defaults to true and gates its custom transport facade.",
+      "Release startup independently enables automatic Crashlytics collection. No Firebase Analytics collection-disable or consent call was found in the inspected source. Do not label all analytics collection optional solely because Settings has an analytics switch.",
+      "PostHog is created only for Release when its key and host are nonblank. It has person profiles, session replay, automatic screen and lifecycle events, deep-link capture and automatic error capture disabled; the app sends explicit events.",
+      "TelemetryDeck receives custom events, navigation, errors and an anonymized installation identity. Anonymization does not mean no collection occurs.",
+      "App Check with Play Integrity processes integrity, license and attestation information for fraud prevention and security."
+    ],
+    "unverified_before_publication": [
+      "The exact distributed release, enabled processors, generated PostHog key presence and host. Do not copy or publish credentials while checking.",
+      "Whole-app encryption in transit across every actual destination. Vendor transport assurances do not prove the app's configurable PostHog host or every other integration uses HTTPS.",
+      "All non-SDK app and backend flows, collection purposes, sharing exceptions, mandatory versus optional collection, deployed retention and the usable account-deletion process.",
+      "The final category and handling answers for every applicable SDK version. Vendor disclosure pages describe current SDK behavior and need reconciliation with the distributed release."
+    ],
+    "references": [
+      "https://firebase.google.com/docs/android/play-data-disclosure",
+      "https://support.google.com/analytics/answer/11582702",
+      "https://www.revenuecat.com/docs/platform-resources/google-platform-resources/google-plays-data-safety"
+    ]
+  },
+  "retention_evidence": {
+    "source": "../vinyly_backend/docs/agents/operations.md, api/retention.py and public_releases/retention.py",
+    "known_source_behavior": [
+      "General backend retention settings are configurable. Zero may retain a table indefinitely. Source defaults are not proof of production settings or successful job execution.",
+      "Recognition cleanup removes private storage bytes before metadata and records failures for retry.",
+      "Public Release operational raw logs are hard-capped in code at seven days and aggregates at thirty days. These narrow limits must not be reused as whole-app or support-inbox promises."
+    ],
+    "not_verified": [
+      "Production backup expiration and restore procedures.",
+      "Actual deployed retention settings and successful cleanup execution.",
+      "Processor and support-inbox per-user retention or legal holds."
+    ]
+  },
+  "remaining_engineering_gap": {
+    "automatic_account_deletion": "There is no existing complete function covering Firebase, Django/Supabase, RevenueCat, analytics identities and local state. Adding a single wrapper around SupabaseService.delete_user would not delete a mobile app account.",
+    "safe_endpoint_requirements": [
+      "Verified ownership and recent authentication appropriate to each identity.",
+      "Idempotent per-system progress and retry after external processor failures.",
+      "Session invalidation and prevention of unintended immediate client re-registration.",
+      "Both native clients must start deletion, handle completion, remove local identity and stop background registration.",
+      "Focused integration tests with non-production identities, including partial failure and retry."
+    ],
+    "apple_status": "Existing iOS Delete account goes to Discogs. This separate app-account deletion gap remains open.",
+    "play_status": "The local request page is not a live deletion URL until deployed and checked. The Data safety declaration remains incomplete.",
+    "public_retention_readiness": "Google expects retained data types and retention periods to be disclosed. The page currently offers a case-specific explanation because no complete deployed retention inventory is verified. Define and verify the applicable retained categories and periods before claiming the page satisfies all requirements.",
+    "existing_privacy_policy": "The prepared policy now removes the incorrect blanket on-device-only claim and describes the observed Firebase, Google Analytics, RevenueCat, optional AdMob, and conditional TelemetryDeck/PostHog services. It also explains that Android's analytics setting does not disable automatic Firebase Analytics or Crashlytics collection. These focused corrections and the deletion route do not verify every deployed flow, retention rule or store disclosure."
+  },
+  "references": [
+    "https://support.google.com/googleplay/android-developer/answer/13327111",
+    "https://developer.apple.com/support/offering-account-deletion-in-your-app/",
+    "https://supabase.com/docs/guides/auth/managing-user-data",
+    "https://firebase.google.com/docs/auth/admin/manage-users",
+    "https://firebase.google.com/docs/auth/admin/manage-sessions",
+    "https://www.revenuecat.com/docs/customers/user-ids"
+  ]
+}

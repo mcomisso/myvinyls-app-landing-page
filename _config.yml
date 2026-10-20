@@ -135,6 +135,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-redirect-from
 
 ####################################################
 ### Jekyll Configuration. No need to touch this. ###
