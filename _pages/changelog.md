@@ -3,10 +3,45 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.4.3"
-latest_summary: "Fixes launch and listening crashes and preserves custom vinyl data across app updates."
+latest_version: "4.5.0"
+latest_summary: "iPhone Duo: on the open Duo, the record fills one screen beside its details, and opening the hinge slides it out of its sleeve."
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.5.0
+
+Released on the App Store: 2026-10-19 (UTC).
+
+What's New in My Vinyl+ 4.5.0:
+
+- iPhone Duo: on the open Duo, the record fills one screen beside its details, and opening the hinge slides it out of its sleeve.
+
+- Your records in 3D: vinyl, CDs and cassettes come to life on the record page. Tap to slide the record out of its sleeve, drag to turn it over, and see real labels, discs and booklets from the release photos. Prefer the flat look? Switch to 2D in Settings.
+
+- Choose the photos: touch and hold an image in the gallery to use it on the 3D record as the cover, label or disc, or back.
+
+- Collection memories: Discover and the On This Day widget remind you when you added a record or when it was first released.
+
+- Privacy mode hides your collection's value in Insights, Discover, sharing and widgets.
+
+- Value by condition: see what a record is worth in each grade, with your copy marked.
+
+- Insights has a new look, inspired by a record shop.
+
+- Limited editions: add your copy's edition details beside its grading, with the pressing size suggested from the release notes.
+
+- A more colourful record page with larger artwork and artist logos, plus vinyl colours read from the release notes.
+
+- Album Mosaic covers now open their records, there's a new extra-large widget size, and a new Count My Collection shortcut.
+
+- Fixes: your collection loads as soon as you sign in to Discogs, values display correctly on German, French and Italian devices, signing out of Discogs no longer signs you out of Last.fm, searches with "+" work, and the scrobbler no longer gets stuck while listening.
+
+If you enjoy My Vinyl+, please consider leaving an App Store review. It helps other record collectors find the app.
+
+Thanks for using My Vinyl!
+Matteo
+
 ---
 
 ### Version 4.4.3
