@@ -3,10 +3,23 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.5.0"
-latest_summary: "iPhone Duo: on the open Duo, the record fills one screen beside its details, and opening the hinge slides it out of its sleeve."
+latest_version: "4.5.1"
+latest_summary: "My Vinyl+ 4.5.1"
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.5.1
+
+Released on the App Store: 2026-10-24 (UTC).
+
+My Vinyl+ 4.5.1
+
+- Smoother collection browsing and improved folder management.
+- Start typing as soon as search filters open. Improved navigation from music recognition to record details.
+- Improved record artwork and artist logos, with clearer buttons in dark mode.
+- Reliability improvements and bug fixes.
+
 ---
 
 ### Version 4.5.0
