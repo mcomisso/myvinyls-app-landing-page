@@ -19,6 +19,7 @@ My Vinyl+ 4.5.2
 - On iPhone Duo, scan records hands-free with the device folded like a laptop.
 - Sort your wantlist from the toolbar, now including Lowest price.
 - A new photo gallery for records and artists, and an animated preview when choosing the app icon.
+- Fixes a freeze on iPhone Duo.
 - Better support for larger text sizes, a steadier Collection header, and reliability fixes.
 
 ---
