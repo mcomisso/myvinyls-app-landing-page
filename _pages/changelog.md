@@ -3,10 +3,25 @@ layout: changelog
 title: "What's New in My Vinyl+"
 description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
 summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
-latest_version: "4.5.1"
-latest_summary: "My Vinyl+ 4.5.1"
+latest_version: "4.5.2"
+latest_summary: "My Vinyl+ 4.5.2"
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.5.2
+
+My Vinyl+ 4.5.2
+
+- Backup and Restore: Save your vinyl colors, 3D record images, custom fields and price tracking to one file, and bring them back any time. With Platinum.
+- More in Your Exports: Exports now include conditions, catalog numbers and custom fields, and you can export as JSON too.
+- A redesigned record scanner: switch modes like a camera, read sleeve backs and labels, and compare look-alike pressings to pick the right one.
+- On iPhone Duo, scan records hands-free with the device folded like a laptop.
+- Sort your wantlist from the toolbar, now including Lowest price.
+- A new photo gallery for records and artists, and an animated preview when choosing the app icon.
+- Fixes a freeze on iPhone Duo.
+- Better support for larger text sizes, a steadier Collection header, and reliability fixes.
+
 ---
 
 ### Version 4.5.1
