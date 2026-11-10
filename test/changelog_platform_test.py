@@ -140,6 +140,7 @@ class ChangelogPlatformTest(unittest.TestCase):
     @unittest.skipUnless(os.environ.get('SITE_DIR'), 'Set SITE_DIR to check a Jekyll build')
     def test_rendered_routes_platform_names_and_store_targets(self):
         site = Path(os.environ['SITE_DIR'])
+        self.assertFalse((site / 'test').exists(), 'Tests must not be published')
         for route, label, other, store in [
             ('changelog', 'iOS', 'Android', 'apps.apple.com'),
             ('changelog/android', 'Android', 'iOS', 'play.google.com/store/apps/details?id=com.mcsoftware.myvinyl'),

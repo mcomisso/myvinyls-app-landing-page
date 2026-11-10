@@ -163,6 +163,7 @@ exclude:
   - skills
   - docs
   - scripts
+  - test
 
 # Sitemap defaults — exclude duplicate public/ paths
 defaults:
