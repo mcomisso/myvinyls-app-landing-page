@@ -10,6 +10,14 @@
 <body class="changelog-body">
     {% include header.html %}
 
+    {% assign release_platform = page.platform | default: 'ios' %}
+    {% if release_platform == 'android' %}
+        {% assign platform_label = 'Android' %}
+    {% else %}
+        {% assign platform_label = 'iOS' %}
+    {% endif %}
+    {% assign latest_label = 'Latest ' | append: platform_label | append: ' version' %}
+
     <main id="main-content" tabindex="-1">
         <section class="changelog-hero" aria-labelledby="changelog-title">
             <div class="container">
@@ -17,24 +25,34 @@
 
                 <div class="changelog-hero-grid">
                     <div class="changelog-hero-copy">
-                        <p class="changelog-kicker">Release history</p>
+                        <p class="changelog-kicker">{{ platform_label }} release history</p>
                         <h1 id="changelog-title">{{ page.title }}</h1>
                         <p>{{ page.summary | default: page.description }}</p>
+                        <nav class="changelog-platform-nav" aria-label="Release history platform">
+                            <a href="{{ '/changelog/' | relative_url }}"{% if release_platform != 'android' %} aria-current="page"{% endif %}>iOS</a>
+                            <a href="{{ '/changelog/android/' | relative_url }}"{% if release_platform == 'android' %} aria-current="page"{% endif %}>Android</a>
+                        </nav>
                     </div>
 
-                    <aside class="changelog-latest-panel" aria-label="Latest release">
-                        <span>Latest version</span>
-                        <strong>{{ page.latest_version | default: "3.14.0" }}</strong>
-                        <p>{{ page.latest_summary | default: "New collector tools, better record detail, and focused stability fixes." }}</p>
+                    <aside class="changelog-latest-panel" aria-label="{{ page.latest_label | default: latest_label }}">
+                        <span>{{ page.latest_label | default: latest_label }}</span>
+                        <strong>{{ page.latest_version }}</strong>
+                        <p>{{ page.latest_summary }}</p>
+                        {% if release_platform == 'android' %}
+                        <a href="{{ site.playstore_link }}" class="changelog-store-link" target="_blank" rel="noopener">
+                            <img src="{{ 'assets/playstore.png' | relative_url }}" alt="Download My Vinyl+ for Android on Google Play" width="136" height="40">
+                        </a>
+                        {% else %}
                         <a href="{{ site.appstore_link }}" class="changelog-store-link" target="_blank" rel="noopener">
                             <img src="{{ 'assets/appstore.png' | relative_url }}" alt="Download on the App Store" width="120" height="40">
                         </a>
+                        {% endif %}
                     </aside>
                 </div>
             </div>
         </section>
 
-        <section class="changelog-section" aria-label="Release notes">
+        <section class="changelog-section" aria-label="{{ platform_label }} release notes">
             <div class="container changelog-layout">
                 <div class="changelog-releases">
                     {% assign open_release_count = page.open_release_count | default: 3 | plus: 0 %}
@@ -83,7 +101,10 @@
                 <aside class="changelog-context">
                     <div class="changelog-context-inner">
                         <p class="changelog-context-title">What this page tracks</p>
-                        <p>Major app releases, feature additions, bug fixes, and collector-facing improvements since the first public versions.</p>
+                        <p>{{ platform_label }} app releases, feature additions, bug fixes, and collector-facing improvements. Choose a platform above to see its release history.</p>
+                        {% if page.release_history_note %}
+                        <p>{{ page.release_history_note | escape }}</p>
+                        {% endif %}
                         <a href="/" class="changelog-home-link">View the app overview</a>
                     </div>
                 </aside>

@@ -21,11 +21,12 @@ class HomepageLayoutTest < Minitest::Test
     refute_includes LAYOUT, 'class="hero-stats"'
   end
 
-  def test_homepage_links_to_the_google_play_beta
+  def test_homepage_links_to_the_google_play_release
     assert_includes ORGANIZER, 'class="playstore-badge"'
-    assert_includes ORGANIZER, 'class="beta-stamp"'
+    refute_includes ORGANIZER, 'class="beta-stamp"'
     assert_includes LAYOUT, 'id="android-beta"'
-    assert_includes LAYOUT, "Join the public beta through Google Play"
+    assert_includes LAYOUT, "Download My Vinyl+ from Google Play"
+    assert_includes LAYOUT, "'/changelog/android/' | relative_url"
     assert_includes LAYOUT, 'class="playstore-badge large"'
     refute_includes LAYOUT, "Android waitlist"
     refute_includes LAYOUT, "formsubmit.co"

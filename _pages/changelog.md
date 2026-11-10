@@ -1,8 +1,9 @@
 ---
 layout: changelog
 title: "What's New in My Vinyl+"
-description: "See the latest updates, new features, and improvements in My Vinyl+, the vinyl collection manager for iPhone with Discogs sync and barcode scanning."
-summary: "Follow the features, fixes, and collector workflows added to My Vinyl+ across each release."
+description: "See the latest iOS and Android updates for My Vinyl+, with separate release notes for features, fixes, and improvements."
+summary: "Features, fixes, and collector workflows in My Vinyl+. Choose iOS or Android below to see its own version history."
+platform: ios
 latest_version: "4.5.2"
 latest_summary: "Backup and Restore, richer exports, a redesigned scanner, hands-free scanning on iPhone Duo, and a fix for the Duo freeze."
 open_release_count: 3
