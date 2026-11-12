@@ -4,10 +4,20 @@ title: "What's New in My Vinyl+"
 description: "See the latest iOS and Android updates for My Vinyl+, with separate release notes for features, fixes, and improvements."
 summary: "Features, fixes, and collector workflows in My Vinyl+. Choose iOS or Android below to see its own version history."
 platform: ios
-latest_version: "4.5.2"
-latest_summary: "Backup and Restore, richer exports, a redesigned scanner, hands-free scanning on iPhone Duo, and a fix for the Duo freeze."
+latest_version: "4.5.3"
+latest_summary: "My Vinyl+ 4.5.3"
 open_release_count: 3
 include_in_header: false
+---
+
+### Version 4.5.3
+
+Released on the App Store: 2026-11-11 (UTC).
+
+My Vinyl+ 4.5.3
+
+- Fixes an empty gap above the Collection table on iPad mini and other smaller iPads.
+
 ---
 
 ### Version 4.5.2
