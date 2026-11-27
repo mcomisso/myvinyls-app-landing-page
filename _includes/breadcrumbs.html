@@ -8,7 +8,7 @@
         {% elsif page.url contains "/blog/" %}
         <li class="breadcrumb-item active" aria-current="page">Blog</li>
         {% else %}
-        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.breadcrumb_title | default: page.title }}</li>
         {% endif %}
     </ol>
 </nav>
@@ -45,7 +45,7 @@
         {
             "@type": "ListItem",
             "position": 2,
-            "name": "{{ page.title | escape }}",
+            "name": "{{ page.breadcrumb_title | default: page.title | escape }}",
             "item": "{{ page.url | absolute_url }}"
         }{% endif %}
     ]

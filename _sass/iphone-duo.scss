@@ -1,0 +1,166 @@
+.duo-page {
+  max-width: 1280px;
+  padding: clamp(108px, 10vw, 140px) clamp(20px, 4vw, 48px) var(--space-4xl);
+
+  h1 {
+    font-size: clamp(2.5rem, 4.6vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 3vw, 2.9rem);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  p {
+    color: var(--gray-600);
+  }
+
+  .duo-copy p:last-child,
+  .duo-requirements p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.duo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.45fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 76px);
+}
+
+.duo-hero p {
+  max-width: 36ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.duo-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  margin-top: var(--space-lg);
+
+  .contextual-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+.duo-stage {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: clamp(16px, 2.5vw, 30px);
+}
+
+.duo-stage--hero {
+  background:
+    repeating-radial-gradient(circle at 48% 48%, transparent 0 10px, rgba(91, 37, 18, 0.10) 11px 12px),
+    radial-gradient(ellipse at 22% 8%, #ffe2bf, #edaa81 62%, #bf6f55);
+
+  .duo-screen {
+    width: 87%;
+    transform: rotate(-4deg);
+  }
+}
+
+.duo-screen {
+  width: 88%;
+  padding: clamp(4px, 0.65vw, 8px);
+  border: 1px solid #62605d;
+  border-radius: clamp(10px, 1.5vw, 22px);
+  background: #141414;
+  box-shadow: 0 14px 30px rgba(23, 16, 21, 0.32);
+}
+
+.duo-feature {
+  margin-top: clamp(44px, 7vw, 96px);
+  padding-top: clamp(32px, 5vw, 64px);
+  border-top: 1px solid var(--border);
+
+  h2 {
+    scroll-margin-top: 100px;
+  }
+}
+
+.duo-feature--detail {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.9fr);
+
+  .duo-stage {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.duo-stage--detail {
+  aspect-ratio: 3 / 2;
+  background: radial-gradient(ellipse at 48% 30%, #d7badc, #a889b2 73%, #826589);
+}
+
+.duo-stage--scan {
+  aspect-ratio: 6 / 5;
+  background: radial-gradient(ellipse at 50% 28%, #e0e6bb, #a7b18d 70%, #7c8c73);
+}
+
+.duo-fold {
+  width: 55%;
+  transform: translateY(2%);
+
+  .duo-screen {
+    width: 100%;
+  }
+}
+
+.duo-fold-camera {
+  position: relative;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: perspective(950px) rotateX(10deg);
+  transform-origin: center bottom;
+}
+
+.duo-fold-results {
+  margin-top: -2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: perspective(950px) rotateX(42deg);
+  transform-origin: center top;
+}
+
+.duo-scan figcaption {
+  margin-top: var(--space-sm);
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.duo-requirements {
+  margin-top: clamp(44px, 7vw, 96px);
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+
+  p {
+    max-width: 72ch;
+  }
+}
+
+@media (max-width: 800px) {
+  .duo-grid,
+  .duo-feature--detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .duo-feature--detail .duo-stage {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

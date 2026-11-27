@@ -9,7 +9,7 @@
 
 <body class="subPageBody">
     {% include header.html %}
-    <main id="main-content" class="page-content" tabindex="-1">
+    <main id="main-content" class="page-content{% if page.content_class %} {{ page.content_class }}{% endif %}" tabindex="-1">
         {% include breadcrumbs.html %}
         <article class="page markdown-body">
             {{ content }}
