@@ -157,6 +157,8 @@ exclude:
   - PLAN.md
   - PRODUCT.md
   - CLAUDE.md
+  - AGENTS.md
+  - design-qa.md
   - privacy.md
   - firebase-debug.log
   - squirrel.toml
